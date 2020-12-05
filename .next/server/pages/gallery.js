@@ -4055,8 +4055,10 @@ exports.ST = ST;
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("YFqc");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("RNiq");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 class Footer extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
@@ -4076,7 +4078,7 @@ class Footer extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     }, __jsx("a", {
       className: "logo"
     }, __jsx("img", {
-      src: "/images/logo2.png",
+      src: _pages_index__WEBPACK_IMPORTED_MODULE_2__["finalPath"] + '/images/logo2.png',
       alt: "logo2"
     }))), __jsx("p", null, "Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual."), __jsx("ul", {
       className: "social-list"
