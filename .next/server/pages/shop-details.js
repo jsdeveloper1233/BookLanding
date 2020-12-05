@@ -2828,7 +2828,7 @@ var pages_jsx = external_react_default.a.createElement;
 
 
 
-const finalPath = '/out/';
+const finalPath = '';
 
 class pages_BookLanding extends external_react_default.a.Component {
   render() {
@@ -2891,15 +2891,7 @@ function removePathTrailingSlash(path) {
 */
 
 
-const normalizePathTrailingSlash =  true ? path => {
-  if (/\.[^/]+\/?$/.test(path)) {
-    return removePathTrailingSlash(path);
-  } else if (path.endsWith('/')) {
-    return path;
-  } else {
-    return path + '/';
-  }
-} : undefined;
+const normalizePathTrailingSlash =  false ? undefined : removePathTrailingSlash;
 exports.normalizePathTrailingSlash = normalizePathTrailingSlash;
 
 /***/ }),
@@ -3342,7 +3334,7 @@ function _interopRequireDefault(obj) {
 // tslint:disable:no-console
 
 
-const basePath = "/out" || false;
+const basePath =  false || '';
 
 function buildCancellationError() {
   return Object.assign(new Error('Route Cancelled'), {

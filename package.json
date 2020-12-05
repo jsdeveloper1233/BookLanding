@@ -6,8 +6,10 @@
     "scripts": {
         "dev": "node server.js -p $PORT",
         "build": "next build",
-        "prod": "BASE_PATH=/out next build && next export",
         "start": "NODE_ENV=production node server.js -p $PORT",
+        // My custom
+        "prod": "BASE_PATH=/out next build && next export",
+        "prod2": "next build && next export",
         "start2": "next start"
     },
     "keywords": [
