@@ -14,7 +14,7 @@ import Blog from '../components/BookLanding/Blog';
 import Platform from '../components/BookLanding/Platform';
 import Subscribe from '../components/BookLanding/Subscribe';
 
-export const finalPath = '/out/';
+export const finalPath = '/out';
 class BookLanding extends React.Component {
     render() {
         return (
