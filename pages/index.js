@@ -5,7 +5,7 @@ import Banner from '../components/BookLanding/Banner';
 import Partner from '../components/BookLanding/Partner';
 import Discover from '../components/BookLanding/Discover';
 import Features from '../components/BookLanding/Features';
-import Funfact from '../components/BookLanding/Funfact';
+// import Funfact from '../components/BookLanding/Funfact';
 import Screenshot from '../components/BookLanding/Screenshot';
 import Team from '../components/BookLanding/Team';
 import Pricing from '../components/BookLanding/Pricing';
@@ -14,16 +14,17 @@ import Blog from '../components/BookLanding/Blog';
 import Platform from '../components/BookLanding/Platform';
 import Subscribe from '../components/BookLanding/Subscribe';
 
+export const finalPath = '/out/';
 class BookLanding extends React.Component {
     render() {
         return (
             <React.Fragment>
                <Navbar />
                <Banner />
-               <Partner />
+               {/* <Partner /> */}
                <Discover />
                <Features />
-               <Funfact />
+               {/* <Funfact /> */}
                <Screenshot />
                <Team />
                <Pricing />

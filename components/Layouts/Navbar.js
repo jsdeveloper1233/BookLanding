@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Link from '../../utils/ActiveLink';
 import SideDrawer from './SideDrawer';
 import SearchForm from './SearchForm';
+import {finalPath} from '../../pages/index';
 
 class Navbar extends React.Component {
     _isMounted = false;
@@ -58,7 +59,7 @@ class Navbar extends React.Component {
         let { products } = this.props;
 
         let layOutCls = '';
-        let logo = '/images/logo.png';
+        let logo = finalPath + "/images/logo.png";
         if (pathname == '/digital-marketing'){
             layOutCls = 'marketing-navbar';
             logo = '/images/logo2.png';

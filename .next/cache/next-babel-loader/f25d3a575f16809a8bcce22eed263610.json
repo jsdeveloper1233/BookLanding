@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\n\nclass Loader extends React.Component {\n  render() {\n    return __jsx(\"div\", {\n      className: \"preloader-area\"\n    }, __jsx(\"div\", {\n      className: \"lds-hourglass\"\n    }));\n  }\n\n}\n\nexport default Loader;","map":null,"metadata":{},"sourceType":"module"}

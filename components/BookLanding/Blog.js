@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
+import {finalPath} from '../../pages/index';
+
 
 const options = {
     autoplay: true,
@@ -55,7 +57,7 @@ class Blog extends React.Component {
                                 <div className="single-blog-post">
                                     <Link href="#">
                                         <a className="post-image">
-                                            <img src='/images/blog-img1.jpg' alt="blog-image" />
+                                            <img src={finalPath + '/images/blog-img1.jpg'} alt="blog-image" />
                                         </a>
                                     </Link>
 
@@ -81,7 +83,7 @@ class Blog extends React.Component {
                                 <div className="single-blog-post">
                                     <Link href="#">
                                         <a className="post-image">
-                                            <img src='/images/blog-img2.jpg' alt="blog-image" />
+                                            <img src={finalPath + '/images/blog-img2.jpg'} alt="blog-image" />
                                         </a>
                                     </Link>
 
@@ -107,7 +109,7 @@ class Blog extends React.Component {
                                 <div className="single-blog-post">
                                     <Link href="#">
                                         <a className="post-image">
-                                            <img src='/images/blog-img3.jpg' alt="blog-image" />
+                                            <img src={finalPath + '/images/blog-img3.jpg'} alt="blog-image" />
                                         </a>
                                     </Link>
 
@@ -133,7 +135,7 @@ class Blog extends React.Component {
                                 <div className="single-blog-post">
                                     <Link href="#">
                                         <a className="post-image">
-                                            <img src='/images/blog-img4.jpg' alt="blog-image" />
+                                            <img src={finalPath + '/images/blog-img4.jpg'} alt="blog-image" />
                                         </a>
                                     </Link>
 
@@ -159,7 +161,7 @@ class Blog extends React.Component {
                                 <div className="single-blog-post">
                                     <Link href="#">
                                         <a className="post-image">
-                                            <img src='/images/blog-img5.jpg' alt="blog-image" />
+                                            <img src={finalPath + '/images/blog-img5.jpg'} alt="blog-image" />
                                         </a>
                                     </Link>
 
@@ -185,7 +187,7 @@ class Blog extends React.Component {
                                 <div className="single-blog-post">
                                     <Link href="#">
                                         <a className="post-image">
-                                            <img src='/images/blog-img3.jpg' alt="blog-image" />
+                                            <img src={ finalPath + '/images/blog-img3.jpg'} alt="blog-image" />
                                         </a>
                                     </Link>
 
