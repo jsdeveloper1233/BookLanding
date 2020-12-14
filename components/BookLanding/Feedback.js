@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
-import {finalPath} from '../../pages/index';
 
 const options = {
     loop:true,
@@ -54,7 +53,7 @@ class Feedback extends Component {
                             <div className="col-lg-12">
                                 <div className="single-feedback-box">
                                     <div className="client-info">
-                                        <img src={finalPath + '/images/client1.jpg'} alt="client" />
+                                        <img src='/images/client1.jpg' alt="client" />
                                         <h3>Alit John</h3>
                                         <span>Web Developer</span>
                                     </div>
@@ -65,7 +64,7 @@ class Feedback extends Component {
                             <div className="col-lg-12">
                                 <div className="single-feedback-box">
                                     <div className="client-info">
-                                        <img src={finalPath + '/images/client2.jpg'} alt="client" />
+                                        <img src='/images/client2.jpg' alt="client" />
                                         <h3>Alit John</h3>
                                         <span>SEO Expert</span>
                                     </div>
@@ -76,7 +75,7 @@ class Feedback extends Component {
                             <div className="col-lg-12">
                                 <div className="single-feedback-box">
                                     <div className="client-info">
-                                        <img src={finalPath + '/images/client3.jpg'} alt="client" />
+                                        <img src='/images/client3.jpg' alt="client" />
                                         <h3>Steven John</h3>
                                         <span>Web Developer</span>
                                     </div>
@@ -87,7 +86,7 @@ class Feedback extends Component {
                             <div className="col-lg-12">
                                 <div className="single-feedback-box">
                                     <div className="client-info">
-                                        <img src={finalPath + '/images/client4.jpg'} alt="client" />
+                                        <img src='/images/client4.jpg' alt="client" />
                                         <h3>David Warner</h3>
                                         <span>Web Developer</span>
                                     </div>

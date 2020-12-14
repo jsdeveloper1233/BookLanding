@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Banner from '../components/Error/Banner'
 
-const Custom404 = () => {
+const ErrorPage = () => {
     return (
         <React.Fragment>
             <Banner />
@@ -23,4 +23,4 @@ const Custom404 = () => {
     )
 }
 
-export default Custom404
+export default ErrorPage

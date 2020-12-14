@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {finalPath} from '../../pages/index';
 
 class Discover extends Component {
     render() {
@@ -30,7 +29,7 @@ class Discover extends Component {
 
                         <div className="col-lg-6 col-md-12">
                             <div className="discover-img">
-                                <img src={finalPath + '/images/book-img2.png'} alt="image" />
+                                <img src='/images/book-img2.png' alt="image" />
                             </div>
                         </div>
                     </div>

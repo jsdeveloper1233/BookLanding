@@ -1,15 +1,12 @@
 {
     "name": "mojosa",
-    "version": "2.8.0",
+    "version": "2.9.0",
     "description": "Mojosa - React Next Landing Page Templates",
     "main": "index.js",
     "scripts": {
         "dev": "node server.js -p $PORT",
         "build": "next build",
-        "start": "NODE_ENV=production node server.js -p $PORT",
-        "prod": "BASE_PATH=/out next build && next export",
-        "prod2": "next build && next export",
-        "start2": "next start"
+        "start": "NODE_ENV=production node server.js -p $PORT"
     },
     "keywords": [
         "next.js",

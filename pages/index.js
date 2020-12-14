@@ -1,41 +1,40 @@
 import React from 'react';
 import Navbar from '../components/Layouts/Navbar';
 import Footer from '../components/Layouts/Footer';
-import Banner from '../components/BookLanding/Banner';
-import Partner from '../components/BookLanding/Partner';
-import Discover from '../components/BookLanding/Discover';
-import Features from '../components/BookLanding/Features';
-// import Funfact from '../components/BookLanding/Funfact';
-import Screenshot from '../components/BookLanding/Screenshot';
-import Team from '../components/BookLanding/Team';
-import Pricing from '../components/BookLanding/Pricing';
-import Feedback from '../components/BookLanding/Feedback';
-import Blog from '../components/BookLanding/Blog';
-import Platform from '../components/BookLanding/Platform';
-import Subscribe from '../components/BookLanding/Subscribe';
+import Banner from '../components/Saas/Banner';
+import Features from '../components/Saas/Features';
+import Overview from '../components/Saas/Overview';
+import JoinCard from '../components/Saas/JoinCard';
+import CtaCard from '../components/Saas/CtaCard';
+import SaasTools from '../components/Saas/SaasTools';
+import Funfact from '../components/Saas/Funfact';
+import WorkProcess from '../components/Saas/WorkProcess';
+import PricingPlan from '../components/Saas/PricingPlan';
+import GetStarted from '../components/Saas/GetStarted';
+import Feedback from '../components/Saas/Feedback';
+import Partner from '../components/Saas/Partner';
 
-export const finalPath = '';
-class BookLanding extends React.Component {
+class Index extends React.Component {
     render() {
         return (
             <React.Fragment>
                <Navbar />
                <Banner />
-               {/* <Partner /> */}
-               <Discover />
                <Features />
-               {/* <Funfact /> */}
-               <Screenshot />
-               <Team />
-               <Pricing />
+               <Overview />
+               <JoinCard />
+               <CtaCard />
+               <SaasTools />
+               <Funfact />
+               <WorkProcess />
+               <PricingPlan />
+               <GetStarted />
                <Feedback />
-               <Blog />
-               <Subscribe />
-               <Platform />
+               <Partner />
                <Footer />
             </React.Fragment>
         );
     }
 }
 
-export default BookLanding;
+export default Index;

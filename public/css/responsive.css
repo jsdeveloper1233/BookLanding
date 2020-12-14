@@ -20,6 +20,18 @@
     height: 3px;
     margin: 18px auto 20px;
   }
+  .shape3 {
+    display: none;
+  }
+  .bg-gray.shape-1 {
+    display: none;
+  }
+  .shape1 {
+    display: none;
+  }
+  .shape6 {
+    display: none;
+  }
   .main-banner {
     height: 100%;
     padding-top: 110px;
@@ -134,7 +146,7 @@
     right: 0;
   }
   .main-banner.marketing-home {
-    background: #ffffff url(/images/bg-point.png) no-repeat fixed right -700px center/auto;
+    background: var(--whiteColor) url(/images/bg-point.png) no-repeat fixed right -700px center/auto;
   }
   .main-banner.marketing-home .shape4, .main-banner.marketing-home .shape2 {
     display: none;
@@ -1008,7 +1020,7 @@
   }
   .blog-details-area .blog-details .article-content .blockquote {
     padding: 20px 15px;
-    border-left: 3px solid #13c4a1;
+    border-left: 3px solid var(--templateColor);
   }
   .blog-details-area .blog-details .article-content .blockquote p {
     font-size: 15px;
@@ -1188,6 +1200,9 @@
   }
   .section-title h2 {
     font-size: 29px;
+  }
+  .navbar-collapse {
+    background-color: transparent !important;
   }
   .main-banner {
     height: 100%;
@@ -2003,12 +2018,12 @@
     display: none;
   }
   .navbar-collapse {
-    background-color: #13c4a1;
+    background-color: var(--templateColor);
     border: 1px solid #eeeeee;
     margin-top: 15px;
   }
   .marketing-navbar .navbar-collapse {
-    background-color: #ffffff;
+    background-color: var(--whiteColor);
     border: 1px solid #eeeeee;
   }
   .crake-nav nav .navbar-nav li .dropdown_menu {
@@ -2031,13 +2046,13 @@
     font-size: 15px;
   }
   .navbar-light .navbar-toggler {
-    border-color: #ffffff;
+    border-color: var(--whiteColor);
   }
   .navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
   .marketing-navbar .navbar-light .navbar-toggler {
-    border-color: #000000;
+    border-color: var(--blackColor);
   }
   .marketing-navbar .navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");

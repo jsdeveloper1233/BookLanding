@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
-import {finalPath} from '../../pages/index';
 
 const options = {
     loop:true,
@@ -57,7 +56,7 @@ class Team extends Component {
                         >
                             <div className="col-lg-12">
                                 <div className="single-team-member-box">
-                                    <img src={finalPath + '/images/team-img1.jpg'} alt="team" />
+                                    <img src='/images/team-img1.jpg' alt="team" />
 
                                     <div className="team-content">
                                         <h3>John Doe</h3>
@@ -91,7 +90,7 @@ class Team extends Component {
 
                             <div className="col-lg-12">
                                 <div className="single-team-member-box">
-                                    <img src={finalPath +  '/images/team-img2.jpg'} alt="team" />
+                                    <img src='/images/team-img2.jpg' alt="team" />
 
                                     <div className="team-content">
                                         <h3>Steven Smith</h3>
@@ -125,7 +124,7 @@ class Team extends Component {
 
                             <div className="col-lg-12">
                                 <div className="single-team-member-box">
-                                    <img src={finalPath + '/images/team-img3.jpg'} alt="team" />
+                                    <img src='/images/team-img3.jpg' alt="team" />
 
                                     <div className="team-content">
                                         <h3>David Luiz</h3>
@@ -159,7 +158,7 @@ class Team extends Component {
 
                             <div className="col-lg-12">
                                 <div className="single-team-member-box">
-                                    <img src={finalPath + '/images/team-img4.jpg'} alt="team" />
+                                    <img src='/images/team-img4.jpg' alt="team" />
 
                                     <div className="team-content">
                                         <h3>Park Tim</h3>
@@ -193,7 +192,7 @@ class Team extends Component {
 
                             <div className="col-lg-12">
                                 <div className="single-team-member-box">
-                                    <img src={finalPath + '/images/team-img5.jpg'} alt="team" />
+                                    <img src='/images/team-img5.jpg' alt="team" />
 
                                     <div className="team-content">
                                         <h3>Doglas Costa</h3>

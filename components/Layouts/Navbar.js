@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Link from '../../utils/ActiveLink';
 import SideDrawer from './SideDrawer';
 import SearchForm from './SearchForm';
-import {finalPath} from '../../pages/index';
 
 class Navbar extends React.Component {
     _isMounted = false;
@@ -59,7 +58,7 @@ class Navbar extends React.Component {
         let { products } = this.props;
 
         let layOutCls = '';
-        let logo = finalPath + "/images/logo.png";
+        let logo = '/images/logo.png';
         if (pathname == '/digital-marketing'){
             layOutCls = 'marketing-navbar';
             logo = '/images/logo2.png';
@@ -96,9 +95,7 @@ class Navbar extends React.Component {
                                 <div className={classOne} id="navbarSupportedContent">
                                     <ul className="navbar-nav nav ml-auto">
                                         <li className="nav-item">
-                                            <Link activeClassName="active" href="#">
-                                                <a className="nav-link">Home</a>
-                                            </Link>
+                                            <a className="nav-link" href="#">Home</a>
                                             <ul className="dropdown_menu">
                                                 <li>
                                                     <Link activeClassName="active" href="/saas">
@@ -146,9 +143,7 @@ class Navbar extends React.Component {
                                         <li className="nav-item"><a href="#" className="nav-link">Pages</a>
                                             <ul className="dropdown_menu">
                                                 <li className="nav-item">
-                                                    <Link activeClassName="active" href="#">
-                                                        <a className="nav-link">About</a>
-                                                    </Link>
+                                                    <a className="nav-link" href="#">About</a>
                                                     <ul className="dropdown_menu">
                                                         <li>
                                                             <Link activeClassName="active" href="/about/about-one">
@@ -182,9 +177,7 @@ class Navbar extends React.Component {
                                                 </li>
 
                                                 <li className="nav-item">
-                                                    <Link activeClassName="active" href="#">
-                                                        <a className="nav-link">Team</a>
-                                                    </Link>
+                                                    <a className="nav-link" href="#">Team</a>
                                                     <ul className="dropdown_menu">
                                                         <li>
                                                             <Link activeClassName="active" href="/team/team-one">
@@ -200,9 +193,7 @@ class Navbar extends React.Component {
                                                 </li>
 
                                                 <li className="nav-item">
-                                                    <Link activeClassName="active" href="#">
-                                                        <a className="nav-link">Pricing</a>
-                                                    </Link>
+                                                    <a className="nav-link" href="#">Pricing</a>
                                                     <ul className="dropdown_menu">
                                                         <li>
                                                             <Link activeClassName="active" href="/pricing/pricing-one">
@@ -223,9 +214,7 @@ class Navbar extends React.Component {
                                                 </li>
 
                                                 <li className="nav-item">
-                                                    <Link activeClassName="active" href="#">
-                                                        <a className="nav-link">Portfolio</a>
-                                                    </Link>
+                                                    <a className="nav-link" href="#">Portfolio</a>
                                                     <ul className="dropdown_menu">
                                                         <li>
                                                             <Link activeClassName="active" href="/portfolio-one">
@@ -251,9 +240,7 @@ class Navbar extends React.Component {
                                                 </li>
 
                                                 <li className="nav-item">
-                                                    <Link activeClassName="active" href="#">
-                                                        <a className="nav-link">Shop</a>
-                                                    </Link>
+                                                    <a className="nav-link" href="#">Shop</a>
                                                     <ul className="dropdown_menu">
                                                         <li>
                                                             <Link activeClassName="active" href="/shop-one">
@@ -284,9 +271,7 @@ class Navbar extends React.Component {
                                                 </li>
 
                                                 <li className="nav-item">
-                                                    <Link activeClassName="active" href="#">
-                                                        <a className="nav-link">Blog</a>
-                                                    </Link>
+                                                    <a className="nav-link" href="#">Blog</a>
                                                     <ul className="dropdown_menu">
                                                         <li>
                                                             <Link activeClassName="active" href="/blog/blog-one">
@@ -335,9 +320,7 @@ class Navbar extends React.Component {
                                         </li>
 
                                         <li className="nav-item">
-                                            <Link activeClassName="active" href="#">
-                                                <a className="nav-link">Portfolio</a>
-                                            </Link>
+                                            <a className="nav-link" href="#">Portfolio</a>
                                             <ul className="dropdown_menu">
                                                 <li>
                                                     <Link activeClassName="active" href="/portfolio-one">
@@ -363,9 +346,7 @@ class Navbar extends React.Component {
                                         </li>
 
                                         <li className="nav-item">
-                                            <Link activeClassName="active" href="#">
-                                                <a className="nav-link">Blog</a>
-                                            </Link>
+                                            <a className="nav-link" href="#">Blog</a>
                                             <ul className="dropdown_menu">
                                                 <li>
                                                     <Link activeClassName="active" href="/blog/blog-one">
@@ -386,9 +367,7 @@ class Navbar extends React.Component {
                                         </li>
                                         
                                         <li className="nav-item">
-                                            <Link activeClassName="active" href="#">
-                                                <a className="nav-link">Shop</a>
-                                            </Link>
+                                            <a className="nav-link" href="#">Shop</a>
                                             <ul className="dropdown_menu">
                                                 <li>
                                                     <Link activeClassName="active" href="/shop-one">

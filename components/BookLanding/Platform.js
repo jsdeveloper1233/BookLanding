@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import {finalPath} from '../../pages/index';
+
 class Platform extends Component {
     render() {
         return (
@@ -14,7 +14,7 @@ class Platform extends Component {
                         <div className="col-lg-3 col-md-6">
                             <Link href="#">
                                 <a className="box">
-                                    <img src={finalPath + '/images/mailchimp.png'} alt="mailchimp" />
+                                    <img src='/images/mailchimp.png' alt="mailchimp" />
 
                                     <h3>Mail Chimp</h3>
                                     <span>Send Mail</span>
@@ -27,7 +27,7 @@ class Platform extends Component {
                         <div className="col-lg-3 col-md-6">
                             <Link href="#">
                                 <a className="box">
-                                    <img src={finalPath + '/images/slack.png'} alt="mailchimp" />
+                                    <img src='/images/slack.png' alt="mailchimp" />
 
                                     <h3>Slack</h3>
                                     <span>Messaging</span>
@@ -40,7 +40,7 @@ class Platform extends Component {
                         <div className="col-lg-3 col-md-6">
                             <Link href="#">
                                 <a className="box">
-                                    <img src={finalPath + '/images/twitter.png'} alt="mailchimp" />
+                                    <img src='/images/twitter.png' alt="mailchimp" />
 
                                     <h3>Twitter</h3>
                                     <span>Twitter Feed</span>
@@ -53,7 +53,7 @@ class Platform extends Component {
                         <div className="col-lg-3 col-md-6">
                             <Link href="#">
                                 <a className="box">
-                                    <img src={finalPath + '/images/instagram.png'} alt="mailchimp" />
+                                    <img src='/images/instagram.png' alt="mailchimp" />
 
                                     <h3>Instagram</h3>
                                     <span>News Feed</span>

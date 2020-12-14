@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import {finalPath} from '../../pages/index';
 
 class Footer extends React.Component {
     render() {
@@ -11,7 +10,7 @@ class Footer extends React.Component {
                             <div className="single-footer-widget">
                                 <Link href="#">
                                     <a className="logo">
-                                        <img src={finalPath + '/images/logo2.png'} alt="logo2" />
+                                        <img src='/images/logo2.png' alt="logo2" />
                                     </a>
                                 </Link>
                                 <p>Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual.</p>

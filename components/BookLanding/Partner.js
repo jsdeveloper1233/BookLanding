@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
-import {finalPath} from '../../pages/index';
 
 const options = {
     autoplay: true,
@@ -53,7 +52,7 @@ class Partner extends React.Component {
                             <div className="col-lg-12">
                                 <div className="item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/partner-1.png'} alt="partner" /></a>
+                                        <a><img src='/images/partner-1.png' alt="partner" /></a>
                                     </Link>
                                 </div>
                             </div>
@@ -61,7 +60,7 @@ class Partner extends React.Component {
                             <div className="col-lg-12">
                                 <div className="item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/partner-2.png'} alt="partner" /></a>
+                                        <a><img src='/images/partner-2.png' alt="partner" /></a>
                                     </Link>
                                 </div>
                             </div>
@@ -69,7 +68,7 @@ class Partner extends React.Component {
                             <div className="col-lg-12">
                                 <div className="item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/partner-3.png'} alt="partner" /></a>
+                                        <a><img src='/images/partner-3.png' alt="partner" /></a>
                                     </Link>
                                 </div>
                             </div>
@@ -77,7 +76,7 @@ class Partner extends React.Component {
                             <div className="col-lg-12">
                                 <div className="item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/partner-4.png'} alt="partner" /></a>
+                                        <a><img src='/images/partner-4.png' alt="partner" /></a>
                                     </Link>
                                 </div>
                             </div>
@@ -85,7 +84,7 @@ class Partner extends React.Component {
                             <div className="col-lg-12">
                                 <div className="item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/partner-5.png'} alt="partner" /></a>
+                                        <a><img src='/images/partner-5.png' alt="partner" /></a>
                                     </Link>
                                 </div>
                             </div>
@@ -93,7 +92,7 @@ class Partner extends React.Component {
                             <div className="col-lg-12">
                                 <div className="item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/partner-6.png'} alt="partner" /></a>
+                                        <a><img src='/images/partner-6.png' alt="partner" /></a>
                                     </Link>
                                 </div>
                             </div>
@@ -101,7 +100,7 @@ class Partner extends React.Component {
                             <div className="col-lg-12">
                                 <div className="item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/partner-7.png'} alt="partner" /></a>
+                                        <a><img src='/images/partner-7.png' alt="partner" /></a>
                                     </Link>
                                 </div>
                             </div>

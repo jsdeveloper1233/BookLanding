@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Lightbox from 'react-image-lightbox';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
-import {finalPath} from '../../pages/index';
 
 const options = {
     loop:true,
@@ -73,7 +72,7 @@ class Screenshot extends Component {
                             <div className="col-lg-12">
                                 <div className="screenshot-item">
                                     <Link href="#">
-                                        <a><img src={finalPath + "/images/page1.jpg"} alt="screenshot" /></a>
+                                        <a><img src='/images/page1.jpg' alt="screenshot" /></a>
                                     </Link>
 
                                     <Link href="#">
@@ -90,7 +89,7 @@ class Screenshot extends Component {
                             <div className="col-lg-12">
                                 <div className="screenshot-item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/page1.jpg'} alt="screenshot" /></a>
+                                        <a><img src='/images/page1.jpg' alt="screenshot" /></a>
                                     </Link>
 
                                     <Link href="#">
@@ -127,7 +126,7 @@ class Screenshot extends Component {
                             <div className="col-lg-12">
                                 <div className="screenshot-item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/page1.jpg'} alt="screenshot" /></a>
+                                        <a><img src='/images/page1.jpg' alt="screenshot" /></a>
                                     </Link>
 
                                     <Link href="#">
@@ -144,7 +143,7 @@ class Screenshot extends Component {
                             <div className="col-lg-12">
                                 <div className="screenshot-item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/page1.jpg'} alt="screenshot" /></a>
+                                        <a><img src='/images/page1.jpg' alt="screenshot" /></a>
                                     </Link>
 
                                     <Link href="#">
@@ -161,7 +160,7 @@ class Screenshot extends Component {
                             <div className="col-lg-12">
                                 <div className="screenshot-item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/page1.jpg'} alt="screenshot" /></a>
+                                        <a><img src='/images/page1.jpg' alt="screenshot" /></a>
                                     </Link>
 
                                     <Link href="#">
@@ -178,7 +177,7 @@ class Screenshot extends Component {
                             <div className="col-lg-12">
                                 <div className="screenshot-item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/page1.jpg'} alt="screenshot" /></a>
+                                        <a><img src='/images/page1.jpg' alt="screenshot" /></a>
                                     </Link>
 
                                     <Link href="#">
@@ -195,7 +194,7 @@ class Screenshot extends Component {
                             <div className="col-lg-12">
                                 <div className="screenshot-item">
                                     <Link href="#">
-                                        <a><img src={finalPath + '/images/page1.jpg'} alt="screenshot" /></a>
+                                        <a><img src='/images/page1.jpg' alt="screenshot" /></a>
                                     </Link>
 
                                     <Link href="#">

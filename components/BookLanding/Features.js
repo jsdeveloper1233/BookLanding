@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {finalPath} from '../../pages/index';
 
 class Features extends Component {
     render() {
@@ -72,21 +71,21 @@ class Features extends Component {
 
                             <div className="col-lg-6 col-md-12">
                                 <div className="features-image">
-                                    <img src={finalPath + '/images/features-img1.png'} alt="image" />
+                                    <img src='/images/features-img1.png' alt="image" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div className="shape7"><img src={finalPath +  '/images/shape7.png'} alt="shape" /></div>
-                <div className="shape3"><img src={finalPath + '/images/shape3.png'} alt="img" /></div>
+                <div className="shape7"><img src='/images/shape7.png' alt="shape" /></div>
+                <div className="shape3"><img src='/images/shape3.png' alt="img" /></div>
                 <div className="bg-gray shape-1"></div>
-                <div className="shape6"><img src={finalPath + '/images/shape6.png'} alt="img" /></div>
-                <div className="shape8 rotateme"><img src={finalPath + '/images/shape8.svg'} alt="shape" /></div>
-                <div className="shape9"><img src={finalPath + '/images/shape9.svg'} alt="shape" /></div>
-                <div className="shape10"><img src={finalPath + '/images/shape10.svg'} alt="shape" /></div>
-                <div className="shape11 rotateme"><img src={finalPath + '/images/shape11.svg'} alt="shape" /></div>
+                <div className="shape6"><img src='/images/shape6.png' alt="img" /></div>
+                <div className="shape8 rotateme"><img src='/images/shape8.svg' alt="shape" /></div>
+                <div className="shape9"><img src='/images/shape9.svg' alt="shape" /></div>
+                <div className="shape10"><img src='/images/shape10.svg' alt="shape" /></div>
+                <div className="shape11 rotateme"><img src='/images/shape11.svg' alt="shape" /></div>
             </section>
         );
     }
