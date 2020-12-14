@@ -9,11 +9,6 @@ $value_five: 1199px;
 $value_six: 1200px;
 $value_seven: 1350px;
 $value_eight: 1910px;
-$template_color: #13c4a1;
-$template_color2: #FF8A73;
-$white_color: #ffffff;
-$black_color: #000000;
-$paragraph_color: #818992;
 
 /* Max width (767px) */
 @media only #{$media} and ($feature_max : $value_one) {
@@ -40,6 +35,18 @@ $paragraph_color: #818992;
         }
     }
 
+    .shape3 {
+        display: none;
+    }
+    .bg-gray.shape-1 {
+        display: none;
+    }
+    .shape1 {
+        display: none;
+    }
+    .shape6 {
+        display: none;
+    }
     .main-banner {
         height: 100%;
         padding: {
@@ -174,7 +181,7 @@ $paragraph_color: #818992;
             }
         }
         &.marketing-home {
-            background: $white_color url(/images/bg-point.png) no-repeat fixed right -700px center/auto;
+            background: var(--whiteColor) url(/images/bg-point.png) no-repeat fixed right -700px center/auto;
 
             .shape4, .shape2 {
                 display: none;
@@ -1395,7 +1402,7 @@ $paragraph_color: #818992;
                 }
                 .blockquote {
                     padding: 20px 15px;
-                    border-left: 3px solid $template_color;
+                    border-left: 3px solid var(--templateColor);
 
                     p {
                         font-size: 15px;
@@ -1632,6 +1639,9 @@ $paragraph_color: #818992;
         h2 {
             font-size: 29px;
         }
+    }
+    .navbar-collapse {
+        background-color: transparent !important;
     }
 
     .main-banner {
@@ -2875,12 +2885,12 @@ $paragraph_color: #818992;
         display: none;
     }
     .navbar-collapse {
-        background-color: $template_color;
+        background-color: var(--templateColor);
         border: 1px solid #eeeeee;
         margin-top: 15px;
     }
     .marketing-navbar .navbar-collapse {
-        background-color: $white_color;
+        background-color: var(--whiteColor);
         border: 1px solid #eeeeee;
     }
     .crake-nav nav .navbar-nav li .dropdown_menu {
@@ -2903,13 +2913,13 @@ $paragraph_color: #818992;
         font-size: 15px;
     }
     .navbar-light .navbar-toggler {
-        border-color: $white_color;
+        border-color: var(--whiteColor);
     }
     .navbar-light .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
     .marketing-navbar .navbar-light .navbar-toggler {
-        border-color: $black_color;
+        border-color: var(--blackColor);
     }
     .marketing-navbar .navbar-light .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
