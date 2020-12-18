@@ -1,0 +1,16 @@
+p {
+    font-size: 18px;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.section-title.all-width {
+    max-width: unset;
+    margin-bottom: unset;
+    span {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}

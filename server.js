@@ -35,7 +35,7 @@ app.prepare().then(() => {
         res.send({})
     });
 
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 3006;
 
     server.listen(PORT, (err) => {
         if (err) throw err

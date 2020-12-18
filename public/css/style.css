@@ -7287,4 +7287,25 @@ Back To Top CSS
 .modal-video-close-btn {
   cursor: pointer;
 }
+
+p {
+  font-size: 18px;
+}
+
+.row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.section-title.all-width {
+  max-width: unset;
+  margin-bottom: unset;
+}
+
+.section-title.all-width span {
+  display: inline-block;
+  margin-top: 10px;
+}
 /*# sourceMappingURL=style.css.map */
