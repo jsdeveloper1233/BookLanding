@@ -7292,6 +7292,12 @@ p {
   font-size: 18px;
 }
 
+.navbar.navbar-expand-md.navbar-light a.navbar-brand {
+  color: var(--whiteColor);
+  font-weight: 700;
+  text-align: center;
+}
+
 .row-reverse {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
@@ -7366,5 +7372,9 @@ span.chapter-number {
   color: var(--paragraphColor);
   font-weight: 700;
   margin-top: 10px;
+}
+
+.platform-connect .row .socialbox a {
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */

@@ -82,7 +82,7 @@ class Navbar extends React.Component {
                 <Link href="#">
                   <a className="navbar-brand">
                     {/* <img src={logo} alt="logo" /> */}
-                    Sekrety Rozwoju Osobistego
+                    Sekrety Rozwoju<br /> Osobistego
                   </a>
                 </Link>
 

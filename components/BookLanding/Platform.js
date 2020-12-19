@@ -1,72 +1,53 @@
-import React, { Component } from 'react';
-import Link from 'next/link';
-import {finalPath} from '../../pages/index';
+import React, { Component } from "react";
+import Link from "next/link";
+import { finalPath } from "../../pages/index";
 class Platform extends Component {
-    render() {
-        return (
-            <section className="platform-connect ptb-100">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12 col-md-12">
-                            <h2>Interact With Your Users On Every Single Platform</h2>
-                        </div>
+  render() {
+    return (
+      <section className="platform-connect ptb-100">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 col-md-12">
+              <h2>Obserwuj Autora w social</h2>
+            </div>
 
-                        <div className="col-lg-3 col-md-6">
-                            <Link href="#">
-                                <a className="box">
-                                    <img src={finalPath + '/images/mailchimp.png'} alt="mailchimp" />
 
-                                    <h3>Mail Chimp</h3>
-                                    <span>Send Mail</span>
+            <div className="col-lg-4 col-md-6 socialbox">
+              <Link href="https://www.instagram.com/sergiosdorje/" target="_blank" rel="noopener">
+                <a className="box">
+                  <img
+                    src={finalPath + "/images/instagram.png"}
+                    alt="instagram"
+                  />
 
-                                    <i className="icofont-bubble-right"></i>
-                                </a>
-                            </Link>
-                        </div>
+                  <h3>Instagram</h3>
+                  <span>Sergio S Dorje</span>
 
-                        <div className="col-lg-3 col-md-6">
-                            <Link href="#">
-                                <a className="box">
-                                    <img src={finalPath + '/images/slack.png'} alt="mailchimp" />
+                  <i className="icofont-bubble-right"></i>
+                </a>
+              </Link>
+            </div>
 
-                                    <h3>Slack</h3>
-                                    <span>Messaging</span>
+            <div className="col-lg-4 col-md-6 socialbox">
+              <Link href="#">
+                <a className="box">
+                  <img
+                    src={finalPath + "/images/instagram.png"}
+                    alt="instagram"
+                  />
 
-                                    <i className="icofont-bubble-right"></i>
-                                </a>
-                            </Link>
-                        </div>
+                  <h3>Instagram</h3>
+                  <span>Sekrety Rozwoju Osobistego</span>
 
-                        <div className="col-lg-3 col-md-6">
-                            <Link href="#">
-                                <a className="box">
-                                    <img src={finalPath + '/images/twitter.png'} alt="mailchimp" />
-
-                                    <h3>Twitter</h3>
-                                    <span>Twitter Feed</span>
-
-                                    <i className="icofont-bubble-right"></i>
-                                </a>
-                            </Link>
-                        </div>
-
-                        <div className="col-lg-3 col-md-6">
-                            <Link href="#">
-                                <a className="box">
-                                    <img src={finalPath + '/images/instagram.png'} alt="mailchimp" />
-
-                                    <h3>Instagram</h3>
-                                    <span>News Feed</span>
-
-                                    <i className="icofont-bubble-right"></i>
-                                </a>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        );
-    }
+                  <i className="icofont-bubble-right"></i>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 }
 
 export default Platform;

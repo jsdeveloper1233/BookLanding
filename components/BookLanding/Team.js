@@ -5,12 +5,12 @@ const OwlCarousel = dynamic(import("react-owl-carousel3"));
 import { finalPath } from "../../pages/index";
 
 const options = {
-  loop: true,
+  loop: false,
   nav: true,
   autoplay: true,
   autoplayHoverPause: true,
   mouseDrag: true,
-  dots: false,
+  dots: true,
   navText: [
     "<i class='icofont-bubble-left'></i>",
     "<i class='icofont-bubble-right'></i>",
@@ -98,43 +98,19 @@ class Team extends Component {
                   </div>
                 </div>
 
-       
-
-
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + "/images/team-img5.jpg"} alt="team" />
+                    <img src={finalPath + ""} alt="team" />
 
                     <div className="team-content">
-                      <h3>Doglas Costa</h3>
-                      <span>Manager</span>
+                      <h3>Nikola Hahn</h3>
+                      <span>Ilustracja / Projekt okładki</span>
 
                       <ul>
                         <li>
-                          <Link href="#">
-                            <a className="facebook">
-                              <i className="icofont-facebook"></i>
-                            </a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
+                          <Link href="https://www.instagram.com/nikolahahn/">
                             <a className="instagram">
                               <i className="icofont-instagram"></i>
-                            </a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            <a className="twitter">
-                              <i className="icofont-twitter"></i>
-                            </a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="#">
-                            <a className="linkedin">
-                              <i className="icofont-linkedin"></i>
                             </a>
                           </Link>
                         </li>
@@ -142,9 +118,6 @@ class Team extends Component {
                     </div>
                   </div>
                 </div>
-
-
-                
               </OwlCarousel>
             ) : (
               ""
