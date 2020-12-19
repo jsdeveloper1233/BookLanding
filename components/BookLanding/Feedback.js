@@ -38,7 +38,7 @@ class Feedback extends Component {
     }
     render() {
         return (
-            <section className="feedback-area ptb-100 bg-gray">
+            <section className="feedback-area ptb-100 bg-gray" id="references">
                 <div className="container">
                     <div className="section-title">
                         <h2>Recenzje i referencje</h2>

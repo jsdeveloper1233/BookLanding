@@ -10,7 +10,8 @@ import {
 class FaqContent extends Component {
     render() {
         return (
-            <div className="faq-accordion">
+            <div className="faq-accordion" id="faq">
+                <h2>FAQ</h2>
                 <Accordion>
                     <AccordionItem>
                         <AccordionItemHeading>

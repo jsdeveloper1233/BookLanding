@@ -4,7 +4,7 @@ import Link from "next/link";
 class Pricing2 extends Component {
   render() {
     return (
-      <section className="pricing-area ptb-100">
+      <section className="pricing-area ptb-100" id="kupteraz">
         <div className="container">
           <div className="section-title">
             <h2>
@@ -26,12 +26,13 @@ class Pricing2 extends Component {
                 </div>
 
                 <ul className="pricing-content">
-                  <li>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
-                  <li>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
-                  <li>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
+                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
+                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
+                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
                 </ul>
                 <Link href="#">
                   <a className="btn btn-primary">KUP KSIĄŻKE</a>
+                  
                 </Link>
               </div>
             </div>
@@ -48,7 +49,7 @@ class Pricing2 extends Component {
 
                 <ul className="pricing-content">
                   <li>
-                    Książka "Sekrety rozwoju osobistego" w formacie papierowym
+                  <i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
                   </li>
                 </ul>
                 <Link href="#">
@@ -63,25 +64,26 @@ class Pricing2 extends Component {
                   <h3 className="title">Pakiet</h3>
                   <div className="price-value">
                     69,90 <sup>zł</sup>
-                    <p>+ 15 - 17 zł wysyłka kurierem</p>
+                    <p>+ 0 zł wysyłka kurierem !!</p>
                   </div>
                 </div>
 
                 <ul className="pricing-content">
                   <li>
-                    Książka "Sekrety rozwoju osobistego" w formacie papierowym
+                  <i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
                   </li>
-                  <li>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
-                  <li>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
-                  <li>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
+                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
+                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
+                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
                   <li>
-                    2x egzemplarze (dla par) książeczki drukowanej "Radykalna
+                  <i class="icofont-tick-mark"></i>2x egzemplarze (dla par) książeczki drukowanej "Radykalna
                     Prawda w Związku"
                   </li>
                 </ul>
                 <Link href="#">
                   <a className="btn btn-primary">KUP PAKIET</a>
                 </Link>
+                <p class="you-save">Oszczędzasz 56 zł</p>
               </div>
             </div>
           </div>

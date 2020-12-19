@@ -47,7 +47,7 @@ class BookLanding extends React.Component {
         <Pricing2 />
         {/* <Pricing /> */}
         <Feedback />
-        <Blog />
+        {/* <Blog /> */}
         <Subscribe />
         <FaqContent />
         <Platform />

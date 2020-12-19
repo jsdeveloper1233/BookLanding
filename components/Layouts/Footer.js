@@ -1,14 +1,18 @@
-import Link from 'next/link';
-import {finalPath} from '../../pages/index';
+import Link from "next/link";
+import { finalPath } from "../../pages/index";
 
 class Footer extends React.Component {
-    render() {
-        return (
-            <footer className="footer-area ptb-100 pb-0 bg-image">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-3 col-md-6">
-                            <div className="single-footer-widget">
+  render() {
+    return (
+      <footer className="footer-area ptb-100 pb-0 bg-image">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12 col-md-12">
+              <div class="regulamin-box">
+                <p>Regulamin</p>
+                <p>Polityka prywatności</p>
+              </div>
+              {/* <div className="single-footer-widget">
                                 <Link href="#">
                                     <a className="logo">
                                         <img src={finalPath + '/images/logo2.png'} alt="logo2" />
@@ -170,13 +174,13 @@ class Footer extends React.Component {
                                         </Link>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        );
-    }
+                            </div> */}
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
 }
 
 export default Footer;

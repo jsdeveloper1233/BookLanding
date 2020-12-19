@@ -1,16 +1,63 @@
 p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .row-reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .section-title.all-width {
-    max-width: unset;
-    margin-bottom: unset;
-    span {
-        display: inline-block;
-        margin-top: 10px;
+  max-width: unset;
+  margin-bottom: unset;
+  span {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
+.icofont-square {
+  position: relative;
+}
+span.chapter-number {
+    position: absolute;
+    color: blue;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: #fff;
+  }
+
+  .next-generation-virtual-reality .single-item h3 {
+      text-transform:uppercase;
+  }
+
+  .regulamin-box {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.faq-accordion h2 {
+    text-align: center;
+}
+
+.pricing-content {
+    li {
+        display: flex;
+        justify-content: space-between;
     }
+    .icofont-tick-mark {
+        color: var(--templateColor2);
+        font-size: 20px;
+    padding-right: 2px;
+    }  
+}
+.price-value p {
+    color: #fff;
+    font-weight: 400;
+}
+
+.you-save {
+    color: var(--paragraphColor);
+    font-weight: 700;
+    margin-top: 10px;
 }
