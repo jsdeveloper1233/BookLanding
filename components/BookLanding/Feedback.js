@@ -41,7 +41,7 @@ class Feedback extends Component {
             <section className="feedback-area ptb-100 bg-gray">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Testimonials</h2>
+                        <h2>Recenzje i referencje</h2>
                         <div className="bar"></div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>

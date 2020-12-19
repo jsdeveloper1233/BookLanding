@@ -8,12 +8,12 @@ class CtaCard extends React.Component {
                 <div className="container">
                     <div className="row h-100 justify-content-center align-items-center">
                         <div className="col-lg-7 col-md-7">
-                            <p>Want a bite? You're in the right place!</p>
+                            <p>Piękny Call to Action</p>
                         </div>
 
                         <div className="col-lg-5 col-md-5 text-right">
                             <Link href="#">
-                                <a className="btn btn-primary">Take a Test Drive</a>
+                                <a className="btn btn-primary">Zamów książkę teraz!</a>
                             </Link>
                         </div>
                     </div>

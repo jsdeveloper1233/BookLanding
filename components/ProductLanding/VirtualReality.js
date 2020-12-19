@@ -6,7 +6,7 @@ class VirtualReality extends Component {
             <section className="next-generation-virtual-reality ptb-100">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Next-generation virtual Reality</h2>
+                        <h2>Spis treści</h2>
                         <div className="bar"></div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>

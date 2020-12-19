@@ -5,13 +5,13 @@ class Subscribe extends Component {
             <section className="subscribe-area ptb-100">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Connect With Our Community</h2>
+                        <h2>Dołącz społeczności Sergio S Dorje</h2>
                         <div className="bar"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Zapisz się do newslettera. Otrzymasz wartościowe informajce bezpośrednio od Autora</p>
                     </div>
 
                     <form className="newsletter-form">
-                        <input type="email" className="form-control" placeholder="Your Email Address" name="EMAIL" required={true} />
+                        <input type="email" className="form-control" placeholder="Twój adre email" name="EMAIL" required={true} />
                         <button className="btn btn-primary" type="submit">Subscribe</button>
                     </form>
                 </div>
