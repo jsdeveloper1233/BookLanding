@@ -26,9 +26,9 @@ class Pricing2 extends Component {
                 </div>
 
                 <ul className="pricing-content">
-                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
-                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
-                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
                 </ul>
                 <Link href="#">
                   <a className="btn btn-primary">KUP KSIĄŻKE</a>
@@ -49,7 +49,7 @@ class Pricing2 extends Component {
 
                 <ul className="pricing-content">
                   <li>
-                  <i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
+                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
                   </li>
                 </ul>
                 <Link href="#">
@@ -70,20 +70,20 @@ class Pricing2 extends Component {
 
                 <ul className="pricing-content">
                   <li>
-                  <i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
+                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
                   </li>
-                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
-                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
-                  <li><i class="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
                   <li>
-                  <i class="icofont-tick-mark"></i>2x egzemplarze (dla par) książeczki drukowanej "Radykalna
+                  <i className="icofont-tick-mark"></i>2x egzemplarze (dla par) książeczki drukowanej "Radykalna
                     Prawda w Związku"
                   </li>
                 </ul>
                 <Link href="#">
                   <a className="btn btn-primary">KUP PAKIET</a>
                 </Link>
-                <p class="you-save">Oszczędzasz 56 zł</p>
+                <p className="you-save">Oszczędzasz 56 zł</p>
               </div>
             </div>
           </div>

@@ -19,10 +19,10 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <div class="chapter-number">
+                  <div className="chapter-number">
                     {/* <span>ROZDZIAŁ 1</span> */}
-                    <i class="icofont-square"></i>
-                    <span class="chapter-number">1</span>
+                    <i className="icofont-square"></i>
+                    <span className="chapter-number">1</span>
                   </div>
                 </div>
                 <h3>Energia</h3>
@@ -45,8 +45,8 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <i class="icofont-square"></i>
-                  <span class="chapter-number">2</span>
+                  <i className="icofont-square"></i>
+                  <span className="chapter-number">2</span>
                 </div>
                 <h3>Pierwsze kroki do celu</h3>
                 <p>
@@ -66,8 +66,8 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <i class="icofont-square"></i>
-                  <span class="chapter-number">3</span>
+                  <i className="icofont-square"></i>
+                  <span className="chapter-number">3</span>
                 </div>
                 <h3>Tantra</h3>
                 <p>
@@ -85,8 +85,8 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <i class="icofont-square"></i>
-                  <span class="chapter-number">4</span>
+                  <i className="icofont-square"></i>
+                  <span className="chapter-number">4</span>
                 </div>
                 <h3>Medytacja</h3>
                 <p>
@@ -105,8 +105,8 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <i class="icofont-square"></i>
-                  <span class="chapter-number">5</span>
+                  <i className="icofont-square"></i>
+                  <span className="chapter-number">5</span>
                 </div>
                 <h3>Czakry</h3>
                 <p>
@@ -123,8 +123,8 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <i class="icofont-square"></i>
-                  <span class="chapter-number">6</span>
+                  <i className="icofont-square"></i>
+                  <span className="chapter-number">6</span>
                 </div>
                 <h3>Seks i relacje uczuciowe</h3>
                 <p>
@@ -143,8 +143,8 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <i class="icofont-square"></i>
-                  <span class="chapter-number">7</span>
+                  <i className="icofont-square"></i>
+                  <span className="chapter-number">7</span>
                 </div>
                 <h3>Unikaj przeszkód i problemów</h3>
                 <p>
@@ -161,8 +161,8 @@ class VirtualReality extends Component {
             <div className="col-lg-6 col-md-6">
               <div className="single-item">
                 <div className="icon">
-                  <i class="icofont-square"></i>
-                  <span class="chapter-number">8</span>
+                  <i className="icofont-square"></i>
+                  <span className="chapter-number">8</span>
                 </div>
                 <h3>Dalsze esploracje - o szkodliwości niektórych praktyk</h3>
                 <p>
