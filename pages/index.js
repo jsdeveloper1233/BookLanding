@@ -32,17 +32,18 @@ class BookLanding extends React.Component {
       <React.Fragment>
         <Navbar />
         <Banner />
-        <AboutContent />
-        <Discover />
+        {/* <AboutContent /> */}
+                <Discover2 />
+        {/* <Discover /> */}
         <CtaCard />
-        <Discover2 />
+
         {/* <Overview /> */}
         <Wartosci />
         <Features />
         {/* <Funfact /> */}
         <Screenshot />
         <VirtualReality />
-        <Services />
+        {/* <Services /> */}
         <Team />
         <Pricing2 />
         {/* <Pricing /> */}

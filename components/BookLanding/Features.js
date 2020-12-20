@@ -12,8 +12,8 @@ class Features extends Component {
                                 <div className="icon">
                                     <i className="icofont-print"></i>
                                 </div>
-                                <h3>Printed Book</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h3>POTĘŻNE NARZĘDZIA </h3>
+                                <p>Jeśli szukasz łatwych rozwiązań, tu ich nie znajdziesz.  Jeśli szukasz miłych i ‘’obiecujących złote góry’’ porad, jak stać się szczęśliwym w zaledwie 5 minut… Nie kupuj tej książki. To narzędzie pomoże Ci wykreować życie, o jakim marzysz, ale wymaga również Twojej pracy.</p>
                             </div>
                         </div>
 
@@ -22,8 +22,11 @@ class Features extends Component {
                                 <div className="icon">
                                     <i className="icofont-ui-edit"></i>
                                 </div>
-                                <h3>User Research</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h3>PRAWDA</h3>
+                                <p>Nie napisałem tej książki po to, by mówić ludziom to, co chcą usłyszeć. 
+Napisałem ją, by Ci, którzy są otwarci na duchowy samorozwój, poznali potężne narzędzia, dzięki którym rzeczywistość zacznie być ich największym dziełem.
+</p>
+                        
                             </div>
                         </div>
 
@@ -32,8 +35,8 @@ class Features extends Component {
                                 <div className="icon">
                                     <i className="icofont-vehicle-delivery-van"></i>
                                 </div>
-                                <h3>Free Delivery</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h3>TAJNA WIEDZA </h3>
+                                <p>SEKRETY ROZWOJU OSOBISTEGO to książka tylko dla osób, które chcą dokonywać w sobie prawdziwych zmian i chcą odkryć prawdy, o których mało kto mówi. Tajna wiedza, którą powinien poznać każdy człowiek na drodze do samoświadomości.</p>
                             </div>
                         </div>
                     </div>
