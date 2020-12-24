@@ -8,20 +8,16 @@ class AboutContent extends Component {
           <div className="row h-100 justify-content-center align-items-center row-reverse">
             <div className="section-title all-width">
               <h2>
-                Żyjesz, by być zdrowym, by być szczęśliwym, by być zadowolonym,
-                by się rozwijać, by dokonywać wielkich rzeczy.
+              Poznaj sekretne metody i tajną wiedzę, która pozwoli Ci wejść na drogę kierująca do wewnętrznej mocy i mądrości.
                 <br />
-                <span>Często o tym słyszysz, prawda?</span>
+                {/* <span>Często o tym słyszysz, prawda?</span> */}
               </h2>
               <div className="bar"></div>
             </div>
             <div className="col-lg-8 col-md-12">
               <div className="about-content">
                 <p>
-                  Mimo tego spotykasz czasem mur, który broni Tobie dostępu do
-                  spełnienia i samoświadomości. Tym murem często są błędne
-                  przekonania kreowane przez społeczeństwo, toksyczni ludzie,
-                  brak wiedzy o sobie samym.
+                SKRETY ROZWOJU OSOBISTEGO to potężne narzędzie, dzięki któremu zaczniesz żyć świadomie i nauczysz się sterować swoją rzeczywistością. Czas na podróż w kierunku rzeczywistości, o jakim marzysz. Tylko Ty masz w sobie moc dokonywania zmian i sterowania swoim życiem.
                 </p>
                 <p>
                   Wiesz w teorii, że ‘’możesz wszystko’’, ale wciąż zastanawiasz

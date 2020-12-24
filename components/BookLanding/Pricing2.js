@@ -21,7 +21,7 @@ class Pricing2 extends Component {
                 <div className="pricingTable-header">
                   <h3 className="title">Tylko eBook</h3>
                   <div className="price-value">
-                    38,90 <sup>zł</sup>
+                  &nbsp;&nbsp;38,90 <sup>zł</sup>
                   </div>
                 </div>
 
@@ -42,7 +42,7 @@ class Pricing2 extends Component {
                 <div className="pricingTable-header">
                   <h3 className="title">Tylko książka</h3>
                   <div className="price-value">
-                    39,90 <sup>zł</sup>
+                  &nbsp;&nbsp;39,90 <sup>zł</sup>
                     <p>+ 15 - 17 zł wysyłka kurierem</p>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ class Pricing2 extends Component {
                 <div className="pricingTable-header">
                   <h3 className="title">Pakiet</h3>
                   <div className="price-value">
-                    69,90 <sup>zł</sup>
+                  &nbsp;&nbsp; 69,90 <sup>zł</sup>
                     <p>+ 0 zł wysyłka kurierem !!</p>
                   </div>
                 </div>

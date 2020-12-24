@@ -31,8 +31,7 @@ class Banner extends Component {
                         Medytacja, joga, energia, seks, tantra. Odkryj prawdy, o
                         których nikt nie mówi.
                       </p>
-                      <p>Poznaj sekretne metody i tajną wiedzę, która pozwoli Ci wejść na drogę kierująca do wewnętrznej mocy i mądrości. SEKRETY ROZWOJU OSOBISTEGO to potężne narzędzie, dzięki któremu zaczniesz żyć świadomie i nauczysz się sterować swoją rzeczywistością. Czas na podróż w kierunku rzeczywistości, o jakim marzysz. Tylko Ty masz w sobie moc dokonywania zmian i sterowania swoim życiem. </p>
-
+             
                       <Link href="#">
                         <a className="btn btn-primary">ZAMÓW TERAZ</a>
                       </Link>

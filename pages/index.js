@@ -3,7 +3,7 @@ import Navbar from "../components/Layouts/Navbar";
 import Footer from "../components/Layouts/Footer";
 import Banner from "../components/BookLanding/Banner";
 import Partner from "../components/BookLanding/Partner";
-import Discover from "../components/BookLanding/Discover";
+import OAutorze from "../components/BookLanding/OAutorze";
 import Discover2 from "../components/BookLanding/Discover2";
 
 import Features from "../components/BookLanding/Features";
@@ -32,13 +32,12 @@ class BookLanding extends React.Component {
       <React.Fragment>
         <Navbar />
         <Banner />
-        {/* <AboutContent /> */}
+        <AboutContent />
                 <Discover2 />
-        {/* <Discover /> */}
         <CtaCard />
 
         {/* <Overview /> */}
-        <Wartosci />
+        {/* <Wartosci /> */}
         <Features />
         {/* <Funfact /> */}
         <Screenshot />
@@ -48,6 +47,8 @@ class BookLanding extends React.Component {
         <Pricing2 />
         {/* <Pricing /> */}
         <Feedback />
+        <OAutorze />
+
         {/* <Blog /> */}
         <Subscribe />
         <FaqContent />

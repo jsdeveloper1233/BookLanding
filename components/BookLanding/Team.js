@@ -103,6 +103,19 @@ class Team extends Component {
                     <img src={finalPath + ""} alt="team" />
 
                     <div className="team-content">
+                      <h3>Wojtek Pitala</h3>
+                      <span>Współpraca literacka</span>
+
+
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-12">
+                  <div className="single-team-member-box">
+                    <img src={finalPath + ""} alt="team" />
+
+                    <div className="team-content">
                       <h3>Nikola Hahn</h3>
                       <span>Ilustracja / Projekt okładki</span>
 
@@ -118,6 +131,29 @@ class Team extends Component {
                     </div>
                   </div>
                 </div>
+
+                <div className="col-lg-12">
+                  <div className="single-team-member-box">
+                    <img src={finalPath + ""} alt="team" />
+
+                    <div className="team-content">
+                      <h3>Maja Strzelecka</h3>
+                      <span>Copywriting LP</span>
+
+                      <ul>
+                        <li>
+                          <Link href="https://www.instagram.com/content_lady/">
+                            <a className="instagram">
+                              <i className="icofont-instagram"></i>
+                            </a>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+             
               </OwlCarousel>
             ) : (
               ""
