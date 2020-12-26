@@ -36,27 +36,35 @@ app.prepare().then(() => {
     server.post('/api/newSubscriber', async (req, res) => {
         var newSubEmail = req.body.newEmail
         var status = null
+        // loops on all subscribers to find the current one
         mailerLite
             .getSubscribers()
             .then(async(subList) => {
                 await subList.some(async (singleSub) => {
+                    // Find the needed subscriber
                     if (singleSub.email === newSubEmail) {
+                        // Means he's subscribed
                         status = "200_sub"
+                        // Loops over the subscribers in the choosed group
                         mailerLite.getGroupSubscribers(process.env.GROUP_ID).then(async(groupSubList)=> {
                             await groupSubList.some((groupSingleSub)=> {
                                 if(groupSingleSub.email === newSubEmail){
+                                    // Means that he's subscribed and in the group
                                     status = "200_sub_200_group"
                                     return
                                 } else {
+                                    // Means that he's subscribed but not in the group
                                     status = "200_sub_404_group"
                                 }
                             })
                         })
                         return
                     } else {
+                        // Means he's not subscribed
                         status = "404_sub"
                     }
                 });
+                // A function that takes action based on the status and returns the result
                 var action = await takeAction(newSubEmail, status)
                 res.json(action)
             })
@@ -76,6 +84,7 @@ app.prepare().then(() => {
 })
 
 async function takeAction(newSubEmail, status){
+    
     switch (status) {
         case '200_sub':
             mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
