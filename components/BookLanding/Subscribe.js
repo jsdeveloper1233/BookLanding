@@ -12,6 +12,7 @@ const Subscribe = () => {
   // GET THE SUBSCRIBER ID
   const getTheSubscriberId = async (newSubEmail) => {
     var req = await axios.post("/api/newSubscriber", { "newEmail": newSubEmail })
+    console.log(req.data)
     if (req.status == 200) {
       setUserType(req.data.type);
       setUserID(req.data.id);
