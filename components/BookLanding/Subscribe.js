@@ -11,10 +11,16 @@ const Subscribe = () => {
 
   // GET THE SUBSCRIBER ID
   const getTheSubscriberId = async (newSubEmail) => {
-    var req = await axios.post("/api/newSubscriber", {"newEmail": newSubEmail})
-    
-        setUserType(req.data.type);
-        setUserID(req.data.id);
+    var req = await axios.post("/api/newSubscriber", { "newEmail": newSubEmail })
+    if (req.status == 200) {
+      setUserType(req.data.type);
+      setUserID(req.data.id);
+    } else {
+      useEffect(() => {
+        console.log(userID);
+      }, [userID]);
+      console.log(error);
+    }
 
     // mailerLite
     //   .getSubscribers()
