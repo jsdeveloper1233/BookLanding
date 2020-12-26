@@ -43,6 +43,7 @@
         "redux-devtools-extension": "^2.13.8",
         "redux-thunk": "^2.3.0",
         "sass": "^1.29.0",
+        "sharp": "^0.27.0",
         "stripe": "^7.63.1",
         "wowjs": "^1.1.3"
     },
