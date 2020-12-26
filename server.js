@@ -35,19 +35,33 @@ app.prepare().then(() => {
     });
     server.post('/api/newSubscriber', async (req, res) => {
         var newSubEmail = req.body.newEmail
+        var status = null
         mailerLite
             .getSubscribers()
-            .then((subList) => {
-                subList.filter((singleSub) => {
+            .then(async(subList) => {
+                await subList.some(async (singleSub) => {
                     if (singleSub.email === newSubEmail) {
-                        // setUserType(singleSub.type);
-                        // setUserID(singleSub.id);
-                        res.status(200).json({"type": singleSub.type, 'id':singleSub.id})
+                        status = "200_sub"
+                        mailerLite.getGroupSubscribers(process.env.GROUP_ID).then(async(groupSubList)=> {
+                            await groupSubList.some((groupSingleSub)=> {
+                                if(groupSingleSub.email === newSubEmail){
+                                    status = "200_sub_200_group"
+                                    return
+                                } else {
+                                    status = "200_sub_404_group"
+                                }
+                            })
+                        })
+                        return
+                    } else {
+                        status = "404_sub"
                     }
                 });
+                var action = await takeAction(newSubEmail, status)
+                res.json(action)
             })
             .catch((error) => {
-                res.status(500).json({"message":"an error happened"})
+                res.json({"message":"error", "error":error})
             });
     })
     server.get('*', (req, res) => {
@@ -60,3 +74,27 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
+
+async function takeAction(newSubEmail, status){
+    switch (status) {
+        case '200_sub':
+            mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
+                "email":newSubEmail
+            })
+            return {"message":"success"}
+        case '404_sub':
+            mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
+                "email":newSubEmail
+            })
+            return {"message":"success"}
+        case '200_sub_404_group':
+            mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
+                "email":newSubEmail
+            })
+            return {"message":"success"}
+        case '200_sub_200_group':
+            return{"message":"already_subscribed"}
+        default:
+            return{"message":"error", "error":"case default"}
+    }
+}
