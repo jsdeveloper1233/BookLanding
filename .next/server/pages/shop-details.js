@@ -858,6 +858,37 @@ function assign(target, ...searchParamsList) {
 
 /***/ }),
 
+/***/ "3wub":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.normalizeLocalePath = normalizeLocalePath;
+
+function normalizeLocalePath(pathname, locales) {
+  let detectedLocale; // first item will be empty string from splitting at first char
+
+  const pathnameParts = pathname.split('/');
+  (locales || []).some(locale => {
+    if (pathnameParts[1].toLowerCase() === locale.toLowerCase()) {
+      detectedLocale = locale;
+      pathnameParts.splice(1, 1);
+      pathname = pathnameParts.join('/') || '/';
+      return true;
+    }
+
+    return false;
+  });
+  return {
+    pathname,
+    detectedLocale
+  };
+}
+
+/***/ }),
+
 /***/ "4Q3z":
 /***/ (function(module, exports) {
 
@@ -3127,8 +3158,13 @@ class Platform_Platform extends external_react_["Component"] {
 }
 
 /* harmony default export */ var BookLanding_Platform = (Platform_Platform);
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__("zr5I");
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
+
 // CONCATENATED MODULE: ./components/BookLanding/Subscribe.js
 var Subscribe_jsx = external_react_default.a.createElement;
+
 
 
 const MailerLite = __webpack_require__("V1uU").default;
@@ -3149,20 +3185,27 @@ const Subscribe = () => {
     1: setUserType
   } = Object(external_react_["useState"])(""); // GET THE SUBSCRIBER ID
 
-  const getTheSubscriberId = newSubEmail => {
-    mailerLite.getSubscribers().then(subList => {
-      subList.filter(singleSub => {
-        if (singleSub.email === newSubEmail) {
-          setUserType(singleSub.type);
-          setUserID(singleSub.id);
-        }
-      });
-    }).catch(error => {
-      Object(external_react_["useEffect"])(() => {
-        console.log(userID);
-      }, [userID]);
-      console.log(error);
+  const getTheSubscriberId = async newSubEmail => {
+    var req = await external_axios_default.a.post("/api/newSubscriber", {
+      "newEmail": newSubEmail
     });
+    setUserType(req.data.type);
+    setUserID(req.data.id); // mailerLite
+    //   .getSubscribers()
+    //   .then((subList) => {
+    //     subList.filter((singleSub) => {
+    //       if (singleSub.email === newSubEmail) {
+    //         setUserType(singleSub.type);
+    //         setUserID(singleSub.id);
+    //       }
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     useEffect(() => {
+    //       console.log(userID);
+    //     }, [userID]);
+    //     console.log(error);
+    //   });
   };
 
   const _handleSubmit = e => {
@@ -3982,6 +4025,8 @@ var _routeLoader = __webpack_require__("Nh2W");
 
 var _denormalizePagePath = __webpack_require__("wkBG");
 
+var _normalizeLocalePath = __webpack_require__("3wub");
+
 var _mitt = _interopRequireDefault(__webpack_require__("dZ6Y"));
 
 var _utils = __webpack_require__("g/15");
@@ -4418,8 +4463,15 @@ class Router {
       performance.mark('routeChange');
     }
 
+    const {
+      shallow = false
+    } = options;
+    const routeProps = {
+      shallow
+    };
+
     if (this._inFlightRoute) {
-      this.abortComponentLoad(this._inFlightRoute);
+      this.abortComponentLoad(this._inFlightRoute, routeProps);
     }
 
     as = addBasePath(addLocale(hasBasePath(as) ? delBasePath(as) : as, options.locale, this.defaultLocale));
@@ -4432,12 +4484,12 @@ class Router {
 
     if (!options._h && this.onlyAHashChange(cleanedAs)) {
       this.asPath = cleanedAs;
-      Router.events.emit('hashChangeStart', as); // TODO: do we need the resolved href when only a hash change?
+      Router.events.emit('hashChangeStart', as, routeProps); // TODO: do we need the resolved href when only a hash change?
 
       this.changeState(method, url, as, options);
       this.scrollToHash(cleanedAs);
       this.notify(this.components[this.route]);
-      Router.events.emit('hashChangeComplete', as);
+      Router.events.emit('hashChangeComplete', as, routeProps);
       return true;
     }
 
@@ -4483,10 +4535,7 @@ class Router {
       method = 'replaceState';
     }
 
-    let route = (0, _normalizeTrailingSlash.removePathTrailingSlash)(pathname);
-    const {
-      shallow = false
-    } = options; // we need to resolve the as value using rewrites for dynamic SSG
+    let route = (0, _normalizeTrailingSlash.removePathTrailingSlash)(pathname); // we need to resolve the as value using rewrites for dynamic SSG
     // pages to allow building the data URL correctly
 
     let resolvedAs = as;
@@ -4522,10 +4571,10 @@ class Router {
       }
     }
 
-    Router.events.emit('routeChangeStart', as);
+    Router.events.emit('routeChangeStart', as, routeProps);
 
     try {
-      const routeInfo = await this.getRouteInfo(route, pathname, query, as, shallow);
+      const routeInfo = await this.getRouteInfo(route, pathname, query, as, routeProps);
       let {
         error,
         props,
@@ -4556,7 +4605,7 @@ class Router {
         return new Promise(() => {});
       }
 
-      Router.events.emit('beforeHistoryChange', as);
+      Router.events.emit('beforeHistoryChange', as, routeProps);
       this.changeState(method, url, as, options);
 
       if (false) {}
@@ -4566,7 +4615,7 @@ class Router {
       });
 
       if (error) {
-        Router.events.emit('routeChangeError', error, cleanedAs);
+        Router.events.emit('routeChangeError', error, cleanedAs, routeProps);
         throw error;
       }
 
@@ -4574,7 +4623,7 @@ class Router {
 
       if (false) {}
 
-      Router.events.emit('routeChangeComplete', as);
+      Router.events.emit('routeChangeComplete', as, routeProps);
       return true;
     } catch (err) {
       if (err.cancelled) {
@@ -4602,14 +4651,14 @@ class Router {
     }
   }
 
-  async handleRouteInfoError(err, pathname, query, as, loadErrorFail) {
+  async handleRouteInfoError(err, pathname, query, as, routeProps, loadErrorFail) {
     if (err.cancelled) {
       // bubble up cancellation errors
       throw err;
     }
 
     if ((0, _routeLoader.isAssetError)(err) || loadErrorFail) {
-      Router.events.emit('routeChangeError', err, as); // If we can't load the page it could be one of following reasons
+      Router.events.emit('routeChangeError', err, as, routeProps); // If we can't load the page it could be one of following reasons
       //  1. Page doesn't exists
       //  2. Page does exist in a different zone
       //  3. Internal error while loading the page
@@ -4675,15 +4724,15 @@ class Router {
 
       return routeInfo;
     } catch (routeInfoErr) {
-      return this.handleRouteInfoError(routeInfoErr, pathname, query, as, true);
+      return this.handleRouteInfoError(routeInfoErr, pathname, query, as, routeProps, true);
     }
   }
 
-  async getRouteInfo(route, pathname, query, as, shallow = false) {
+  async getRouteInfo(route, pathname, query, as, routeProps) {
     try {
       const existingRouteInfo = this.components[route];
 
-      if (shallow && existingRouteInfo && this.route === route) {
+      if (routeProps.shallow && existingRouteInfo && this.route === route) {
         return existingRouteInfo;
       }
 
@@ -4721,7 +4770,7 @@ class Router {
       this.components[route] = routeInfo;
       return routeInfo;
     } catch (err) {
-      return this.handleRouteInfoError(err, pathname, query, as);
+      return this.handleRouteInfoError(err, pathname, query, as, routeProps);
     }
   }
 
@@ -4814,6 +4863,7 @@ class Router {
       });
     }
 
+    parsedHref.pathname = (0, _normalizeTrailingSlash.removePathTrailingSlash)(parsedHref.pathname);
     return parsedHref;
   }
   /**
@@ -4929,9 +4979,9 @@ class Router {
     });
   }
 
-  abortComponentLoad(as) {
+  abortComponentLoad(as, routeProps) {
     if (this.clc) {
-      Router.events.emit('routeChangeError', buildCancellationError(), as);
+      Router.events.emit('routeChangeError', buildCancellationError(), as, routeProps);
       this.clc();
       this.clc = null;
     }
@@ -6017,6 +6067,13 @@ function createObserver(options) {
 "use strict";
 exports.__esModule=true;exports.normalizePathSep=normalizePathSep;exports.denormalizePagePath=denormalizePagePath;function normalizePathSep(path){return path.replace(/\\/g,'/');}function denormalizePagePath(page){page=normalizePathSep(page);if(page.startsWith('/index/')){page=page.slice(6);}else if(page==='/index'){page='/';}return page;}
 //# sourceMappingURL=denormalize-page-path.js.map
+
+/***/ }),
+
+/***/ "zr5I":
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ })
 

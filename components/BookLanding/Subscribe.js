@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios'
 const MailerLite = require("mailerlite-api-v2-node").default;
 
 const mailerLite = MailerLite("xxx");
@@ -9,23 +10,28 @@ const Subscribe = () => {
   const [userType, setUserType] = useState("");
 
   // GET THE SUBSCRIBER ID
-  const getTheSubscriberId = (newSubEmail) => {
-    mailerLite
-      .getSubscribers()
-      .then((subList) => {
-        subList.filter((singleSub) => {
-          if (singleSub.email === newSubEmail) {
-            setUserType(singleSub.type);
-            setUserID(singleSub.id);
-          }
-        });
-      })
-      .catch((error) => {
-        useEffect(() => {
-          console.log(userID);
-        }, [userID]);
-        console.log(error);
-      });
+  const getTheSubscriberId = async (newSubEmail) => {
+    var req = await axios.post("/api/newSubscriber", {"newEmail": newSubEmail})
+    
+        setUserType(req.data.type);
+        setUserID(req.data.id);
+
+    // mailerLite
+    //   .getSubscribers()
+    //   .then((subList) => {
+    //     subList.filter((singleSub) => {
+    //       if (singleSub.email === newSubEmail) {
+    //         setUserType(singleSub.type);
+    //         setUserID(singleSub.id);
+    //       }
+    //     });
+    //   })
+    //   .catch((error) => {
+    //     useEffect(() => {
+    //       console.log(userID);
+    //     }, [userID]);
+    //     console.log(error);
+    //   });
   };
 
   const _handleSubmit = (e) => {
