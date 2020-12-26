@@ -12,10 +12,13 @@ const Subscribe = () => {
   // GET THE SUBSCRIBER ID
   const getTheSubscriberId = async (newSubEmail) => {
     var req = await axios.post("/api/newSubscriber", { "newEmail": newSubEmail })
-    console.log(req.data)
+    console.log(req.data) // success if a new user subscribes
     if (req.status == 200) {
       setUserType(req.data.type);
       setUserID(req.data.id);
+
+        console.log(userType, userID);
+    
     } else {
       useEffect(() => {
         console.log(userID);
@@ -23,22 +26,6 @@ const Subscribe = () => {
       console.log(error);
     }
 
-    // mailerLite
-    //   .getSubscribers()
-    //   .then((subList) => {
-    //     subList.filter((singleSub) => {
-    //       if (singleSub.email === newSubEmail) {
-    //         setUserType(singleSub.type);
-    //         setUserID(singleSub.id);
-    //       }
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     useEffect(() => {
-    //       console.log(userID);
-    //     }, [userID]);
-    //     console.log(error);
-    //   });
   };
 
   const _handleSubmit = (e) => {
@@ -47,10 +34,6 @@ const Subscribe = () => {
     getTheSubscriberId(email);
   };
 
-  useEffect(() => {
-    console.log(userID, userType);
-    // getUserType(userID);
-  }, [userID, userType]);
 
   return (
     <section className="subscribe-area ptb-100">
