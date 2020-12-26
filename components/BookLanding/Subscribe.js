@@ -6,26 +6,15 @@ const mailerLite = MailerLite("xxx");
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
-  const [userID, setUserID] = useState("");
-  const [userType, setUserType] = useState("");
+  const [status, setStatus] = useState(null);
 
   // GET THE SUBSCRIBER ID
   const getTheSubscriberId = async (newSubEmail) => {
     var req = await axios.post("/api/newSubscriber", { "newEmail": newSubEmail })
     console.log(req.data) // success if a new user subscribes
-    if (req.status == 200) {
-      setUserType(req.data.type);
-      setUserID(req.data.id);
-
-        console.log(userType, userID);
-    
-    } else {
-      useEffect(() => {
-        console.log(userID);
-      }, [userID]);
-      console.log(error);
+    if (req.data.message === "success") {
+      setStatus("success")
     }
-
   };
 
   const _handleSubmit = (e) => {
@@ -61,6 +50,7 @@ const Subscribe = () => {
             Subscribe
           </button>
         </form>
+          {status === "success" && <p>Great, check your mail and confirm</p>}
       </div>
     </section>
   );
