@@ -6,8 +6,8 @@ const keys = require("./server/config/keys");
 const stripe = require('stripe')(keys.stripeSecretKey);
 const routes = require('./routes');
 const MailerLite = require("mailerlite-api-v2-node").default;
-const mailerLite = MailerLite("457a48add32c952f9ad9617afc9e6ec0");
-
+require('dotenv').config()
+const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY);
 const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({ dir: '.', dev });
