@@ -33,8 +33,7 @@ class Features extends Component {
                   Nie napisałem tej książki po to, by mówić ludziom to, co chcą
                   usłyszeć. Napisałem ją, by Ci, którzy są otwarci na duchowy
                   samorozwój, poznali potężne narzędzia, dzięki którym
-                  rzeczywistość zacznie być ich największym dziełem. Szczęśliwe
-                  życie to nie efekt przypadku, a świadomego działania. Ta
+                  rzeczywistość zacznie być ich największym dziełem. Ta
                   książka pomoże Ci przejąć ster i poznać wielkie tajemnice
                   rozwoju osobistego.
                 </p>
