@@ -1,10 +1,13 @@
 import React from 'react';
 import OrderSummary from './OrderSummary';
 import useForm from './userForm';
+import {useRouter} from 'next/router'
 
 function CheckoutBody({total, shipping}) {
     function handleSubmit() {
-        console.log("Form submitted.");
+        // console.log("aaaaForm submitted.");
+        // var ur = useRouter()
+        // console.log(ur.query.product)
     }
 
     const stateSchema = {
@@ -95,14 +98,6 @@ function CheckoutBody({total, shipping}) {
     return (
         <section className="checkout-area ptb-100">
             <div className="container">
-                <div className="row">
-                    <div className="col-lg-12 col-md-12">
-                        <div className="user-actions">
-                            <i className="icofont-ui-file"></i>
-                            <span>Returning customer? <a href="#">Click here to login</a></span>
-                        </div>
-                    </div>
-                </div>
 
                 <form onSubmit={handleOnSubmit}>
                     <div className="row">
@@ -118,12 +113,8 @@ function CheckoutBody({total, shipping}) {
                                         
                                         <div className="select-box">
                                             <select className="form-control">
-                                                <option value="5">United Arab Emirates</option>
-                                                <option value="1">China</option>
-                                                <option value="2">United Kingdom</option>
-                                                <option value="0">Germany</option>
-                                                <option value="3">France</option>
-                                                <option value="4">Japan</option>
+                                                <option value="Poland">Poland</option>
+                                                <option value="Other">Other</option>
                                             </select>
                                         </div>
                                     </div>

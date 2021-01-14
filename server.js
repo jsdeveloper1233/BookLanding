@@ -5,6 +5,11 @@ const bodyParser = require('body-parser');
 const keys = require("./server/config/keys");
 const stripe = require('stripe')(keys.stripeSecretKey);
 const routes = require('./routes');
+const { v4: uuidv4 } = require('uuid');
+const axios = require('axios')
+const Przelewy24 = require('./prz24lib.js')
+// const {Przelewy24} = require('node-przelewy24')
+// const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', false)
 const MailerLite = require("mailerlite-api-v2-node").default;
 require('dotenv').config()
 const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY);
@@ -72,6 +77,26 @@ app.prepare().then(() => {
                 res.json({"message":"error", "error":error})
             });
     })
+    server.post("/api/buy/:p", async (req, res)=> {
+        switch (req.params.p) {
+            case "ebook":
+                var u = await getPaymentLink(38.90)
+                res.json({"link":u})
+                break;
+            case "pdf":
+                var u = await getPaymentLink(39.90)
+                res.json({"link":u})
+                break;
+            case "hard":
+                var u = await getPaymentLink(69.90)
+                res.json({"link":u})
+                break;
+
+            default:
+                res.status(400).json({"message":"error", "error":"unsupported product"})
+                break;
+        }
+    })
     server.get('*', (req, res) => {
         return handle(req, res)
     });
@@ -82,7 +107,48 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
+async function getPaymentLink(price, product){
+    const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', true)
+    // Set obligatory data
+    P24.setSessionId(uuidv4())
+    P24.setAmount(price * 100)
+    P24.setCurrency('PLN')
+    P24.setDescription('Simple payment.')
+    P24.setEmail('test@gmail.com')
+    P24.setCountry('PL')
+    // P24.setUrlStatus('https://myshop.com/api/v1/store/callback_p24')
+    P24.setUrlStatus('https://sekretyrozwojuosobistego.pl/api/verifyprz24')
+    P24.setUrlReturn('https://sekretyrozwojuosobistego.pl/?paymentSuccess=true')
+    
+    // What about adding some products?
+    P24.addProduct('Product no.1', 'Product description', 1, price * 100)
 
+    // Register our order
+    try {
+        const token = await P24.register()
+        const url = P24.getPayByLinkUrl(token)
+
+        console.log(token)
+        console.log(url)
+        // var reqbody = {
+        //     "merchantId":"133651",
+        //     "posId":"133651",
+        //     "sessionId":uuidv4(),
+        //     "amount":price,
+        //     "currency":"PLN",
+        //     "description":"Book",
+        //     "email":"ahmedmgh67@gmail.com",
+        //     "country":"PL",
+        //     "language":"pl",
+        //     "urlReturn":"https://google.com",
+        //     "sign":"",
+        // }
+        return url
+    } catch (e) {
+        console.log(e.message)
+    }
+
+}
 async function takeAction(newSubEmail, status){
     
     switch (status) {

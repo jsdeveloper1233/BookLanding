@@ -27,13 +27,25 @@ import Pricing2 from "../components/BookLanding/Pricing2";
 
 export const finalPath = "";
 class BookLanding extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {paymentSuccess:null};
+}
+  componentDidMount() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('paymentSuccess');
+    if(myParam == "true"){
+      this.setState({paymentSuccess: true})
+      alert("Payment Success, You'll recieve an email with the instructions")
+    }
+  }
   render() {
     return (
       <React.Fragment>
         <Navbar />
         <Banner />
         <AboutContent />
-                <Discover2 />
+        <Discover2 />
         <CtaCard />
 
         {/* <Overview /> */}
