@@ -79,7 +79,7 @@ class Navbar extends React.Component {
           <div id="navbar" className={`crake-nav ${layOutCls}`}>
             <div className="container">
               <nav className="navbar navbar-expand-md navbar-light">
-                <Link href="#">
+                <Link href="/">
                   <a className="navbar-brand">
                     {/* <img src={logo} alt="logo" /> */}
                     Sekrety Rozwoju<br /> Osobistego
@@ -102,7 +102,7 @@ class Navbar extends React.Component {
                 <div className={classOne} id="navbarSupportedContent">
                   <ul className="navbar-nav nav ml-auto">
                     <li className="nav-item">
-                      <Link activeClassName="active" href="#">
+                      <Link activeClassName="active" href="/">
                         <a className="nav-link">Home</a>
                       </Link>
                     </li>

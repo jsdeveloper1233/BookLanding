@@ -37,7 +37,12 @@ class OrderSummary extends Component {
     }
     orderProduct(){
         console.log(this.state.product)
-        axios.post("/api/buy/"+this.state.product.sku, {}).then((d)=> {
+        axios.post("/api/buy/"+this.state.product.sku, {
+            "email":this.props.email,
+            "name":this.props.name,
+            "phone":this.props.phone,
+            "address":this.props.address,
+        }).then((d)=> {
             console.log(d.data)
             console.log(d.data.link)
             window.open(d.data.link, '_blank');
@@ -118,6 +123,7 @@ class OrderSummary extends Component {
                     </div>
 
                     <div className="payment-method">
+                        Payment Method:
                         {/* <p>
                             <input type="radio" id="direct-bank-transfer" name="radio-group" />
                             <label htmlFor="direct-bank-transfer">Direct Bank Transfer</label>
@@ -132,6 +138,13 @@ class OrderSummary extends Component {
                             <input type="radio" id="cash-on-delivery" name="radio-group" />
                             <label htmlFor="cash-on-delivery">Cash on Delivery</label>
                         </p> */}
+                    </div>
+                    <div className="payment-method">
+                        Shipping Method:
+                        <p>
+                            <input type="radio" id="prz" name="radio-group" checked readOnly />
+                            <label htmlFor="prz">Przelewy24</label>
+                        </p>
                     </div>
                     {!this.state.load?(<></>): <div className="order-btn">
 

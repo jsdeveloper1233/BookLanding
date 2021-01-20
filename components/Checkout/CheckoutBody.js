@@ -148,12 +148,12 @@ function CheckoutBody({total, shipping}) {
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12 col-md-12">
+                                    {/* <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
                                             <label>Company Name</label>
                                             <input type="text" className="form-control" />
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
@@ -242,27 +242,27 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
                                             <input type="checkbox" className="form-check-input" id="create-an-account" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Create an account?</label>
+                                            <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12 col-md-12">
+                                    {/* <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
                                             <input type="checkbox" className="form-check-input" id="ship-different-address" />
                                             <label className="form-check-label" htmlFor="ship-different-address">Ship to a different address?</label>
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <div className="col-lg-12 col-md-12">
+                                    {/* <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
                                             <textarea name="notes" id="notes" cols="30" rows="4" placeholder="Order Notes" className="form-control" />
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} />
+                        <OrderSummary disabled={disable} email={stateSchema.email.value} name={stateSchema.firstName.value+stateSchema.lastName.value} address={""} phone={stateSchema.phone.value}/>
 
                     </div>
                 </form>
