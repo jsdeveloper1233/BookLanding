@@ -80,19 +80,39 @@ app.prepare().then(() => {
     server.post("/api/buy/:p", async (req, res) => {
         switch (req.params.p) {
             case "ebook":
-                var u = await getPaymentLink(38.90)
+                var u = await getPaymentLink(38.90, req.body.email)
+                var body = req.body
                 res.json({ "link": u })
                 sendEmail("d-43a4ce7ca5344d3c89282454be042e30", req.body.email, req.body.name)
+                sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter})
+                if(body.newsletter){
+                    subscribeUser(body.email)
+                }
+                sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter})
+                if(body.newsletter){
+                    subscribeUser(body.email)
+                }
                 break;
             case "pdf":
-                var u = await getPaymentLink(39.90)
+                var u = await getPaymentLink(39.90, req.body.email)
+                var body = req.body
+
                 res.json({ "link": u })
                 sendEmail("d-889a4f6a165a425cb98e7dae11baa998", req.body.email, req.body.name)
+                sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter})
+                if(body.newsletter){
+                    subscribeUser(body.email)
+                }
                 break;
             case "hard":
-                var u = await getPaymentLink(69.90)
+                var u = await getPaymentLink(69.90, req.body.email)
+                var body = req.body
                 res.json({ "link": u })
                 sendEmail("d-58f0808630ff4b2483efc4b88e8995f0", req.body.email, req.body.name)
+                sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter})
+                if(body.newsletter){
+                    subscribeUser(body.email)
+                }
                 break;
 
             default:
@@ -110,7 +130,7 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
-async function getPaymentLink(price, product, email) {
+async function getPaymentLink(price, email) {
     const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', true)
     // Set obligatory data
     P24.setSessionId(uuidv4())
@@ -120,7 +140,8 @@ async function getPaymentLink(price, product, email) {
     P24.setEmail(email)
     P24.setCountry('PL')
     P24.setUrlStatus('https://sekretyrozwojuosobistego.pl/api/verifyprz24')
-    P24.setUrlReturn('https://sekretyrozwojuosobistego.pl/thankyou')
+    P24.setUrlReturn('http://localhost:3006/thankyou')
+    // P24.setUrlReturn('https://sekretyrozwojuosobistego.pl/thankyou')
 
     // What about adding some products?
     // P24.addProduct('Book', 'Product description', 1, price * 100)
@@ -158,31 +179,40 @@ async function sendEmail(tid, email, name) {
         "template_id": tid
     }, {
         headers: {
-            "Authorization":"Bearer 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"
+            "Authorization": "Bearer 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"
         }
     })
 }
-async function sendAuthorEmail() {
+async function sendAuthorEmail({cname, email, phone, address, city, state, zip, newsletter}) {
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
                 "to": [
                     {
-                        "email": "sergio@sergiosdorje.com",
+                        "email": "ahmedmgh67@gmail.com",
                         "name": "Sergio L"
                     }
                 ],
-            }
+                "dynamic_template_data": {
+                    "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter
+                },
+            },
         ],
         "from": {
             "email": "ahmedmgh67@gmail.com",
             "name": "Sergio L"
         },
-        "template_id": tid
+        "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
     }, {
         headers: {
-            "Authorization":"Bearer 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"
+            "Authorization": "Bearer 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"
         }
+    })
+}
+
+async function subscribeUser(email){
+    mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
+        "email": email
     })
 }
 async function takeAction(newSubEmail, status) {

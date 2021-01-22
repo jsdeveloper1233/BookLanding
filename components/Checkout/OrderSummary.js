@@ -42,6 +42,10 @@ class OrderSummary extends Component {
             "name":this.props.name,
             "phone":this.props.phone,
             "address":this.props.address,
+            "city":this.props.city,
+            "state":this.props.state,
+            "zip":this.props.zip,
+            "newsletter":this.props.newsletter,
         }).then((d)=> {
             console.log(d.data)
             console.log(d.data.link)
@@ -122,28 +126,28 @@ class OrderSummary extends Component {
                         </table>
                     </div>
 
-                    <div className="payment-method">
-                        Payment Method:
+                    {/* <div className="payment-method">
+                        Payment Method: */}
                         {/* <p>
                             <input type="radio" id="direct-bank-transfer" name="radio-group" />
                             <label htmlFor="direct-bank-transfer">Direct Bank Transfer</label>
 
                             Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
                         </p> */}
-                        <p>
+                        {/* <p>
                             <input type="radio" id="prz" name="radio-group" checked readOnly />
                             <label htmlFor="prz">Przelewy24</label>
-                        </p>
+                        </p> */}
                         {/* <p>
                             <input type="radio" id="cash-on-delivery" name="radio-group" />
                             <label htmlFor="cash-on-delivery">Cash on Delivery</label>
                         </p> */}
-                    </div>
+                    {/* </div> */}
                     <div className="payment-method">
                         Shipping Method:
                         <p>
-                            <input type="radio" id="prz" name="radio-group" checked readOnly />
-                            <label htmlFor="prz">Przelewy24</label>
+                            <input type="radio" id="express" name="radio-group" checked readOnly />
+                            <label htmlFor="prz">Express Courier</label>
                         </p>
                     </div>
                     {!this.state.load?(<></>): <div className="order-btn">

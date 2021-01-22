@@ -9,7 +9,7 @@ function CheckoutBody({total, shipping}) {
         // var ur = useRouter()
         // console.log(ur.query.product)
     }
-
+    
     const stateSchema = {
         firstName: {value: "", error: ""},
         lastName: {value: "", error: ""},
@@ -18,7 +18,8 @@ function CheckoutBody({total, shipping}) {
         state: {value: "", error: ""},
         zip: {value: "", error: ""},
         email: {value: "", error: ""},
-        phone: {value: "", error: ""}
+        phone: {value: "", error: ""},
+        newsletter: {value: false, error: ""}
     };
 
     const validationStateSchema = {
@@ -81,10 +82,13 @@ function CheckoutBody({total, shipping}) {
                 regEx: /^\+[0-9]?()[0-9](\s|\S)(\d[0-9]{9})$/,
                 error: "Invalid phone number format use like +2923432432432."
             }
+        },
+        newsletter: {
+            required: false
         }
     };
 
-    const { state, handleOnChange, handleOnSubmit, disable } = useForm (
+    const { state, handleOnChange, handleOnSubmit, disable, handleCheckBoxOnChange } = useForm (
         stateSchema,
         validationStateSchema,
         handleSubmit
@@ -107,7 +111,7 @@ function CheckoutBody({total, shipping}) {
                             <div className="bar"></div>
 
                             <div className="row">
-                                <div className="col-lg-12 col-md-12">
+                                {/* <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
                                         <label>Country <span className="required">*</span></label>
                                         
@@ -118,7 +122,7 @@ function CheckoutBody({total, shipping}) {
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
@@ -241,7 +245,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
-                                            <input type="checkbox" className="form-check-input" id="create-an-account" />
+                                            <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
                                             <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
                                         </div>
                                     </div>
@@ -262,7 +266,7 @@ function CheckoutBody({total, shipping}) {
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} email={stateSchema.email.value} name={stateSchema.firstName.value+stateSchema.lastName.value} address={""} phone={stateSchema.phone.value}/>
+                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value}/>
 
                     </div>
                 </form>
