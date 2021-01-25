@@ -7288,6 +7288,10 @@ Back To Top CSS
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 p {
   font-size: 18px;
 }
