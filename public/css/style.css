@@ -7366,6 +7366,7 @@ span.chapter-number {
 .price-value p {
   color: #fff;
   font-weight: 400;
+  font-size: 32px;
 }
 
 .you-save {
@@ -7376,5 +7377,11 @@ span.chapter-number {
 
 .platform-connect .row .socialbox a {
   height: 100%;
+}
+
+.platform-connect.ptb-100 .container .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

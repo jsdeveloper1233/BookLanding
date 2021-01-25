@@ -12,7 +12,7 @@ class Platform extends Component {
             </div>
 
 
-            <div className="col-lg-4 col-md-6 socialbox">
+            <div className="col-lg-5 col-md-6 socialbox">
               <Link href="https://www.instagram.com/sergiosdorje/" target="_blank" rel="noopener">
                 <a className="box">
                   <img
@@ -28,7 +28,7 @@ class Platform extends Component {
               </Link>
             </div>
 
-            <div className="col-lg-4 col-md-6 socialbox">
+            <div className="col-lg-5 col-md-6 socialbox">
               <Link href="#">
                 <a className="box">
                   <img
@@ -37,6 +37,47 @@ class Platform extends Component {
                   />
 
                   <h3>Instagram</h3>
+                  <span>Sekrety Rozwoju Osobistego</span>
+
+                  <i className="icofont-bubble-right"></i>
+                </a>
+              </Link>
+            </div>
+          </div>
+
+
+
+
+          <div className="row">
+            <div className="col-lg-12 col-md-12">
+            </div>
+
+
+            <div className="col-lg-5 col-md-6 socialbox">
+              <Link href="https://www.facebook.com/sergiosdorje/" target="_blank" rel="noopener">
+                <a className="box">
+                  <img
+                    src={finalPath + "/images/facebook.png"}
+                    alt="facebook"
+                  />
+
+                  <h3>Facebook</h3>
+                  <span>Sergio S Dorje</span>
+
+                  <i className="icofont-bubble-right"></i>
+                </a>
+              </Link>
+            </div>
+
+            <div className="col-lg-5 col-md-6 socialbox">
+              <Link href="#">
+                <a className="box">
+                  <img
+                    src={finalPath + "/images/facebook.png"}
+                    alt="facebook"
+                  />
+
+                  <h3>Facebook</h3>
                   <span>Sekrety Rozwoju Osobistego</span>
 
                   <i className="icofont-bubble-right"></i>

@@ -71,3 +71,9 @@ span.chapter-number {
 .platform-connect .row .socialbox a {
     height: 100%;
 }
+
+.platform-connect.ptb-100 {
+  .container .row {
+    justify-content: center;
+  }
+}
