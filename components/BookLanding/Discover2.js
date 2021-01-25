@@ -6,7 +6,7 @@ class Discover2 extends Component {
             <section className="book-discover ptb-100">
                 <div className="container">
                     <div className="row h-100 justify-content-center align-items-center">
-                        <div className="col-lg-6 col-md-12">
+                        <div className="col-lg-8 col-md-12">
                             <div className="discover-content">
                                 <h3>NAJWIĘKSZE WARTOŚCI Z KSIĄŻKI</h3>
                                 <span>Książka, którą właśnie poznajesz, to potężne narzędzie samorozwoju, dzięki któremu dowiesz się, jak sterować swoim życiem i radzić sobie ze wszystkimi przeszkodami. </span>
@@ -34,9 +34,9 @@ class Discover2 extends Component {
                             </div>
                         </div>
 
-                        <div className="col-lg-6 col-md-12">
+                        <div className="col-lg-4 col-md-12">
                             <div className="discover-img">
-                                <img src='/images/book-img2.png' alt="image" />
+                                <img src='/images/ksiazka-2.png' alt="Sekrety Rozwoju Osobistego" />
                             </div>
                         </div>
                     </div>

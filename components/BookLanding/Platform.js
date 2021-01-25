@@ -13,8 +13,7 @@ class Platform extends Component {
 
 
             <div className="col-lg-5 col-md-6 socialbox">
-              <Link href="https://www.instagram.com/sergiosdorje/" target="_blank" rel="noopener">
-                <a className="box">
+              <a className="box" href="https://www.instagram.com/sergiosdorje/" target="_blank" rel="noopener">
                   <img
                     src={finalPath + "/images/instagram.png"}
                     alt="instagram"
@@ -24,13 +23,11 @@ class Platform extends Component {
                   <span>Sergio S Dorje</span>
 
                   <i className="icofont-bubble-right"></i>
-                </a>
-              </Link>
+              </a>
             </div>
 
             <div className="col-lg-5 col-md-6 socialbox">
-              <Link href="#">
-                <a className="box">
+              <a className="box" href="https://www.instagram.com/sekretyrozwojuosobistego/" target="blank">
                   <img
                     src={finalPath + "/images/instagram.png"}
                     alt="instagram"
@@ -40,8 +37,7 @@ class Platform extends Component {
                   <span>Sekrety Rozwoju Osobistego</span>
 
                   <i className="icofont-bubble-right"></i>
-                </a>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -54,8 +50,7 @@ class Platform extends Component {
 
 
             <div className="col-lg-5 col-md-6 socialbox">
-              <Link href="https://www.facebook.com/sergiosdorje/" target="_blank" rel="noopener">
-                <a className="box">
+              <a className="box" href="https://www.facebook.com/sergiosdorje/" target="_blank" rel="noopener">
                   <img
                     src={finalPath + "/images/facebook.png"}
                     alt="facebook"
@@ -65,13 +60,11 @@ class Platform extends Component {
                   <span>Sergio S Dorje</span>
 
                   <i className="icofont-bubble-right"></i>
-                </a>
-              </Link>
+              </a>
             </div>
 
             <div className="col-lg-5 col-md-6 socialbox">
-              <Link href="#">
-                <a className="box">
+              <a className="box" href="#">
                   <img
                     src={finalPath + "/images/facebook.png"}
                     alt="facebook"
@@ -81,8 +74,7 @@ class Platform extends Component {
                   <span>Sekrety Rozwoju Osobistego</span>
 
                   <i className="icofont-bubble-right"></i>
-                </a>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

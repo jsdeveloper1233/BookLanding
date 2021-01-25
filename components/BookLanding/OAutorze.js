@@ -31,7 +31,7 @@ Książka SEKRETY ROZWOJU OSOBISTEGO jest owocem kilkunastoletniego intensywnego
 
             <div className="col-lg-6 col-md-12">
               <div className="discover-img">
-                <img src={finalPath + "/images/book-img2.png"} alt="image" />
+                <img src={finalPath + "/images/ksiazka-2.png"} alt="Sekrety rozwoju osobistego" />
               </div>
             </div>
           </div>
