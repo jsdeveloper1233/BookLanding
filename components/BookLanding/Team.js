@@ -134,7 +134,7 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + ""} alt="team" />
+                    <img src={finalPath + "/images/team-maja.png"} alt="Maja" />
 
                     <div className="team-content">
                       <h3>Maja Strzelecka</h3>
