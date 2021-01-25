@@ -20,7 +20,7 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                            <p className="accordion-content">Książka zamówiona na tej stronie może być dostarczony tylko w granicach Polski, jednak dostawa za granicę również jest możliwa! Jeśli chcesz, by książka trafiła pod Twój adres za granicą, napisz do mnie <a href="https://www.sergiosdorje.com/kontakt/" target="blank">tutaj</a>.</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
@@ -30,7 +30,7 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                            <p className="accordion-content">Oczywiście - otrzymasz fakturę za książkę, jeśli jej potrzebujesz :) Pamiętaj, by kupując książkę zaznaczyć w formularzu, że chcesz otrzymać fakturę, a następnie dodaj nazwę firmy, adres i NIP.</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
@@ -40,7 +40,7 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                            <p className="accordion-content">Nie mogę pozwolić, by ktoś długo czekał na moją książkę :) Moim celem jest, by trafiła jak najszybciej w Twoje ręce, dlatego książki są najczęściej wysyłane następnego dnia lub najpóźniej dwa dni robocze od daty zamówienia.</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
@@ -50,7 +50,7 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                            <p className="accordion-content">''Sekrety Rozwoju Osobistego'' kupisz tylko na tej stronie - nie znajdziesz jej w księgarniach. Czasem jest taka możliwość również na Allegro.</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
@@ -60,7 +60,8 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                            <p className="accordion-content">Dobry kurier powinien zadzwonić do Ciebie, jeśli nie zastanie Cię w domu, ale cóż... To nie jest jego obowiązek i pewnie często zależy od humoru :) Jeśli Tobie i kurierowi nie uda się ''złapać'', jest szansa, że wróci on do Ciebie ponownie następnego dnia. Jeśli wiesz, że kurier był z Twoją paczką, gdy Ciebie akurat nie było - zadzwoń do niego czym prędzej i ustal, co dalej.
+</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
@@ -70,7 +71,7 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                            <p className="accordion-content">Pisz śmiało! By zadać inne pytanie korzystaj z <a href="https://www.sergiosdorje.com/kontakt/" target="blank">formularza</a>.</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                   
