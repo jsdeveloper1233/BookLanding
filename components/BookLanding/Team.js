@@ -63,7 +63,7 @@ class Team extends Component {
                   <div className="single-team-member-box">
                     <img
                       src={finalPath + "/images/team-sergio.jpg"}
-                      alt="team"
+                      alt="Sergio"
                     />
 
                     <div className="team-content">
@@ -100,7 +100,7 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + ""} alt="team" />
+                    <img src={finalPath + "/images/team-wojtek.jpeg"} alt="Wojtek" />
 
                     <div className="team-content">
                       <h3>Wojtek Pitala</h3>
@@ -134,7 +134,7 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + ""} alt="team" />
+                    <img src={finalPath + "/images/team-maja.png"} alt="Maja" />
 
                     <div className="team-content">
                       <h3>Maja Strzelecka</h3>

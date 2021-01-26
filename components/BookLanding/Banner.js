@@ -56,7 +56,7 @@ class Banner extends Component {
                   <div className="col-lg-6 col-md-12">
                     <div className="book-image">
                       <img
-                        src={finalPath + "/images/book-img.png"}
+                        src={finalPath + "/images/sekrety-rozwoju-osobistego-mkp-sm.png"}
                         alt="image"
                       />
                     </div>
