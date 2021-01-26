@@ -7388,4 +7388,17 @@ span.chapter-number {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.discover-content ul li {
+  width: unset;
+  float: unset;
+}
+
+.single-features-box {
+  height: 100%;
+}
+
+.platform-connect h2 {
+  max-width: 640px;
+}
 /*# sourceMappingURL=style.css.map */

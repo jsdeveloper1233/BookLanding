@@ -32,10 +32,10 @@ class Banner extends Component {
                         których nikt nie mówi.
                       </p>
              
-                      <Link href="#">
-                        <a className="btn btn-primary">ZAMÓW TERAZ</a>
-                      </Link>
-                      <Link href="#">
+                      {/* <Link href="#"> */}
+                        <a href="#kupteraz" className="btn btn-primary">ZAMÓW TERAZ</a>
+                      {/* </Link> */}
+                      {/* <Link href="#">
                         <a
                           onClick={(e) => {
                             e.preventDefault();
@@ -46,7 +46,7 @@ class Banner extends Component {
                           Obejrzyj zwiastun
                           <i className="icofont-play-alt-3"></i>
                         </a>
-                      </Link>
+                      </Link> */}
                       <em className="inlucdebooks">
                         * eBook zawiera wersje MOBI, EPUB i PDF
                       </em>

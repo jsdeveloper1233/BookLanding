@@ -16,9 +16,8 @@ class Discover2 extends Component {
                                     <li><i className="icofont-check"></i> Rozciągniesz swoją świadomość.
 </li>
                                     <li><i className="icofont-check"></i> Nauczysz się odbierać świat w sposób duchowy</li>
-                                    <li><i className="icofont-check"></i> Dowiesz się jak minimalizować błędy, zwiększać skuteczność swoich działań i unikać traum. </li>
-                                    <li><i className="icofont-check"></i> Poznasz typy energii i nauczysz się być w równowadze energetycznej.
-</li>
+                                    <li><i className="icofont-check"></i> Dowiesz się jak minimalizować błędy, zwiększać skuteczność swoich działań i unikać traum</li>
+                                    <li><i className="icofont-check"></i> Poznasz typy energii i nauczysz się być w równowadze energetycznej</li>
                                     <li><i className="icofont-check"></i> Nauczysz się pracy z intencją</li>
                                     <li><i className="icofont-check"></i> Zdobędziesz siłę, by uwolnić się od negatywnych osób</li>
                                     <li><i className="icofont-check"></i> Poznasz sekret udanej komunikacji w związki</li>
@@ -27,7 +26,7 @@ class Discover2 extends Component {
                                     <li><i className="icofont-check"></i> Dowiesz się jak oczyszczać umysł z negatywnych wpływów</li>
                                     <li><i className="icofont-check"></i> Zrozumiesz swoje wewnętrzne dziecko</li>
                                     <li><i className="icofont-check"></i> Dowiesz się czym jest PRAWDZIWA tantra</li>
-                                    <li><i className="icofont-check"></i> Zobaczy jak nie paść ofiarą manipulacji złego lidera…</li>
+                                    <li><i className="icofont-check"></i> Zobaczy jak nie paść ofiarą manipulacji złego lidera</li>
                                     <li><i className="icofont-check"></i> Zrozumiesz swoje wewnętrzne dziecko</li>
          
                                 </ul>

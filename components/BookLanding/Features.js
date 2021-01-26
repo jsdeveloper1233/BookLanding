@@ -34,7 +34,7 @@ class Features extends Component {
                   usłyszeć. Napisałem ją, by Ci, którzy są otwarci na duchowy
                   samorozwój, poznali potężne narzędzia, dzięki którym
                   rzeczywistość zacznie być ich największym dziełem. Ta
-                  książka pomoże Ci przejąć ster i poznać wielkie tajemnice
+                  książka pomoże Ci przejąć ster i poznać tajemnice
                   rozwoju osobistego.
                 </p>
               </div>
