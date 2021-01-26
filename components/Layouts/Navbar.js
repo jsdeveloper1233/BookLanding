@@ -77,7 +77,7 @@ class Navbar extends React.Component {
       <React.Fragment>
         <header id="header">
           <div id="navbar" className={`crake-nav ${layOutCls}`}>
-            <div className="container">
+            <div className="container" id="top">
               <nav className="navbar navbar-expand-md navbar-light">
                 <Link href="#">
                   <a className="navbar-brand">
@@ -102,15 +102,11 @@ class Navbar extends React.Component {
                 <div className={classOne} id="navbarSupportedContent">
                   <ul className="navbar-nav nav ml-auto">
                     <li className="nav-item">
-                      <Link activeClassName="active" href="#">
-                        <a className="nav-link">Home</a>
-                      </Link>
+                        <a className="nav-link" href="#header">Home</a>
                     </li>
 
                     <li className="nav-item">
-                      <Link activeClassName="active" href="#index">
-                        <a className="nav-link">Spis treści</a>
-                      </Link>
+                        <a className="nav-link" href="#index">Spis treści</a>
                     </li>
 
                     <li className="nav-item">

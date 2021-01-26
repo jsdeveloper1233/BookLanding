@@ -94,3 +94,16 @@ span.chapter-number {
 .platform-connect h2 {
   max-width: 640px;
 }
+
+.next-generation-virtual-reality .single-item:hover {
+  background-color: #edf5ff;
+  transition: 200ms ease-in;
+  p:last-child {
+    color: #1b1b1b;
+  }
+}
+.next-generation-virtual-reality .single-item {
+  margin-bottom: 30px;
+  padding-left: 40px;
+  height: 100%;
+}
