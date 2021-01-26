@@ -173,7 +173,7 @@ async function sendEmail(tid, email, name) {
             }
         ],
         "from": {
-            "email": "ahmedmgh67@gmail.com",
+            "email": "sergio@sergiosdorje.com",
             "name": "Sergio L"
         },
         "template_id": tid
@@ -189,7 +189,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
             {
                 "to": [
                     {
-                        "email": "ahmedmgh67@gmail.com",
+                        "email": "sergio@sergiosdorje.com",
                         "name": "Sergio L"
                     }
                 ],
