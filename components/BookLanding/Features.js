@@ -10,7 +10,7 @@ class Features extends Component {
             <div className="col-lg-4 col-md-6">
               <div className="single-features-box">
                 <div className="icon">
-                  <i className="icofont-print"></i>
+                  <i className="icofont-muscle"></i>
                 </div>
                 <h3>POTĘŻNE NARZĘDZIA </h3>
                 <p>
@@ -26,7 +26,7 @@ class Features extends Component {
             <div className="col-lg-4 col-md-6">
               <div className="single-features-box">
                 <div className="icon">
-                  <i className="icofont-ui-edit"></i>
+                  <i className="icofont-verification-check"></i>
                 </div>
                 <h3>PRAWDA</h3>
                 <p>
@@ -43,7 +43,7 @@ class Features extends Component {
             <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
               <div className="single-features-box">
                 <div className="icon">
-                  <i className="icofont-vehicle-delivery-van"></i>
+                  <i className="icofont-unlocked"></i>
                 </div>
                 <h3>TAJNA WIEDZA </h3>
                 <p>
