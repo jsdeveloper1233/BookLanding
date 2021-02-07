@@ -7421,4 +7421,8 @@ span.chapter-number {
 .discover-content ul li:hover {
   color: #1b1b1b;
 }
+
+.hidden-instagram-icon {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

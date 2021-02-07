@@ -66,11 +66,11 @@ class Features extends Component {
                     <div className="icon">
                       <i className="icofont-win-trophy"></i>
                     </div>
-                    <h3>More than 5+ award achived</h3>
+                    <h3>Czy czujesz w swoim życiu, że czasem wpadasz na mur?</h3>
                     <p>
-                      Plan ahead by day, week, or month, and see project status
-                      at a glance. Search and filter to focus in on anything
-                      form a single project to an individual person's workload.
+                    Mam na myśli mur, który broni Tobie dostępu do spełnienia i samoświadomości. 
+Tym murem często są błędne przekonania kreowane przez społeczeństwo, toksyczni ludzie, brak wiedzy o sobie samym.
+
                     </p>
                   </div>
 
@@ -78,11 +78,9 @@ class Features extends Component {
                     <div className="icon">
                       <i className="icofont-responsive"></i>
                     </div>
-                    <h3>Read On Any Device</h3>
+                    <h3>...Ale to nie jest Twoje przeznaczenie!</h3>
                     <p>
-                      Plan ahead by day, week, or month, and see project status
-                      at a glance. Search and filter to focus in on anything
-                      form a single project to an individual person's workload.
+                    Tylko Ty - nikt inny - odpowiadasz za jakość swojego życia. Możesz stworzyć rzeczywistość bez toksyczności, bez nienawiści, bez osądów. Zasługujesz na coś więcej, ale pamiętaj… Musisz po to sięgnąć - musisz podjąć najważniejszą decyzję. Decyzję o zmianie.
                     </p>
                   </div>
 
@@ -90,11 +88,9 @@ class Features extends Component {
                     <div className="icon">
                       <i className="icofont-verification-check"></i>
                     </div>
-                    <h3>Very high resolution (4K)</h3>
+                    <h3>Książka ‘’Sekrety Rozwoju Osobistego’’ jest jak dobra przyjaciółka.</h3>
                     <p>
-                      Plan ahead by day, week, or month, and see project status
-                      at a glance. Search and filter to focus in on anything
-                      form a single project to an individual person's workload.
+                      Prawdziwa przyjaźń nie ma oczekiwań, nie osądza, nie narzuca swojego zdania. Służy swoją mądrością i daje siłę, ale nie wymaga od Ciebie niczego. Tak samo jest z tą książką - dostarczy Ci cenne wskazówki i przeprowadzi za rękę przez proces zmiany, ale to Ty na końcu drogi decydujesz, jakiego życia pragniesz.
                     </p>
                   </div>
                 </div>

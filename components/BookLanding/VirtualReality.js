@@ -10,8 +10,7 @@ class VirtualReality extends Component {
             <h2>Spis treści</h2>
             <div className="bar"></div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Poznaj spis treści książki ‘’Sekrety Rozwoju Osobistego’’ i dowiedz się, jakie obszary Twojego życia będziemy uzdrawiać. Musisz wiedzieć, że ten spis treści nie jest przypadkowy. Każda część książki to intymna rozmowa o najważniejszych aspektach Twojego życia… Najpierw ja rozmawiam z Tobą, a później Ty sam - wprowadzając zdobytą wiedzę - prowadzisz wewnętrzny dialog i zmieniasz swoje życie.
             </p>
           </div>
 

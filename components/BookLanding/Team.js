@@ -105,7 +105,15 @@ class Team extends Component {
                     <div className="team-content">
                       <h3>Wojtek Pitala</h3>
                       <span>Współpraca literacka</span>
-
+                      <ul>
+                        <li>
+                          <a href="/" className="hidden-instagram-icon">
+                            <a className="instagram">
+                              <i className="icofont-instagram"></i>
+                            </a>
+                          </a>
+                        </li>
+                      </ul>
 
                     </div>
                   </div>
@@ -113,7 +121,7 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + ""} alt="team" />
+                    <img src={finalPath + "/images/NikolaHahn_2020_S_Sergio.png"} alt="team" />
 
                     <div className="team-content">
                       <h3>Nikola Hahn</h3>
