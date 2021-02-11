@@ -133,7 +133,7 @@ class Team extends Component {
 
                     <div className="team-content">
                       <h3>Maja Strzelecka</h3>
-                      <span>Copywriting LP</span>
+                      <span>Copywriting na stronę www</span>
 
                       <ul>
                         <li>
