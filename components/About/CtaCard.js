@@ -16,9 +16,7 @@ class CtaCard extends React.Component {
             </div>
 
             <div className="col-lg-5 col-md-5 text-right">
-              <Link href="#kupteraz">
-                <a className="btn btn-primary">Zamów książkę teraz!</a>
-              </Link>
+                <a className="btn btn-primary" href="#kupteraz">Zamów książkę teraz!</a>
             </div>
           </div>
         </div>

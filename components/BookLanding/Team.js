@@ -45,11 +45,10 @@ class Team extends Component {
       <section className="team-area ptb-100 bg-gray">
         <div className="container">
           <div className="section-title">
-            <h2>Our Smart Team</h2>
+            <h2>To oni pomagali przy powstawaniu książki!</h2>
             <div className="bar"></div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Poznaj osoby, które wspierały mnie podczas tworzenia mojego dzieła. Bez nich byłoby bardzo trudno. Z całego serca dziękuję, że byliście! 
             </p>
           </div>
 
@@ -72,26 +71,18 @@ class Team extends Component {
 
                       <ul>
                         <li>
-                          <Link
-                            href="https://www.facebook.com/sergiosdorje/"
+                            <a className="facebook" href="https://www.facebook.com/sergiosdorje/"
                             target="_blank"
-                            rel="noopener"
-                          >
-                            <a className="facebook">
+                            rel="noopener">
                               <i className="icofont-facebook"></i>
                             </a>
-                          </Link>
                         </li>
                         <li>
-                          <Link
-                            href="https://www.instagram.com/sergiosdorje/"
+                            <a className="instagram" href="https://www.instagram.com/sergiosdorje/"
                             target="_blank"
-                            rel="noopener"
-                          >
-                            <a className="instagram">
+                            rel="noopener">
                               <i className="icofont-instagram"></i>
                             </a>
-                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -107,11 +98,9 @@ class Team extends Component {
                       <span>Współpraca literacka</span>
                       <ul>
                         <li>
-                          <a href="/" className="hidden-instagram-icon">
-                            <a className="instagram">
+                            <a className="instagram hidden-instagram-icon">
                               <i className="icofont-instagram"></i>
                             </a>
-                          </a>
                         </li>
                       </ul>
 
@@ -129,11 +118,9 @@ class Team extends Component {
 
                       <ul>
                         <li>
-                          <Link href="https://www.instagram.com/nikolahahn/">
-                            <a className="instagram">
+                            <a className="instagram" href="https://www.instagram.com/nikolahahn/">
                               <i className="icofont-instagram"></i>
                             </a>
-                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -150,11 +137,9 @@ class Team extends Component {
 
                       <ul>
                         <li>
-                          <Link href="https://www.instagram.com/content_lady/">
-                            <a className="instagram">
+                            <a className="instagram" href="https://www.instagram.com/content_lady/">
                               <i className="icofont-instagram"></i>
                             </a>
-                          </Link>
                         </li>
                       </ul>
                     </div>

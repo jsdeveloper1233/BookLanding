@@ -79,12 +79,12 @@ class Navbar extends React.Component {
           <div id="navbar" className={`crake-nav ${layOutCls}`}>
             <div className="container" id="top">
               <nav className="navbar navbar-expand-md navbar-light">
-                <Link href="#">
-                  <a className="navbar-brand">
+                {/* <Link href="#"> */}
+                  <a className="navbar-brand" href="#">
                     {/* <img src={logo} alt="logo" /> */}
                     Sekrety Rozwoju<br /> Osobistego
                   </a>
-                </Link>
+                {/* </Link> */}
 
                 <button
                   onClick={this.toggleNavbar}
@@ -110,19 +110,13 @@ class Navbar extends React.Component {
                     </li>
 
                     <li className="nav-item">
-                      <Link activeClassName="active" href="#references">
-                        <a className="nav-link">Referencje</a>
-                      </Link>
+                        <a className="nav-link" href="#references">Referencje</a>
                     </li>
                     <li className="nav-item">
-                      <Link activeClassName="active" href="#faq">
-                        <a className="nav-link">FAQ</a>
-                      </Link>
+                        <a className="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li className="nav-item">
-                      <Link activeClassName="active" href="#kupteraz">
-                        <a className="nav-link">Kup teraz</a>
-                      </Link>
+                        <a className="nav-link" href="#kupteraz">Kup teraz</a>
                     </li>
 
                     {/* <li className="nav-item">
