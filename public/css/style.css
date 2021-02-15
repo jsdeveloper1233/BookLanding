@@ -7289,7 +7289,7 @@ Back To Top CSS
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: inherit;
 }
 
 p {
