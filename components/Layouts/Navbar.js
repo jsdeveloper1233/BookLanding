@@ -1,10 +1,18 @@
 import React from "react";
 import { withRouter } from "next/router";
 import { connect } from "react-redux";
-import Link from "../../utils/ActiveLink";
 import SideDrawer from "./SideDrawer";
 import SearchForm from "./SearchForm";
 import { finalPath } from "../../pages/index";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 class Navbar extends React.Component {
   _isMounted = false;
@@ -80,10 +88,11 @@ class Navbar extends React.Component {
             <div className="container" id="top">
               <nav className="navbar navbar-expand-md navbar-light">
                 {/* <Link href="#"> */}
-                  <a className="navbar-brand" href="#">
-                    {/* <img src={logo} alt="logo" /> */}
-                    Sekrety Rozwoju<br /> Osobistego
-                  </a>
+                <a className="navbar-brand" href="#">
+                  {/* <img src={logo} alt="logo" /> */}
+                  Sekrety Rozwoju
+                  <br /> Osobistego
+                </a>
                 {/* </Link> */}
 
                 <button
@@ -102,21 +111,76 @@ class Navbar extends React.Component {
                 <div className={classOne} id="navbarSupportedContent">
                   <ul className="navbar-nav nav ml-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="#header">Home</a>
+                    <Link
+                        className="nav-link"
+                        activeClass="active"
+                        to="header"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        Home
+                      </Link>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="#index">Spis treści</a>
+                      <Link
+                        className="nav-link"
+                        activeClass="active"
+                        to="index"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        Spis treści
+                      </Link>
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="#references">Referencje</a>
+                    <Link
+                        className="nav-link"
+                        activeClass="active"
+                        to="references"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        Referencje
+                      </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#faq">FAQ</a>
+                    <Link
+                        className="nav-link"
+                        activeClass="active"
+                        to="faq"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        FAQ
+                      </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#kupteraz">Kup teraz</a>
+                       <Link
+                        className="nav-link"
+                        activeClass="active"
+                        to="kupteraz"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        Kup teraz
+                      </Link>
                     </li>
 
                     {/* <li className="nav-item">

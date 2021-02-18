@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Link from "next/link";
 import ModalVideo from "react-modal-video";
 import { finalPath } from "../../pages/index";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+
 class Banner extends Component {
   state = {
     isOpen: false,
@@ -33,7 +34,18 @@ class Banner extends Component {
                       </p>
              
                       {/* <Link href="#"> */}
-                        <a href="#kupteraz" className="btn btn-primary">ZAMÓW TERAZ</a>
+                      <Link
+                        className="btn btn-primary"
+                        to="kupteraz"
+                        href="#kupteraz"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        ZAMÓW TERAZ
+                      </Link>
                       {/* </Link> */}
                       {/* <Link href="#">
                         <a

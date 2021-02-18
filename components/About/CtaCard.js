@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 class CtaCard extends React.Component {
   render() {
@@ -16,7 +16,18 @@ class CtaCard extends React.Component {
             </div>
 
             <div className="col-lg-5 col-md-5 text-right">
-                <a className="btn btn-primary" href="#kupteraz">Zamów książkę teraz!</a>
+            <Link
+                        className="btn btn-primary"
+                        href="#kupteraz"
+                        to="kupteraz"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        Zamów książkę teraz!
+                      </Link>
             </div>
           </div>
         </div>

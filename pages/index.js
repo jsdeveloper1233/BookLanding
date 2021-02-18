@@ -29,8 +29,9 @@ export const finalPath = "";
 class BookLanding extends React.Component {
   render() {
     return (
+    
       <React.Fragment>
-        <Navbar />
+                <Navbar />
         <Banner />
         <AboutContent />
                 <Discover2 />
@@ -55,6 +56,7 @@ class BookLanding extends React.Component {
         <Platform />
         <Footer />
       </React.Fragment>
+      
     );
   }
 }
