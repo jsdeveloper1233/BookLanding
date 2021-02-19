@@ -12,8 +12,7 @@ const Przelewy24 = require('./prz24lib.js')
 // const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', false)
 const MailerLite = require("mailerlite-api-v2-node").default;
 require('dotenv').config()
-// const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY);
-const mailerLite = MailerLite('process.env.MAILERLITE_API_KEY');
+const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY);
 const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({ dir: '.', dev });
