@@ -248,6 +248,14 @@ function CheckoutBody({total, shipping}) {
                                             <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
                                             <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
                                         </div>
+                                        <div className="form-check">
+                                            <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
+                                            <label className="form-check-label" htmlFor="create-an-account">Checkbox 1</label>
+                                        </div>
+                                        <div className="form-check">
+                                            <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
+                                            <label className="form-check-label" htmlFor="create-an-account">Checkbox 2</label>
+                                        </div>
                                     </div>
 
                                     {/* <div className="col-lg-12 col-md-12">

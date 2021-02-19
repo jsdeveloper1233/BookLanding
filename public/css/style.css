@@ -7434,3 +7434,42 @@ span.chapter-number {
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
+
+a.add-product-btn {
+  width: 18px;
+  font-weight: bold;
+  color: #000;
+  background-color: #e1e1e1;
+  text-align: center;
+  line-height: 29px;
+  height: 29px;
+  font-size: 14px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.btn-left {
+  float: left
+}
+
+.btn-right {
+  float: right
+}
+
+.clearfix.flex {
+  display: flex;
+}
+
+.cart-items {
+  text-align: center;
+  width: 40px;
+  border: 1px solid #e1e1e1;
+}
+
+td.product-name {
+  display: flex;
+  justify-content: space-between;
+}
+
