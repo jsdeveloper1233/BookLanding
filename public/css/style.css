@@ -7289,7 +7289,7 @@ Back To Top CSS
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: inherit;
 }
 
 p {
@@ -7387,5 +7387,50 @@ span.chapter-number {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.discover-content ul li {
+  width: unset;
+  float: unset;
+}
+
+.single-features-box {
+  height: 100%;
+}
+
+.platform-connect h2 {
+  max-width: 640px;
+}
+
+.next-generation-virtual-reality .single-item:hover {
+  background-color: #edf5ff;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+}
+
+.next-generation-virtual-reality .single-item:hover p:last-child {
+  color: #1b1b1b;
+}
+
+.next-generation-virtual-reality .single-item {
+  margin-bottom: 30px;
+  padding-left: 40px;
+  height: 100%;
+}
+
+.discover-content ul li:hover {
+  color: #1b1b1b;
+}
+
+.hidden-instagram-icon {
+  display: none;
+}
+
+.creative-shape img {
+  width: 100%;
+}
+
+.nav-item {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

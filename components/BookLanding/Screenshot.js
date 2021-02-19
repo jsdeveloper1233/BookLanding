@@ -60,9 +60,9 @@ class Screenshot extends Component {
             <section className="screenshot-area page-from-book ptb-100">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Pages From Book</h2>
+                        <h2>Przykładowe strony z książki</h2>
                         <div className="bar"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Musisz wiedzieć, że jako autor tej książki, jestem tylko człowiekiem… Mnie również spotykają problemy i ja również - tak jak i Ty - musiałem przejść przez drogę prowadzącą do samoświadomości… Przedstawię Ci moją wiedzę w sposób, jakbym mówił do najlepszego przyjaciela. W tej książce nie znajdziesz wywyższania się i narzucania mojego zdania. Zaprezentuję Ci Sekrety Rozwoju Osobistego, które pomogły mi i setkom innych świadomych osób zbudować życie marzeń.</p>
                     </div>
 
                     <div className="row">

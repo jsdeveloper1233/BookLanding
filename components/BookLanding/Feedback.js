@@ -43,7 +43,7 @@ class Feedback extends Component {
                     <div className="section-title">
                         <h2>Recenzje i referencje</h2>
                         <div className="bar"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Zobacz, co o książęce „Sekrety Rozwoju Osobistego” mówią ci, którzy już ją przeczytali.</p>
                     </div>
 
                     <div className="row">

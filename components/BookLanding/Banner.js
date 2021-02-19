@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Link from "next/link";
 import ModalVideo from "react-modal-video";
 import { finalPath } from "../../pages/index";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+
 class Banner extends Component {
   state = {
     isOpen: false,
@@ -32,10 +33,21 @@ class Banner extends Component {
                         których nikt nie mówi.
                       </p>
              
-                      <Link href="#">
-                        <a className="btn btn-primary">ZAMÓW TERAZ</a>
+                      {/* <Link href="#"> */}
+                      <Link
+                        className="btn btn-primary"
+                        to="kupteraz"
+                        href="#kupteraz"
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        ZAMÓW TERAZ
                       </Link>
-                      <Link href="#">
+                      {/* </Link> */}
+                      {/* <Link href="#">
                         <a
                           onClick={(e) => {
                             e.preventDefault();
@@ -46,7 +58,7 @@ class Banner extends Component {
                           Obejrzyj zwiastun
                           <i className="icofont-play-alt-3"></i>
                         </a>
-                      </Link>
+                      </Link> */}
                       <em className="inlucdebooks">
                         * eBook zawiera wersje MOBI, EPUB i PDF
                       </em>

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Pricing2 from "../BookLanding/Pricing2";
-
 class VirtualReality extends Component {
   render() {
     return (
+      
       <section className="next-generation-virtual-reality ptb-100" id="index">
         <div className="container">
           <div className="section-title">

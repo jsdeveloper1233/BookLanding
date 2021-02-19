@@ -21,7 +21,7 @@ import AboutContent from "../components/BookLanding/AboutContent";
 import Wartosci from "../components/BookLanding/Wartosci";
 import Overview from "../components/BookLanding/Overview";
 import Services from "../components/DigitalMarketing/Services";
-import VirtualReality from "../components/ProductLanding/VirtualReality";
+import VirtualReality from "../components/BookLanding/VirtualReality";
 import CtaCard from "../components/About/CtaCard";
 import Pricing2 from "../components/BookLanding/Pricing2";
 
@@ -41,8 +41,9 @@ class BookLanding extends React.Component {
   // }
   render() {
     return (
+    
       <React.Fragment>
-        <Navbar />
+                <Navbar />
         <Banner />
         <AboutContent />
         <Discover2 />
@@ -67,6 +68,7 @@ class BookLanding extends React.Component {
         <Platform />
         <Footer />
       </React.Fragment>
+      
     );
   }
 }

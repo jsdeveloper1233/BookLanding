@@ -39,17 +39,18 @@ class Team extends Component {
   componentDidMount() {
     this.setState({ display: true });
   }
-
+  
   render() {
     return (
       <section className="team-area ptb-100 bg-gray">
         <div className="container">
           <div className="section-title">
-            <h2>Our Smart Team</h2>
+            <h2>To oni pomagali przy powstawaniu książki!</h2>
             <div className="bar"></div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Poznaj osoby, które wspierały mnie podczas tworzenia mojego
+              dzieła. Bez nich byłoby bardzo trudno. Z całego serca dziękuję, że
+              byliście!
             </p>
           </div>
 
@@ -67,31 +68,32 @@ class Team extends Component {
                     />
 
                     <div className="team-content">
-                      <h3>Sergio S Dorje</h3>
+                      <h3>
+                        Sergio
+                        <br /> S Dorje
+                      </h3>
                       <span>Autor</span>
 
                       <ul>
                         <li>
-                          <Link
+                          <a
+                            className="facebook"
                             href="https://www.facebook.com/sergiosdorje/"
                             target="_blank"
                             rel="noopener"
                           >
-                            <a className="facebook">
-                              <i className="icofont-facebook"></i>
-                            </a>
-                          </Link>
+                            <i className="icofont-facebook"></i>
+                          </a>
                         </li>
                         <li>
-                          <Link
+                          <a
+                            className="instagram"
                             href="https://www.instagram.com/sergiosdorje/"
                             target="_blank"
                             rel="noopener"
                           >
-                            <a className="instagram">
-                              <i className="icofont-instagram"></i>
-                            </a>
-                          </Link>
+                            <i className="icofont-instagram"></i>
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -100,32 +102,82 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + "/images/team-wojtek.jpeg"} alt="Wojtek" />
+                    <img
+                      src={finalPath + "/images/team-wojtek.jpeg"}
+                      alt="Wojtek"
+                    />
 
                     <div className="team-content">
-                      <h3>Wojtek Pitala</h3>
+                      <h3>
+                        Wojtek
+                        <br /> Pitala
+                      </h3>
                       <span>Współpraca literacka</span>
-
-
+                      <ul>
+                        <li>
+                          <a className="instagram hidden-instagram-icon">
+                            <i className="icofont-instagram"></i>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
 
+
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + ""} alt="team" />
+                    <img
+                      src={finalPath + "/images/lucjan-wesolowski.jpg"}
+                      alt="Lucjan"
+                    />
 
                     <div className="team-content">
-                      <h3>Nikola Hahn</h3>
+                      <h3>
+                        Lucjan
+                        <br /> Wesołowski
+                      </h3>
+                      <span>Kolejna redakcja i korekta</span>
+
+                      <ul>
+                        <li>
+                          <a
+                            className="facebook"
+                            href="https://www.facebook.com/lucjan.wesolowski"
+                            target="_blank"
+                            rel="noopener"
+                          >
+                            <i className="icofont-facebook"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <div className="col-lg-12">
+                  <div className="single-team-member-box">
+                    <img
+                      src={finalPath + "/images/NikolaHahn_2020_S_Sergio.png"}
+                      alt="team"
+                    />
+
+                    <div className="team-content">
+                      <h3>
+                        Nikola
+                        <br /> Hahn
+                      </h3>
                       <span>Ilustracja / Projekt okładki</span>
 
                       <ul>
                         <li>
-                          <Link href="https://www.instagram.com/nikolahahn/">
-                            <a className="instagram">
-                              <i className="icofont-instagram"></i>
-                            </a>
-                          </Link>
+                          <a
+                            className="instagram"
+                            href="https://www.instagram.com/nikolahahn/"
+                          >
+                            <i className="icofont-instagram"></i>
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -137,23 +189,27 @@ class Team extends Component {
                     <img src={finalPath + "/images/team-maja.png"} alt="Maja" />
 
                     <div className="team-content">
-                      <h3>Maja Strzelecka</h3>
-                      <span>Copywriting LP</span>
+                      <h3>
+                        Maja
+                        <br /> Strzelecka
+                      </h3>
+                      <span>Copywriting na stronę www</span>
 
                       <ul>
                         <li>
-                          <Link href="https://www.instagram.com/content_lady/">
-                            <a className="instagram">
-                              <i className="icofont-instagram"></i>
-                            </a>
-                          </Link>
+                          <a
+                            className="instagram"
+                            href="https://www.instagram.com/content_lady/"
+                          >
+                            <i className="icofont-instagram"></i>
+                          </a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-             
+ 
               </OwlCarousel>
             ) : (
               ""

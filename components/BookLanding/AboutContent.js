@@ -37,7 +37,7 @@ class AboutContent extends Component {
             </div>
 
             <div className="col-lg-4 col-md-12">
-              <img src="/images/marketing.png" alt="image" />
+              <img src="/images/ksiazka-ig-sm.jpg" alt="image" />
             </div>
           </div>
         </div>
