@@ -47,7 +47,9 @@ class OrderSummary extends Component {
             "newsletter":this.props.newsletter,
             "product": this.state.product.name,
             "quantity": this.state.quantity,
-            "total": this.state.total
+            "total": this.state.total,
+            "privacy": this.props.privacy,
+            "terms": this.props.terms
         }).then((d)=> {
             console.log(d.data)
             console.log(d.data.link)
@@ -175,11 +177,9 @@ class OrderSummary extends Component {
                         </p>
                     </div>
                     {!this.state.load?(<></>): <div className="order-btn">
-                    <button  onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
-
-                        {/* DAVID CASAS <button disabled={this.props.disabled} onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} > */}
-                            Place Order
-                        </button>
+                    <button disabled={this.props.disabled}  onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
+                        Place Order
+                    </button>
                     </div>}
                     {/* <Payment 
                         amount={totalAmount * 100}

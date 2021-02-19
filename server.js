@@ -79,6 +79,7 @@ app.prepare().then(() => {
             });
     })
     server.post("/api/buy/:p", async (req, res) => {
+        
         const total = parseFloat(req.body.total)
         switch (req.params.p) {
             case "ebook":
@@ -86,7 +87,23 @@ app.prepare().then(() => {
                 var body = req.body
                 res.json({ "link": u })
                 sendEmail("d-43a4ce7ca5344d3c89282454be042e30", req.body.email, req.body.name)
-                sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter, product: body.product, quantity: body.quantity})
+                sendAuthorEmail({
+                    cname: body.name, 
+                    email: body.email, 
+                    phone: body.phone, 
+                    address: body.address, 
+                    city: body.city, 
+                    state: body.state, 
+                    zip: body.zip, 
+                    newsletter: 
+                    body.newsletter, 
+                    product: 
+                    body.product, 
+                    quantity: 
+                    body.quantity, 
+                    privacy: body.privacy,
+                    terms: body.terms
+                })
                 if(body.newsletter){
                     subscribeUser(body.email)
                 }
@@ -97,7 +114,20 @@ app.prepare().then(() => {
 
                 res.json({ "link": u })
                 sendEmail("d-889a4f6a165a425cb98e7dae11baa998", req.body.email, req.body.name)
-                sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter, product: body.product, quantity: body.quantity})
+                sendAuthorEmail({
+                    cname: body.name, 
+                    email: body.email, 
+                    phone: body.phone, 
+                    address: body.address, 
+                    city: body.city, 
+                    state: body.state, 
+                    zip: body.zip, 
+                    newsletter: body.newsletter, 
+                    product: body.product, 
+                    quantity: body.quantity,
+                    privacy: body.privacy,
+                    terms: body.terms
+                })
                 if(body.newsletter){
                     subscribeUser(body.email)
                 }
@@ -107,7 +137,20 @@ app.prepare().then(() => {
                 var body = req.body
                 res.json({ "link": u })
                 sendEmail("d-58f0808630ff4b2483efc4b88e8995f0", req.body.email, req.body.name)
-                sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter, product: body.product, quantity: body.quantity})
+                sendAuthorEmail({
+                    cname: body.name, 
+                    email: body.email, 
+                    phone: body.phone, 
+                    address: body.address, 
+                    city: body.city, 
+                    state: body.state, 
+                    zip: body.zip, 
+                    newsletter: body.newsletter, 
+                    product: body.product, 
+                    quantity: body.quantity,
+                    privacy: body.privacy,
+                    terms: body.terms
+                })
                 if(body.newsletter){
                     subscribeUser(body.email)
                 }
@@ -182,7 +225,7 @@ async function sendEmail(tid, email, name) {
         }
     })
 }
-async function sendAuthorEmail({cname, email, phone, address, city, state, zip, newsletter, product, quantity}) {
+async function sendAuthorEmail({cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms}) {
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
@@ -193,7 +236,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
                     }
                 ],
                 "dynamic_template_data": {
-                    "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity" + quantity
+                    "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms
                 },
             },
         ],

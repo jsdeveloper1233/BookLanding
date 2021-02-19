@@ -65,7 +65,6 @@ function useForm(stateSchema, validationSchema = {}, callback) {
 
         const name = event.target.name;
         const value = event.target.checked;
-        console.log(value + "Value in hpook")
         let error = "";
         if (validationSchema[name].required) {
             if (!value) {

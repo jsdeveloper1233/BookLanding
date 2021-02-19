@@ -19,7 +19,9 @@ function CheckoutBody({total, shipping}) {
         zip: {value: "", error: ""},
         email: {value: "", error: ""},
         phone: {value: "", error: ""},
-        newsletter: {value: false, error: ""}
+        newsletter: {value: false, error: ""},
+        privacy: {value: false, error: ""},
+        terms: {value: false, error: ""}
     };
 
     const validationStateSchema = {
@@ -84,6 +86,12 @@ function CheckoutBody({total, shipping}) {
             }
         },
         newsletter: {
+            required: false
+        },
+        privacy: {
+            required: false
+        },
+        terms: {
             required: false
         }
     };
@@ -249,12 +257,12 @@ function CheckoutBody({total, shipping}) {
                                             <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Checkbox 1</label>
+                                            <input type="checkbox" value={state.privacy.value} onChange={handleCheckBoxOnChange} name="privacy" className="form-check-input form-controla" id="newsletter" />
+                                            <label className="form-check-label" htmlFor="create-an-account">Privacy</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Checkbox 2</label>
+                                            <input type="checkbox" value={state.terms.value} onChange={handleCheckBoxOnChange} name="terms" className="form-check-input form-controla" id="newsletter" />
+                                            <label className="form-check-label" htmlFor="create-an-account">Terms and conditions</label>
                                         </div>
                                     </div>
 
@@ -274,7 +282,7 @@ function CheckoutBody({total, shipping}) {
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value}/>
+                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value}/>
 
                     </div>
                 </form>
