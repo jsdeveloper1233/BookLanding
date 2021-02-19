@@ -30,7 +30,7 @@ class Pricing2 extends Component {
                   <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
                   <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
                 </ul>
-                <Link href="#">
+                <Link href={{ pathname: '/checkout', query: { product: 'ebook' } }}>
                   <a className="btn btn-primary">KUP KSIĄŻKE</a>
                   
                 </Link>
@@ -52,7 +52,7 @@ class Pricing2 extends Component {
                   <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
                   </li>
                 </ul>
-                <Link href="#">
+                <Link href={{ pathname: '/checkout', query: { product: 'pdf' } }}>
                   <a className="btn btn-primary">KUP EBOOK</a>
                 </Link>
               </div>
@@ -80,7 +80,7 @@ class Pricing2 extends Component {
                     Prawda w Związku"
                   </li>
                 </ul>
-                <Link href="#">
+                <Link href={{ pathname: '/checkout', query: { product: 'hard' } }}>
                   <a className="btn btn-primary">KUP PAKIET</a>
                 </Link>
                 <p className="you-save">Oszczędzasz 56 zł</p>

@@ -1,12 +1,15 @@
 import React from 'react';
 import OrderSummary from './OrderSummary';
 import useForm from './userForm';
+import {useRouter} from 'next/router'
 
 function CheckoutBody({total, shipping}) {
     function handleSubmit() {
-        console.log("Form submitted.");
+        // console.log("aaaaForm submitted.");
+        // var ur = useRouter()
+        // console.log(ur.query.product)
     }
-
+    
     const stateSchema = {
         firstName: {value: "", error: ""},
         lastName: {value: "", error: ""},
@@ -15,7 +18,8 @@ function CheckoutBody({total, shipping}) {
         state: {value: "", error: ""},
         zip: {value: "", error: ""},
         email: {value: "", error: ""},
-        phone: {value: "", error: ""}
+        phone: {value: "", error: ""},
+        newsletter: {value: false, error: ""}
     };
 
     const validationStateSchema = {
@@ -78,10 +82,13 @@ function CheckoutBody({total, shipping}) {
                 regEx: /^\+[0-9]?()[0-9](\s|\S)(\d[0-9]{9})$/,
                 error: "Invalid phone number format use like +2923432432432."
             }
+        },
+        newsletter: {
+            required: false
         }
     };
 
-    const { state, handleOnChange, handleOnSubmit, disable } = useForm (
+    const { state, handleOnChange, handleOnSubmit, disable, handleCheckBoxOnChange } = useForm (
         stateSchema,
         validationStateSchema,
         handleSubmit
@@ -95,14 +102,6 @@ function CheckoutBody({total, shipping}) {
     return (
         <section className="checkout-area ptb-100">
             <div className="container">
-                <div className="row">
-                    <div className="col-lg-12 col-md-12">
-                        <div className="user-actions">
-                            <i className="icofont-ui-file"></i>
-                            <span>Returning customer? <a href="#">Click here to login</a></span>
-                        </div>
-                    </div>
-                </div>
 
                 <form onSubmit={handleOnSubmit}>
                     <div className="row">
@@ -112,22 +111,18 @@ function CheckoutBody({total, shipping}) {
                             <div className="bar"></div>
 
                             <div className="row">
-                                <div className="col-lg-12 col-md-12">
+                                {/* <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
                                         <label>Country <span className="required">*</span></label>
                                         
                                         <div className="select-box">
                                             <select className="form-control">
-                                                <option value="5">United Arab Emirates</option>
-                                                <option value="1">China</option>
-                                                <option value="2">United Kingdom</option>
-                                                <option value="0">Germany</option>
-                                                <option value="3">France</option>
-                                                <option value="4">Japan</option>
+                                                <option value="Poland">Poland</option>
+                                                <option value="Other">Other</option>
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
@@ -157,12 +152,12 @@ function CheckoutBody({total, shipping}) {
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12 col-md-12">
+                                    {/* <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
                                             <label>Company Name</label>
                                             <input type="text" className="form-control" />
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
@@ -250,28 +245,28 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
-                                            <input type="checkbox" className="form-check-input" id="create-an-account" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Create an account?</label>
+                                            <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
+                                            <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-12 col-md-12">
+                                    {/* <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
                                             <input type="checkbox" className="form-check-input" id="ship-different-address" />
                                             <label className="form-check-label" htmlFor="ship-different-address">Ship to a different address?</label>
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <div className="col-lg-12 col-md-12">
+                                    {/* <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
                                             <textarea name="notes" id="notes" cols="30" rows="4" placeholder="Order Notes" className="form-control" />
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} />
+                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value}/>
 
                     </div>
                 </form>

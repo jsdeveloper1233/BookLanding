@@ -37,7 +37,35 @@ function useForm(stateSchema, validationSchema = {}, callback) {
 
         const name = event.target.name;
         const value = event.target.value;
+        let error = "";
+        if (validationSchema[name].required) {
+            if (!value) {
+                error = "This is required field.";
+            }
+        }
 
+        if (
+            validationSchema[name].validator !== null &&
+            typeof validationSchema[name].validator === "object"
+        ) {
+            if (validationSchema[name].validator.regEx){
+                if (value && !validationSchema[name].validator.regEx.test(value)) {
+                    error = validationSchema[name].validator.error;
+                }
+            }
+        }
+
+        setState(prevState => ({
+            ...prevState,
+            [name]: { value, error }
+        }));
+    }
+    function handleCheckBoxOnChange(event) {
+        setIsDirty(true);
+
+        const name = event.target.name;
+        const value = event.target.checked;
+        console.log(value + "Value in hpook")
         let error = "";
         if (validationSchema[name].required) {
             if (!value) {
@@ -72,7 +100,7 @@ function useForm(stateSchema, validationSchema = {}, callback) {
         }
     }
 
-    return { state, disable, handleOnChange, handleOnSubmit };
+    return { state, disable, handleOnChange, handleOnSubmit, handleCheckBoxOnChange };
 }
 
 export default useForm;

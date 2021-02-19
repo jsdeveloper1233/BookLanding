@@ -13,11 +13,11 @@ class Payments extends React.Component {
     render(){
         let { amount } = this.props;
         const onToken = async token => {
-            const body = {
-                amount: amount,
-                token: token
-            };  
-            await axios.post("/api/stripe/checkout", body);
+            // const body = {
+            //     amount: amount,
+            //     token: token
+            // };  
+            // await axios.post("/api/stripe/checkout", body);
         };
 
         return (

@@ -94,7 +94,6 @@ class Navbar extends React.Component {
                   <br /> Osobistego
                 </a>
                 {/* </Link> */}
-
                 <button
                   onClick={this.toggleNavbar}
                   className={classTwo}
