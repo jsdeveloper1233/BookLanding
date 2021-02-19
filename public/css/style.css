@@ -7473,3 +7473,7 @@ td.product-name {
   justify-content: space-between;
 }
 
+.required {
+  color: red;
+}
+

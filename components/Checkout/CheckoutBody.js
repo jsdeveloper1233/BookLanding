@@ -82,17 +82,17 @@ function CheckoutBody({total, shipping}) {
             required: true,
             validator: {
                 regEx: /^(?:[+]{0,1}[0-9]●?){8,8}[0-9]$/,
-                error: "Invalid phone number format use like +2923432432432."
+                error: "Niepoprawny format numeru telefonu"
             }
         },
         newsletter: {
             required: false
         },
         privacy: {
-            required: false
+            required: true
         },
         terms: {
-            required: false
+            required: true
         }
     };
 
@@ -256,13 +256,14 @@ function CheckoutBody({total, shipping}) {
                                             <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
                                             <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
                                         </div>
+                                            
                                         <div className="form-check">
-                                            <input type="checkbox" value={state.privacy.value} onChange={handleCheckBoxOnChange} name="terms" className="form-check-input form-controla" id="newsletter" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Zapoznałam/em się z regulaminem sklepu i akceptuję go.</label>
+                                            <input type="checkbox" value={state.privacy.value} onChange={handleCheckBoxOnChange} name="terms" className="form-check-input form-controla" id="privacy" />
+                                            <label className="form-check-label" htmlFor="create-an-account"><span className="required">* </span> Zapoznałam/em się z regulaminem sklepu i akceptuję go.</label>
                                         </div>
                                         <div className="form-check">
-                                            <input type="checkbox" value={state.terms.value} onChange={handleCheckBoxOnChange} name="privacy" className="form-check-input form-controla" id="newsletter" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Wyrażam zgodę na przetwarzanie i wykorzystanie moich danych osobowych w celu realizacji zamówienia przez Life Consulting, ul. Bluszczańska 32/1, 00-712 Warszawa, NIP: 5222841056, który jest administratorem danych osobowych zgodnie z przepisami Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE i ustawy o ochronie danych osobowych z dnia 10 maja 2018 r. (Dz.U. 2018 poz. 1000).</label>
+                                            <input type="checkbox" value={state.terms.value} onChange={handleCheckBoxOnChange} name="privacy" className="form-check-input form-controla" id="terms" />
+                                            <label className="form-check-label" htmlFor="create-an-account"><span className="required">* </span> Wyrażam zgodę na przetwarzanie i wykorzystanie moich danych osobowych w celu realizacji zamówienia przez Life Consulting, ul. Bluszczańska 32/1, 00-712 Warszawa, NIP: 5222841056, który jest administratorem danych osobowych zgodnie z przepisami Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE i ustawy o ochronie danych osobowych z dnia 10 maja 2018 r. (Dz.U. 2018 poz. 1000).</label>
                                         </div>
                                     </div>
 

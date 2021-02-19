@@ -36,25 +36,25 @@ class OrderSummary extends Component {
         // console.log(this.state.product)
     }
     orderProduct(){
-        axios.post("/api/buy/"+this.state.product.sku, {
-            "email":this.props.email,
-            "name":this.props.name,
-            "phone":this.props.phone,
-            "address":this.props.address,
-            "city":this.props.city,
-            "state":this.props.state,
-            "zip":this.props.zip,
-            "newsletter":this.props.newsletter,
-            "product": this.state.product.name,
-            "quantity": this.state.quantity,
-            "total": this.state.total,
-            "privacy": this.props.privacy,
-            "terms": this.props.terms
-        }).then((d)=> {
-            console.log(d.data)
-            console.log(d.data.link)
-            window.open(d.data.link, '_blank');
-        })
+        // axios.post("/api/buy/"+this.state.product.sku, {
+        //     "email":this.props.email,
+        //     "name":this.props.name,
+        //     "phone":this.props.phone,
+        //     "address":this.props.address,
+        //     "city":this.props.city,
+        //     "state":this.props.state,
+        //     "zip":this.props.zip,
+        //     "newsletter":this.props.newsletter,
+        //     "product": this.state.product.name,
+        //     "quantity": this.state.quantity,
+        //     "total": this.state.total,
+        //     "privacy": this.props.privacy,
+        //     "terms": this.props.terms
+        // }).then((d)=> {
+        //     console.log(d.data)
+        //     console.log(d.data.link)
+        //     window.open(d.data.link, '_blank');
+        // })
     }
 
     decreaseQuantity () {
