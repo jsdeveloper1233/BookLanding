@@ -36,7 +36,6 @@ class OrderSummary extends Component {
         // console.log(this.state.product)
     }
     orderProduct(){
-        console.log(this.state.product)
         axios.post("/api/buy/"+this.state.product.sku, {
             "email":this.props.email,
             "name":this.props.name,
@@ -46,6 +45,7 @@ class OrderSummary extends Component {
             "state":this.props.state,
             "zip":this.props.zip,
             "newsletter":this.props.newsletter,
+            "product": this.state.product.name
         }).then((d)=> {
             console.log(d.data)
             console.log(d.data.link)
@@ -151,8 +151,9 @@ class OrderSummary extends Component {
                         </p>
                     </div>
                     {!this.state.load?(<></>): <div className="order-btn">
+                    <button  onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
 
-                        <button disabled={this.props.disabled} onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
+                        {/* DAVID CASAS <button disabled={this.props.disabled} onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} > */}
                             Place Order
                         </button>
                     </div>}

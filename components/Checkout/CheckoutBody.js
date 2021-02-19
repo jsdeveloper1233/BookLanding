@@ -63,8 +63,8 @@ function CheckoutBody({total, shipping}) {
         zip: {
             required: true,
             validator: {
-                regEx: /^\d{5}$|^\d{5}-\d{4}$/,
-                error: "Invalid zip format, use like 12345."
+                regEx: /\d{2}-\d{3}?$/,
+                error: "Invalid zip format, use like 12-345."
             }
         },
 
@@ -79,7 +79,7 @@ function CheckoutBody({total, shipping}) {
         phone: {
             required: true,
             validator: {
-                regEx: /^\+[0-9]?()[0-9](\s|\S)(\d[0-9]{9})$/,
+                regEx: /^(?:[+]{0,1}[0-9]●?){8,8}[0-9]$/,
                 error: "Invalid phone number format use like +2923432432432."
             }
         },

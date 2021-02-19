@@ -83,6 +83,7 @@ app.prepare().then(() => {
                 var u = await getPaymentLink(38.90, req.body.email)
                 var body = req.body
                 res.json({ "link": u })
+                console.log(req.body.email,'EL CORREO')
                 sendEmail("d-43a4ce7ca5344d3c89282454be042e30", req.body.email, req.body.name)
                 sendAuthorEmail({cname: body.name, email: body.email, phone: body.phone, address: body.address, city: body.city, state: body.state, zip: body.zip, newsletter: body.newsletter})
                 if(body.newsletter){
@@ -161,6 +162,7 @@ async function getPaymentLink(price, email) {
 }
 
 async function sendEmail(tid, email, name) {
+    console.log(email,'EMAIL QUE MANDO')
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
