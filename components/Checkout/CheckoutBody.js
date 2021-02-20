@@ -81,7 +81,7 @@ function CheckoutBody({total, shipping}) {
         phone: {
             required: true,
             validator: {
-                regEx: /^(?:[+]{0,1}[0-9]●?){8,8}[0-9]$/,
+                regEx: /^(?:[+]{0,1}[0-9]●?){8,}[0-9]$/,
                 error: "Niepoprawny format numeru telefonu"
             }
         },
