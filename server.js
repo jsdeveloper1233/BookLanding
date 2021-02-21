@@ -201,7 +201,6 @@ async function getPaymentLink(price, email) {
 }
 
 async function sendEmail(tid, email, name) {
-    console.log(email,'EMAIL QUE MANDO')
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
@@ -240,7 +239,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
             },
         ],
         "from": {
-            "email": "ahmedmgh67@gmail.com",
+            "email": "sergio@sergiosdorje.com",
             "name": "Sergio L"
         },
         "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
