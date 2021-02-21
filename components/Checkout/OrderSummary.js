@@ -117,7 +117,7 @@ class OrderSummary extends Component {
                                         </div>
                                     </td>
                                     <td className="product-total">
-                                        <span className="subtotal-amount">${this.state.product.price}</span>
+                                        <span className="subtotal-amount">{this.state.product.price} zł</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -126,7 +126,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="order-subtotal-price">
-                                        <span className="order-subtotal-amount">${this.state.product.price}</span>
+                                        <span className="order-subtotal-amount">{this.state.product.price} zł</span>
                                     </td>
                                 </tr>
 
@@ -136,7 +136,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="shipping-price">
-                                        <span>$0.00</span>
+                                        <span>0.00 zł</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -145,7 +145,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="product-subtotal">
-                                        <span className="subtotal-amount">${this.state.total}</span>
+                                        <span className="subtotal-amount">{this.state.total} zł</span>
                                     </td>
                                 </tr>
                             </tbody>}
