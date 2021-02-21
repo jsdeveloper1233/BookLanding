@@ -214,7 +214,7 @@ async function sendEmail(tid, email, name) {
         ],
         "from": {
             "email": "sergio@sergiosdorje.com",
-            "name": "Sergio L"
+            "name": "Sergio S Dorje"
         },
         "template_id": tid
     }, {
@@ -230,7 +230,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
                 "to": [
                     {
                         "email": "sergio@sergiosdorje.com",
-                        "name": "Sergio L"
+                        "name": "Sergio S Dorje"
                     }
                 ],
                 "dynamic_template_data": {
@@ -240,7 +240,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
         ],
         "from": {
             "email": "sergio@sergiosdorje.com",
-            "name": "Sergio L"
+            "name": "Sergio S Dorje"
         },
         "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
     }, {
