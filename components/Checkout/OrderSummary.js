@@ -3,24 +3,11 @@ import { connect } from 'react-redux';
 import Link from "next/link";
 import Payment from '../Payment/Payment';
 import { useRouter } from 'next/router'
+import buyingOptions from '../../buyingOptions'
 import axios from 'axios'
 class OrderSummary extends Component {
     products = {
-        "ebook": {
-            "name": "Ebook Version ",
-            "price": "38.90",
-            "sku": "ebook"
-        },
-        "pdf": {
-            "name": "PDF Version",
-            "price": "39.90",
-            "sku": "pdf"
-        },
-        "hard": {
-            "name": "Hard Copy Version",
-            "price": "69.90",
-            "sku": "hard"
-        }
+        ...buyingOptions
     }
     constructor(props) {
         super(props);
@@ -49,7 +36,8 @@ class OrderSummary extends Component {
             "quantity": this.state.quantity,
             "total": this.state.total,
             "privacy": this.props.privacy,
-            "terms": this.props.terms
+            "terms": this.props.terms,
+            "comment":this.props.comment
         }).then((d)=> {
             console.log(d.data)
             console.log(d.data.link)
@@ -59,7 +47,7 @@ class OrderSummary extends Component {
 
     decreaseQuantity () {
         let newQuantity = this.state.quantity - 1
-        let newPrice = (this.state.product.price * newQuantity).toFixed(2)
+        let newPrice = (Math.round(this.state.product.price * 100) * newQuantity)/100
         if(newQuantity <= 1) {
             newQuantity = 1
             newPrice = this.state.product.price
@@ -69,13 +57,12 @@ class OrderSummary extends Component {
 
     increaseQuantity () {
         const newQuantity = this.state.quantity + 1
-        const newPrice = (this.state.product.price * newQuantity).toFixed(2)
+        const newPrice = (Math.round(this.state.product.price * 100) * newQuantity)/100
         this.setState({quantity: newQuantity, total: newPrice })
 
     }
 
     render() {
-        let totalAmount = (this.props.total).toFixed(2)
         return (
             <div className="col-lg-6 col-md-12">
                 <div className="order-details">
@@ -126,7 +113,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="order-subtotal-price">
-                                        <span className="order-subtotal-amount">{this.state.product.price} zł</span>
+                                        <span className="order-subtotal-amount">{this.state.total} zł</span>
                                     </td>
                                 </tr>
 
@@ -136,7 +123,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="shipping-price">
-                                        <span>0.00 zł</span>
+                                        <span>{this.state.product.shipping} zł</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -145,7 +132,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="product-subtotal">
-                                        <span className="subtotal-amount">{this.state.total} zł</span>
+                                        <span className="subtotal-amount">{this.state.total + this.state.product.shipping} zł</span>
                                     </td>
                                 </tr>
                             </tbody>}
@@ -177,9 +164,16 @@ class OrderSummary extends Component {
                         </p>
                     </div>
                     {!this.state.load?(<></>): <div className="order-btn">
-                    <button disabled={this.props.disabled}  onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
-                        Place Order
-                    </button>
+
+                        <button disabled={this.props.disabled} onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
+                            Place Order
+                        </button>
+
+                        <div className="order-image">
+                            <img src={this.state.product.image} alt={this.state.product.name}></img>
+                        </div>
+                            
+
                     </div>}
                     {/* <Payment 
                         amount={totalAmount * 100}

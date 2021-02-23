@@ -21,14 +21,35 @@ function CheckoutBody({total, shipping}) {
         phone: {value: "", error: ""},
         newsletter: {value: false, error: ""},
         privacy: {value: false, error: ""},
-        terms: {value: false, error: ""}
+        terms: {value: false, error: ""},
+        comment: {value: "", error: ""}
     };
+
+    const states = [
+        "",
+        "dolnośląskie",
+        "kujawsko-pomorskie",
+        "lubelskie",
+        "lubuskie",
+        "łódzkie",
+        "małopolskie",
+        "mazowieckie",
+        "opolskie",
+        "podkarpackie",
+        "podlaskie",
+        "pomorskie",
+        "śląskie",
+        "świętokrzyskie",
+        "warmińsko-mazurskie",
+        "wielkopolskie",
+        "zachodniopomorskie"
+    ];
 
     const validationStateSchema = {
         firstName: {
             required: true,
             validator: {
-            regEx: /^[a-zA-Z]+$/,
+            regEx: /^[a-zA-Z\.-]+$/,
             error: "Invalid first name format."
             }
         },
@@ -36,7 +57,7 @@ function CheckoutBody({total, shipping}) {
         lastName: {
             required: true,
             validator: {
-            regEx: /^[a-zA-Z]+$/,
+            regEx: /^[a-zA-Z\.-]+$/,
             error: "Invalid last name format."
             }
         },
@@ -51,15 +72,12 @@ function CheckoutBody({total, shipping}) {
         city: {
             required: true,
             validator: {
-                error: "Invalid last name format."
+                error: "Invalid city format."
             }
         },
 
         state: {
-            required: true,
-            validator: {
-                error: "Invalid last name format."
-            }
+            required: true
         },
 
         zip: {
@@ -85,6 +103,7 @@ function CheckoutBody({total, shipping}) {
                 error: "Niepoprawny format numeru telefonu"
             }
         },
+
         newsletter: {
             required: false
         },
@@ -93,6 +112,10 @@ function CheckoutBody({total, shipping}) {
         },
         terms: {
             required: true
+        },
+
+        comment: {
+            required: false
         }
     };
 
@@ -198,13 +221,16 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
                                             <label>State / County <span className="required">*</span></label>
-                                            <input 
-                                                type="text" 
-                                                name="state"
+                                            <select 
+                                                name="state" 
                                                 className="form-control" 
                                                 onChange={handleOnChange}
-                                                value={state.state.value}
-                                            />
+                                                value={state.state.value}>
+                                                    {states.map(x => 
+                                                        <option key={x} value={x}>{x}</option>
+                                                    )}
+                                                </select>
+                                            
                                             {state.state.error && <p style={errorStyle}>{state.state.error}</p>}
                                         </div>
                                     </div>
@@ -252,6 +278,20 @@ function CheckoutBody({total, shipping}) {
                                     </div>
 
                                     <div className="col-lg-12 col-md-12">
+                                        <div className="form-group">
+                                            <label>Comment </label>
+                                            <textarea 
+                                                type="text" 
+                                                name="comment"
+                                                className="form-control" 
+                                                onChange={handleOnChange}
+                                                value={state.comment.value}
+                                            />
+                                            {state.comment.error && <p style={errorStyle}>{state.comment.error}</p>}
+                                        </div>
+                                    </div>
+
+                                    <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
                                             <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
                                             <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
@@ -283,7 +323,7 @@ function CheckoutBody({total, shipping}) {
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value}/>
+                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value} comment={state.comment.value}/>
 
                     </div>
                 </form>

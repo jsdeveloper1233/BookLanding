@@ -17,6 +17,7 @@ const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({ dir: '.', dev });
 const handle = routes.getRequestHandler(app);
+const buingOptions = require('./buyingOptions');
 
 app.prepare().then(() => {
     const server = express();
@@ -79,9 +80,12 @@ app.prepare().then(() => {
     })
     server.post("/api/buy/:p", async (req, res) => {
         
-        const total = parseFloat(req.body.total)
+        const quantity = body.quantity;
+
         switch (req.params.p) {
-            case "ebook":
+
+            case buingOptions.ebook.sku:
+                const total = (quantity * Math.round(buingOptions.ebook.price * 100))/100;
                 var u = await getPaymentLink(total, req.body.email)
                 var body = req.body
                 res.json({ "link": u })
@@ -94,25 +98,28 @@ app.prepare().then(() => {
                     city: body.city, 
                     state: body.state, 
                     zip: body.zip, 
-                    newsletter: 
-                    body.newsletter, 
-                    product: 
-                    body.product, 
-                    quantity: 
-                    body.quantity, 
+                    newsletter: body.newsletter, 
+                    product: body.product, 
+                    quantity: body.quantity, 
                     privacy: body.privacy,
-                    terms: body.terms
+                    terms: body.terms,
+                    comment: body.comment
                 })
+
                 if(body.newsletter){
                     subscribeUser(body.email)
                 }
                 break;
-            case "pdf":
+
+            case buingOptions.paperCopy.sku:
+                const total = (quantity * Math.round(buingOptions.paperCopy.price * 100) / 100) + buingOptions.paperCopy.shipping;
                 var u = await getPaymentLink(total, req.body.email)
+
                 var body = req.body
 
                 res.json({ "link": u })
                 sendEmail("d-889a4f6a165a425cb98e7dae11baa998", req.body.email, req.body.name)
+
                 sendAuthorEmail({
                     cname: body.name, 
                     email: body.email, 
@@ -125,13 +132,17 @@ app.prepare().then(() => {
                     product: body.product, 
                     quantity: body.quantity,
                     privacy: body.privacy,
-                    terms: body.terms
-                })
+                    terms: body.terms,
+                    comment: body.comment
+                });
+
                 if(body.newsletter){
                     subscribeUser(body.email)
                 }
                 break;
-            case "hard":
+                
+            case buingOptions.bundle.sku:
+                const total = (quantity * Math.round(buingOptions.bundle.price * 100) / 100) + buingOptions.bundle.shipping;
                 var u = await getPaymentLink(total, req.body.email)
                 var body = req.body
                 res.json({ "link": u })
@@ -148,8 +159,10 @@ app.prepare().then(() => {
                     product: body.product, 
                     quantity: body.quantity,
                     privacy: body.privacy,
-                    terms: body.terms
+                    terms: body.terms,
+                    comment: body.comment
                 })
+
                 if(body.newsletter){
                     subscribeUser(body.email)
                 }
@@ -171,7 +184,7 @@ app.prepare().then(() => {
     });
 })
 async function getPaymentLink(price, email) {
-    const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', true)
+    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, dev)
     // Set obligatory data
     P24.setSessionId(uuidv4())
     P24.setAmount(price * 100)
@@ -219,11 +232,11 @@ async function sendEmail(tid, email, name) {
         "template_id": tid
     }, {
         headers: {
-            "Authorization": "Bearer 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"
+            "Authorization": process.env.SENDGRID_AUTH_TOKEN
         }
     })
 }
-async function sendAuthorEmail({cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms}) {
+async function sendAuthorEmail({cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment}) {
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
@@ -234,7 +247,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
                     }
                 ],
                 "dynamic_template_data": {
-                    "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms
+                    "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
                 },
             },
         ],
@@ -245,7 +258,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
         "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
     }, {
         headers: {
-            "Authorization": "Bearer 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"
+            "Authorization": process.env.SENDGRID_AUTH_TOKEN
         }
     })
 }

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Layouts/Navbar';
 import Footer from '../components/Layouts/Footer';
 import Banner from '../components/Checkout/Banner';
 import CheckoutBody from '../components/Checkout/CheckoutBody';
+import EmptyNavbar from '../components/Layouts/EmptyNavbar';
 
 class Checkout extends Component {
     render() {
         return (
             <React.Fragment>
-                <Navbar />
+                <EmptyNavbar />
                 <Banner />
                 <CheckoutBody />
                 <Footer />

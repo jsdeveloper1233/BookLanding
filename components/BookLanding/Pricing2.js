@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Link from "next/link";
+import buingOptions from "../../buyingOptions";
 
 class Pricing2 extends Component {
   render() {
@@ -21,7 +22,7 @@ class Pricing2 extends Component {
                 <div className="pricingTable-header">
                   <h3 className="title">Tylko eBook</h3>
                   <div className="price-value">
-                  &nbsp;&nbsp;38,90 <sup>zł</sup>
+                  &nbsp;&nbsp;{buingOptions.ebook.price} <sup>zł</sup>
                   </div>
                 </div>
 
@@ -31,7 +32,7 @@ class Pricing2 extends Component {
                   <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
                 </ul>
                 <Link href={{ pathname: '/checkout', query: { product: 'ebook' } }}>
-                  <a className="btn btn-primary">KUP KSIĄŻKE</a>
+                  <a className="btn btn-primary">KUP EBOOK</a>
                   
                 </Link>
               </div>
@@ -42,8 +43,8 @@ class Pricing2 extends Component {
                 <div className="pricingTable-header">
                   <h3 className="title">Tylko książka</h3>
                   <div className="price-value">
-                  &nbsp;&nbsp;39,90 <sup>zł</sup>
-                    <p>+ 15 - 17 zł wysyłka kurierem</p>
+                  &nbsp;&nbsp;{buingOptions.paperCopy.price} <sup>zł</sup>
+                    <p>+ {buingOptions.paperCopy.shipping} zł wysyłka kurierem</p>
                   </div>
                 </div>
 
@@ -52,8 +53,8 @@ class Pricing2 extends Component {
                   <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
                   </li>
                 </ul>
-                <Link href={{ pathname: '/checkout', query: { product: 'pdf' } }}>
-                  <a className="btn btn-primary">KUP EBOOK</a>
+                <Link href={{ pathname: '/checkout', query: { product: 'paperCopy' } }}>
+                  <a className="btn btn-primary">KUP KSIĄŻKĘ</a>
                 </Link>
               </div>
             </div>
@@ -63,8 +64,8 @@ class Pricing2 extends Component {
                 <div className="pricingTable-header">
                   <h3 className="title">Pakiet</h3>
                   <div className="price-value">
-                  &nbsp;&nbsp; 69,90 <sup>zł</sup>
-                    <p>+ 0 zł wysyłka kurierem !!</p>
+                  &nbsp;&nbsp; {buingOptions.bundle.price} <sup>zł</sup>
+                    <p>+ {buingOptions.bundle.shipping} zł wysyłka kurierem !!</p>
                   </div>
                 </div>
 
@@ -80,10 +81,10 @@ class Pricing2 extends Component {
                     Prawda w Związku"
                   </li>
                 </ul>
-                <Link href={{ pathname: '/checkout', query: { product: 'hard' } }}>
+                <Link href={{ pathname: '/checkout', query: { product: 'bundle' } }}>
                   <a className="btn btn-primary">KUP PAKIET</a>
                 </Link>
-                <p className="you-save">Oszczędzasz 56 zł</p>
+                <p className="you-save">Oszczędzasz {buingOptions.bundle.discount} zł</p>
               </div>
             </div>
           </div>
