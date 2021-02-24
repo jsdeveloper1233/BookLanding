@@ -17,26 +17,8 @@ class Pricing2 extends Component {
           </div>
 
           <div className="row">
-            <div className="col-lg-4 col-md-6">
-              <div className="pricing-table-box">
-                <div className="pricingTable-header">
-                  <h3 className="title">Tylko eBook</h3>
-                  <div className="price-value">
-                  &nbsp;&nbsp;{buingOptions.ebook.price} <sup>zł</sup>
-                  </div>
-                </div>
 
-                <ul className="pricing-content">
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
-                </ul>
-                <Link href={{ pathname: '/checkout', query: { product: 'ebook' } }}>
-                  <a className="btn btn-primary">KUP EBOOK</a>
-                  
-                </Link>
-              </div>
-            </div>
+     
 
             <div className="col-lg-4 col-md-6">
               <div className="pricing-table-box">
@@ -47,7 +29,6 @@ class Pricing2 extends Component {
                     <p>+ {buingOptions.paperCopy.shipping} zł wysyłka kurierem</p>
                   </div>
                 </div>
-
                 <ul className="pricing-content">
                   <li>
                   <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
@@ -55,6 +36,26 @@ class Pricing2 extends Component {
                 </ul>
                 <Link href={{ pathname: '/checkout', query: { product: 'paperCopy' } }}>
                   <a className="btn btn-primary">KUP KSIĄŻKĘ</a>
+                </Link>
+              </div>
+            </div>
+
+                   
+            <div className="col-lg-4 col-md-6">
+              <div className="pricing-table-box">
+                <div className="pricingTable-header">
+                  <h3 className="title">Tylko eBook</h3>
+                  <div className="price-value">
+                  &nbsp;&nbsp;{buingOptions.ebook.price} <sup>zł</sup>
+                  </div>
+                </div>
+                <ul className="pricing-content">
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
+                </ul>
+                <Link href={{ pathname: '/checkout', query: { product: 'ebook' } }}>
+                  <a className="btn btn-primary">KUP EBOOK</a>
                 </Link>
               </div>
             </div>
@@ -68,7 +69,6 @@ class Pricing2 extends Component {
                     <p>+ {buingOptions.bundle.shipping} zł wysyłka kurierem !!</p>
                   </div>
                 </div>
-
                 <ul className="pricing-content">
                   <li>
                   <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
