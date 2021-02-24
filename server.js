@@ -85,7 +85,7 @@ app.prepare().then(() => {
         switch (req.params.p) {
 
             case buingOptions.ebook.sku:
-                const total = (quantity * Math.round(buingOptions.ebook.price * 100))/100;
+                var total = (quantity * Math.round(buingOptions.ebook.price * 100))/100;
                 var u = await getPaymentLink(total, req.body.email)
                 var body = req.body
                 res.json({ "link": u })
@@ -112,7 +112,7 @@ app.prepare().then(() => {
                 break;
 
             case buingOptions.paperCopy.sku:
-                const total = (quantity * Math.round(buingOptions.paperCopy.price * 100) / 100) + buingOptions.paperCopy.shipping;
+                var total = (quantity * Math.round(buingOptions.paperCopy.price * 100) / 100) + buingOptions.paperCopy.shipping;
                 var u = await getPaymentLink(total, req.body.email)
 
                 var body = req.body
@@ -142,7 +142,7 @@ app.prepare().then(() => {
                 break;
                 
             case buingOptions.bundle.sku:
-                const total = (quantity * Math.round(buingOptions.bundle.price * 100) / 100) + buingOptions.bundle.shipping;
+                var total = (quantity * Math.round(buingOptions.bundle.price * 100) / 100) + buingOptions.bundle.shipping;
                 var u = await getPaymentLink(total, req.body.email)
                 var body = req.body
                 res.json({ "link": u })
