@@ -49,7 +49,7 @@ function CheckoutBody({total, shipping}) {
         firstName: {
             required: true,
             validator: {
-            regEx: /^[a-zA-Z\.-]+$/,
+            regEx: /^[a-zA-Z\.-\s]+$/,
             error: "Invalid first name format."
             }
         },
@@ -57,7 +57,7 @@ function CheckoutBody({total, shipping}) {
         lastName: {
             required: true,
             validator: {
-            regEx: /^[a-zA-Z\.-]+$/,
+            regEx: /^[a-zA-Z\.-\s]+$/,
             error: "Invalid last name format."
             }
         },
