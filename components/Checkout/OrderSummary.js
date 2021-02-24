@@ -24,7 +24,7 @@ class OrderSummary extends Component {
     }
     constructor(props) {
         super(props);
-        this.state = {product:null, load: false};
+        this.state = { product: null, load: false, quantity: 1};
     }
     componentDidMount() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -32,11 +32,10 @@ class OrderSummary extends Component {
         // console.log(myParam)
         var p = this.products[myParam]
         // console.log(p)
-        this.setState({product: p, load: true})
+        this.setState({product: p, load: true, total: p.price})
         // console.log(this.state.product)
     }
     orderProduct(){
-        console.log(this.state.product)
         axios.post("/api/buy/"+this.state.product.sku, {
             "email":this.props.email,
             "name":this.props.name,
@@ -46,12 +45,35 @@ class OrderSummary extends Component {
             "state":this.props.state,
             "zip":this.props.zip,
             "newsletter":this.props.newsletter,
+            "product": this.state.product.name,
+            "quantity": this.state.quantity,
+            "total": this.state.total,
+            "privacy": this.props.privacy,
+            "terms": this.props.terms
         }).then((d)=> {
             console.log(d.data)
             console.log(d.data.link)
             window.open(d.data.link, '_blank');
         })
     }
+
+    decreaseQuantity () {
+        let newQuantity = this.state.quantity - 1
+        let newPrice = (this.state.product.price * newQuantity).toFixed(2)
+        if(newQuantity <= 1) {
+            newQuantity = 1
+            newPrice = this.state.product.price
+        }
+        this.setState({quantity: newQuantity, total: newPrice})
+    }
+
+    increaseQuantity () {
+        const newQuantity = this.state.quantity + 1
+        const newPrice = (this.state.product.price * newQuantity).toFixed(2)
+        this.setState({quantity: newQuantity, total: newPrice })
+
+    }
+
     render() {
         let totalAmount = (this.props.total).toFixed(2)
         return (
@@ -88,10 +110,14 @@ class OrderSummary extends Component {
                                         <Link href="#">
                                             <a>{this.state.product.name}</a>
                                         </Link>
+                                        <div className="clearfix flex">
+                                            <a className="add-product-btn btn-left" onClick={this.decreaseQuantity.bind(this)}>-</a>
+                                            <input type="value" value={this.state.quantity} name="" className="cart-items" readOnly></input>
+                                            <a className="add-product-btn btn-right" onClick={this.increaseQuantity.bind(this)}>+</a>
+                                        </div>
                                     </td>
-
                                     <td className="product-total">
-                                        <span className="subtotal-amount">${this.state.product.price}</span>
+                                        <span className="subtotal-amount">{this.state.product.price} zł</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -100,7 +126,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="order-subtotal-price">
-                                        <span className="order-subtotal-amount">${this.state.product.price}</span>
+                                        <span className="order-subtotal-amount">{this.state.product.price} zł</span>
                                     </td>
                                 </tr>
 
@@ -110,7 +136,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="shipping-price">
-                                        <span>$0.00</span>
+                                        <span>0.00 zł</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -119,7 +145,7 @@ class OrderSummary extends Component {
                                     </td>
 
                                     <td className="product-subtotal">
-                                        <span className="subtotal-amount">${this.state.product.price}</span>
+                                        <span className="subtotal-amount">{this.state.total} zł</span>
                                     </td>
                                 </tr>
                             </tbody>}
@@ -151,10 +177,9 @@ class OrderSummary extends Component {
                         </p>
                     </div>
                     {!this.state.load?(<></>): <div className="order-btn">
-
-                        <button disabled={this.props.disabled} onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
-                            Place Order
-                        </button>
+                    <button disabled={this.props.disabled}  onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
+                        Place Order
+                    </button>
                     </div>}
                     {/* <Payment 
                         amount={totalAmount * 100}
