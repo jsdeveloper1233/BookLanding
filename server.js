@@ -80,7 +80,7 @@ app.prepare().then(() => {
     })
     server.post("/api/buy/:p", async (req, res) => {
         
-        const quantity = body.quantity;
+        const quantity = req.body.quantity;
 
         switch (req.params.p) {
 
