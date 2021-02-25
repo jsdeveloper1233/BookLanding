@@ -6800,14 +6800,14 @@ Checkout CSS
   border-radius: 5px;
 }
 
-.billing-details .form-group label {
+.billing-details .form-group label, .billing-details .form-check label {
   display: block;
   color: var(--paragraphColor);
   margin-bottom: 7px;
   font-size: 16px;
 }
 
-.billing-details .form-group label .required {
+.billing-details .form-group label .required, .billing-details .form-check label .required {
   color: red;
 }
 
@@ -6857,7 +6857,11 @@ Checkout CSS
   color: var(--templateColor);
 }
 
-.order-details .order-table table tbody tr td.order-subtotal span, .order-details .order-table table tbody tr td.order-shipping span, .order-details .order-table table tbody tr td.total-price span {
+.order-details .order-table table tbody tr td.order-subtotal span, .order-details .order-table table tbody tr td.order-shipping span {
+  color: var(--paragraphColor);
+}
+
+.order-details .order-table table tbody tr td.total-price span, .order-details .order-table table tbody tr td.product-total span {
   color: var(--blackColor);
   font-weight: 700;
 }
@@ -7433,7 +7437,12 @@ span.chapter-number {
 .nav-item {
   cursor: pointer;
 }
-/*# sourceMappingURL=style.css.map */
+
+.clearfix.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 
 a.add-product-btn {
   width: 18px;
@@ -7444,36 +7453,51 @@ a.add-product-btn {
   line-height: 29px;
   height: 29px;
   font-size: 14px;
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
-.btn-left {
-  float: left
+a.add-product-btn.btn-left {
+  float: left;
 }
 
-.btn-right {
-  float: right
+a.add-product-btn.btn-right {
+  float: right;
 }
 
-.clearfix.flex {
+td.product-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-right: unset;
 }
 
-.cart-items {
+td.product-name .cart-items {
   text-align: center;
   width: 40px;
   border: 1px solid #e1e1e1;
 }
 
-td.product-name {
-  display: flex;
-  justify-content: space-between;
+.order-details .order-table table tbody tr td.order-shipping, .order-details .order-table table tbody tr td.shipping-price, .order-details .order-table table tbody tr td.order-subtotal, .order-details .order-table table tbody tr td.order-subtotal-price {
+  border-bottom: unset;
+  border-top: unset;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
-.required {
-  color: red;
+.order-details .order-table table tbody tr td.shipping-price, .order-details .order-table table tbody tr td.order-subtotal-price {
+  border-left: unset;
 }
 
+.order-details .order-table table tbody tr td.order-shipping, .order-details .order-table table tbody tr td.order-subtotal {
+  border-right: unset;
+}
+
+.order-details .order-table table tbody tr td.order-subtotal, .order-details .order-table table tbody tr td.order-subtotal-price {
+  padding-top: 25px;
+}
+/*# sourceMappingURL=style.css.map */

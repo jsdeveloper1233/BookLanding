@@ -66,15 +66,15 @@ class OrderSummary extends Component {
         return (
             <div className="col-lg-6 col-md-12">
                 <div className="order-details">
-                    <h3 className="title">Your Order</h3>
+                    <h3 className="title">Twoje zamówienie</h3>
                     <div className="bar"></div>
 
                     <div className="order-table table-responsive">
                         <table className="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col">Total</th>
+                                    <th scope="col">Produkt</th>
+                                    <th scope="col">Cena</th>
                                 </tr>
                             </thead>
 
@@ -109,7 +109,7 @@ class OrderSummary extends Component {
                                 </tr>
                                 <tr>
                                     <td className="order-subtotal">
-                                        <span>Cart Subtotal</span>
+                                        <span className="gray-cost">Suma</span>
                                     </td>
 
                                     <td className="order-subtotal-price">
@@ -119,7 +119,7 @@ class OrderSummary extends Component {
 
                                 <tr>
                                     <td className="order-shipping">
-                                        <span>Shipping</span>
+                                        <span className="gray-cost">Dostawa</span>
                                     </td>
 
                                     <td className="shipping-price">
@@ -128,11 +128,11 @@ class OrderSummary extends Component {
                                 </tr>
                                 <tr>
                                     <td className="total-price">
-                                        <span>Order Total</span>
+                                        <span>Do zapłaty</span>
                                     </td>
 
-                                    <td className="product-subtotal">
-                                        <span className="subtotal-amount">{this.state.total + this.state.product.shipping} zł</span>
+                                    <td className="product-total">
+                                        <span className="total-amount">{this.state.total + this.state.product.shipping} zł</span>
                                     </td>
                                 </tr>
                             </tbody>}
@@ -157,16 +157,16 @@ class OrderSummary extends Component {
                         </p> */}
                     {/* </div> */}
                     <div className="payment-method">
-                        Shipping Method:
+                        Sposób dostawy:
                         <p>
                             <input type="radio" id="express" name="radio-group" checked readOnly />
-                            <label htmlFor="prz">Express Courier</label>
+                            <label htmlFor="prz">Kurier 24/48h</label>
                         </p>
                     </div>
                     {!this.state.load?(<></>): <div className="order-btn">
 
                         <button disabled={this.props.disabled} onClick={this.orderProduct.bind(this)} className={`btn btn-primary order-btn ${this.props.disabled ? 'btn-disabled' : ''}`} >
-                            Place Order
+                            Zamawiam
                         </button>
 
                         <div className="order-image">

@@ -6449,7 +6449,7 @@ Checkout CSS
     padding: 25px;
     border-radius: 5px;
 
-    .form-group {
+    .form-group, .form-check {
         label {
             display: block;
             color: var(--paragraphColor);
@@ -6512,7 +6512,12 @@ Checkout CSS
                                 }
                             }
                         }
-                        &.order-subtotal, &.order-shipping , &.total-price {
+                        &.order-subtotal, &.order-shipping  {
+                            span {
+                                color: var(--paragraphColor);
+                            }
+                        }
+                        &.total-price, &.product-total {
                             span {
                                 color: var(--blackColor);
                                 font-weight: 700;

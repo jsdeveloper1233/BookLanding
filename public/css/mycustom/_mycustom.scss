@@ -84,7 +84,7 @@ span.chapter-number {
 
 .discover-content ul li {
   width: unset;
-  float:unset;
+  float: unset;
 }
 
 .single-features-box {
@@ -113,7 +113,7 @@ span.chapter-number {
 }
 
 .hidden-instagram-icon {
-  display:none;
+  display: none;
 }
 
 .creative-shape img {
@@ -121,5 +121,66 @@ span.chapter-number {
 }
 
 .nav-item {
-  cursor:pointer;
+  cursor: pointer;
+}
+
+.clearfix.flex {
+  display: flex;
+}
+a.add-product-btn {
+  width: 18px;
+  font-weight: bold;
+  color: #000;
+  background-color: #e1e1e1;
+  text-align: center;
+  line-height: 29px;
+  height: 29px;
+  font-size: 14px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &.btn-left {
+    float: left;
+  }
+  &.btn-right {
+    float: right;
+  }
+}
+
+td.product-name {
+  display: flex;
+  justify-content: space-between;
+  border-right: unset;
+  .cart-items {
+    text-align: center;
+    width: 40px;
+    border: 1px solid #e1e1e1;
+  }
+}
+
+.order-details .order-table table tbody tr td {
+  &.order-shipping,
+  &.shipping-price,
+  &.order-subtotal,
+  &.order-subtotal-price {
+    border-bottom:unset;
+    border-top:unset;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  &.shipping-price,
+  &.order-subtotal-price {
+  border-left: unset;
+  }
+
+  &.order-shipping,
+  &.order-subtotal {
+    border-right:unset;
+  }
+  &.order-subtotal,
+  &.order-subtotal-price {
+    padding-top:25px;
+  }
 }
