@@ -184,3 +184,24 @@ td.product-name {
     padding-top:25px;
   }
 }
+
+
+.order-image {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px;
+  border-style: ridge;
+  padding: 20px;
+  img {
+    max-width: 40%;
+  }
+  .arrow-right-order {
+    font-size: 25px;
+  }
+}
+
+.strikeout {
+  text-decoration: line-through;
+}

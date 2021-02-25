@@ -1,24 +1,25 @@
 module.exports = {
     ebook: {
         sku: 'ebook',
-        name: 'Ebook Version',
+        name: 'Wersja eBook',
         price: 38.9,
         shipping: 0.0,
-        image: '/images/sekrety-rozwoju-osobistego-mkp-sm.png'
+        image: '/images/ebook-mockup.jpg'
     },
     paperCopy: {
-        sku: 'pdf',
-        name: 'PDF Version',
+        sku: 'papierowa',
+        name: 'Wersja papierowa książki',
         price: 39.9,
         shipping: 15.0,
-        image: '/images/sekrety-rozwoju-osobistego-mkp-sm.png'
+        image: '/images/ksiazka-2.png'
     },
     bundle: {
-        sku: 'hard',
-        name: 'Hard Copy Version',
+        sku: 'pakiet',
+        name: 'Pakiet',
+        originalPrice: 90,
         price: 69.9,
         shipping: 0.0,
         discount: 56.0,
-        image: '/images/sekrety-rozwoju-osobistego-mkp-sm.png'
+        image: '/images/pakiet.jpg'
     },
 }
