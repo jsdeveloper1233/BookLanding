@@ -50,7 +50,7 @@ function CheckoutBody({total, shipping}) {
             required: true,
             validator: {
             regEx: /^[a-zA-Z\.-\s]+$/,
-            error: "Invalid first name format."
+            error: "Niepoprawny format"
             }
         },
 
@@ -58,21 +58,21 @@ function CheckoutBody({total, shipping}) {
             required: true,
             validator: {
             regEx: /^[a-zA-Z\.-\s]+$/,
-            error: "Invalid last name format."
+            error: "Niepoprawny format"
             }
         },
 
         address: {
             required: true,
             validator: {
-                error: "Invalid address format."
+                error: "Niepoprawny format"
             }
         },
 
         city: {
             required: true,
             validator: {
-                error: "Invalid city format."
+                error: "Niepoprawny format"
             }
         },
 
@@ -84,7 +84,7 @@ function CheckoutBody({total, shipping}) {
             required: true,
             validator: {
                 regEx: /\d{2}-\d{3}?$/,
-                error: "Invalid zip format, use like 12-345."
+                error: "Niepoprawny format kodu. Poprawnie to: 12-345"
             }
         },
 
@@ -92,7 +92,7 @@ function CheckoutBody({total, shipping}) {
             required: true,
             validator: {
                 regEx: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                error: "Invalid email format."
+                error: "Niepoprawny format adresu email"
             }
         },
 
@@ -138,7 +138,7 @@ function CheckoutBody({total, shipping}) {
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
                             <div className="billing-details">
-                                <h3 className="title">Billing Details</h3>
+                                <h3 className="title">Formularz zamówienia</h3>
                             <div className="bar"></div>
 
                             <div className="row">
@@ -157,7 +157,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
-                                            <label>First Name <span className="required">*</span></label>
+                                            <label>Imię <span className="required">*</span></label>
                                             <input 
                                                 type="text" 
                                                 name="firstName"
@@ -171,7 +171,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
-                                            <label>Last Name <span className="required">*</span></label>
+                                            <label>Nazwisko <span className="required">*</span></label>
                                             <input 
                                                 type="text" 
                                                 name="lastName"
@@ -192,7 +192,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
-                                            <label>Adress <span className="required">*</span></label>
+                                            <label>Adres <span className="required">*</span></label>
                                             <input 
                                                 type="text" 
                                                 name="address"
@@ -220,7 +220,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
-                                            <label>State / County <span className="required">*</span></label>
+                                            <label>Miejscowość <span className="required">*</span></label>
                                             <select 
                                                 name="state" 
                                                 className="form-control" 
@@ -237,7 +237,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
-                                            <label>Postcode / Zip <span className="required">*</span></label>
+                                            <label>Kod pocztowy <span className="required">*</span></label>
                                             <input 
                                                 type="text" 
                                                 name="zip"
@@ -251,7 +251,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
-                                            <label>Email Address <span className="required">*</span></label>
+                                            <label>Adres email <span className="required">*</span></label>
                                             <input 
                                                 type="email" 
                                                 name="email"
@@ -265,7 +265,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
-                                            <label>Phone <span className="required">*</span></label>
+                                            <label>Numer telefonu <span className="required">*</span></label>
                                             <input 
                                                 type="text" 
                                                 name="phone"
@@ -279,7 +279,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
-                                            <label>Comment </label>
+                                            <label>Uwagi do zamówienia </label>
                                             <textarea 
                                                 type="text" 
                                                 name="comment"
@@ -294,7 +294,7 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
                                             <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Subscribe to newsletter?</label>
+                                            <label className="form-check-label" htmlFor="create-an-account">Tak, interesuję się takimi tematami i wyrażam zgodę na zapisanie do newslettera.</label>
                                         </div>
                                             
                                         <div className="form-check">
