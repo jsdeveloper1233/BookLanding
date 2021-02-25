@@ -7500,4 +7500,32 @@ td.product-name .cart-items {
 .order-details .order-table table tbody tr td.order-subtotal, .order-details .order-table table tbody tr td.order-subtotal-price {
   padding-top: 25px;
 }
+
+.order-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px;
+  border-style: ridge;
+  padding: 20px;
+}
+
+.order-image img {
+  max-width: 40%;
+}
+
+.order-image .arrow-right-order {
+  font-size: 25px;
+}
+
+.strikeout {
+  text-decoration: line-through;
+}
 /*# sourceMappingURL=style.css.map */
