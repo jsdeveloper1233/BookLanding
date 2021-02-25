@@ -323,7 +323,7 @@ function CheckoutBody({total, shipping}) {
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value} comment={state.comment.value}/>
+                        <OrderSummary disabled={disable} email={state.email.value} name={"imię: " + state.firstName.value +  "Nazwisko: " + state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value} comment={state.comment.value}/>
 
                     </div>
                 </form>
