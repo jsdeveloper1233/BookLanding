@@ -247,7 +247,33 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
                     }
                 ],
                 "dynamic_template_data": {
-                    "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
+                    "data": `<h2>Wyślij do:</h2>
+                    <div>
+                    Imię i nazwisko: ${cname} <br/>
+                    Adres: ${address} <br/>
+                    Kod: ${zip} <br/>
+                    Miejscowość: ${city} <br/>
+                    <br/>
+                    Tel: ${phone} <br/>
+                    Email: ${email}
+                    </div>
+                    <br/>
+                    <div>
+                    <h2>Zamówienie</h2>
+                    Produkt zamówiony: ${product}<br/>
+                    Ilość sztuk: ${quantity}<br/>
+                    Komentarz: ${comment}
+                    </div>
+                    <br/>
+                    <div>
+                    <h2>Dodatkowe informacje</h2>
+                    Polityka prywatnośći zaznaczona: ${privacy}<br/>
+                    Regulamin zaakceptowany: ${terms}<br/>
+                    Zapisał się do newslettera: ${newsletter}
+                    </div>
+                    `
+                    
+                    // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
                 },
             },
         ],

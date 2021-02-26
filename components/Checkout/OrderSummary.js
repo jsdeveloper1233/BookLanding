@@ -230,7 +230,7 @@ class OrderSummary extends Component {
                   </Link>
                 </div>
                 <span className="arrow-right-order">
-                  <i class="icofont-long-arrow-right"></i>
+                  <i className="icofont-long-arrow-right"></i>
                 </span>
                 <img
                   src={this.state.product.image}

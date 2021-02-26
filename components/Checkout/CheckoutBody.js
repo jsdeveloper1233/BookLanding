@@ -45,11 +45,15 @@ function CheckoutBody({total, shipping}) {
         "zachodniopomorskie"
     ];
 
+    var pCL = 'a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒĄąĆćĘęŁłŃńÓóŚśŹźŻż';
+    var re = new RegExp(`^[${pCL}][${pCL}' ,".-]+$`);
+
     const validationStateSchema = {
         firstName: {
             required: true,
             validator: {
-            regEx: /^[a-zA-Z\.-\s]+$/,
+            // regEx: /^[a-zA-Z\.-\s]+$/,
+            regEx: re,
             error: "Niepoprawny format"
             }
         },
@@ -57,7 +61,8 @@ function CheckoutBody({total, shipping}) {
         lastName: {
             required: true,
             validator: {
-            regEx: /^[a-zA-Z\.-\s]+$/,
+            // regEx: /^[a-zA-Z\.-\s]+$/,
+            regEx: re,
             error: "Niepoprawny format"
             }
         },
@@ -206,7 +211,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
-                                            <label>Town / City <span className="required">*</span></label>
+                                            <label>Miejscowość <span className="required">*</span></label>
                                             <input 
                                                 type="text" 
                                                 name="city"
@@ -220,7 +225,7 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
-                                            <label>Miejscowość <span className="required">*</span></label>
+                                            <label>Województwo <span className="required">*</span></label>
                                             <select 
                                                 name="state" 
                                                 className="form-control" 
@@ -323,7 +328,7 @@ function CheckoutBody({total, shipping}) {
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} email={state.email.value} name={state.firstName.value+"  "+state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value} comment={state.comment.value}/>
+                        <OrderSummary disabled={disable} email={state.email.value} name={"imię: " + state.firstName.value +  "Nazwisko: " + state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value} comment={state.comment.value}/>
 
                     </div>
                 </form>
