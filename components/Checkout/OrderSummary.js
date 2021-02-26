@@ -48,6 +48,7 @@ class OrderSummary extends Component {
       .then((d) => {
         console.log(d.data);
         console.log(d.data.link);
+        this.setState({isLoading: false, product: this.state.product, quantity: this.state.quantity, total: this.state.total});
         window.open(d.data.link, "_blank");
       });
   }
