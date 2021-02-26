@@ -40,17 +40,17 @@ const Subscribe = () => {
           <input
             type="email"
             className="form-control"
-            placeholder="Twój adre email"
+            placeholder="Twój adres email"
             name="EMAIL"
             required={true}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <button className="btn btn-primary" type="submit">
-            Subscribe
+            Zapisz się
           </button>
         </form>
-          {status === "success" && <p>Great, check your mail and confirm</p>}
+          {status === "success" && <p className="newsletter-success-textbox"><i class="icofont-heart"></i> Świetnie! Sprawdź w mailu i potwierdź.<br /><span>P.s. Jeśli nie ma maila, sprawdź w "spamie"</span></p>}
       </div>
     </section>
   );

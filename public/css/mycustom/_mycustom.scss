@@ -205,3 +205,31 @@ td.product-name {
 .strikeout {
   text-decoration: line-through;
 }
+
+.newsletter-success-textbox {
+  max-width: 650px;
+  margin: 30px auto;
+  position: relative;
+  border-radius: 5px;
+  background: #fff;
+  color: forestgreen;
+  padding: 8px;
+  span {
+    font-size: 16px;
+  }
+}
+
+.checkout-area {
+  .form-check {
+    .form-check-input, .form-check-label {
+      cursor: pointer;
+    }
+     .form-check-input {
+      width: 20px;
+      height:20px;
+    }
+    .form-check-label {
+      padding-left: 10px;
+    }
+  }
+}

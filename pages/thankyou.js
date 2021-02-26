@@ -26,11 +26,11 @@ class TeamOne extends Component {
                 </section>
                 <div className="thank-you-area">
                     <div className="container">
-                        <h1>Your order has been confirmed.</h1>
-                        <h3>An email was sent to you.</h3>
-                        <h6>If any issues appered, contact sergio@sergiosdorje.com</h6>
+                        <h1>Twoje zamówienie zostało pomyślnie złożone.</h1>
+                        <h3>Sprawdź swój mail. Potwierdzenie zakupu zostało wysłane.</h3>
+                        <p>W razie problemów napisz do sergio@sergiosdorje.com</p>
                         <Link href="/">
-                            <a className="btn btn-primary">Go Home</a>
+                            <a className="btn btn-primary">Powrót do strony głównej</a>
                         </Link>
                     </div>
                 </div>

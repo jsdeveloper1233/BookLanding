@@ -193,19 +193,34 @@ class OrderSummary extends Component {
                             <label htmlFor="cash-on-delivery">Cash on Delivery</label>
                         </p> */}
           {/* </div> */}
-          <div className="payment-method">
+          <div className="shipping-method">
             Sposób dostawy:
             <p>
               <input
                 type="radio"
                 id="express"
-                name="radio-group"
+                name="radio-group-shipping"
                 checked
                 readOnly
               />
-              <label htmlFor="prz">Kurier 24/48h</label>
+              <label htmlFor="express">Kurier 24/48h</label>
             </p>
           </div>
+
+          <div className="payment-method">
+            Sposób płatności:
+            <p>
+              <input
+                type="radio"
+                id="przelewy24"
+                name="radio-group-payment"
+                checked
+                readOnly
+              />
+              <label htmlFor="przelewy24">Szybkie płatności Przelewy24</label>
+            </p>
+          </div>
+
           {!this.state.load ? (
             <></>
           ) : (
