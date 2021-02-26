@@ -26,7 +26,7 @@ class OrderSummary extends Component {
   }
   orderProduct() {
 
-    this.setState({isLoading: true})
+    this.setState({isLoading: true, product: this.state.product, quantity: this.state.quantity, total: this.state.total})
 
     axios
       .post("/api/buy/" + this.state.product.sku, {
