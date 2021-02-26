@@ -3,7 +3,7 @@ module.exports = {
         sku: 'ebook',
         name: 'Wersja eBook',
         price: 38.9,
-        shipping: 0.0,
+        shipping: 4.0,
         image: '/images/ebook-mockup.jpg'
     },
     paperCopy: {

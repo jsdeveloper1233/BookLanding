@@ -299,16 +299,16 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
                                             <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
-                                            <label className="form-check-label" htmlFor="create-an-account">Tak, interesuję się takimi tematami i wyrażam zgodę na zapisanie do newslettera.</label>
+                                            <label className="form-check-label" htmlFor="newsletter">Tak, interesuję się takimi tematami i wyrażam zgodę na zapisanie do newslettera.</label>
                                         </div>
                                             
                                         <div className="form-check">
                                             <input type="checkbox" value={state.privacy.value} onChange={handleCheckBoxOnChange} name="terms" className="form-check-input form-controla" id="privacy" />
-                                            <label className="form-check-label" htmlFor="create-an-account"><span className="required">* </span> Zapoznałam/em się z regulaminem sklepu i akceptuję go.</label>
+                                            <label className="form-check-label" htmlFor="privacy"><span className="required">* </span> Zapoznałam/em się z regulaminem sklepu i akceptuję go.</label>
                                         </div>
                                         <div className="form-check">
                                             <input type="checkbox" value={state.terms.value} onChange={handleCheckBoxOnChange} name="privacy" className="form-check-input form-controla" id="terms" />
-                                            <label className="form-check-label" htmlFor="create-an-account"><span className="required">* </span> Wyrażam zgodę na przetwarzanie i wykorzystanie moich danych osobowych w celu realizacji zamówienia przez Life Consulting, ul. Bluszczańska 32/1, 00-712 Warszawa, NIP: 5222841056, który jest administratorem danych osobowych zgodnie z przepisami Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE i ustawy o ochronie danych osobowych z dnia 10 maja 2018 r. (Dz.U. 2018 poz. 1000).</label>
+                                            <label className="form-check-label" htmlFor="terms"><span className="required">* </span> Wyrażam zgodę na przetwarzanie i wykorzystanie moich danych osobowych w celu realizacji zamówienia przez Life Consulting, ul. Bluszczańska 32/1, 00-712 Warszawa, NIP: 5222841056, który jest administratorem danych osobowych zgodnie z przepisami Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE i ustawy o ochronie danych osobowych z dnia 10 maja 2018 r. (Dz.U. 2018 poz. 1000).</label>
                                         </div>
                                     </div>
 
