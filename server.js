@@ -194,6 +194,7 @@ app.prepare().then(() => {
 })
 async function getPaymentLink(price, email, name, id) {
     const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, dev)
+    const PORT = process.env.PORT || 3006;
     // Set obligatory data
     P24.setSessionId(uuidv4())
     P24.setAmount(price * 100)
