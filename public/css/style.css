@@ -7555,4 +7555,11 @@ td.product-name .cart-items {
 .checkout-area .form-check .form-check-label {
   padding-left: 10px;
 }
+
+.privacy-policy {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 /*# sourceMappingURL=style.css.map */
