@@ -87,7 +87,7 @@ app.prepare().then(() => {
 
         if(!state)
         {
-            res.redirect('/');
+            res.redirect('/thankyou');
             return;
         }
 
@@ -95,7 +95,7 @@ app.prepare().then(() => {
         sendEmail(state.template, state.email, state.cname)
         serverCache.del(id);
 
-        res.redirect('/');
+        res.redirect('/thankyou');
     })
 
     server.post("/api/buy/:p", async (req, res) => {
