@@ -5,6 +5,8 @@ import Payment from "../Payment/Payment";
 import { useRouter } from "next/router";
 import buyingOptions from "../../buyingOptions";
 import axios from "axios";
+import Loader from "../Shared/Loader";
+
 class OrderSummary extends Component {
   products = {
     ...buyingOptions,
@@ -19,10 +21,13 @@ class OrderSummary extends Component {
     // console.log(myParam)
     var p = this.products[myParam];
     // console.log(p)
-    this.setState({ product: p, load: true, total: p.price });
+    this.setState({ product: p, load: true, total: p.price, isLoading: false });
     // console.log(this.state.product)
   }
   orderProduct() {
+
+    this.setState({isLoading: true, product: this.state.product, quantity: this.state.quantity, total: this.state.total})
+
     axios
       .post("/api/buy/" + this.state.product.sku, {
         email: this.props.email,
@@ -39,10 +44,12 @@ class OrderSummary extends Component {
         privacy: this.props.privacy,
         terms: this.props.terms,
         comment: this.props.comment,
+        description: this.state.product.description
       })
       .then((d) => {
         console.log(d.data);
         console.log(d.data.link);
+        this.setState({isLoading: false, product: this.state.product, quantity: this.state.quantity, total: this.state.total});
         window.open(d.data.link, "_blank");
       });
   }
@@ -55,17 +62,22 @@ class OrderSummary extends Component {
       newQuantity = 1;
       newPrice = this.state.product.price;
     }
-    this.setState({ quantity: newQuantity, total: newPrice });
+    this.setState({ quantity: newQuantity, total: newPrice, isLoading: false });
   }
 
   increaseQuantity() {
     const newQuantity = this.state.quantity + 1;
     const newPrice =
       (Math.round(this.state.product.price * 100) * newQuantity) / 100;
-    this.setState({ quantity: newQuantity, total: newPrice });
+    this.setState({ quantity: newQuantity, total: newPrice, isLoading: false });
   }
 
   render() {
+
+    if(this.state.isLoading){
+      return <Loader />
+    }
+
     return (
       <div className="col-lg-6 col-md-12">
         <div className="order-details">
@@ -103,7 +115,7 @@ class OrderSummary extends Component {
                       <Link href="#">
                         <a>{this.state.product.name}</a>
                       </Link>
-                      <div className="clearfix flex">
+                      <div style={{float: "right"}}>
                         <a
                           className="add-product-btn btn-left"
                           onClick={this.decreaseQuantity.bind(this)}
@@ -146,7 +158,15 @@ class OrderSummary extends Component {
 
                     <td className="order-subtotal-price">
                       <span className="order-subtotal-amount">
-                        {this.state.total} zł
+                      {this.state.product.originalPrice && (
+                          <>
+                            <span className="strikeout">
+                              {(Math.round(this.state.product.originalPrice * 100) * this.state.quantity) / 100} zł
+                            </span>
+                            <br />
+                          </>
+                        )}
+                        {(Math.round(this.state.product.price * 100) * this.state.quantity) / 100} zł
                       </span>
                     </td>
                   </tr>

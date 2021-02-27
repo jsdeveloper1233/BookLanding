@@ -18,6 +18,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
 const handle = routes.getRequestHandler(app);
 const buingOptions = require('./buyingOptions');
+const NodeCache = require( "node-cache" );
+const serverCache = new NodeCache({ stdTTL: 3600, checkperiod: 600 });
 
 app.prepare().then(() => {
     const server = express();
@@ -78,19 +80,38 @@ app.prepare().then(() => {
                 res.json({ "message": "error", "error": error })
             });
     })
+
+    server.get("/api/thankyou", async (req, res) => {
+        var id = req.query.id;
+        var state = serverCache.get(id);
+
+        if(!state)
+        {
+            res.redirect('/thankyou');
+            return;
+        }
+
+        sendAuthorEmail(state)
+        sendEmail(state.template, state.email, state.cname)
+        serverCache.del(id);
+
+        res.redirect('/thankyou');
+    })
+
     server.post("/api/buy/:p", async (req, res) => {
         
         const quantity = req.body.quantity;
+        const id = uuidv4();
 
         switch (req.params.p) {
 
             case buingOptions.ebook.sku:
-                var total = (quantity * Math.round(buingOptions.ebook.price * 100))/100;
-                var u = await getPaymentLink(total, req.body.email)
+                var total = (quantity * Math.round(buingOptions.ebook.price * 100));
+                var u = await getPaymentLink(id, req.body.description, total, req.body.email)
                 var body = req.body
                 res.json({ "link": u })
-                sendEmail("d-43a4ce7ca5344d3c89282454be042e30", req.body.email, req.body.name)
-                sendAuthorEmail({
+
+                serverCache.set(id, {
                     cname: body.name, 
                     email: body.email, 
                     phone: body.phone, 
@@ -103,8 +124,9 @@ app.prepare().then(() => {
                     quantity: body.quantity, 
                     privacy: body.privacy,
                     terms: body.terms,
-                    comment: body.comment
-                })
+                    comment: body.comment,
+                    template: "d-43a4ce7ca5344d3c89282454be042e30"
+                });
 
                 if(body.newsletter){
                     subscribeUser(body.email)
@@ -112,15 +134,14 @@ app.prepare().then(() => {
                 break;
 
             case buingOptions.paperCopy.sku:
-                var total = (quantity * Math.round(buingOptions.paperCopy.price * 100) / 100) + buingOptions.paperCopy.shipping;
-                var u = await getPaymentLink(total, req.body.email)
+                var total = (quantity * Math.round(buingOptions.paperCopy.price * 100)) + (buingOptions.paperCopy.shipping * 100);
+                var u = await getPaymentLink(id, req.body.description, total, req.body.email)
 
                 var body = req.body
 
                 res.json({ "link": u })
-                sendEmail("d-889a4f6a165a425cb98e7dae11baa998", req.body.email, req.body.name)
 
-                sendAuthorEmail({
+                serverCache.set(id, {
                     cname: body.name, 
                     email: body.email, 
                     phone: body.phone, 
@@ -130,10 +151,11 @@ app.prepare().then(() => {
                     zip: body.zip, 
                     newsletter: body.newsletter, 
                     product: body.product, 
-                    quantity: body.quantity,
+                    quantity: body.quantity, 
                     privacy: body.privacy,
                     terms: body.terms,
-                    comment: body.comment
+                    comment: body.comment,
+                    template: "d-889a4f6a165a425cb98e7dae11baa998"
                 });
 
                 if(body.newsletter){
@@ -142,12 +164,13 @@ app.prepare().then(() => {
                 break;
                 
             case buingOptions.bundle.sku:
-                var total = (quantity * Math.round(buingOptions.bundle.price * 100) / 100) + buingOptions.bundle.shipping;
-                var u = await getPaymentLink(total, req.body.email)
+                var total = (quantity * Math.round(buingOptions.bundle.price * 100)) + (buingOptions.bundle.shipping * 100);
+        
+                var u = await getPaymentLink(id, req.body.description, total, req.body.email)
                 var body = req.body
                 res.json({ "link": u })
-                sendEmail("d-58f0808630ff4b2483efc4b88e8995f0", req.body.email, req.body.name)
-                sendAuthorEmail({
+
+                serverCache.set(id, {
                     cname: body.name, 
                     email: body.email, 
                     phone: body.phone, 
@@ -157,11 +180,12 @@ app.prepare().then(() => {
                     zip: body.zip, 
                     newsletter: body.newsletter, 
                     product: body.product, 
-                    quantity: body.quantity,
+                    quantity: body.quantity, 
                     privacy: body.privacy,
                     terms: body.terms,
-                    comment: body.comment
-                })
+                    comment: body.comment,
+                    template: "d-58f0808630ff4b2483efc4b88e8995f0"
+                });
 
                 if(body.newsletter){
                     subscribeUser(body.email)
@@ -183,17 +207,18 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
-async function getPaymentLink(price, email) {
+async function getPaymentLink(id, description, price, email) {
     const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, dev)
+    const PORT = process.env.PORT || 3006;
     // Set obligatory data
-    P24.setSessionId(uuidv4())
-    P24.setAmount(price * 100)
+    P24.setSessionId(id)
+    P24.setAmount(price)
     P24.setCurrency('PLN')
-    P24.setDescription('Sekrety Rozwoju Osobistego')
+    P24.setDescription(description)
     P24.setEmail(email)
     P24.setCountry('PL')
     P24.setUrlStatus('https://sekretyrozwojuosobistego.pl/api/verifyprz24')
-    P24.setUrlReturn('http://localhost:3006/thankyou')
+    P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${encodeURI(id)}`)
     // P24.setUrlReturn('https://sekretyrozwojuosobistego.pl/thankyou')
 
     // What about adding some products?

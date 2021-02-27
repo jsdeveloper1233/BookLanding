@@ -1,9 +1,29 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import buingOptions from "../../buyingOptions";
+import Loader from "../Shared/Loader"
 
 class Pricing2 extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { isLoading: false };
+  }
+
+  componentDidMount() {
+    this.setState({isLoading: false});
+  }
+
+  showLoader(event) {
+    this.setState({isLoading: true});
+  }
+
   render() {
+
+    if(this.state.isLoading) {
+      return (<Loader />);
+    }
+
     return (
       <section className="pricing-area ptb-100" id="kupteraz">
         <div className="container">
@@ -34,9 +54,9 @@ class Pricing2 extends Component {
                   <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
                   </li>
                 </ul>
-                <Link href={{ pathname: '/checkout', query: { product: 'paperCopy' } }}>
-                  <a className="btn btn-primary">KUP KSIĄŻKĘ</a>
-                </Link>
+               
+                  <a className="btn btn-primary" href="/checkout?product=paperCopy" onClick={this.showLoader.bind(this)}>KUP KSIĄŻKĘ</a>
+            
               </div>
             </div>
 
@@ -54,9 +74,7 @@ class Pricing2 extends Component {
                   <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
                   <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
                 </ul>
-                <Link href={{ pathname: '/checkout', query: { product: 'ebook' } }}>
-                  <a className="btn btn-primary">KUP EBOOK</a>
-                </Link>
+                <a className="btn btn-primary" href="/checkout?product=ebook" onClick={this.showLoader.bind(this)}>KUP EBOOK</a>
               </div>
             </div>
 
@@ -81,9 +99,7 @@ class Pricing2 extends Component {
                     Prawda w Związku"
                   </li>
                 </ul>
-                <Link href={{ pathname: '/checkout', query: { product: 'bundle' } }}>
-                  <a className="btn btn-primary">KUP PAKIET</a>
-                </Link>
+                <a className="btn btn-primary" href="/checkout?product=bundle" onClick={this.showLoader.bind(this)}>KUP PAKIET</a>
                 <p className="you-save">Oszczędzasz {buingOptions.bundle.discount} zł</p>
               </div>
             </div>
