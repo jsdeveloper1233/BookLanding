@@ -30,6 +30,7 @@
         "next": "^10.0.3",
         "next-redux-wrapper": "^3.0.0-alpha.3",
         "next-routes": "^1.4.2",
+        "node-cache": "^5.1.2",
         "node-przelewy24": "^1.2.0",
         "query-string": "^6.13.8",
         "react": "^16.14.0",

@@ -44,6 +44,7 @@ class OrderSummary extends Component {
         privacy: this.props.privacy,
         terms: this.props.terms,
         comment: this.props.comment,
+        description: this.state.product.description
       })
       .then((d) => {
         console.log(d.data);
