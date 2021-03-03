@@ -46,12 +46,12 @@ class Pricing2 extends Component {
                   <h3 className="title">Tylko książka</h3>
                   <div className="price-value">
                   &nbsp;&nbsp;{buingOptions.paperCopy.price} <sup>zł</sup>
-                    <p>+ {buingOptions.paperCopy.shipping} zł wysyłka kurierem</p>
+                    <p>{buingOptions.paperCopy.shipping} zł wysyłka kurierem</p>
                   </div>
                 </div>
                 <ul className="pricing-content">
                   <li>
-                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
+                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie papierowym
                   </li>
                 </ul>
                
@@ -67,12 +67,13 @@ class Pricing2 extends Component {
                   <h3 className="title">Tylko eBook</h3>
                   <div className="price-value">
                   &nbsp;&nbsp;{buingOptions.ebook.price} <sup>zł</sup>
+                  <p>{buingOptions.ebook.shipping} zł wysyłka kurierem !!</p>
                   </div>
                 </div>
                 <ul className="pricing-content">
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie MOBI</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie EPUB</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie PDF</li>
                 </ul>
                 <a className="btn btn-primary" href="/checkout?product=ebook" onClick={this.showLoader.bind(this)}>KUP EBOOK</a>
               </div>
@@ -84,23 +85,23 @@ class Pricing2 extends Component {
                   <h3 className="title">Pakiet</h3>
                   <div className="price-value">
                   &nbsp;&nbsp; {buingOptions.bundle.price} <sup>zł</sup>
-                    <p>+ {buingOptions.bundle.shipping} zł wysyłka kurierem !!</p>
+                    <p>{buingOptions.bundle.shipping} zł wysyłka kurierem !!</p>
                   </div>
                 </div>
                 <ul className="pricing-content">
                   <li>
-                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie papierowym
+                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie papierowym
                   </li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie MOBI</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie EPUB</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" w formacie PDF</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie MOBI</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie EPUB</li>
+                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie PDF</li>
                   <li>
                   <i className="icofont-tick-mark"></i>2x egzemplarze (dla par) książeczki drukowanej "Radykalna
                     Prawda w Związku"
                   </li>
                 </ul>
-                <a className="btn btn-primary" href="/checkout?product=bundle" onClick={this.showLoader.bind(this)}>KUP PAKIET</a>
-                <p className="you-save">Oszczędzasz {buingOptions.bundle.discount} zł</p>
+                <a className="btn btn-primary" href="/checkout?product=bundle" onClick={this.showLoader.bind(this)}>KUP PAKIET<br /><small>I oszczędź {buingOptions.bundle.discount}zł</small></a>
+                {/* <p className="you-save">Oszczędzasz {buingOptions.bundle.discount} zł</p> */}
               </div>
             </div>
           </div>

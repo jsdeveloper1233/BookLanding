@@ -3,7 +3,7 @@ html {
 }
 
 p {
-  font-size: 18px;
+  font-size: 19px;
 }
 .navbar.navbar-expand-md.navbar-light a.navbar-brand {
   color: var(--whiteColor);
@@ -53,6 +53,7 @@ span.chapter-number {
   li {
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
   }
   .icofont-tick-mark {
     color: var(--templateColor2);
@@ -63,7 +64,8 @@ span.chapter-number {
 .price-value p {
   color: #fff;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 17px;
+  line-height: 31px;
 }
 
 .you-save {
@@ -164,26 +166,25 @@ td.product-name {
   &.shipping-price,
   &.order-subtotal,
   &.order-subtotal-price {
-    border-bottom:unset;
-    border-top:unset;
+    border-bottom: unset;
+    border-top: unset;
     padding-top: 4px;
     padding-bottom: 4px;
   }
   &.shipping-price,
   &.order-subtotal-price {
-  border-left: unset;
+    border-left: unset;
   }
 
   &.order-shipping,
   &.order-subtotal {
-    border-right:unset;
+    border-right: unset;
   }
   &.order-subtotal,
   &.order-subtotal-price {
-    padding-top:25px;
+    padding-top: 25px;
   }
 }
-
 
 .order-image {
   display: flex;
@@ -220,12 +221,13 @@ td.product-name {
 
 .checkout-area {
   .form-check {
-    .form-check-input, .form-check-label {
+    .form-check-input,
+    .form-check-label {
       cursor: pointer;
     }
-     .form-check-input {
+    .form-check-input {
       width: 20px;
-      height:20px;
+      height: 20px;
     }
     .form-check-label {
       padding-left: 10px;
@@ -235,4 +237,19 @@ td.product-name {
 
 .privacy-policy {
   flex-direction: column;
+}
+
+.book-discover {
+  span {
+    font-size: 20px;
+  }
+  ul {
+    font-size: 18px;
+}
+}
+
+.next-generation-virtual-reality {
+  .icon {
+    line-height: 0  ;
+  }
 }

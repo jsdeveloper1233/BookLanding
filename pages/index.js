@@ -22,7 +22,7 @@ import Wartosci from "../components/BookLanding/Wartosci";
 import Overview from "../components/BookLanding/Overview";
 import Services from "../components/DigitalMarketing/Services";
 import VirtualReality from "../components/BookLanding/VirtualReality";
-import CtaCard from "../components/About/CtaCard";
+import CtaCard from "../components/BookLanding/CtaCard";
 import Pricing2 from "../components/BookLanding/Pricing2";
 
 export const finalPath = "";

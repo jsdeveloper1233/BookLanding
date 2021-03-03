@@ -72,7 +72,7 @@ Default CSS
     --templateColor2: #FF8A73;
     --whiteColor: #ffffff;
     --blackColor: #000000;
-    --paragraphColor: #818992;
+    --paragraphColor: #1d1d1d;
     --transition: .5s;
 }
 body {
@@ -1669,7 +1669,7 @@ Main Banner CSS
     position: absolute;
     top: 85px;
     z-index: -1;
-    right: 30px;
+    right: 0;
     animation: movebounce 5s linear infinite;
 }
 .shape3 {
@@ -2498,7 +2498,7 @@ CTA CSS
     z-index: 1;
     padding: 60px 0;
     background: {
-        image: url(/images/cta-bg.jpg);
+        // image: url(/images/cta-bg.jpg);
         position: center center;
         size: cover;
         attachment: fixed;
@@ -3270,7 +3270,7 @@ Pricing CSS
         list-style-type: none;
 
         li {
-            color: #828893;
+            color: var(--paragraphColor);
             text-transform: capitalize;
             border-bottom: 1px solid #eee;
             margin-bottom: 12px;
