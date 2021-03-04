@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class AboutContent extends Component {
+class PrivacyPolicyText extends Component {
   render() {
     return (
       <section className="about-area ptb-100">
@@ -572,4 +572,4 @@ class AboutContent extends Component {
   }
 }
 
-export default AboutContent;
+export default PrivacyPolicyText;
