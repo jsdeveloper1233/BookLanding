@@ -154,9 +154,4 @@ import withAnalytics from "next-analytics";
         </React.Fragment>
       );
     }
-    // export default withAnalytics(Router, { ga: "UA-xxxxxxxxx-1", fbq: "139xxxxxxxxx3" })(withRedux(initStore)(MyApp));
-    export default withAnalytics(Router, { ga: "UA-xxxxxxxxx-1", fbq: "139xxxxxxxxx3" })(MyApp);
-
-        // export default withRedux(initStore)(withAnalytics(Router, { ga: "UA-xxxxxxxxx-1", fbq: "139xxxxxxxxx3" })(MyApp));
-
-    // export default withRedux(initStore)(MyApp);
+     export default withAnalytics(Router, { ga: "UA-xxxxxxxxx-1", fbq: "139xxxxxxxxx3" })(withRedux(initStore)(MyApp));
