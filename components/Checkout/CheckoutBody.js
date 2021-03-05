@@ -1,28 +1,35 @@
 import React from 'react';
 import OrderSummary from './OrderSummary';
 import useForm from './userForm';
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
-function CheckoutBody({total, shipping}) {
+function CheckoutBody({ total, shipping }) {
     function handleSubmit() {
         // console.log("aaaaForm submitted.");
         // var ur = useRouter()
         // console.log(ur.query.product)
     }
-    
+
     const stateSchema = {
-        firstName: {value: "", error: ""},
-        lastName: {value: "", error: ""},
-        address: {value: "", error: ""},
-        city: {value: "", error: ""},
-        state: {value: "", error: ""},
-        zip: {value: "", error: ""},
-        email: {value: "", error: ""},
-        phone: {value: "", error: ""},
-        newsletter: {value: false, error: ""},
-        privacy: {value: false, error: ""},
-        terms: {value: false, error: ""},
-        comment: {value: "", error: ""}
+        firstName: { value: "", error: "" },
+        lastName: { value: "", error: "" },
+        address: { value: "", error: "" },
+        city: { value: "", error: "" },
+        state: { value: "", error: "" },
+        zip: { value: "", error: "" },
+        email: { value: "", error: "" },
+        phone: { value: "", error: "" },
+        newsletter: { value: false, error: "" },
+        privacy: { value: false, error: "" },
+        terms: { value: false, error: "" },
+        comment: { value: "", error: "" },
+        vat: { value: false, error: "" },
+        vatCompany: { value: "", error: "" },
+        vatNip: { value: "", error: "" },
+        vatAddress: { value: "", error: "" },
+        vatCity: { value: "", error: "" },
+        vatState: { value: "", error: "" },
+        vatZip: { value: "", error: "" },
     };
 
     const states = [
@@ -52,18 +59,18 @@ function CheckoutBody({total, shipping}) {
         firstName: {
             required: true,
             validator: {
-            // regEx: /^[a-zA-Z\.-\s]+$/,
-            regEx: re,
-            error: "Niepoprawny format"
+                // regEx: /^[a-zA-Z\.-\s]+$/,
+                regEx: re,
+                error: "Niepoprawny format"
             }
         },
 
         lastName: {
             required: true,
             validator: {
-            // regEx: /^[a-zA-Z\.-\s]+$/,
-            regEx: re,
-            error: "Niepoprawny format"
+                // regEx: /^[a-zA-Z\.-\s]+$/,
+                regEx: re,
+                error: "Niepoprawny format"
             }
         },
 
@@ -121,19 +128,148 @@ function CheckoutBody({total, shipping}) {
 
         comment: {
             required: false
-        }
+        },
+
+        vat: {
+            required: false
+        },
+
+        vatNip: {
+            required: false,
+            vatRequired: true
+        },
+
+        vatCompany: {
+            required: false,
+            vatRequired: true
+        },
+
+        vatAddress: {
+            required: false,
+            vatRequired: true
+        },
+
+        vatCity: {
+            required: false,
+            vatRequired: true
+        },
+
+        vatState: {
+            required: false,
+            vatRequired: true
+        },
+
+        vatZip: {
+            required: false,
+            vatRequired: true,
+            validator: {
+                regEx: /\d{2}-\d{3}?$/,
+                error: "Niepoprawny format kodu. Poprawnie to: 12-345"
+            }
+        },
     };
 
-    const { state, handleOnChange, handleOnSubmit, disable, handleCheckBoxOnChange } = useForm (
+    const { state, handleOnChange, handleOnSubmit, disable, handleCheckBoxOnChange } = useForm(
         stateSchema,
         validationStateSchema,
         handleSubmit
     );
-    
+
     const errorStyle = {
         color: "red",
         fontSize: "13px"
     };
+
+    const vatFields = state.vat.value
+        ? (<React.Fragment>
+            <div className="col-lg-6 col-md-6">
+                <div className="form-group">
+                    <label>Firma <span className="required">*</span></label>
+                    <input
+                        type="text"
+                        name="vatCompany"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        value={state.vatCompany.value}
+                    />
+                    {state.vatCompany.error && <p style={errorStyle}>{state.vatCompany.error}</p>}
+                </div>
+            </div>
+
+            <div className="col-lg-6 col-md-6">
+                <div className="form-group">
+                    <label>NIP <span className="required">*</span></label>
+                    <input
+                        type="text"
+                        name="vatNip"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        value={state.vatNip.value}
+                    />
+                    {state.vatNip.error && <p style={errorStyle}>{state.vatNip.error}</p>}
+                </div>
+            </div>
+
+            <div className="col-lg-12 col-md-6">
+                <div className="form-group">
+                    <label>Adres <span className="required">*</span></label>
+                    <input
+                        type="text"
+                        name="vatAddress"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        value={state.vatAddress.value}
+                    />
+                    {state.vatAddress.error && <p style={errorStyle}>{state.vatAddress.error}</p>}
+                </div>
+            </div>
+
+            <div className="col-lg-12 col-md-6">
+                <div className="form-group">
+                    <label>Miejscowość <span className="required">*</span></label>
+                    <input
+                        type="text"
+                        name="vatCity"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        value={state.vatCity.value}
+                    />
+                    {state.vatCity.error && <p style={errorStyle}>{state.vatCity.error}</p>}
+                </div>
+            </div>
+
+            <div className="col-lg-6 col-md-6">
+                <div className="form-group">
+                    <label>Województwo <span className="required">*</span></label>
+                    <select
+                        name="vatState"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        value={state.vatState.value}>
+                        {states.map(x =>
+                            <option key={x} value={x}>{x}</option>
+                        )}
+                    </select>
+
+                    {state.vatState.error && <p style={errorStyle}>{state.vatState.error}</p>}
+                </div>
+            </div>
+
+            <div className="col-lg-6 col-md-6">
+                <div className="form-group">
+                    <label>Kod pocztowy <span className="required">*</span></label>
+                    <input
+                        type="text"
+                        name="vatZip"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        value={state.vatZip.value}
+                    />
+                    {state.vatZip.error && <p style={errorStyle}>{state.vatZip.error}</p>}
+                </div>
+            </div>
+        </React.Fragment>)
+        : null;
 
     return (
         <section className="checkout-area ptb-100">
@@ -144,10 +280,10 @@ function CheckoutBody({total, shipping}) {
                         <div className="col-lg-6 col-md-12">
                             <div className="billing-details">
                                 <h3 className="title">Formularz zamówienia</h3>
-                            <div className="bar"></div>
+                                <div className="bar"></div>
 
-                            <div className="row">
-                                {/* <div className="col-lg-12 col-md-12">
+                                <div className="row">
+                                    {/* <div className="col-lg-12 col-md-12">
                                     <div className="form-group">
                                         <label>Country <span className="required">*</span></label>
                                         
@@ -163,10 +299,10 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
                                             <label>Imię <span className="required">*</span></label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 name="firstName"
-                                                className="form-control" 
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.firstName.value}
                                             />
@@ -177,10 +313,10 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
                                             <label>Nazwisko <span className="required">*</span></label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 name="lastName"
-                                                className="form-control" 
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.lastName.value}
                                             />
@@ -198,10 +334,10 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
                                             <label>Adres <span className="required">*</span></label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 name="address"
-                                                className="form-control" 
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.address.value}
                                             />
@@ -212,10 +348,10 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-12 col-md-6">
                                         <div className="form-group">
                                             <label>Miejscowość <span className="required">*</span></label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 name="city"
-                                                className="form-control" 
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.city.value}
                                             />
@@ -226,16 +362,16 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
                                             <label>Województwo <span className="required">*</span></label>
-                                            <select 
-                                                name="state" 
-                                                className="form-control" 
+                                            <select
+                                                name="state"
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.state.value}>
-                                                    {states.map(x => 
-                                                        <option key={x} value={x}>{x}</option>
-                                                    )}
-                                                </select>
-                                            
+                                                {states.map(x =>
+                                                    <option key={x} value={x}>{x}</option>
+                                                )}
+                                            </select>
+
                                             {state.state.error && <p style={errorStyle}>{state.state.error}</p>}
                                         </div>
                                     </div>
@@ -243,8 +379,8 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
                                             <label>Kod pocztowy <span className="required">*</span></label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 name="zip"
                                                 className="form-control"
                                                 onChange={handleOnChange}
@@ -257,10 +393,10 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
                                             <label>Adres email <span className="required">*</span></label>
-                                            <input 
-                                                type="email" 
+                                            <input
+                                                type="email"
                                                 name="email"
-                                                className="form-control" 
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.email.value}
                                             />
@@ -271,10 +407,10 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-6 col-md-6">
                                         <div className="form-group">
                                             <label>Numer telefonu <span className="required">*</span></label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 name="phone"
-                                                className="form-control" 
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.phone.value}
                                             />
@@ -285,10 +421,10 @@ function CheckoutBody({total, shipping}) {
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-group">
                                             <label>Uwagi do zamówienia </label>
-                                            <textarea 
-                                                type="text" 
+                                            <textarea
+                                                type="text"
                                                 name="comment"
-                                                className="form-control" 
+                                                className="form-control"
                                                 onChange={handleOnChange}
                                                 value={state.comment.value}
                                             />
@@ -298,10 +434,19 @@ function CheckoutBody({total, shipping}) {
 
                                     <div className="col-lg-12 col-md-12">
                                         <div className="form-check">
+                                            <input type="checkbox" value={state.vat.value} onChange={handleCheckBoxOnChange} name="vat" className="form-check-input form-controla" id="vat" />
+                                            <label className="form-check-label" htmlFor="vat">Faktura VAT</label>
+                                        </div>
+                                    </div>
+
+                                    {vatFields}
+
+                                    <div className="col-lg-12 col-md-12">
+                                        <div className="form-check">
                                             <input type="checkbox" value={state.newsletter.value} onChange={handleCheckBoxOnChange} name="newsletter" className="form-check-input form-controla" id="newsletter" />
                                             <label className="form-check-label" htmlFor="newsletter">Tak, interesuję się takimi tematami i wyrażam zgodę na zapisanie do newslettera.</label>
                                         </div>
-                                            
+
                                         <div className="form-check">
                                             <input type="checkbox" value={state.privacy.value} onChange={handleCheckBoxOnChange} name="terms" className="form-check-input form-controla" id="privacy" />
                                             <label className="form-check-label" htmlFor="privacy"><span className="required">* </span> Zapoznałam/em się z regulaminem sklepu i akceptuję go.</label>
@@ -328,7 +473,27 @@ function CheckoutBody({total, shipping}) {
                             </div>
                         </div>
 
-                        <OrderSummary disabled={disable} email={state.email.value} name={"imię: " + state.firstName.value +  "Nazwisko: " + state.lastName.value} address={state.address.value} city={state.city.value} state={state.state.value} zip={state.zip.value} phone={state.phone.value} newsletter={state.newsletter.value} privacy={state.privacy.value} terms={state.terms.value} comment={state.comment.value}/>
+                        <OrderSummary 
+                            disabled={disable} 
+                            email={state.email.value} 
+                            name={"imię: " + state.firstName.value + "Nazwisko: " + state.lastName.value} 
+                            address={state.address.value} 
+                            city={state.city.value} 
+                            state={state.state.value} 
+                            zip={state.zip.value} 
+                            phone={state.phone.value} 
+                            newsletter={state.newsletter.value} 
+                            privacy={state.privacy.value} 
+                            terms={state.terms.value} 
+                            comment={state.comment.value} 
+                            vat={state.vat.value} 
+                            vatComapny={state.vatCompany.value} 
+                            vatNip={state.vatNip.value}
+                            vatAddress={state.vatAddress.value} 
+                            vatCity={state.vatCity.value} 
+                            vatState={state.vatState.value} 
+                            vatZip={state.vatZip.value} 
+                        />
 
                     </div>
                 </form>
