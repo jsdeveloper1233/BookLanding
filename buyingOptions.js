@@ -4,7 +4,7 @@ var options = {
         name: 'Wersja eBook',
         description: 'Sekrety Rozwoju Osobistego - Wersja eBook',
         price: 38.9,
-        shipping: 4.0,
+        shipping: 0,
         image: '/images/ebook-mockup.jpg'
     },
     paperCopy: {
@@ -12,7 +12,7 @@ var options = {
         name: 'Wersja papierowa książki',
         description: 'Sekrety Rozwoju Osobistego - Wersja papierowa książki',
         price: 39.9,
-        shipping: 15.0,
+        shipping: 14.9,
         image: '/images/ksiazka-2.png'
     },
     bundle: {
