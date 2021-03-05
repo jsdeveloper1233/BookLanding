@@ -262,7 +262,7 @@ app.prepare().then(() => {
     });
 })
 async function getPaymentLink(state) {
-    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, dev)
+    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, true) // todo dev zamiast true
     const PORT = process.env.PORT || 3006;
     // Set obligatory data
     P24.setSessionId(state.id)
