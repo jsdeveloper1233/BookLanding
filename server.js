@@ -98,6 +98,7 @@ app.prepare().then(() => {
 
     server.post("/api/verify", async (req, res) => {
         console.log('verify')
+        console.log(req.body)
         const result = await verify(req.body)
         if (result) {
             var id = req.body.p24_session_id;
@@ -325,7 +326,7 @@ async function getPaymentLink(state) {
 }
 
 async function verify(state) {
-    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, dev)
+    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, true) //todo dev zamiast true
 
     P24.setSessionId(state.p24_session_id)
     P24.setAmount(state.p24_amount)
