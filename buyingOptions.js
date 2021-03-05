@@ -1,4 +1,4 @@
-module.exports = {
+var options = {
     ebook: {
         sku: 'ebook',
         name: 'Wersja eBook',
@@ -22,7 +22,11 @@ module.exports = {
         originalPrice: 90,
         price: 69.9,
         shipping: 0.0,
-        discount: this.originalPrice - this.price,
+        discount: 0, // to pole jest automatycznie wyliczane poniżej
         image: '/images/pakiet.jpg'
     },
 }
+
+options.bundle.discount = Math.round((options.bundle.originalPrice - options.bundle.price) * 100) / 100;
+
+module.exports = options;

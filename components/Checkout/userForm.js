@@ -21,7 +21,7 @@ function useForm(stateSchema, validationSchema = {}, callback) {
     // in every re-render in component
     const validateState = useCallback(() => {
         const hasErrorInState = Object.keys(validationSchema).some(key => {
-            const isInputFieldRequired = validationSchema[key].required;
+            const isInputFieldRequired = validationSchema[key].required || (validationSchema[key].vatRequired && state['vat'].value);
             // Get state value
             const stateValue = state[key].value;
             const stateError = state[key].error;
@@ -38,7 +38,7 @@ function useForm(stateSchema, validationSchema = {}, callback) {
         const name = event.target.name;
         const value = event.target.value;
         let error = "";
-        if (validationSchema[name].required) {
+        if (validationSchema[name].required || (validationSchema[name].vatRequired && state['vat'].value)) {
             if (!value) {
                 error = "This is required field.";
             }
@@ -66,7 +66,7 @@ function useForm(stateSchema, validationSchema = {}, callback) {
         const name = event.target.name;
         const value = event.target.checked;
         let error = "";
-        if (validationSchema[name].required) {
+        if (validationSchema[name].required || (validationSchema[name].vatRequired && state['vat'].value)) {
             if (!value) {
                 error = "This is required field.";
             }

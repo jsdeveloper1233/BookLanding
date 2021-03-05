@@ -1651,6 +1651,10 @@ class Przelewy24 {
         this.form.p24_amount = value
     }
 
+    setEncoding(value) {
+        this.form.p24_encoding = value
+    }
+
     setCurrency(value) {
         if (value.length !== 3) {
             throw new Error('p24_currency value must have from 3 characters.')
@@ -1819,6 +1823,12 @@ class Przelewy24 {
         return crypto.createHash('md5').update(data).digest("hex");
     }
 
+    getCrc2() {
+        const data = this.form.p24_session_id + '|' + this.form.p24_order_id + '|' + this.form.p24_amount + '|' + this.form.p24_currency + '|' + this.salt
+
+        return crypto.createHash('md5').update(data).digest("hex");
+    }
+
     // Main methods
     register() {
         return new Promise(async (resolve, reject) => {
@@ -1855,7 +1865,7 @@ class Przelewy24 {
         return this.host + 'trnRequest/' + token
     }
 
-    verify(sign) {
+    verify() {
         return new Promise(async (resolve, reject) => {
             for (const field of this.REQUIRED_FIELDS_VERIFY) {
                 if (this.form[field] === undefined) {
@@ -1863,7 +1873,7 @@ class Przelewy24 {
                 }
             }
 
-            this.form.p24_sign = sign
+            this.form.p24_sign = this.getCrc2()
 
             try {
                 const rawResponse = await request.post(this.host + "trnVerify", { form: this.form })

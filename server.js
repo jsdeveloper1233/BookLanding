@@ -12,13 +12,13 @@ const Przelewy24 = require('./prz24lib.js')
 // const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', false)
 const MailerLite = require("mailerlite-api-v2-node").default;
 require('dotenv').config()
-const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY);
+const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY || 'test');
 const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({ dir: '.', dev });
 const handle = routes.getRequestHandler(app);
 const buingOptions = require('./buyingOptions');
-const NodeCache = require( "node-cache" );
+const NodeCache = require("node-cache");
 const serverCache = new NodeCache({ stdTTL: 3600, checkperiod: 600 });
 
 app.prepare().then(() => {
@@ -82,24 +82,40 @@ app.prepare().then(() => {
     })
 
     server.get("/api/thankyou", async (req, res) => {
-        var id = req.query.id;
-        var state = serverCache.get(id);
+        res.redirect('/thankyou?id='+req.query.id);
+    })
 
-        if(!state)
-        {
-            res.redirect('/thankyou');
-            return;
+    server.get("/api/status", async (req, res) => {
+        console.log(req.query.id);
+        var state = serverCache.get(req.query.id);
+        console.log(state);
+        if(state){
+            res.json({status: state.status});
+        } else {
+            res.json({status: -1});
         }
+    })
 
-        sendAuthorEmail(state)
-        sendEmail(state.template, state.email, state.cname)
-        serverCache.del(id);
+    server.post("/api/verify", async (req, res) => {
+        console.log('verify')
+        const result = await verify(req.body)
+        if (result) {
+            var id = req.body.p24_session_id;
+            var state = serverCache.get(id);
 
-        res.redirect('/thankyou');
+            if (!state) {
+                state.statement = req.body.p24_statement;
+                sendAuthorEmail(state)
+                sendEmail(state.template, state.email, state.cname)
+                state.status = 1;
+            } else {
+                state.status = -1;
+            }
+        }
     })
 
     server.post("/api/buy/:p", async (req, res) => {
-        
+
         const quantity = req.body.quantity;
         const id = uuidv4();
 
@@ -107,87 +123,125 @@ app.prepare().then(() => {
 
             case buingOptions.ebook.sku:
                 var total = (quantity * Math.round(buingOptions.ebook.price * 100));
-                var u = await getPaymentLink(id, req.body.description, total, req.body.email)
                 var body = req.body
-                res.json({ "link": u })
-
-                serverCache.set(id, {
-                    cname: body.name, 
-                    email: body.email, 
-                    phone: body.phone, 
-                    address: body.address, 
-                    city: body.city, 
-                    state: body.state, 
-                    zip: body.zip, 
-                    newsletter: body.newsletter, 
-                    product: body.product, 
-                    quantity: body.quantity, 
+                var state = {
+                    id: id,
+                    description: body.description,
+                    price: total,
+                    cname: body.name,
+                    email: body.email,
+                    phone: body.phone,
+                    address: body.address,
+                    city: body.city,
+                    state: body.state,
+                    zip: body.zip,
+                    newsletter: body.newsletter,
+                    product: body.product,
+                    quantity: body.quantity,
                     privacy: body.privacy,
                     terms: body.terms,
                     comment: body.comment,
-                    template: "d-43a4ce7ca5344d3c89282454be042e30"
-                });
+                    template: "d-43a4ce7ca5344d3c89282454be042e30",
+                    vat: body.vat,
+                    vatCompany: body.vatCompany,
+                    vatNip: body.vatNip,
+                    vatAddress: body.vatAddress,
+                    vatCity: body.vatCity,
+                    vatState: body.vatState,
+                    vatZip: body.vatZip,
+                    status: 0
+                };
 
-                if(body.newsletter){
+                var u = await getPaymentLink(state)
+                res.json({ "link": u })
+
+                serverCache.set(id, state);
+
+                if (body.newsletter) {
                     subscribeUser(body.email)
                 }
                 break;
 
             case buingOptions.paperCopy.sku:
                 var total = (quantity * Math.round(buingOptions.paperCopy.price * 100)) + (buingOptions.paperCopy.shipping * 100);
-                var u = await getPaymentLink(id, req.body.description, total, req.body.email)
-
                 var body = req.body
-
-                res.json({ "link": u })
-
-                serverCache.set(id, {
-                    cname: body.name, 
-                    email: body.email, 
-                    phone: body.phone, 
-                    address: body.address, 
-                    city: body.city, 
-                    state: body.state, 
-                    zip: body.zip, 
-                    newsletter: body.newsletter, 
-                    product: body.product, 
-                    quantity: body.quantity, 
+                var state = {
+                    id: id,
+                    price: total,
+                    description: body.description,
+                    cname: body.name,
+                    email: body.email,
+                    phone: body.phone,
+                    address: body.address,
+                    city: body.city,
+                    state: body.state,
+                    zip: body.zip,
+                    newsletter: body.newsletter,
+                    product: body.product,
+                    quantity: body.quantity,
                     privacy: body.privacy,
                     terms: body.terms,
                     comment: body.comment,
-                    template: "d-889a4f6a165a425cb98e7dae11baa998"
-                });
+                    template: "d-889a4f6a165a425cb98e7dae11baa998",
+                    vat: body.vat,
+                    vatCompany: body.vatCompany,
+                    vatNip: body.vatNip,
+                    vatAddress: body.vatAddress,
+                    vatCity: body.vatCity,
+                    vatState: body.vatState,
+                    vatZip: body.vatZip,
+                    status: 0
+                };
 
-                if(body.newsletter){
+                var u = await getPaymentLink(state)
+
+                res.json({ "link": u })
+
+                serverCache.set(id, state);
+
+                if (body.newsletter) {
                     subscribeUser(body.email)
                 }
                 break;
-                
+
             case buingOptions.bundle.sku:
                 var total = (quantity * Math.round(buingOptions.bundle.price * 100)) + (buingOptions.bundle.shipping * 100);
-        
-                var u = await getPaymentLink(id, req.body.description, total, req.body.email)
                 var body = req.body
-                res.json({ "link": u })
-
-                serverCache.set(id, {
-                    cname: body.name, 
-                    email: body.email, 
-                    phone: body.phone, 
-                    address: body.address, 
-                    city: body.city, 
-                    state: body.state, 
-                    zip: body.zip, 
-                    newsletter: body.newsletter, 
-                    product: body.product, 
-                    quantity: body.quantity, 
+                var state = {
+                    id: id,
+                    description: body.description,
+                    price: total,
+                    cname: body.name,
+                    email: body.email,
+                    phone: body.phone,
+                    address: body.address,
+                    city: body.city,
+                    state: body.state,
+                    zip: body.zip,
+                    newsletter: body.newsletter,
+                    product: body.product,
+                    quantity: body.quantity,
                     privacy: body.privacy,
                     terms: body.terms,
                     comment: body.comment,
-                    template: "d-58f0808630ff4b2483efc4b88e8995f0"
-                });
+                    template: "d-58f0808630ff4b2483efc4b88e8995f0",
+                    vat: body.vat,
+                    vatCompany: body.vatCompany,
+                    vatNip: body.vatNip,
+                    vatAddress: body.vatAddress,
+                    vatCity: body.vatCity,
+                    vatState: body.vatState,
+                    vatZip: body.vatZip,
+                    status: 0
+                };
 
-                if(body.newsletter){
+                var u = await getPaymentLink(state)
+
+                res.json({ "link": u })
+
+                serverCache.set(id, state);
+
+                if (body.newsletter) {
                     subscribeUser(body.email)
                 }
                 break;
@@ -207,19 +261,51 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
-async function getPaymentLink(id, description, price, email) {
+async function getPaymentLink(state) {
     const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, dev)
     const PORT = process.env.PORT || 3006;
     // Set obligatory data
-    P24.setSessionId(id)
-    P24.setAmount(price)
+    P24.setSessionId(state.id)
+    P24.setAmount(state.price)
     P24.setCurrency('PLN')
-    P24.setDescription(description)
-    P24.setEmail(email)
+
+    if (state.description) {
+        P24.setDescription(state.description)
+    }
+
+    P24.setEmail(state.email)
     P24.setCountry('PL')
-    P24.setUrlStatus('https://sekretyrozwojuosobistego.pl/api/verifyprz24')
-    P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${encodeURI(id)}`)
-    // P24.setUrlReturn('https://sekretyrozwojuosobistego.pl/thankyou')
+    P24.setWaitForResult(1)
+
+    if (state.cname) {
+        P24.setClient(state.cname)
+    }
+
+    if (state.address) {
+        P24.setAddress(state.address)
+    }
+
+    if (state.zip) {
+        P24.setZip(state.zip)
+    }
+
+    if (state.city) {
+        P24.setCity(state.city)
+    }
+
+    if (state.phone) {
+        // P24.setPhone(state.phone)
+    }
+
+    P24.setEncoding('UTF-8')
+
+    if (dev) {
+        P24.setUrlStatus(`http://localhost:${PORT}/api/verify`)
+        P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${state.id}`)
+    } else {
+        P24.setUrlStatus(`https://sekretyrozwojuosobistego.pl/api/verify`)
+        P24.setUrlReturn(`https://sekretyrozwojuosobistego.pl/api/thankyou?id=${state.id}`)
+    }
 
     // What about adding some products?
     // P24.addProduct('Book', 'Product description', 1, price * 100)
@@ -236,6 +322,25 @@ async function getPaymentLink(id, description, price, email) {
         console.log(e.message)
     }
 
+}
+
+async function verify(state) {
+    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, dev)
+
+    P24.setSessionId(state.p24_session_id)
+    P24.setAmount(state.p24_amount)
+    P24.setCurrency(state.p24_currency)
+    P24.setOrderId(state.p24_order_id)
+
+    try {
+        const result = await P24.verify();
+        console.log(result)
+        return true;
+    } catch (e) {
+        console.log(e.message)
+    }
+
+    return false;
 }
 
 async function sendEmail(tid, email, name) {
@@ -261,7 +366,7 @@ async function sendEmail(tid, email, name) {
         }
     })
 }
-async function sendAuthorEmail({cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment}) {
+async function sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip}) {
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
@@ -295,9 +400,21 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
                     Polityka prywatnośći zaznaczona: ${privacy}<br/>
                     Regulamin zaakceptowany: ${terms}<br/>
                     Zapisał się do newslettera: ${newsletter}
+                    <br/>
+                    <br/>
+                    <h2>Dane do faktury</h2>
+                    Wystawić fakturę: ${vat}</br>
+                    Firma: ${vatCompany}</br>
+                    NIP: ${vatNip}</br>
+                    Adres: ${vatAddress} <br/>
+                    Kod: ${vatZip} <br/>
+                    Miejscowość: ${vatCity} <br/>
+                    <br/>
+                    <br/>
+                    Tytuł przelewu: ${statement}
                     </div>
                     `
-                    
+
                     // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
                 },
             },
@@ -314,7 +431,7 @@ async function sendAuthorEmail({cname, email, phone, address, city, state, zip, 
     })
 }
 
-async function subscribeUser(email){
+async function subscribeUser(email) {
     mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
         "email": email
     })
