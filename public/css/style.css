@@ -71,7 +71,7 @@ Default CSS
   --templateColor2: #FF8A73;
   --whiteColor: #ffffff;
   --blackColor: #000000;
-  --paragraphColor: #818992;
+  --paragraphColor: #1d1d1d;
   --transition: .5s;
 }
 
@@ -1819,7 +1819,7 @@ Main Banner CSS
   position: absolute;
   top: 85px;
   z-index: -1;
-  right: 30px;
+  right: 0;
   -webkit-animation: movebounce 5s linear infinite;
           animation: movebounce 5s linear infinite;
 }
@@ -2712,7 +2712,6 @@ CTA CSS
   position: relative;
   z-index: 1;
   padding: 60px 0;
-  background-image: url(/images/cta-bg.jpg);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -3491,7 +3490,7 @@ Pricing CSS
 }
 
 .pricing-table-box .pricing-content li {
-  color: #828893;
+  color: var(--paragraphColor);
   text-transform: capitalize;
   border-bottom: 1px solid #eee;
   margin-bottom: 12px;
@@ -7297,7 +7296,7 @@ html {
 }
 
 p {
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .navbar.navbar-expand-md.navbar-light a.navbar-brand {
@@ -7363,6 +7362,7 @@ span.chapter-number {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: 18px;
 }
 
 .pricing-content .icofont-tick-mark {
@@ -7374,7 +7374,8 @@ span.chapter-number {
 .price-value p {
   color: #fff;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 17px;
+  line-height: 31px;
 }
 
 .you-save {
@@ -7467,9 +7468,6 @@ a.add-product-btn.btn-right {
 }
 
 td.product-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -7543,7 +7541,8 @@ td.product-name .cart-items {
   font-size: 16px;
 }
 
-.checkout-area .form-check .form-check-input, .checkout-area .form-check .form-check-label {
+.checkout-area .form-check .form-check-input,
+.checkout-area .form-check .form-check-label {
   cursor: pointer;
 }
 
@@ -7561,5 +7560,17 @@ td.product-name .cart-items {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.book-discover span {
+  font-size: 20px;
+}
+
+.book-discover ul {
+  font-size: 18px;
+}
+
+.next-generation-virtual-reality .icon {
+  line-height: 0;
 }
 /*# sourceMappingURL=style.css.map */

@@ -22,15 +22,16 @@ import Wartosci from "../components/BookLanding/Wartosci";
 import Overview from "../components/BookLanding/Overview";
 import Services from "../components/DigitalMarketing/Services";
 import VirtualReality from "../components/BookLanding/VirtualReality";
-import CtaCard from "../components/About/CtaCard";
+import CtaCard from "../components/BookLanding/CtaCard";
 import Pricing2 from "../components/BookLanding/Pricing2";
+
 
 export const finalPath = "";
 class BookLanding extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {paymentSuccess:null};
-}
+    this.state = { paymentSuccess: null };
+  }
   // componentDidMount() {
   //   const urlParams = new URLSearchParams(window.location.search);
   //   const myParam = urlParams.get('paymentSuccess');
@@ -41,34 +42,35 @@ class BookLanding extends React.Component {
   // }
   render() {
     return (
-    
-      <React.Fragment>
-                <Navbar />
-        <Banner />
-        <AboutContent />
-        <Discover2 />
-        <CtaCard />
+      <>
 
-        {/* <Overview /> */}
-        {/* <Wartosci /> */}
-        <Features />
-        {/* <Funfact /> */}
-        <Screenshot />
-        <VirtualReality />
-        {/* <Services /> */}
-        <Team />
-        <Pricing2 />
-        {/* <Pricing /> */}
-        <Feedback />
-        <OAutorze />
+        <React.Fragment>
+          <Navbar />
+          <Banner />
+          <AboutContent />
+          <Discover2 />
+          <CtaCard />
 
-        {/* <Blog /> */}
-        <Subscribe />
-        <FaqContent />
-        <Platform />
-        <Footer />
-      </React.Fragment>
-      
+          {/* <Overview /> */}
+          {/* <Wartosci /> */}
+          <Features />
+          {/* <Funfact /> */}
+          <Screenshot />
+          <VirtualReality />
+          {/* <Services /> */}
+          <Team />
+          <Pricing2 />
+          {/* <Pricing /> */}
+          <Feedback />
+          <OAutorze />
+
+          {/* <Blog /> */}
+          <Subscribe />
+          <FaqContent />
+          <Platform />
+          <Footer />
+        </React.Fragment>
+      </>
     );
   }
 }

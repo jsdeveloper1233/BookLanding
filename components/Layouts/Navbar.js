@@ -88,7 +88,7 @@ class Navbar extends React.Component {
             <div className="container" id="top">
               <nav className="navbar navbar-expand-md navbar-light">
                 {/* <Link href="#"> */}
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="/">
                   {/* <img src={logo} alt="logo" /> */}
                   Sekrety Rozwoju
                   <br /> Osobistego
