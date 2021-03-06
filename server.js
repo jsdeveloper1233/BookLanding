@@ -87,9 +87,8 @@ app.prepare().then(() => {
     })
 
     server.get("/api/status", async (req, res) => {
-        console.log(req.query.id);
         var state = serverCache.get(req.query.id);
-        console.log(state);
+
         if(state){
             res.json({status: state.status});
         } else {
@@ -99,20 +98,20 @@ app.prepare().then(() => {
 
     server.post("/api/verify", async (req, res) => {
         console.log('verify')
-        console.log(req)
-        console.log(req.body)
         const result = await verify(req.body)
+        console.log('verify result')
+        console.log(result)
+
         if (result) {
             var id = req.body.p24_session_id;
             var state = serverCache.get(id);
 
-            if (!state) {
+            if (state) {
                 state.statement = req.body.p24_statement;
                 sendAuthorEmail(state)
                 sendEmail(state.template, state.email, state.cname)
                 state.status = 1;
-            } else {
-                state.status = -1;
+                serverCache.set(id, state);
             }
         }
     })
