@@ -30,6 +30,7 @@ app.prepare().then(() => {
     }));
 
     server.use(bodyParser.json());
+    server.use(bodyParser.urlencoded({ extended: true }));
 
 
     server.post('/api/stripe/checkout', async (req, res) => {
@@ -98,6 +99,7 @@ app.prepare().then(() => {
 
     server.post("/api/verify", async (req, res) => {
         console.log('verify')
+        console.log(req)
         console.log(req.body)
         const result = await verify(req.body)
         if (result) {
