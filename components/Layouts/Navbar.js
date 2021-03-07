@@ -116,7 +116,6 @@ class Navbar extends React.Component {
                         to="header"
                         spy={true}
                         smooth={true}
-                        offset={50}
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
@@ -131,7 +130,6 @@ class Navbar extends React.Component {
                         to="index"
                         spy={true}
                         smooth={true}
-                        offset={50}
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
@@ -146,7 +144,6 @@ class Navbar extends React.Component {
                         to="references"
                         spy={true}
                         smooth={true}
-                        offset={50}
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
@@ -160,7 +157,6 @@ class Navbar extends React.Component {
                         to="faq"
                         spy={true}
                         smooth={true}
-                        offset={50}
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
@@ -174,7 +170,6 @@ class Navbar extends React.Component {
                         to="kupteraz"
                         spy={true}
                         smooth={true}
-                        offset={50}
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >

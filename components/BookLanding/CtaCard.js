@@ -22,7 +22,6 @@ class CtaCard extends React.Component {
                         to="kupteraz"
                         spy={true}
                         smooth={true}
-                        offset={50}
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
