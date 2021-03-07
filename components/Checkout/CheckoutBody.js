@@ -487,7 +487,7 @@ function CheckoutBody({ total, shipping }) {
                             terms={state.terms.value} 
                             comment={state.comment.value} 
                             vat={state.vat.value} 
-                            vatComapny={state.vatCompany.value} 
+                            vatCompany={state.vatCompany.value} 
                             vatNip={state.vatNip.value}
                             vatAddress={state.vatAddress.value} 
                             vatCity={state.vatCity.value} 
