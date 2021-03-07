@@ -130,8 +130,9 @@ class TeamOne extends Component {
                     </section>
                     <div className="thank-you-area">
                         <div className="container">
-                            <h1>Trwa weryfikacja zamówienia. Proszę czekać.</h1>
-                            <p>W razie problemów napisz do sergio@sergiosdorje.com</p>
+                            <h1>Transakcja w trakcie procesowania.</h1>
+                            <p>Jeżeli transakcja zakończy się sukcesem, w ciągu 10 minut otrzymasz wiadomość e-mail z potwierdzeniem zamówienia.</p>
+                            <p>W przeciwnym razie napisz do nas na adres sergio@sergiosdorje.com. Postaramy się pomóc.</p>
                             <Link href="/">
                                 <a className="btn btn-primary">Powrót do strony głównej</a>
                             </Link>
