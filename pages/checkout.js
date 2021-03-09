@@ -9,7 +9,7 @@ class Checkout extends Component {
         return (
             <React.Fragment>
                 <EmptyNavbar />
-                <Banner title="Checkout" />
+                <Banner title="Dostawa i sposób płatności" />
                 <CheckoutBody />
                 <Footer />
             </React.Fragment>

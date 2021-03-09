@@ -119,7 +119,7 @@ class Navbar extends React.Component {
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
-                        Home
+                        Start
                       </Link>
                     </li>
 
@@ -147,7 +147,7 @@ class Navbar extends React.Component {
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
-                        Referencje
+                        Recenzje
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -163,17 +163,18 @@ class Navbar extends React.Component {
                         FAQ
                       </Link>
                     </li>
-                    <li className="nav-item">
-                       <Link
-                        className="nav-link"
-                        activeClass="active"
+                    <li className="nav-item zamowteraz">
+
+                      <Link
+                        className="btn btn-primary"
                         to="kupteraz"
+                        href="#kupteraz"
                         spy={true}
                         smooth={true}
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
-                        Kup teraz
+                        ZAMÓW TERAZ
                       </Link>
                     </li>
 

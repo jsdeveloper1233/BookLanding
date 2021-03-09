@@ -245,11 +245,27 @@ td.product-name {
   }
   ul {
     font-size: 18px;
-}
+  }
 }
 
 .next-generation-virtual-reality {
   .icon {
-    line-height: 0  ;
+    line-height: 0;
+  }
+}
+
+.navbar-nav {
+align-items:center;
+}
+
+.crake-nav nav .navbar-nav li {
+  &.zamowteraz {
+    a {
+      padding: 14px !important;
+    }
+    &:hover a::before {
+      visibility: hidden;
+      top: 13px;
+    }
   }
 }

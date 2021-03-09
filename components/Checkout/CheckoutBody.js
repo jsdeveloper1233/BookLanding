@@ -112,7 +112,7 @@ function CheckoutBody({ total, shipping }) {
             required: true,
             validator: {
                 regEx: /^(?:[+]{0,1}[0-9]●?){8,}[0-9]$/,
-                error: "Niepoprawny format numeru telefonu"
+                error: "Niepoprawny format numeru telefonu. Numer telefonu ma minimum 9 cyfr."
             }
         },
 

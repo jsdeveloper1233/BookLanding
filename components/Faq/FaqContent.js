@@ -50,7 +50,7 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">''Sekrety Rozwoju Osobistego'' kupisz tylko na tej stronie - nie znajdziesz jej w księgarniach. Czasem jest taka możliwość również na Allegro.</p>
+                            <p className="accordion-content">''Sekrety Rozwoju Osobistego'' kupisz tylko na tej stronie - nie znajdziesz jej w księgarniach.</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>

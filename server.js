@@ -33,15 +33,15 @@ app.prepare().then(() => {
     server.use(bodyParser.urlencoded({ extended: true }));
 
 
-    server.post('/api/stripe/checkout', async (req, res) => {
-        await stripe.charges.create({
-            amount: req.body.amount,
-            currency: 'usd',
-            description: 'Mojosa - React Next Landing Page Templates',
-            source: req.body.token.id
-        });
-        res.send({})
-    });
+    // server.post('/api/stripe/checkout', async (req, res) => {
+    //     await stripe.charges.create({
+    //         amount: req.body.amount,
+    //         currency: 'usd',
+    //         description: 'Mojosa - React Next Landing Page Templates',
+    //         source: req.body.token.id
+    //     });
+    //     res.send({})
+    // });
     server.post('/api/newSubscriber', async (req, res) => {
         var newSubEmail = req.body.newEmail
         var status = null

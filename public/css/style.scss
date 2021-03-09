@@ -86,6 +86,7 @@ a {
     transition: .4s;
     display: inline-block;
     outline: 0;
+    font-weight: bold;
 
     &:hover, &:focus {
         text-decoration: none;
@@ -723,7 +724,8 @@ Navbar CSS
         padding: 0;
         z-index: 999;
         box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
-        background-color: var(--templateColor) !important;
+        // background-color: var(--templateColor) !important;
+        background-color: #7A3760;
         animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     }
 }
@@ -3237,13 +3239,15 @@ Pricing CSS
         }
     }
     .title {
-        font: {
-            size: 23px;
-            weight: 700;
-        }
+        font-size: 16px;
+        font-weight: normal;
         color: var(--whiteColor);
         text-transform: uppercase;
         margin-bottom: 15px;
+        span {
+            font-size: 23px;
+            font-weight: 700;
+        }
     }
     .price-value {
         display: block;
@@ -6611,6 +6615,7 @@ Checkout CSS
             display: block;
             margin-top: 25px;
             width: 100%;
+            font-size:1.6em;
 
             &.btn-disabled {
                 background-color: #717070;

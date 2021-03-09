@@ -119,10 +119,7 @@ class VirtualReality extends Component {
                 </div>
                 <h3>"Dalsze esploracje - o szkodliwości niektórych praktyk"</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aenean gravida leo porttitor pretium ullamcorper. Fusce
-                  consectetur turpis nec dolor laoreet ultrices. In a venenatis
-                  leo.
+                Na końcu mojej książki poznasz pułapki, które czekają na osoby dążące do rozwoju osobistego. Zdobędziesz wskazówki, które uchronią Cię przed toksycznymi ludźmi i wkroczeniem na złą ścieżkę.
                 </p>
               </div>
             </div>

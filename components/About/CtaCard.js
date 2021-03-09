@@ -25,7 +25,7 @@ class CtaCard extends React.Component {
                         duration={500}
                         onSetActive={this.handleSetActive}
                       >
-                        Zamów książkę teraz!
+                        Zamów teraz!
                       </Link>
             </div>
           </div>

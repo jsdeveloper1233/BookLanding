@@ -6,6 +6,10 @@ class Features extends Component {
     return (
       <section className="features-area book-features ptb-100">
         <div className="container">
+        <div className="section-title">
+        <h2>Bądźmy szczerzy...</h2>
+            <div className="bar"></div>
+          </div>
           <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="single-features-box">

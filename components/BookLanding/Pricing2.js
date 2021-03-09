@@ -1,27 +1,26 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import buingOptions from "../../buyingOptions";
-import Loader from "../Shared/Loader"
+import Loader from "../Shared/Loader";
+import CornerRibbon from "react-corner-ribbon";
 
 class Pricing2 extends Component {
-
   constructor(props) {
     super(props);
     this.state = { isLoading: false };
   }
 
   componentDidMount() {
-    this.setState({isLoading: false});
+    this.setState({ isLoading: false });
   }
 
   showLoader(event) {
-    this.setState({isLoading: true});
+    this.setState({ isLoading: true });
   }
 
   render() {
-
-    if(this.state.isLoading) {
-      return (<Loader />);
+    if (this.state.isLoading) {
+      return <Loader />;
     }
 
     return (
@@ -37,70 +36,122 @@ class Pricing2 extends Component {
           </div>
 
           <div className="row">
-
-     
-
             <div className="col-lg-4 col-md-6">
               <div className="pricing-table-box">
                 <div className="pricingTable-header">
-                  <h3 className="title">Tylko książka</h3>
+                  <h3 className="title">
+                    Tylko <span>książka</span>
+                  </h3>
                   <div className="price-value">
-                  &nbsp;&nbsp;{buingOptions.paperCopy.price} <sup>zł</sup>
-                    <p>{buingOptions.paperCopy.shipping} zł wysyłka kurierem</p>
+                    &nbsp;&nbsp;{buingOptions.paperCopy.price.toFixed(2)}{" "}
+                    <sup>zł</sup>
+                    <p>
+                      {buingOptions.paperCopy.shipping.toFixed(2)} zł wysyłka
+                      kurierem
+                    </p>
                   </div>
                 </div>
                 <ul className="pricing-content">
                   <li>
-                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie papierowym
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie papierowym
                   </li>
                 </ul>
-               
-                  <a className="btn btn-primary" href="/checkout?product=paperCopy" onClick={this.showLoader.bind(this)}>KUP KSIĄŻKĘ</a>
-            
+
+                <a
+                  className="btn btn-primary"
+                  href="/checkout?product=paperCopy"
+                  onClick={this.showLoader.bind(this)}
+                >
+                  ZAMÓW KSIĄŻKĘ
+                </a>
               </div>
             </div>
 
-                   
             <div className="col-lg-4 col-md-6">
               <div className="pricing-table-box">
                 <div className="pricingTable-header">
-                  <h3 className="title">Tylko eBook</h3>
+                  <h3 className="title">
+                    Tylko <span>eBook</span>
+                  </h3>
                   <div className="price-value">
-                  &nbsp;&nbsp;{buingOptions.ebook.price} <sup>zł</sup>
-                  <p>{buingOptions.ebook.shipping} zł wysyłka kurierem !!</p>
+                    &nbsp;&nbsp;{buingOptions.ebook.price.toFixed(2)}{" "}
+                    <sup>zł</sup>
+                    <p>darmowa wysyłka</p>
                   </div>
                 </div>
                 <ul className="pricing-content">
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie MOBI</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie EPUB</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie PDF</li>
+                  <li>
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie MOBI
+                  </li>
+                  <li>
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie EPUB
+                  </li>
+                  <li>
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie PDF
+                  </li>
                 </ul>
-                <a className="btn btn-primary" href="/checkout?product=ebook" onClick={this.showLoader.bind(this)}>KUP EBOOK</a>
+                <a
+                  className="btn btn-primary"
+                  href="/checkout?product=ebook"
+                  onClick={this.showLoader.bind(this)}
+                >
+                  ZAMÓW EBOOK
+                </a>
               </div>
             </div>
 
             <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
               <div className="pricing-table-box">
+                <CornerRibbon
+                  position="top-right"
+                  fontColor="#fff"
+                  backgroundColor="#7A3760"
+                >
+                   Oszczędź {buingOptions.bundle.discount.toFixed(2)} zł
+                </CornerRibbon>
                 <div className="pricingTable-header">
-                  <h3 className="title">Pakiet</h3>
+                  <h3 className="title">
+                    <span>Pakiet</span>
+                  </h3>
                   <div className="price-value">
-                  &nbsp;&nbsp; {buingOptions.bundle.price} <sup>zł</sup>
+                    &nbsp;&nbsp; {buingOptions.bundle.price.toFixed(2)}{" "}
+                    <sup>zł</sup>
                     <p>{buingOptions.bundle.shipping} zł wysyłka kurierem !!</p>
                   </div>
                 </div>
                 <ul className="pricing-content">
                   <li>
-                  <i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie papierowym
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie papierowym
                   </li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie MOBI</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie EPUB</li>
-                  <li><i className="icofont-tick-mark"></i>Książka "Sekrety rozwoju osobistego" <br />w formacie PDF</li>
                   <li>
-                  <i className="icofont-tick-mark"></i>2x egzemplarze (dla par) książeczki drukowanej "Radykalna
-                    Prawda w Związku"
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie MOBI
+                  </li>
+                  <li>
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie EPUB
+                  </li>
+                  <li>
+                    <i className="icofont-tick-mark"></i>Książka "Sekrety
+                    rozwoju osobistego" <br />w formacie PDF
+                  </li>
+                  <li>
+                    <i className="icofont-tick-mark"></i>2x egzemplarze (dla
+                    par) książeczki drukowanej "Radykalna Prawda w Związku"
                   </li>
                 </ul>
-                <a className="btn btn-primary" href="/checkout?product=bundle" onClick={this.showLoader.bind(this)}>KUP PAKIET<br /><small>I oszczędź {buingOptions.bundle.discount}zł</small></a>
+                <a
+                  className="btn btn-primary"
+                  href="/checkout?product=bundle"
+                  onClick={this.showLoader.bind(this)}
+                >
+                  ZAMÓW PAKIET
+                </a>
                 {/* <p className="you-save">Oszczędzasz {buingOptions.bundle.discount} zł</p> */}
               </div>
             </div>

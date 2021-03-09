@@ -17,21 +17,19 @@ class AboutContent extends Component {
             <div className="col-lg-8 col-md-12">
               <div className="about-content">
                 <p>
-                SKRETY ROZWOJU OSOBISTEGO to potężne narzędzie, dzięki któremu zaczniesz żyć świadomie i nauczysz się sterować swoją rzeczywistością. Czas na podróż w kierunku rzeczywistości, o jakim marzysz. Tylko Ty masz w sobie moc dokonywania zmian i sterowania swoim życiem.
+                <strong>SKRETY ROZWOJU OSOBISTEGO</strong> to potężne narzędzie, dzięki któremu zaczniesz żyć świadomie i nauczysz się sterować swoją rzeczywistością.</p>
+                
+                <p>Czas na podróż w kierunku rzeczywistości, o jakim marzysz. Tylko Ty masz w sobie <strong>moc dokonywania zmian</strong> i sterowania swoim życiem.
                 </p>
                 <p>
                   Wiesz w teorii, że ‘’możesz wszystko’’, ale wciąż zastanawiasz
-                  się: Jak wykorzystywać SIŁĘ SWOJEGO UMYSŁU, by przeskakiwać te
+                  się: Jak wykorzystywać <strong>SIŁĘ SWOJEGO UMYSŁU</strong>, by przeskakiwać te
                   mury? Zapamiętaj: Tylko Ty masz w sobie moc dokonywania zmian
                   i sterowania swoim życiem.
                 </p>
                 <p>
                   Poznaj sekretne metody i tajną wiedzę, która pozwoli Ci wejść
-                  na drogę kierująca do wewnętrznej mocy i mądrości. SEKRETY
-                  ROZWOJU OSOBISTEGO to potężne narzędzie, dzięki któremu
-                  zaczniesz żyć świadomie i nauczysz się sterować swoją
-                  rzeczywistością. Czas na podróż w kierunku życia, o jakim
-                  marzysz.
+                  na drogę kierująca do wewnętrznej mocy i mądrości.
                 </p>
               </div>
             </div>

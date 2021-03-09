@@ -40,7 +40,7 @@ function useForm(stateSchema, validationSchema = {}, callback) {
         let error = "";
         if (validationSchema[name].required || (validationSchema[name].vatRequired && state['vat'].value)) {
             if (!value) {
-                error = "This is required field.";
+                error = "Pole obowiązkowe.";
             }
         }
 
@@ -68,7 +68,7 @@ function useForm(stateSchema, validationSchema = {}, callback) {
         let error = "";
         if (validationSchema[name].required || (validationSchema[name].vatRequired && state['vat'].value)) {
             if (!value) {
-                error = "This is required field.";
+                error = "Pole obowiązkowe.";
             }
         }
 
