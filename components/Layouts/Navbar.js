@@ -4,15 +4,10 @@ import { connect } from "react-redux";
 import SideDrawer from "./SideDrawer";
 import SearchForm from "./SearchForm";
 import { finalPath } from "../../pages/index";
-import * as Scroll from "react-scroll";
 import {
   Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from "react-scroll";
+import {default as NextLink}  from "next/link";
 
 class Navbar extends React.Component {
   _isMounted = false;
@@ -87,13 +82,13 @@ class Navbar extends React.Component {
           <div id="navbar" className={`crake-nav ${layOutCls}`}>
             <div className="container" id="top">
               <nav className="navbar navbar-expand-md navbar-light">
-                {/* <Link href="#"> */}
-                <a className="navbar-brand" href="/">
+                <NextLink href="/">
+                <a className="navbar-brand">
                   {/* <img src={logo} alt="logo" /> */}
                   Sekrety Rozwoju
                   <br /> Osobistego
                 </a>
-                {/* </Link> */}
+                </NextLink>
                 <button
                   onClick={this.toggleNavbar}
                   className={classTwo}
@@ -120,6 +115,20 @@ class Navbar extends React.Component {
                         onSetActive={this.handleSetActive}
                       >
                         Start
+                      </Link>
+                    </li>
+
+                    <li className="nav-item">
+                      <Link
+                        className="nav-link"
+                        activeClass="active"
+                        to="author"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        O autorze
                       </Link>
                     </li>
 
@@ -169,7 +178,6 @@ class Navbar extends React.Component {
                         className="btn btn-primary"
                         to="kupteraz"
                         href="#kupteraz"
-                        spy={true}
                         smooth={true}
                         duration={500}
                         onSetActive={this.handleSetActive}

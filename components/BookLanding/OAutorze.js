@@ -4,7 +4,7 @@ import { finalPath } from "../../pages/index";
 class OAutorze extends Component {
   render() {
     return (
-      <section className="book-discover ptb-100">
+      <section className="book-discover ptb-100" id="author">
         <div className="container">
           <div className="row h-100 justify-content-center align-items-center">
             <div className="col-lg-6 col-md-12">

@@ -6940,6 +6940,7 @@ Checkout CSS
   display: block;
   margin-top: 25px;
   width: 100%;
+  font-size: 1.6em;
 }
 
 .order-details .btn.order-btn.btn-disabled {

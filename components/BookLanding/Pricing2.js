@@ -46,7 +46,7 @@ class Pricing2 extends Component {
                     &nbsp;&nbsp;{buingOptions.paperCopy.price.toFixed(2)}{" "}
                     <sup>zł</sup>
                     <p>
-                      {buingOptions.paperCopy.shipping.toFixed(2)} zł wysyłka
+                      + {buingOptions.paperCopy.shipping.toFixed(2)} zł wysyłka
                       kurierem
                     </p>
                   </div>
@@ -110,6 +110,7 @@ class Pricing2 extends Component {
                   position="top-right"
                   fontColor="#fff"
                   backgroundColor="#7A3760"
+                  style={{letterSpacing: '1px', fontWeight:700, border: '2px dashed #FF8A73'}}
                 >
                    Oszczędź {buingOptions.bundle.discount.toFixed(2)} zł
                 </CornerRibbon>
@@ -120,7 +121,7 @@ class Pricing2 extends Component {
                   <div className="price-value">
                     &nbsp;&nbsp; {buingOptions.bundle.price.toFixed(2)}{" "}
                     <sup>zł</sup>
-                    <p>{buingOptions.bundle.shipping} zł wysyłka kurierem !!</p>
+                    <p>darmowa wysyłka</p>
                   </div>
                 </div>
                 <ul className="pricing-content">
