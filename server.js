@@ -83,16 +83,16 @@ app.prepare().then(() => {
     })
 
     server.get("/api/thankyou", async (req, res) => {
-        res.redirect('/thankyou?id='+req.query.id);
+        res.redirect('/thankyou?id=' + req.query.id);
     })
 
     server.get("/api/status", async (req, res) => {
         var state = serverCache.get(req.query.id);
 
-        if(state){
-            res.json({status: state.status});
+        if (state) {
+            res.json({ status: state.status });
         } else {
-            res.json({status: -1});
+            res.json({ status: -1 });
         }
     })
 
@@ -121,136 +121,62 @@ app.prepare().then(() => {
         const quantity = req.body.quantity;
         const id = uuidv4();
 
-        switch (req.params.p) {
+        let product;
 
-            case buingOptions.ebook.sku:
-                var total = (quantity * Math.round(buingOptions.ebook.price * 100));
-                var body = req.body
-                var state = {
-                    id: id,
-                    description: body.description,
-                    price: total,
-                    cname: body.name,
-                    email: body.email,
-                    phone: body.phone,
-                    address: body.address,
-                    city: body.city,
-                    state: body.state,
-                    zip: body.zip,
-                    newsletter: body.newsletter,
-                    product: body.product,
-                    quantity: body.quantity,
-                    privacy: body.privacy,
-                    terms: body.terms,
-                    comment: body.comment,
-                    template: "d-43a4ce7ca5344d3c89282454be042e30",
-                    vat: body.vat,
-                    vatCompany: body.vatCompany,
-                    vatNip: body.vatNip,
-                    vatAddress: body.vatAddress,
-                    vatCity: body.vatCity,
-                    vatState: body.vatState,
-                    vatZip: body.vatZip,
-                    status: 0
-                };
+        for(var property in buingOptions){
+            if(buingOptions[property].sku == req.params.p){
+                product = buingOptions[property];
+            }
+        }
 
-                var u = await getPaymentLink(state)
-                res.json({ "link": u })
+        if (product) {
 
-                serverCache.set(id, state);
+            var total = (quantity * Math.round(product.price * 100));
+            if (product.shipping) {
+                total = total + (product.shipping * 100)
+            }
 
-                if (body.newsletter) {
-                    subscribeUser(body.email)
-                }
-                break;
+            var body = req.body
+            var state = {
+                id: id,
+                price: total,
+                description: body.description,
+                cname: body.name,
+                email: body.email,
+                phone: body.phone,
+                address: body.address,
+                city: body.city,
+                state: body.state,
+                zip: body.zip,
+                newsletter: body.newsletter,
+                product: body.product,
+                quantity: body.quantity,
+                privacy: body.privacy,
+                terms: body.terms,
+                comment: body.comment,
+                template: product.template,
+                vat: body.vat,
+                vatCompany: body.vatCompany,
+                vatNip: body.vatNip,
+                vatAddress: body.vatAddress,
+                vatCity: body.vatCity,
+                vatState: body.vatState,
+                vatZip: body.vatZip,
+                status: 0
+            };
 
-            case buingOptions.paperCopy.sku:
-                var total = (quantity * Math.round(buingOptions.paperCopy.price * 100)) + (buingOptions.paperCopy.shipping * 100);
-                var body = req.body
-                var state = {
-                    id: id,
-                    price: total,
-                    description: body.description,
-                    cname: body.name,
-                    email: body.email,
-                    phone: body.phone,
-                    address: body.address,
-                    city: body.city,
-                    state: body.state,
-                    zip: body.zip,
-                    newsletter: body.newsletter,
-                    product: body.product,
-                    quantity: body.quantity,
-                    privacy: body.privacy,
-                    terms: body.terms,
-                    comment: body.comment,
-                    template: "d-889a4f6a165a425cb98e7dae11baa998",
-                    vat: body.vat,
-                    vatCompany: body.vatCompany,
-                    vatNip: body.vatNip,
-                    vatAddress: body.vatAddress,
-                    vatCity: body.vatCity,
-                    vatState: body.vatState,
-                    vatZip: body.vatZip,
-                    status: 0
-                };
+            var u = await getPaymentLink(state)
 
-                var u = await getPaymentLink(state)
+            res.json({ "link": u })
 
-                res.json({ "link": u })
+            serverCache.set(id, state);
 
-                serverCache.set(id, state);
+            if (body.newsletter) {
+                subscribeUser(body.email)
+            }
 
-                if (body.newsletter) {
-                    subscribeUser(body.email)
-                }
-                break;
-
-            case buingOptions.bundle.sku:
-                var total = (quantity * Math.round(buingOptions.bundle.price * 100)) + (buingOptions.bundle.shipping * 100);
-                var body = req.body
-                var state = {
-                    id: id,
-                    description: body.description,
-                    price: total,
-                    cname: body.name,
-                    email: body.email,
-                    phone: body.phone,
-                    address: body.address,
-                    city: body.city,
-                    state: body.state,
-                    zip: body.zip,
-                    newsletter: body.newsletter,
-                    product: body.product,
-                    quantity: body.quantity,
-                    privacy: body.privacy,
-                    terms: body.terms,
-                    comment: body.comment,
-                    template: "d-58f0808630ff4b2483efc4b88e8995f0",
-                    vat: body.vat,
-                    vatCompany: body.vatCompany,
-                    vatNip: body.vatNip,
-                    vatAddress: body.vatAddress,
-                    vatCity: body.vatCity,
-                    vatState: body.vatState,
-                    vatZip: body.vatZip,
-                    status: 0
-                };
-
-                var u = await getPaymentLink(state)
-
-                res.json({ "link": u })
-
-                serverCache.set(id, state);
-
-                if (body.newsletter) {
-                    subscribeUser(body.email)
-                }
-                break;
-
-            default:
-                res.status(400).json({ "message": "error", "error": "unsupported product" })
-                break;
+        } else {
+            res.status(400).json({ "message": "error", "error": "unsupported product" })
         }
     })
     server.get('*', (req, res) => {
@@ -368,7 +294,7 @@ async function sendEmail(tid, email, name) {
         }
     })
 }
-async function sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip}) {
+async function sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip }) {
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
