@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { finalPath } from "../../pages/index";
 
 class Footer extends React.Component {
   render() {
@@ -9,7 +8,11 @@ class Footer extends React.Component {
           <div className="row">
             <div className="col-lg-12 col-md-12">
               <div className="regulamin-box">
-                <p>Regulamin</p>
+                <p>
+                  <Link href="/regulamin">
+                    <a>Regulamin</a>
+                  </Link>
+                </p>
                 <p>
                   <Link href="/polityka-prywatnosci">
                     <a>Polityka prywatności</a>
