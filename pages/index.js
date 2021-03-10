@@ -60,22 +60,6 @@ class BookLanding extends React.Component {
           <Platform />
           <FaqContent />
           <Subscribe />
-          {/* <Overview /> */}
-          {/* <Wartosci /> */}
-        
-          {/* <Funfact /> */}
-
-        
-          {/* <Services /> */}
-         
-  
-          {/* <Pricing /> */}
-
-
-          {/* <Blog /> */}
-
-  
- 
           <Footer />
         </React.Fragment>
       </>
