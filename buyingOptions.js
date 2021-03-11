@@ -6,7 +6,12 @@ var options = {
         price: 38.90,
         shipping: 0,
         image: '/images/ebook-mockup.jpg',
-        template: 'd-43a4ce7ca5344d3c89282454be042e30'
+        template: 'd-43a4ce7ca5344d3c89282454be042e30',
+        extra: {
+            key: 'paperCopy',
+            title: 'Kup jeszcze książkę papierową!',
+            text: 'Testowy tekst. Dodaj jeszcze to do koszyka'
+        }
     },
     paperCopy: {
         sku: 'papierowa',

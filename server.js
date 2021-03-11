@@ -162,7 +162,8 @@ app.prepare().then(() => {
                 vatCity: body.vatCity,
                 vatState: body.vatState,
                 vatZip: body.vatZip,
-                status: 0
+                status: 0,
+                extra: body.extra
             };
 
             var u = await getPaymentLink(state)
