@@ -7595,4 +7595,8 @@ td.product-name .cart-items {
   visibility: hidden;
   top: 13px;
 }
+
+.sklep-prices .row {
+  row-gap: 30px;
+}
 /*# sourceMappingURL=style.css.map */

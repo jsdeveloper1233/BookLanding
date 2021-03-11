@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 import SideDrawer from "./SideDrawer";
 import SearchForm from "./SearchForm";
 import { finalPath } from "../../pages/index";
+import {default as NextLink}  from "next/link";
 import {
   Link,
 } from "react-scroll";
-import {default as NextLink}  from "next/link";
 
 class Navbar extends React.Component {
   _isMounted = false;
@@ -171,6 +171,13 @@ class Navbar extends React.Component {
                       >
                         FAQ
                       </Link>
+                    </li>
+                      <li className="nav-item">
+                    <NextLink
+                        href="/sklep"
+                      >
+                        Sklep
+                      </NextLink>
                     </li>
                     <li className="nav-item zamowteraz">
 
