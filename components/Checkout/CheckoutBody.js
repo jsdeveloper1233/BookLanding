@@ -274,6 +274,7 @@ function CheckoutBody({ total, shipping }) {
     return (
         <section className="checkout-area ptb-100">
             <div className="container">
+            
 
                 <form onSubmit={handleOnSubmit}>
                     <div className="row">

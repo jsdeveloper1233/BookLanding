@@ -121,6 +121,8 @@ app.prepare().then(() => {
         const quantity = req.body.quantity;
         const id = uuidv4();
 
+        var body = req.body
+
         let product;
 
         for(var property in buingOptions){
@@ -131,12 +133,35 @@ app.prepare().then(() => {
 
         if (product) {
 
-            var total = (quantity * Math.round(product.price * 100));
-            if (product.shipping) {
-                total = total + (product.shipping * 100)
+            let extraProduct;
+
+            if(product.extra && req.body.extra) {
+                extraProduct = buingOptions[product.extra.key];
             }
 
-            var body = req.body
+            var total = (quantity * Math.round(product.price * 100));
+
+            if(extraProduct) {
+                var total2 = (req.body.extra.quantity * Math.round(extraProduct.price * 100));
+                total = total + total2;
+            }
+
+            if (product.shipping || (extraProduct && extraProduct.shipping)) {
+
+                let extraShipping = 0;
+                if(extraProduct && extraProduct.shipping)
+                {
+                    extraShipping = extraProduct.shipping;
+                }
+
+                let shipping = 0;
+                if(product.shipping){
+                    shipping = product.shipping;
+                }
+
+                total = total + (Math.max(shipping, extraShipping) * 100)
+            }
+
             var state = {
                 id: id,
                 price: total,
@@ -162,7 +187,8 @@ app.prepare().then(() => {
                 vatCity: body.vatCity,
                 vatState: body.vatState,
                 vatZip: body.vatZip,
-                status: 0
+                status: 0,
+                extra: body.extra
             };
 
             var u = await getPaymentLink(state)
