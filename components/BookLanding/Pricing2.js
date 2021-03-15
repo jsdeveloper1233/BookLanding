@@ -142,8 +142,7 @@ class Pricing2 extends Component {
                     rozwoju osobistego" <br />w formacie PDF
                   </li>
                   <li>
-                    <i className="icofont-tick-mark"></i>2x egzemplarze (dla
-                    par) książeczki drukowanej "Radykalna Prawda w Związku"
+                    <i className="icofont-tick-mark"></i>Narzędzie "Radykalna Prawda w Związku"<br />w formacie PDF
                   </li>
                 </ul>
                 <a
