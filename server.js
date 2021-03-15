@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 const keys = require("./server/config/keys");
 const stripe = require('stripe')(keys.stripeSecretKey);
 const routes = require('./routes');
-const { v4: uuidv4 } = require('uuid');
 const axios = require('axios')
 const Przelewy24 = require('./prz24lib.js')
+const moment = require('moment');
 // const {Przelewy24} = require('node-przelewy24')
 // const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', false)
 const MailerLite = require("mailerlite-api-v2-node").default;
@@ -18,8 +18,40 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
 const handle = routes.getRequestHandler(app);
 const buingOptions = require('./buyingOptions');
-const NodeCache = require("node-cache");
-const serverCache = new NodeCache({ stdTTL: 3600, checkperiod: 600 });
+
+const { Sequelize, DataTypes, Op } = require('sequelize');
+const sequelize = new Sequelize(`postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
+
+try {
+    sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+} catch (error) {
+    console.error('Unable to connect to the database:', error);
+}
+
+const Order = sequelize.define('Order', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    body: {
+        type: DataTypes.STRING(2048),
+        allowNull: false
+    },
+    state: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
+}, {
+
+})
+
+Order.sync();
+
+setInterval(async () => {
+    await synchronize();
+}, 1000 * 60);
 
 app.prepare().then(() => {
     const server = express();
@@ -87,7 +119,7 @@ app.prepare().then(() => {
     })
 
     server.get("/api/status", async (req, res) => {
-        var state = serverCache.get(req.query.id);
+        var state = await Order.findByPk(parseInt(req.query.id)); 
 
         if (state) {
             res.json({ status: state.status });
@@ -104,14 +136,15 @@ app.prepare().then(() => {
 
         if (result) {
             var id = req.body.p24_session_id;
-            var state = serverCache.get(id);
+            var order = await Order.findByPk(parseInt(req.query.id)); 
 
-            if (state) {
+            if (order) {
+                let state = JSON.parse(order.body);
                 state.statement = req.body.p24_statement;
                 sendAuthorEmail(state)
                 sendEmail(state.template, state.email, state.cname)
                 state.status = 1;
-                serverCache.set(id, state);
+                await Order.update({body: JSON.stringify(state), state: 1}, {where: {id: parseInt(id)}});
             }
         }
     })
@@ -119,14 +152,13 @@ app.prepare().then(() => {
     server.post("/api/buy/:p", async (req, res) => {
 
         const quantity = req.body.quantity;
-        const id = uuidv4();
 
         var body = req.body
 
         let product;
 
-        for(var property in buingOptions){
-            if(buingOptions[property].sku == req.params.p){
+        for (var property in buingOptions) {
+            if (buingOptions[property].sku == req.params.p) {
                 product = buingOptions[property];
             }
         }
@@ -135,36 +167,39 @@ app.prepare().then(() => {
 
             let extraProduct;
 
-            if(product.extra && req.body.extra) {
+            if (product.extra && req.body.extra) {
                 extraProduct = buingOptions[product.extra.key];
             }
 
             var total = (quantity * Math.round(product.price * 100));
 
-            if(extraProduct) {
+            if (extraProduct) {
                 var total2 = (req.body.extra.quantity * Math.round(extraProduct.price * 100));
                 total = total + total2;
             }
 
+            let shipping = 0;
+
             if (product.shipping || (extraProduct && extraProduct.shipping)) {
 
                 let extraShipping = 0;
-                if(extraProduct && extraProduct.shipping)
-                {
+                if (extraProduct && extraProduct.shipping) {
                     extraShipping = extraProduct.shipping;
                 }
 
-                let shipping = 0;
-                if(product.shipping){
+                shipping = 0;
+                if (product.shipping) {
                     shipping = product.shipping;
                 }
 
-                total = total + (Math.max(shipping, extraShipping) * 100)
+                shipping = Math.max(shipping, extraShipping);
+
+                total = total + (shipping * 100)
             }
 
             var state = {
-                id: id,
                 price: total,
+                shipping: shipping,
                 description: body.description,
                 cname: body.name,
                 email: body.email,
@@ -191,11 +226,16 @@ app.prepare().then(() => {
                 extra: body.extra
             };
 
-            var u = await getPaymentLink(state)
+            let order = await Order.create({
+                body: JSON.stringify(state),
+                state: 0
+            });
+
+            var u = await getPaymentLink(order, state);
+
+            await sendNewOrderEmail(order, state);
 
             res.json({ "link": u })
-
-            serverCache.set(id, state);
 
             if (body.newsletter) {
                 subscribeUser(body.email)
@@ -215,11 +255,29 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
-async function getPaymentLink(state) {
+
+async function synchronize(){
+    var time = new Date();
+    time = moment(time).add(-15, 'm').toDate();
+    var result = await Order.findAll({where: {state:0, createdAt: { [Op.lt]: time }}});
+
+    for(let i=0; i<result.length; i++)
+    {
+        let item = result[i];
+        await rejectOrder(item);
+    }
+}
+
+async function rejectOrder(order){
+    await sendRejectOrderEmail(order, JSON.parse(order.body));
+    await Order.update({state: -1}, { where: {id: order.id}});
+}
+
+async function getPaymentLink(order, state) {
     const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, true) // todo dev zamiast true
     const PORT = process.env.PORT || 3006;
     // Set obligatory data
-    P24.setSessionId(state.id)
+    P24.setSessionId(order.id)
     P24.setAmount(state.price)
     P24.setCurrency('PLN')
 
@@ -255,10 +313,10 @@ async function getPaymentLink(state) {
 
     if (dev) {
         P24.setUrlStatus(`http://localhost:${PORT}/api/verify`)
-        P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${state.id}`)
+        P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${order.id}`)
     } else {
         P24.setUrlStatus(`https://sekretyrozwojuosobistego.pl/api/verify`)
-        P24.setUrlReturn(`https://sekretyrozwojuosobistego.pl/api/thankyou?id=${state.id}`)
+        P24.setUrlReturn(`https://sekretyrozwojuosobistego.pl/api/thankyou?id=${order.id}`)
     }
 
     // What about adding some products?
@@ -367,6 +425,116 @@ async function sendAuthorEmail({ cname, email, phone, address, city, state, zip,
                     <br/>
                     Tytuł przelewu: ${statement}
                     </div>
+                    `
+
+                    // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
+                },
+            },
+        ],
+        "from": {
+            "email": "sergio@sergiosdorje.com",
+            "name": "Sergio S Dorje"
+        },
+        "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
+    }, {
+        headers: {
+            "Authorization": process.env.SENDGRID_AUTH_TOKEN
+        }
+    })
+}
+
+async function sendNewOrderEmail(order, state) {
+    await axios.post("https://api.sendgrid.com/v3/mail/send", {
+        "personalizations": [
+            {
+                "to": [
+                    {
+                        "email": state.email,
+                        "name": state.cname
+                    }
+                ],
+                "dynamic_template_data": {
+                    "data": `
+                    <p>Szczegóły dotyczące zamówienia #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                    <p>Metoda płatności: Przelew elektroniczny - Przelewy24</p>
+                    <p>Po zatwierdzeniu płatności, otrzymasz kolejną wiadomość z potwierdzeniem pomyślnego zamówienia.</p>
+                    <p>W razie problemów lub pytań prosimy o kontakt.</p>
+
+                    <div>Adres dostarczenia:</div>
+                    <div>
+                    ${state.cname} <br/>
+                    ${state.address}, ${state.zip} ${state.city} <br/>
+                    Tel: ${state.phone} <br/>
+                    Email: ${state.email}
+                    </div>
+                    <br/>
+                    
+                    <div>Dane na rachunku/fakturze:</div>
+                    <div>
+                    ${state.vat 
+                    ? `${state.vatCompany} <br/>
+                    ${state.vatNip} <br/>
+                    ${state.vatAddress}, ${state.vatZip} ${state.vatCity} <br/>
+                    Tel: ${state.phone} <br/>
+                    Email: ${state.email}`
+                    : `${state.cname} <br/>
+                    ${state.address}, ${state.zip} ${state.city} <br/>
+                    Tel: ${state.phone} <br/>
+                    Email: ${state.email}`}
+                    
+                    </div>
+
+                    <p>Metoda dostawy: Przesyłka kurierska (koszt dostawy wyniósł ${state.shipping} zł)</p>
+
+                    <p>
+                    Zakupione produkty:
+                    <br />
+                    ${state.product}
+                    <br />
+                    ${state.extra ? state.extra.product.name : ''}
+                    </p>
+
+                    <p>
+                        Kwota do zapłaty: ${state.price} zł
+                    </p>
+                    `
+
+                    // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
+                },
+            },
+        ],
+        "from": {
+            "email": "sergio@sergiosdorje.com",
+            "name": "Sergio S Dorje"
+        },
+        "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
+    }, {
+        headers: {
+            "Authorization": process.env.SENDGRID_AUTH_TOKEN
+        }
+    })
+}
+
+async function sendRejectOrderEmail(order, state) {
+    await axios.post("https://api.sendgrid.com/v3/mail/send", {
+        "personalizations": [
+            {
+                "to": [
+                    {
+                        "email": state.email,
+                        "name": state.cname
+                    }
+                ],
+                "dynamic_template_data": {
+                    "data": `
+                    <p>Szanowni Państwo,</p>
+
+                    <p>Zamówienie #${order.id} z dnia ${order.createdAt.toLocaleDateString('pl-PL')} zostało anulowane. W razie jakichkolwiek pytań prosimy o kontakt.</p>
+                    
+                    
+                    <p>Serdecznie pozdrawiamy,</p>
+                    <p>Sekretyrozwojuosobistego.pl</p>
+                    <
                     `
 
                     // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
