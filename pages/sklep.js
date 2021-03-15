@@ -3,6 +3,7 @@ import Navbar from "../components/Layouts/Navbar";
 import Banner from "../components/Checkout/Banner";
 import Footer from "../components/Layouts/Footer";
 import Pricing from "../components/BookLanding/Pricing";
+import NavbarSinglePage from "../components/Layouts/NavbarSinglePage";
 
 export const finalPath = "";
 class Sklep extends React.Component {
@@ -14,7 +15,7 @@ class Sklep extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        <NavbarSinglePage />
         <Banner title="Sklep" />
 
         <Pricing />
