@@ -277,7 +277,7 @@ async function getPaymentLink(order, state) {
     const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, true) // todo dev zamiast true
     const PORT = process.env.PORT || 3006;
     // Set obligatory data
-    P24.setSessionId(order.id)
+    P24.setSessionId(order.id + '')
     P24.setAmount(state.price)
     P24.setCurrency('PLN')
 
