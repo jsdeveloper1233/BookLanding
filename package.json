@@ -28,6 +28,7 @@
         "express": "^4.17.1",
         "mailerlite-api-v2-node": "^1.1.1",
         "moment": "^2.29.1",
+        "mysql2": "^2.2.5",
         "next": "^10.0.3",
         "next-analytics": "^2.0.0",
         "next-redux-wrapper": "^3.0.0-alpha.3",

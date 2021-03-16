@@ -20,7 +20,7 @@ const handle = routes.getRequestHandler(app);
 const buingOptions = require('./buyingOptions');
 
 const { Sequelize, DataTypes, Op } = require('sequelize');
-const sequelize = new Sequelize(`postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
+const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
 
 try {
     sequelize.authenticate();
@@ -495,7 +495,7 @@ async function sendNewOrderEmail(order, state) {
                     </p>
 
                     <p>
-                        Kwota do zapłaty: ${state.price} zł
+                        Kwota do zapłaty: ${state.price / 100} zł
                     </p>
                     `
 
