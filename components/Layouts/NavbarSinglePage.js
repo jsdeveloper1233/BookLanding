@@ -104,7 +104,7 @@ class NavbarSinglePage extends React.Component {
                   <ul className="navbar-nav nav ml-auto">
                     <li className="nav-item">
                       <NextLink href="/">
-                        <a className="nav-link" activeClass="active">
+                        <a className="nav-link" >
                           Start
                         </a>
                       </NextLink>
@@ -112,7 +112,7 @@ class NavbarSinglePage extends React.Component {
 
                     <li className="nav-item">
                     <NextLink href="/#author">
-                        <a className="nav-link" activeClass="active">
+                        <a className="nav-link" >
                           O autorze
                         </a>
                       </NextLink>
@@ -120,7 +120,7 @@ class NavbarSinglePage extends React.Component {
 
                     <li className="nav-item">
                     <NextLink href="/#index">
-                        <a className="nav-link" activeClass="active">
+                        <a className="nav-link">
                           Spis treści
                         </a>
                       </NextLink>
@@ -128,14 +128,14 @@ class NavbarSinglePage extends React.Component {
 
                     <li className="nav-item">
                     <NextLink href="/#references">
-                        <a className="nav-link" activeClass="active">
+                        <a className="nav-link">
                           Recenzje
                         </a>
                       </NextLink>
                     </li>
                     <li className="nav-item">
                     <NextLink href="/#faq">
-                        <a className="nav-link" activeClass="active">
+                        <a className="nav-link">
                           FAQ
                         </a>
                       </NextLink>
@@ -145,7 +145,7 @@ class NavbarSinglePage extends React.Component {
                     </li>
                     <li className="nav-item zamowteraz">
                     <NextLink href="/#kupteraz">
-                        <a className="btn btn-primary" activeClass="active">
+                        <a className="btn btn-primary">
                           ZAMÓW TERAZ
                         </a>
                       </NextLink>

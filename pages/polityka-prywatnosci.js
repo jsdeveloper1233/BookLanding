@@ -3,6 +3,7 @@ import Navbar from "../components/Layouts/Navbar";
 import Banner from '../components/Checkout/Banner';
 import Footer from "../components/Layouts/Footer";
 import PrivacyPolicyText from "../components/BookLanding/PrivacyPolicyText";
+import NavbarSinglePage from "../components/Layouts/NavbarSinglePage";
 
 
 export const finalPath = "";
@@ -16,7 +17,7 @@ class PrivacyPolicy extends React.Component {
     return (
     
       <React.Fragment>
-         <Navbar />
+         <NavbarSinglePage />
          <Banner title="Polityka Prywatności" />
         <PrivacyPolicyText />
 

@@ -33,13 +33,24 @@ var options = {
         image: '/images/pakiet.jpg',
         template: 'd-58f0808630ff4b2483efc4b88e8995f0'
     },
+    czygrupajestsekta: {
+        sku: 'czygrupajestsekta',
+        name: 'Czy grupa jest sektą?',
+        description: 'Czy grupa jest sektą?',
+        originalPrice: 90,
+        price: 10.90,
+        shipping: 0.0,
+        discount: 0, // to pole jest automatycznie wyliczane poniżej
+        image: '/images/pakiet.jpg',
+        template: 'd-58f0808630ff4b2483efc4b88e8995f0'
+    },
     test: {
         sku: 'test',
         name: 'Test',
         description: 'Testowy produkt',
         originalPrice: 123,
         price: 100,
-        shipping: 20.0,
+        shipping: 20.00,
         discount: 0, // to pole jest automatycznie wyliczane poniżej
         image: '/images/pakiet.jpg',
         template: 'd-58f0808630ff4b2483efc4b88e8995f0'

@@ -2,12 +2,14 @@ import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import Banner from '../components/Checkout/Banner';
 import Footer from "../components/Layouts/Footer";
-import RegulaminText from "../components/BookLanding/RegulaminText";
+import PrivacyPolicyText from "../components/BookLanding/PrivacyPolicyText";
 import NavbarSinglePage from "../components/Layouts/NavbarSinglePage";
+import CzyGrupaJestSektaContent from "../components/BookLanding/CzyGrupaJestSektaContent";
+import BuyCzyGrupaJestSekta from "../components/BookLanding/BuyCzyGrupaJestSekta";
 
 
 export const finalPath = "";
-class Regulamin extends React.Component {
+class CzyGrupaJestSekta extends React.Component {
   constructor(props) {
     super(props);
     this.state = {paymentSuccess:null};
@@ -18,8 +20,9 @@ class Regulamin extends React.Component {
     
       <React.Fragment>
          <NavbarSinglePage />
-         <Banner title="Regulamin" />
-        <RegulaminText />
+         <Banner title="Czy dana grupa jest sektą?" />
+         <BuyCzyGrupaJestSekta />
+        <CzyGrupaJestSektaContent />
 
         <Footer />
       </React.Fragment>
@@ -28,4 +31,4 @@ class Regulamin extends React.Component {
   }
 }
 
-export default Regulamin;
+export default CzyGrupaJestSekta;
