@@ -374,7 +374,7 @@ class OrderSummary extends Component {
                   checked
                   readOnly
                 />
-                <label htmlFor="express">Kurier 24/48h</label>
+                <label htmlFor="express">{this.getShipping() == 0 ? 'Wysyłka elektroniczna' : 'Kurier 24/48h'}</label>
               </p>
             </div>
 

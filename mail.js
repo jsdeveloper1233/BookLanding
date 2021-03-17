@@ -10,7 +10,7 @@ class Mails {
     //email do klienta, zamówienie zostało przyjęte, transakcja została rozpoczęta
     //*********************************************** */
     async sendNewOrderEmail(order, state) {
-        const {cname, email, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, price, name, quantity} = state;
+        const {cname, email, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, quantity, shipping, price, product, extra} = state;
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
@@ -46,13 +46,12 @@ class Mails {
                     Kod: ${vatZip} ${vatCity}
                     </p>`,
 
-                    "shippingMethod": `
-                    <p>Kurierem 24h-48h</p>`,
+                    "shippingMethod": shipping > 0 ? `<p>Kurierem 24h-48h</p>` : `<p>Wysyłka elektroniczna</p>`,
 
                     "totalPrice": `<p>Kwota do zapłaty: ${price / 100} zł </p>`,
 
-                    "productBought": `${name}`,
-                    "productBoughtQty": `${quantity}`,
+                    "productBought": `${product.name}`, //drugi produkt ${extra.product.name}
+                    "productBoughtQty": `${quantity}`, //ilość drugiego produktu ${extra.quantity}
 
 
 
@@ -101,8 +100,10 @@ class Mails {
                     <br/>
                     <div>
                     <h2>Zamówienie</h2>
-                    Produkt zamówiony: ${product}<br/>
+                    Produkt zamówiony: ${product.name}<br/>
                     Ilość sztuk: ${quantity}<br/>
+                    ${product.extra ? `Produkt zamówiony: ${extra.product.name}<br/>
+                    Ilość sztuk: ${extra.quantity}<br/>` : ''}
                     Komentarz: ${comment}
                     </div>
                     <br/>

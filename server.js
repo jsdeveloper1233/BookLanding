@@ -202,6 +202,7 @@ app.prepare().then(() => {
 
             var state = {
                 price: total,
+                quantity: quantity,
                 shipping: shipping,
                 description: body.description,
                 cname: body.name,
@@ -212,8 +213,7 @@ app.prepare().then(() => {
                 state: body.state,
                 zip: body.zip,
                 newsletter: body.newsletter,
-                product: body.product,
-                quantity: body.quantity,
+                product: product,
                 privacy: body.privacy,
                 terms: body.terms,
                 comment: body.comment,
@@ -322,8 +322,11 @@ async function getPaymentLink(order, state) {
         P24.setUrlReturn(`https://sekretyrozwojuosobistego.pl/api/thankyou?id=${order.id}`)
     }
 
-    // What about adding some products?
-    // P24.addProduct('Book', 'Product description', 1, price * 100)
+    P24.addProduct(state.product.name, state.product.description, state.quantity, state.product.price * 100);
+
+    if(state.extra){
+        P24.addProduct(state.extra.product.name, state.extra.product.description, state.extra.quantity, state.extra.product.price * 100);
+    }
 
     // Register our order
     try {
