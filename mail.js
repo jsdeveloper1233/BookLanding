@@ -6,8 +6,84 @@ class Mails {
 
     }
 
+    // MAIL DO KLIENTA
+    //email do klienta, zamówienie zostało przyjęte, transakcja została rozpoczęta
+    //*********************************************** */
+    async sendNewOrderEmail(order, state) {
+        const {cname, email, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, price, name, quantity} = state;
+        await axios.post("https://api.sendgrid.com/v3/mail/send", {
+            "personalizations": [
+                {
+                    "to": [
+                        {
+                            "email": email,
+                            "name": cname
+                        }
+                    ],
+                    "dynamic_template_data": {
+                        "data": `
+                        <p>Witaj ${cname}, <br />
+                        Dziękujemy za złożenie zamówienia w Sekretyrozwojuosobistego.pl.<br />
+                        Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
+                        </p>
+                        <h2>Szczegóły dotyczące zamówienia</h2>
+                        <p><strong>Numer zamówienia:</strong> #${order.id} <br />
+                        <strong>Data zamówienia:</strong> ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                    `,
+                    "shippingAddress": `
+                    <p><strong>Adres dostawy:</strong><br />
+                    ${cname}<br />
+                    ${address} <br/>
+                    ${zip} ${city} <br/>
+                    ${phone}
+                    </p>
 
-//email do autora, potwierdzenie że transakcja zakończyła się sukcesem
+                    `,
+                    "invoiceData": `
+                    <p>
+                    Firma: ${vatCompany}</br>
+                    NIP: ${vatNip}</br>
+                    Adres: ${vatAddress} <br/>
+                    Kod: ${vatZip} ${vatCity}
+                    </p>`,
+
+                    "shippingMethod": `
+                    <p>
+                    Kurierem 24h-48h
+                    </p>`,
+
+                    "totalPrice": `
+                    <p>
+                    Kwota do zapłaty: ${price / 100} zł
+                    </p>
+                    `,
+
+                    "productBought": `${name}`,
+                    "productBoughtQty": `${quantity}`,
+
+
+
+                },
+                    
+                },
+            ],
+            "from": {
+                "email": "sergio@sergiosdorje.com",
+                "name": "Sergio S Dorje"
+            },
+            "template_id": "d-6c787146340a43e9bfa66a707882d7fb"
+        }, {
+            headers: {
+                "Authorization": process.env.SENDGRID_AUTH_TOKEN
+            }
+        })
+    }
+
+
+
+// MAIL DO ADMINA
+// email do Admina, potwierdzenie że transakcja zakończyła się sukcesem
+//*********************************************** */
     async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip }) {
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
@@ -73,80 +149,10 @@ class Mails {
         })
     }
 
-    //email do klienta, zamówienie zostało przyjęte, transakcja została rozpoczęta
-    async sendNewOrderEmail(order, state) {
-        await axios.post("https://api.sendgrid.com/v3/mail/send", {
-            "personalizations": [
-                {
-                    "to": [
-                        {
-                            "email": state.email,
-                            "name": state.cname
-                        }
-                    ],
-                    "dynamic_template_data": {
-                        "data": `
-                    <p>Szczegóły dotyczące zamówienia #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
-                    <p>Metoda płatności: Przelew elektroniczny - Przelewy24</p>
-                    <p>Po zatwierdzeniu płatności, otrzymasz kolejną wiadomość z potwierdzeniem pomyślnego zamówienia.</p>
-                    <p>W razie problemów lub pytań prosimy o kontakt.</p>
-
-                    <div>Adres dostarczenia:</div>
-                    <div>
-                    ${state.cname} <br/>
-                    ${state.address}, ${state.zip} ${state.city} <br/>
-                    Tel: ${state.phone} <br/>
-                    Email: ${state.email}
-                    </div>
-                    <br/>
-                    
-                    <div>Dane na rachunku/fakturze:</div>
-                    <div>
-                    ${state.vat
-                                ? `${state.vatCompany} <br/>
-                    ${state.vatNip} <br/>
-                    ${state.vatAddress}, ${state.vatZip} ${state.vatCity} <br/>
-                    Tel: ${state.phone} <br/>
-                    Email: ${state.email}`
-                                : `${state.cname} <br/>
-                    ${state.address}, ${state.zip} ${state.city} <br/>
-                    Tel: ${state.phone} <br/>
-                    Email: ${state.email}`}
-                    
-                    </div>
-
-                    <p>Metoda dostawy: Przesyłka kurierska (koszt dostawy wyniósł ${state.shipping} zł)</p>
-
-                    <p>
-                    Zakupione produkty:
-                    <br />
-                    ${state.product}
-                    <br />
-                    ${state.extra ? state.extra.product.name : ''}
-                    </p>
-
-                    <p>
-                        Kwota do zapłaty: ${state.price / 100} zł
-                    </p>
-                    `
-
-                        // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
-                    },
-                },
-            ],
-            "from": {
-                "email": "sergio@sergiosdorje.com",
-                "name": "Sergio S Dorje"
-            },
-            "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
-        }, {
-            headers: {
-                "Authorization": process.env.SENDGRID_AUTH_TOKEN
-            }
-        })
-    }
-
+    
+    // MAIL DO KLIENTA
     //email do klienta, zamówienie zostało anulowane
+    //*********************************************** */
     async sendRejectOrderEmail(order, state) {
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
