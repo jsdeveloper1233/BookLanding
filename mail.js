@@ -23,24 +23,23 @@ class Mails {
                     "dynamic_template_data": {
                         "data": `
                         <p>Witaj ${cname}, <br />
+                        <br />
                         Dziękujemy za złożenie zamówienia w Sekretyrozwojuosobistego.pl.<br />
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
-                        <h2>Szczegóły dotyczące zamówienia</h2>
+                        <strong>Szczegóły dotyczące zamówienia</strong>
                         <p><strong>Numer zamówienia:</strong> #${order.id} <br />
                         <strong>Data zamówienia:</strong> ${(new Date()).toLocaleDateString('pl-PL')}</p>
                     `,
                     "shippingAddress": `
-                    <p><strong>Adres dostawy:</strong><br />
+                    <p>
                     ${cname}<br />
                     ${address} <br/>
                     ${zip} ${city} <br/>
                     ${phone}
-                    </p>
-
-                    `,
-                    "invoiceData": `
-                    <p>
+                    </p>`,
+                    
+                    "invoiceData": `<p>
                     Firma: ${vatCompany}</br>
                     NIP: ${vatNip}</br>
                     Adres: ${vatAddress} <br/>
@@ -48,15 +47,9 @@ class Mails {
                     </p>`,
 
                     "shippingMethod": `
-                    <p>
-                    Kurierem 24h-48h
-                    </p>`,
+                    <p>Kurierem 24h-48h</p>`,
 
-                    "totalPrice": `
-                    <p>
-                    Kwota do zapłaty: ${price / 100} zł
-                    </p>
-                    `,
+                    "totalPrice": `<p>Kwota do zapłaty: ${price / 100} zł </p>`,
 
                     "productBought": `${name}`,
                     "productBoughtQty": `${quantity}`,
