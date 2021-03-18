@@ -50,11 +50,9 @@ class Mails {
 
                     "totalPrice": `<p>Kwota do zapłaty: ${price / 100} zł </p>`,
 
-                    "productBought": `${product.name}`, //drugi produkt ${extra.product.name}
-                    "productBoughtQty": `${quantity}`, //ilość drugiego produktu ${extra.quantity}
-
-
-
+                    "productBought": `${product.name}`,
+                    "productBoughtQty": `${quantity}`, 
+                    "extraProduct": `${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}`
                 },
                     
                 },
