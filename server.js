@@ -200,10 +200,16 @@ app.prepare().then(() => {
                 total = total + (shipping * 100)
             }
 
+            var electronicShipping = product.electronicShipping;
+            if(extraProduct){
+                electronicShipping = electronicShipping && extraProduct.electronicShipping;
+            }
+
             var state = {
                 price: total,
                 quantity: quantity,
                 shipping: shipping,
+                electronicShipping: electronicShipping,
                 description: body.description,
                 cname: body.name,
                 email: body.email,

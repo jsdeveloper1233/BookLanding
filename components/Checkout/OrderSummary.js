@@ -109,6 +109,19 @@ class OrderSummary extends Component {
     return sum;
   }
 
+  isElectronicShipping(){
+    if(!this.state.product){
+      return true;
+    }
+
+    var elec = this.state.product.electronicShipping;
+    if(this.state.extra) {
+      elec = elec && this.state.extra.product.electronicShipping;
+    }
+
+    return elec;
+  }
+
   getProductsTotal(){
     if(!this.state.product){
       return 0;
@@ -374,7 +387,7 @@ class OrderSummary extends Component {
                   checked
                   readOnly
                 />
-                <label htmlFor="express">{this.getShipping() == 0 ? 'Wysyłka elektroniczna' : 'Kurier 24/48h'}</label>
+                <label htmlFor="express">{this.isElectronicShipping() ? 'Wysyłka elektroniczna' : 'Kurier 24/48h'}</label>
               </p>
             </div>
 
