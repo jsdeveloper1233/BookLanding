@@ -73,7 +73,7 @@ class Mails {
 // MAIL DO ADMINA
 // email do Admina, potwierdzenie że transakcja zakończyła się sukcesem
 //*********************************************** */
-    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip }) {
+    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price }) {
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
@@ -88,6 +88,7 @@ class Mails {
                     <div>
                     Imię i nazwisko: ${cname} <br/>
                     Adres: ${address} <br/>
+                    Województwo: ${state}
                     Kod: ${zip} <br/>
                     Miejscowość: ${city} <br/>
                     <br/>
@@ -97,10 +98,14 @@ class Mails {
                     <br/>
                     <div>
                     <h2>Zamówienie</h2>
+                    <p>
                     Produkt zamówiony: ${product.name}<br/>
                     Ilość sztuk: ${quantity}<br/>
+                    </p>
+                    <p>
                     ${product.extra ? `Produkt zamówiony: ${extra.product.name}<br/>
                     Ilość sztuk: ${extra.quantity}<br/>` : ''}
+                    </p>
                     Komentarz: ${comment}
                     </div>
                     <br/>
@@ -120,6 +125,7 @@ class Mails {
                     Miejscowość: ${vatCity} <br/>
                     <br/>
                     <br/>
+                    Kwota zapłacona: ${price}
                     Tytuł przelewu: ${statement}
                     </div>
                     `
@@ -156,7 +162,7 @@ class Mails {
                     ],
                     "dynamic_template_data": {
                         "data": `
-                    <p>Szanowni Państwo,</p>
+                    <p>Witaj,</p>
 
                     <p>Zamówienie #${order.id} z dnia ${order.createdAt.toLocaleDateString('pl-PL')} zostało anulowane. W razie jakichkolwiek pytań prosimy o kontakt.</p>
                     
