@@ -22,7 +22,7 @@ const buingOptions = require('./buyingOptions');
 const Mails = require('./mail');
 const mail = new Mails();
 
-const { Sequelize, DataTypes, Op } = require('sequelize');
+const { Sequelize, DataTypes, Op, UUID } = require('sequelize');
 const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
 
 try {
@@ -50,7 +50,45 @@ const Order = sequelize.define('Order', {
 
 })
 
+const Link = sequelize.define('Link', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    link: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+    },
+    orderId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    }
+}, {
+
+})
+
+const Download = sequelize.define('Download', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    time: {
+        type: Sequelize.DATE,
+        allowNull: false
+    }, 
+    linkId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    }
+}, {
+
+})
+
 Order.sync();
+Link.sync();
+Download.sync();
 
 setInterval(async () => {
     await synchronize();
@@ -131,6 +169,21 @@ app.prepare().then(() => {
         }
     })
 
+    server.get("/api/download", async (req, res) => {
+        let id = req.query.id;
+
+        let link = await Link.findOne({where: {link: id}});
+        if(link) {
+            await Download.create({linkId: link.id, time: new Date()});
+            res.status(200);
+
+            //todo pobieranie pliku
+
+        } else {
+            res.status(404);
+        }
+    })
+
     server.post("/api/verify", async (req, res) => {
         console.log('verify')
         const result = await verify(req.body)
@@ -144,6 +197,15 @@ app.prepare().then(() => {
             if (order) {
                 let state = JSON.parse(order.body);
                 state.statement = req.body.p24_statement;
+
+                let downloadLink;
+
+                if(state.product.electronicShipping || (state.extra && state.extra.product.electronicShipping)) {
+                    downloadLink = UUID() + '';
+                    await Link.create({link: downloadLink, orderId: order.id});
+                    downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`
+                }
+
                 await mail.sendAuthorEmail(state)
                 sendEmail(state.template, state.email, state.cname)
                 state.status = 1;
