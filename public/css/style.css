@@ -7599,4 +7599,22 @@ td.product-name .cart-items {
 .sklep-prices .row {
   row-gap: 30px;
 }
+
+.form-group.uploadphoto label {
+  margin-bottom: 0;
+}
+
+label.sendphoto {
+  margin-right: 20px;
+}
+
+.wordcount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: #888;
+}
 /*# sourceMappingURL=style.css.map */
