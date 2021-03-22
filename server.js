@@ -175,9 +175,9 @@ app.prepare().then(() => {
         let link = await Link.findOne({where: {link: id}});
         if(link) {
             await Download.create({linkId: link.id, time: new Date()});
-            res.status(200);
-
-            //todo pobieranie pliku
+            
+            let file = `${__dirname}/public/sample.pdf`;
+            res.download(file);
 
         } else {
             res.status(404);
@@ -207,7 +207,7 @@ app.prepare().then(() => {
                 }
 
                 await mail.sendAuthorEmail(state)
-                sendEmail(state.template, state.email, state.cname)
+                sendEmail(state.template, state.email, state.cname, downloadLink);
                 state.status = 1;
                 await Order.update({body: JSON.stringify(state), state: 1}, {where: {id: parseInt(id)}});
             }
@@ -429,7 +429,7 @@ async function verify(state) {
     return false;
 }
 
-async function sendEmail(tid, email, name) {
+async function sendEmail(tid, email, name, downloadLink) {
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
@@ -439,6 +439,9 @@ async function sendEmail(tid, email, name) {
                         "name": name
                     }
                 ],
+                "dynamic_template_data": {
+                    "link": downloadLink
+                }
             }
         ],
         "from": {
