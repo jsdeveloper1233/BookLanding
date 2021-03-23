@@ -7,6 +7,36 @@ class Mails {
     }
 
     // MAIL DO KLIENTA
+    // transakcja zakończyła się sukcesem
+    async sendEmail(tid, email, name, links) {
+        await axios.post("https://api.sendgrid.com/v3/mail/send", {
+            "personalizations": [
+                {
+                    "to": [
+                        {
+                            "email": email,
+                            "name": name
+                        }
+                    ],
+                    "dynamic_template_data": {
+                        "links": links
+                    }
+                }
+            ],
+            "from": {
+                "email": "sergio@sergiosdorje.com",
+                "name": "Sergio S Dorje"
+            },
+            "template_id": tid
+        }, {
+            headers: {
+                "Authorization": process.env.SENDGRID_AUTH_TOKEN
+            }
+        })
+    }
+
+
+    // MAIL DO KLIENTA
     //email do klienta, zamówienie zostało przyjęte, transakcja została rozpoczęta
     //*********************************************** */
     async sendNewOrderEmail(order, state) {

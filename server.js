@@ -234,7 +234,7 @@ app.prepare().then(() => {
                 });
 
                 await mail.sendAuthorEmail(state)
-                sendEmail(state.template, state.email, state.cname, links);
+                await mail.sendEmail(state.template, state.email, state.cname, links);
                 state.status = 1;
                 await Order.update({body: JSON.stringify(state), state: 1}, {where: {id: parseInt(id)}});
             }
@@ -456,32 +456,6 @@ async function verify(state) {
     return false;
 }
 
-async function sendEmail(tid, email, name, links) {
-    await axios.post("https://api.sendgrid.com/v3/mail/send", {
-        "personalizations": [
-            {
-                "to": [
-                    {
-                        "email": email,
-                        "name": name
-                    }
-                ],
-                "dynamic_template_data": {
-                    "links": links
-                }
-            }
-        ],
-        "from": {
-            "email": "sergio@sergiosdorje.com",
-            "name": "Sergio S Dorje"
-        },
-        "template_id": tid
-    }, {
-        headers: {
-            "Authorization": process.env.SENDGRID_AUTH_TOKEN
-        }
-    })
-}
 
 async function subscribeUser(email) {
     mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
