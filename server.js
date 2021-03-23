@@ -63,6 +63,10 @@ const Link = sequelize.define('Link', {
     orderId: {
         type: Sequelize.INTEGER,
         allowNull: false
+    },
+    file: {
+        type: DataTypes.STRING(100),
+        allowNull: false
     }
 }, {
 
@@ -176,7 +180,7 @@ app.prepare().then(() => {
         if(link) {
             await Download.create({linkId: link.id, time: new Date()});
             
-            let file = `${__dirname}/public/sample.pdf`;
+            let file = `${__dirname}/public/${link.file}`;
             res.download(file);
 
         } else {
@@ -198,16 +202,39 @@ app.prepare().then(() => {
                 let state = JSON.parse(order.body);
                 state.statement = req.body.p24_statement;
 
-                let downloadLink;
+                let files = [];
+                
+                if(state.product.links) {
+                    state.product.links.forEach(l => {
+                        if(files.some(f => f == l)){
+                            continue;
+                        }
 
-                if(state.product.electronicShipping || (state.extra && state.extra.product.electronicShipping)) {
-                    downloadLink = UUID() + '';
-                    await Link.create({link: downloadLink, orderId: order.id});
-                    downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`
+                        files.push(l);
+                    });
                 }
 
+                if(state.extra && state.extra.product.links) {
+                    state.extra.product.links.forEach(l => {
+                        if(files.some(f => f == l)){
+                            continue;
+                        }
+
+                        files.push(l);
+                    });
+                }
+
+                let links = [];
+
+                files.forEach(f => {
+                    downloadLink = UUID() + '';
+                    await Link.create({link: downloadLink, orderId: order.id, file: f});
+                    downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`;
+                    links.push(downloadLink);
+                });
+
                 await mail.sendAuthorEmail(state)
-                sendEmail(state.template, state.email, state.cname, downloadLink);
+                sendEmail(state.template, state.email, state.cname, links);
                 state.status = 1;
                 await Order.update({body: JSON.stringify(state), state: 1}, {where: {id: parseInt(id)}});
             }
@@ -429,7 +456,7 @@ async function verify(state) {
     return false;
 }
 
-async function sendEmail(tid, email, name, downloadLink) {
+async function sendEmail(tid, email, name, links) {
     await axios.post("https://api.sendgrid.com/v3/mail/send", {
         "personalizations": [
             {
@@ -440,7 +467,7 @@ async function sendEmail(tid, email, name, downloadLink) {
                     }
                 ],
                 "dynamic_template_data": {
-                    "link": downloadLink
+                    "links": links
                 }
             }
         ],

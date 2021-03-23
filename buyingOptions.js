@@ -12,7 +12,10 @@ var options = {
             key: 'paperCopy',
             title: 'Kup jeszcze książkę papierową!',
             text: 'Testowy tekst. Dodaj jeszcze to do koszyka'
-        }
+        },
+        links: [
+            "sample.pdf"
+        ]
     },
     paperCopy: {
         sku: 'papierowa',
@@ -22,7 +25,9 @@ var options = {
         shipping: 14.90,
         electronicShipping: false,
         image: '/images/ksiazka-2.png',
-        template: 'd-889a4f6a165a425cb98e7dae11baa998'
+        template: 'd-889a4f6a165a425cb98e7dae11baa998',
+        links: [
+        ]
     },
     bundle: {
         sku: 'pakiet',
@@ -34,7 +39,11 @@ var options = {
         electronicShipping: false,
         discount: 0, // to pole jest automatycznie wyliczane poniżej
         image: '/images/pakiet.jpg',
-        template: 'd-58f0808630ff4b2483efc4b88e8995f0'
+        template: 'd-58f0808630ff4b2483efc4b88e8995f0',
+        links: [
+            "sample.pdf",
+            "sample.pdf"
+        ]
     },
     test: {
         sku: 'test',
