@@ -206,21 +206,17 @@ app.prepare().then(() => {
                 
                 if(state.product.links) {
                     state.product.links.forEach(l => {
-                        if(files.some(f => f == l)){
-                            continue;
+                        if(!files.some(f => f == l)){
+                            files.push(l);
                         }
-
-                        files.push(l);
                     });
                 }
 
                 if(state.extra && state.extra.product.links) {
                     state.extra.product.links.forEach(l => {
-                        if(files.some(f => f == l)){
-                            continue;
+                        if(!files.some(f => f == l)){
+                            files.push(l);
                         }
-
-                        files.push(l);
                     });
                 }
 
