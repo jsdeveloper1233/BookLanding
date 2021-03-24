@@ -196,7 +196,7 @@ app.prepare().then(() => {
 
         if (result) {
             var id = req.body.p24_session_id;
-            var order = await Order.findByPk(parseInt(req.query.id)); 
+            var order = await Order.findByPk(parseInt(id)); 
 
             if (order) {
                 let state = JSON.parse(order.body);
