@@ -7600,21 +7600,41 @@ td.product-name .cart-items {
   row-gap: 30px;
 }
 
-.form-group.uploadphoto label {
+.reviewform .form-group.uploadphoto label {
   margin-bottom: 0;
 }
 
-label.sendphoto {
+.reviewform .form-check-label {
+  cursor: pointer;
+}
+
+.reviewform label.sendphoto {
   margin-right: 20px;
 }
 
-.wordcount {
+.reviewform .wordcount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  color: #888;
+}
+
+.reviewform input::-webkit-input-placeholder, .reviewform textarea::-webkit-input-placeholder {
+  color: #888;
+}
+
+.reviewform input:-ms-input-placeholder, .reviewform textarea:-ms-input-placeholder {
+  color: #888;
+}
+
+.reviewform input::-ms-input-placeholder, .reviewform textarea::-ms-input-placeholder {
+  color: #888;
+}
+
+.reviewform input::placeholder, .reviewform textarea::placeholder {
   color: #888;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 
 const LeaveAReview = ({ limit, value }) => {
   const [{ content, wordCount }, setContent] = useState({
@@ -38,7 +39,7 @@ const LeaveAReview = ({ limit, value }) => {
           </div>
 
           <div className="col-lg-6 col-md-12">
-            <form id="contactForm">
+            <form id="contactForm" className="reviewform">
               <div className="row">
                 <div className="col-lg-12 col-md-12">
                   <div className="form-group">
@@ -73,7 +74,7 @@ const LeaveAReview = ({ limit, value }) => {
                       className="form-control"
                       required={true}
                       data-error="Proszę wpisz tutaj Twój coś o sobie, np. Twój zawód"
-                      placeholder="O Tobie / Twj zawód (pojawi się pod Twoim imieniem)"
+                      placeholder="O Tobie / Twój zawód (pojawi się pod Twoim imieniem)"
                     />
                     <div className="help-block with-errors"></div>
                   </div>
@@ -94,18 +95,18 @@ const LeaveAReview = ({ limit, value }) => {
                       value={content}
                     />
                     <div className="help-block with-errors"></div>
-                    <em clasName="wordcount">
-                    {wordCount}/{limit} słów
-                  </em>
+                    <em className="wordcount">
+                      {wordCount}/{limit} słów
+                    </em>
                   </div>
 
                   <div className="form-group uploadphoto">
-                    <label htmlFor="sendphoto" className="btn-default p-0">
-                      Dodaj swoję zdjęcie  
+                    <label htmlFor="sendphoto" className="btn-default p-0 sendphoto">
+                      Dodaj swoję zdjęcie
                     </label>
 
                     <input
-                    required
+                      required
                       id="sendphoto"
                       name="sendphoto"
                       type="file"
@@ -113,8 +114,6 @@ const LeaveAReview = ({ limit, value }) => {
                       //   onChange={this.selectFile}
                     />
                   </div>
-
-
                 </div>
 
                 <div className="col-lg-12 col-md-12">
@@ -144,7 +143,10 @@ const LeaveAReview = ({ limit, value }) => {
                       required
                     />
                     <label className="form-check-label" htmlFor="zgoda-opinie">
-                      Zgadzam się na dodawanie opinij/recenzji zgodnie z regulaminem.
+                      Zgadzam się na dodawanie opinij zgodnie z{" "}
+                      <Link href="/regulamin-opinii">
+                        <a  target="_blank">Regulaminem opinii.</a>
+                      </Link>
                     </label>
                   </div>
 
