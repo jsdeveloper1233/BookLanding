@@ -222,12 +222,12 @@ app.prepare().then(() => {
 
                 let links = [];
 
-                files.forEach(f => {
+                for (const f in files) {
                     downloadLink = UUID() + '';
                     await Link.create({link: downloadLink, orderId: order.id, file: f});
                     downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`;
                     links.push(downloadLink);
-                });
+                }
 
                 await mail.sendAuthorEmail(state)
                 await mail.sendEmail(state.template, state.email, state.cname, links);
