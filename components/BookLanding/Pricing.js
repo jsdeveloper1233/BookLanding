@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import buingOptions from "../../buyingOptions";
 import Loader from "../Shared/Loader";
+import { finalPath } from "../../pages/index";
 class Pricing extends Component {
     constructor(props) {
         super(props);
@@ -56,6 +57,7 @@ class Pricing extends Component {
 
             <div className="col-lg-4 col-md-6">
               <div className="pricing-table">
+              <img src={finalPath + '/images/ksiazka.png'} alt="screenshot" />
                 <div className="price-header">
                   <h3 className="title">Printed</h3>
                   <div className="price">

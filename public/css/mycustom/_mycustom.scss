@@ -65,7 +65,7 @@ span.chapter-number {
   color: #fff;
   font-weight: 400;
   font-size: 17px;
-  line-height: 31px;
+  margin-top: -12px;
 }
 
 .you-save {
@@ -296,5 +296,21 @@ td.product-name {
   }
   input::placeholder, textarea::placeholder  {
     color:#888;
+  }
+}
+
+.pricing-area {
+  color: var(--paragraphColor);
+  .pricing-table-box.pakiet {
+    background-color: #ff5a5a61;
+  }
+  .textbig {
+    font-size: 46px;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+  .textmedium {
+    font-size: 36px;
+    line-height: 1.2;
   }
 }
