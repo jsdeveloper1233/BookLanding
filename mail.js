@@ -133,7 +133,7 @@ class Mails {
                     Ilość sztuk: ${quantity}<br/>
                     </p>
                     <p>
-                    ${product.extra ? `Produkt zamówiony: ${extra.product.name}<br/>
+                    ${extra ? `Produkt zamówiony: ${extra.product.name}<br/>
                     Ilość sztuk: ${extra.quantity}<br/>` : ''}
                     </p>
                     Komentarz: ${comment}
