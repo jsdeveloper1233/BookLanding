@@ -14,7 +14,7 @@ var options = {
             text: 'Testowy tekst. Dodaj jeszcze to do koszyka'
         },
         links: [
-            "sample.pdf"
+            "files/sample.pdf"
         ]
     },
     paperCopy: {
@@ -41,8 +41,8 @@ var options = {
         image: '/images/pakiet.jpg',
         template: 'd-58f0808630ff4b2483efc4b88e8995f0',
         links: [
-            "sample.pdf",
-            "sample.pdf"
+            "files/sample.pdf",
+            "files/otherpdf/Koło Zgody - Polish Wheel of Consent.pdf"
         ]
     },
     test: {
