@@ -276,16 +276,25 @@ td.product-name {
   }
 }
 
-.form-group.uploadphoto label {
-  margin-bottom: 0;
-}
+.reviewform {
+  .form-group.uploadphoto label {
+    margin-bottom: 0;
+  }
 
-label.sendphoto {
-  margin-right: 20px;
-}
+  .form-check-label {
+    cursor:pointer;
+  }
 
-.wordcount {
-  display: flex;
-  justify-content: flex-end;
-  color: #888;
+  label.sendphoto {
+    margin-right: 20px;
+  }
+
+  .wordcount {
+    display: flex;
+    justify-content: flex-end;
+    color: #888;
+  }
+  input::placeholder, textarea::placeholder  {
+    color:#888;
+  }
 }
