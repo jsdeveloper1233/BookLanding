@@ -37,16 +37,15 @@ class Funfact extends React.Component {
                                                 start={0}
                                                 end={
                                                     this.state.didViewCountUp
-                                                        ? 5
+                                                        ? 3
                                                         : 0
                                                 }
                                                 duration={3}
                                             />
                                         </VisibilitySensor>
                                     </span>
-                                    M
                                 </h3>
-                                <p>Copies Sold</p>
+                                <p>eBooki</p>
                             </div>
                         </div>
 
@@ -68,16 +67,15 @@ class Funfact extends React.Component {
                                                 start={0}
                                                 end={
                                                     this.state.didViewCountUp
-                                                        ? 1
+                                                        ? 2
                                                         : 0
                                                 }
                                                 duration={3}
                                             />
                                         </VisibilitySensor>
                                     </span>
-                                    M
                                 </h3>
-                                <p>Cup Of Coffe</p>
+                                <p>Sesje mentorskie</p>
                             </div>
                         </div>
 
@@ -99,16 +97,16 @@ class Funfact extends React.Component {
                                                 start={0}
                                                 end={
                                                     this.state.didViewCountUp
-                                                        ? 1
+                                                        ? 5
                                                         : 0
                                                 }
                                                 duration={3}
                                             />
                                         </VisibilitySensor>
                                     </span>
-                                    M
+                                    h
                                 </h3>
-                                <p>Copies Released</p>
+                                <p>Pracy z medytacją</p>
                             </div>
                         </div>
 
@@ -130,16 +128,16 @@ class Funfact extends React.Component {
                                                 start={0}
                                                 end={
                                                     this.state.didViewCountUp
-                                                        ? 50
+                                                        ? 15
                                                         : 0
                                                 }
                                                 duration={3}
                                             />
                                         </VisibilitySensor>
                                     </span>
-                                    K
+                                    h
                                 </h3>
-                                <p>Happy Readers</p>
+                                <p>przekazu wiedzy</p>
                             </div>
                         </div>
                     </div>

@@ -14,10 +14,10 @@ class Download extends React.Component {
                                 <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account the system and expound the actual teachings of the great explore.</p>
 
                                 <div className="download-btn">
-                                    <Link href="#">
+                                    <Link href="/">
                                         <a><i className="icofont-brand-android-robot"></i> Available On <span>Google Store</span></a>
                                     </Link>
-                                    <Link href="#">
+                                    <Link href="/">
                                         <a><i className="icofont-brand-apple"></i> Available On <span>Apple Store</span></a>
                                     </Link>
                                 </div>

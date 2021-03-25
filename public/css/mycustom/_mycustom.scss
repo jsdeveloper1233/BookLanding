@@ -2,6 +2,12 @@ html {
   scroll-behavior: inherit;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1350px;
+  }
+}
+
 p {
   font-size: 19px;
 }
@@ -282,7 +288,7 @@ td.product-name {
   }
 
   .form-check-label {
-    cursor:pointer;
+    cursor: pointer;
   }
 
   label.sendphoto {
@@ -294,7 +300,49 @@ td.product-name {
     justify-content: flex-end;
     color: #888;
   }
-  input::placeholder, textarea::placeholder  {
-    color:#888;
+  input::placeholder,
+  textarea::placeholder {
+    color: #888;
   }
+}
+
+.drogadoszczescialanding {
+  .drogadoszczesciaheader {
+    .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+      color: var(--paragraphColor);
+    }
+    .crake-nav nav .navbar-nav li a {
+      color: var(--paragraphColor) !important;
+    }
+
+    .crake-nav.is-sticky {
+      .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+        color: #fff;
+      }
+      nav .navbar-nav li a {
+        color: #fff !important;
+      }
+    }
+    nav .nav-item.zamowteraz .btn-primary {
+      color: #fff !important;
+    }
+  }
+
+  .drogadoszczesciabanner .omnie {
+    max-width: 700px;
+    margin: 60px auto;
+    position: relative;
+    box-shadow: 4px 16px 30px 0px rgba(205, 141, 176, 0.39);
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .app-funfacts-area, .dlaczego {
+    background: var(--darkViolet);
+    &:before {
+      content: none;
+    }
+  }
+
 }

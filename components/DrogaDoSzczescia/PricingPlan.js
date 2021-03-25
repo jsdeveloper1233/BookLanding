@@ -38,7 +38,7 @@ class PricingPlan extends React.Component {
                                         <li>24/7 Support</li>
                                     </ul>
                                 </div>
-                                <Link href="#">
+                                <Link href="/">
                                     <a className="btn btn-primary">Get Started</a>
                                 </Link>
                             </div>
@@ -69,7 +69,7 @@ class PricingPlan extends React.Component {
                                         <li>24/7 Support</li>
                                     </ul>
                                 </div>
-                                <Link href="#">
+                                <Link href="/">
                                     <a className="btn btn-primary">Get Started</a>
                                 </Link>
                             </div>
@@ -100,7 +100,7 @@ class PricingPlan extends React.Component {
                                         <li className="active">24/7 Support</li>
                                     </ul>
                                 </div>
-                                <Link href="#">
+                                <Link href="/">
                                     <a className="btn btn-primary">Get Started</a>
                                 </Link>
                             </div>

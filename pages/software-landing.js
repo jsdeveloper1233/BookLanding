@@ -10,7 +10,7 @@ import SaasTools from '../components/SoftwareLanding/SaasTools';
 import Funfact from '../components/SoftwareLanding/Funfact';
 import GetStarted from '../components/SoftwareLanding/GetStarted';
 import Blog from '../components/SoftwareLanding/Blog';
-import Download from '../components/SoftwareLanding/Download';
+import Download from '../components/DrogaDoSzczescia/Download';
 import Platform from '../components/SoftwareLanding/Platform';
 
 class HomeFive extends React.Component {

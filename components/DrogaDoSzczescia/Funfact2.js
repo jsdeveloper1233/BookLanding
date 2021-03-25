@@ -3,7 +3,7 @@ import Link from 'next/link';
 import CountUp from 'react-countup';
 import VisibilitySensor from "react-visibility-sensor";
 
-class Funfact extends React.Component {
+class Funfact2 extends React.Component {
 
     state = {
         didViewCountUp: false
@@ -178,4 +178,4 @@ class Funfact extends React.Component {
     }
 }
 
-export default Funfact;
+export default Funfact2;

@@ -72,6 +72,7 @@ Default CSS
   --whiteColor: #ffffff;
   --blackColor: #000000;
   --paragraphColor: #1d1d1d;
+  --darkViolet:#7A3760;
   --transition: .5s;
 }
 
@@ -7302,6 +7303,12 @@ html {
   scroll-behavior: inherit;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1350px;
+  }
+}
+
 p {
   font-size: 19px;
 }
@@ -7622,19 +7629,63 @@ td.product-name .cart-items {
   color: #888;
 }
 
-.reviewform input::-webkit-input-placeholder, .reviewform textarea::-webkit-input-placeholder {
+.reviewform input::-webkit-input-placeholder,
+.reviewform textarea::-webkit-input-placeholder {
   color: #888;
 }
 
-.reviewform input:-ms-input-placeholder, .reviewform textarea:-ms-input-placeholder {
+.reviewform input:-ms-input-placeholder,
+.reviewform textarea:-ms-input-placeholder {
   color: #888;
 }
 
-.reviewform input::-ms-input-placeholder, .reviewform textarea::-ms-input-placeholder {
+.reviewform input::-ms-input-placeholder,
+.reviewform textarea::-ms-input-placeholder {
   color: #888;
 }
 
-.reviewform input::placeholder, .reviewform textarea::placeholder {
+.reviewform input::placeholder,
+.reviewform textarea::placeholder {
   color: #888;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+  color: var(--paragraphColor);
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .crake-nav nav .navbar-nav li a {
+  color: var(--paragraphColor) !important;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .crake-nav.is-sticky .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+  color: #fff;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .crake-nav.is-sticky nav .navbar-nav li a {
+  color: #fff !important;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader nav .nav-item.zamowteraz .btn-primary {
+  color: #fff !important;
+}
+
+.drogadoszczescialanding .drogadoszczesciabanner .omnie {
+  max-width: 700px;
+  margin: 60px auto;
+  position: relative;
+  -webkit-box-shadow: 4px 16px 30px 0px rgba(205, 141, 176, 0.39);
+          box-shadow: 4px 16px 30px 0px rgba(205, 141, 176, 0.39);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.drogadoszczescialanding .app-funfacts-area, .drogadoszczescialanding .dlaczego {
+  background: var(--darkViolet);
+}
+
+.drogadoszczescialanding .app-funfacts-area:before, .drogadoszczescialanding .dlaczego:before {
+  content: none;
 }
 /*# sourceMappingURL=style.css.map */
