@@ -210,7 +210,7 @@ class Mails {
                 "email": "sergio@sergiosdorje.com",
                 "name": "Sergio S Dorje"
             },
-            "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
+            "template_id": "d-b97ae7ab1f064a99806de5119286b3ba"
         }, {
             headers: {
                 "Authorization": process.env.SENDGRID_AUTH_TOKEN
