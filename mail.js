@@ -103,7 +103,7 @@ class Mails {
 // MAIL DO ADMINA
 // email do Admina, potwierdzenie że transakcja zakończyła się sukcesem
 //*********************************************** */
-    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price }) {
+    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, extra, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price }) {
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
