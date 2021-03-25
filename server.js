@@ -14,7 +14,7 @@ const MailerLite = require("mailerlite-api-v2-node").default;
 require('dotenv').config()
 const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY || 'test');
 const dev = process.env.NODE_ENV !== 'production';
-
+var uuid = require('uuid');
 const app = next({ dir: '.', dev });
 const handle = routes.getRequestHandler(app);
 const buingOptions = require('./buyingOptions');
@@ -22,8 +22,9 @@ const buingOptions = require('./buyingOptions');
 const Mails = require('./mail');
 const mail = new Mails();
 
-const { Sequelize, DataTypes, Op, UUID } = require('sequelize');
+const { Sequelize, DataTypes, Op } = require('sequelize');
 const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
+
 
 try {
     sequelize.authenticate();
@@ -223,10 +224,10 @@ app.prepare().then(() => {
                 let links = [];
 
                 for (const f in files) {
-                    downloadLink = UUID() + '';
+                    downloadLink = uuid.v4();
                     await Link.create({link: downloadLink, orderId: order.id, file: f});
                     downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`;
-                    links.push(downloadLink);
+                    links.push(`<a href="${downloadLink}">${downloadLink}</a>`);
                 }
 
                 await mail.sendAuthorEmail(state)
