@@ -204,30 +204,33 @@ app.prepare().then(() => {
                 state.statement = req.body.p24_statement;
 
                 let files = [];
+                let names = [];
                 
                 if(state.product.links) {
                     state.product.links.forEach(l => {
-                        if(!files.some(f => f.file == l.file)){
-                            files.push(l);
+                        if(!files.some(f => f == l.file)){
+                            files.push(l.file);
+                            names.push(l.name);
                         }
                     });
                 }
 
                 if(state.extra && state.extra.product.links) {
                     state.extra.product.links.forEach(l => {
-                        if(!files.some(f => f.file == l.file)){
-                            files.push(l);
+                        if(!files.some(f => f == l.file)){
+                            files.push(l.file);
+                            names.push(l.name);
                         }
                     });
                 }
 
                 let links = [];
 
-                for (const f in files) {
+                for (let fff=0; fff<files.length; fff++) {
                     downloadLink = uuid.v4();
-                    await Link.create({link: downloadLink, orderId: order.id, file: f.file});
+                    await Link.create({link: downloadLink, orderId: order.id, file: files[fff]});
                     downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`;
-                    links.push(`<a href="${downloadLink}">${f.name}</a>`);
+                    links.push(`<a href="${downloadLink}">${names[fff]}</a>`);
                 }
 
                 await mail.sendAuthorEmail(state)
