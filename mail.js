@@ -19,7 +19,7 @@ class Mails {
                         }
                     ],
                     "dynamic_template_data": {
-                        "links": links
+                        "links": this.joinLinks(links)
                     }
                 }
             ],
@@ -33,6 +33,16 @@ class Mails {
                 "Authorization": process.env.SENDGRID_AUTH_TOKEN
             }
         })
+    }
+
+    joinLinks(links) {
+        let result = '';
+        
+        for(let i=0; i<links.length; i++){
+            result+=links[i] + '<br />';
+        }
+
+        return result;
     }
 
 
