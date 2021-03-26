@@ -207,7 +207,7 @@ app.prepare().then(() => {
                 
                 if(state.product.links) {
                     state.product.links.forEach(l => {
-                        if(!files.some(f => f == l)){
+                        if(!files.some(f => f.file == l.file)){
                             files.push(l);
                         }
                     });
@@ -215,7 +215,7 @@ app.prepare().then(() => {
 
                 if(state.extra && state.extra.product.links) {
                     state.extra.product.links.forEach(l => {
-                        if(!files.some(f => f == l)){
+                        if(!files.some(f => f.file == l.file)){
                             files.push(l);
                         }
                     });
@@ -225,9 +225,9 @@ app.prepare().then(() => {
 
                 for (const f in files) {
                     downloadLink = uuid.v4();
-                    await Link.create({link: downloadLink, orderId: order.id, file: f});
+                    await Link.create({link: downloadLink, orderId: order.id, file: f.file});
                     downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`;
-                    links.push(`<a href="${downloadLink}">${downloadLink}</a>`);
+                    links.push(`<a href="${downloadLink}">${f.name}</a>`);
                 }
 
                 await mail.sendAuthorEmail(state)
