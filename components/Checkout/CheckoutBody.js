@@ -477,7 +477,7 @@ function CheckoutBody({ total, shipping }) {
                         <OrderSummary 
                             disabled={disable} 
                             email={state.email.value} 
-                            name={"imię: " + state.firstName.value + "Nazwisko: " + state.lastName.value} 
+                            name={state.firstName.value + " " + state.lastName.value} 
                             address={state.address.value} 
                             city={state.city.value} 
                             state={state.state.value} 

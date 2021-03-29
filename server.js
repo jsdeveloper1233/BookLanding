@@ -5,21 +5,99 @@ const bodyParser = require('body-parser');
 const keys = require("./server/config/keys");
 const stripe = require('stripe')(keys.stripeSecretKey);
 const routes = require('./routes');
-const { v4: uuidv4 } = require('uuid');
 const axios = require('axios')
 const Przelewy24 = require('./prz24lib.js')
+const moment = require('moment');
 // const {Przelewy24} = require('node-przelewy24')
 // const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', false)
 const MailerLite = require("mailerlite-api-v2-node").default;
 require('dotenv').config()
 const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY || 'test');
 const dev = process.env.NODE_ENV !== 'production';
-
+var uuid = require('uuid');
 const app = next({ dir: '.', dev });
 const handle = routes.getRequestHandler(app);
 const buingOptions = require('./buyingOptions');
-const NodeCache = require("node-cache");
-const serverCache = new NodeCache({ stdTTL: 3600, checkperiod: 600 });
+
+const Mails = require('./mail');
+const mail = new Mails();
+
+const { Sequelize, DataTypes, Op } = require('sequelize');
+const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
+
+
+try {
+    sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+} catch (error) {
+    console.error('Unable to connect to the database:', error);
+}
+
+const Order = sequelize.define('Order', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    body: {
+        type: DataTypes.STRING(2048),
+        allowNull: false
+    },
+    state: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
+}, {
+
+})
+
+const Link = sequelize.define('Link', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    link: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+    },
+    orderId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    file: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+    }
+}, {
+
+})
+
+const Download = sequelize.define('Download', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    time: {
+        type: Sequelize.DATE,
+        allowNull: false
+    }, 
+    linkId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    }
+}, {
+
+})
+
+Order.sync();
+Link.sync();
+Download.sync();
+
+setInterval(async () => {
+    await synchronize();
+}, 1000 * 60);
 
 app.prepare().then(() => {
     const server = express();
@@ -87,12 +165,27 @@ app.prepare().then(() => {
     })
 
     server.get("/api/status", async (req, res) => {
-        var state = serverCache.get(req.query.id);
+        var state = await Order.findByPk(parseInt(req.query.id)); 
 
         if (state) {
             res.json({ status: state.status });
         } else {
             res.json({ status: -1 });
+        }
+    })
+
+    server.get("/api/download", async (req, res) => {
+        let id = req.query.id;
+
+        let link = await Link.findOne({where: {link: id}});
+        if(link) {
+            await Download.create({linkId: link.id, time: new Date()});
+            
+            let file = `${__dirname}/public/${link.file}`;
+            res.download(file);
+
+        } else {
+            res.status(404);
         }
     })
 
@@ -104,14 +197,46 @@ app.prepare().then(() => {
 
         if (result) {
             var id = req.body.p24_session_id;
-            var state = serverCache.get(id);
+            var order = await Order.findByPk(parseInt(id)); 
 
-            if (state) {
+            if (order) {
+                let state = JSON.parse(order.body);
                 state.statement = req.body.p24_statement;
-                sendAuthorEmail(state)
-                sendEmail(state.template, state.email, state.cname)
+
+                let files = [];
+                let names = [];
+                
+                if(state.product.links) {
+                    state.product.links.forEach(l => {
+                        if(!files.some(f => f == l.file)){
+                            files.push(l.file);
+                            names.push(l.name);
+                        }
+                    });
+                }
+
+                if(state.extra && state.extra.product.links) {
+                    state.extra.product.links.forEach(l => {
+                        if(!files.some(f => f == l.file)){
+                            files.push(l.file);
+                            names.push(l.name);
+                        }
+                    });
+                }
+
+                let links = [];
+
+                for (let fff=0; fff<files.length; fff++) {
+                    downloadLink = uuid.v4();
+                    await Link.create({link: downloadLink, orderId: order.id, file: files[fff]});
+                    downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`;
+                    links.push(`<a href="${downloadLink}">${names[fff]}</a>`);
+                }
+
+                await mail.sendAuthorEmail(state)
+                await mail.sendEmail(state.template, state.email, state.cname, links);
                 state.status = 1;
-                serverCache.set(id, state);
+                await Order.update({body: JSON.stringify(state), state: 1}, {where: {id: parseInt(id)}});
             }
         }
     })
@@ -119,14 +244,13 @@ app.prepare().then(() => {
     server.post("/api/buy/:p", async (req, res) => {
 
         const quantity = req.body.quantity;
-        const id = uuidv4();
 
         var body = req.body
 
         let product;
 
-        for(var property in buingOptions){
-            if(buingOptions[property].sku == req.params.p){
+        for (var property in buingOptions) {
+            if (buingOptions[property].sku == req.params.p) {
                 product = buingOptions[property];
             }
         }
@@ -135,36 +259,46 @@ app.prepare().then(() => {
 
             let extraProduct;
 
-            if(product.extra && req.body.extra) {
+            if (product.extra && req.body.extra) {
                 extraProduct = buingOptions[product.extra.key];
             }
 
             var total = (quantity * Math.round(product.price * 100));
 
-            if(extraProduct) {
+            if (extraProduct) {
                 var total2 = (req.body.extra.quantity * Math.round(extraProduct.price * 100));
                 total = total + total2;
             }
 
+            let shipping = 0;
+
             if (product.shipping || (extraProduct && extraProduct.shipping)) {
 
                 let extraShipping = 0;
-                if(extraProduct && extraProduct.shipping)
-                {
+                if (extraProduct && extraProduct.shipping) {
                     extraShipping = extraProduct.shipping;
                 }
 
-                let shipping = 0;
-                if(product.shipping){
+                shipping = 0;
+                if (product.shipping) {
                     shipping = product.shipping;
                 }
 
-                total = total + (Math.max(shipping, extraShipping) * 100)
+                shipping = Math.max(shipping, extraShipping);
+
+                total = total + (shipping * 100)
+            }
+
+            var electronicShipping = product.electronicShipping;
+            if(extraProduct){
+                electronicShipping = electronicShipping && extraProduct.electronicShipping;
             }
 
             var state = {
-                id: id,
                 price: total,
+                quantity: quantity,
+                shipping: shipping,
+                electronicShipping: electronicShipping,
                 description: body.description,
                 cname: body.name,
                 email: body.email,
@@ -174,8 +308,7 @@ app.prepare().then(() => {
                 state: body.state,
                 zip: body.zip,
                 newsletter: body.newsletter,
-                product: body.product,
-                quantity: body.quantity,
+                product: product,
                 privacy: body.privacy,
                 terms: body.terms,
                 comment: body.comment,
@@ -191,11 +324,16 @@ app.prepare().then(() => {
                 extra: body.extra
             };
 
-            var u = await getPaymentLink(state)
+            let order = await Order.create({
+                body: JSON.stringify(state),
+                state: 0
+            });
+
+            var u = await getPaymentLink(order, state);
+
+            await mail.sendNewOrderEmail(order, state);
 
             res.json({ "link": u })
-
-            serverCache.set(id, state);
 
             if (body.newsletter) {
                 subscribeUser(body.email)
@@ -215,11 +353,29 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
-async function getPaymentLink(state) {
+
+async function synchronize(){
+    var time = new Date();
+    time = moment(time).add(-15, 'm').toDate();
+    var result = await Order.findAll({where: {state:0, createdAt: { [Op.lt]: time }}});
+
+    for(let i=0; i<result.length; i++)
+    {
+        let item = result[i];
+        await rejectOrder(item);
+    }
+}
+
+async function rejectOrder(order){
+    await mail.sendRejectOrderEmail(order, JSON.parse(order.body));
+    await Order.update({state: -1}, { where: {id: order.id}});
+}
+
+async function getPaymentLink(order, state) {
     const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, true) // todo dev zamiast true
     const PORT = process.env.PORT || 3006;
     // Set obligatory data
-    P24.setSessionId(state.id)
+    P24.setSessionId(order.id + '')
     P24.setAmount(state.price)
     P24.setCurrency('PLN')
 
@@ -255,14 +411,17 @@ async function getPaymentLink(state) {
 
     if (dev) {
         P24.setUrlStatus(`http://localhost:${PORT}/api/verify`)
-        P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${state.id}`)
+        P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${order.id}`)
     } else {
         P24.setUrlStatus(`https://sekretyrozwojuosobistego.pl/api/verify`)
-        P24.setUrlReturn(`https://sekretyrozwojuosobistego.pl/api/thankyou?id=${state.id}`)
+        P24.setUrlReturn(`https://sekretyrozwojuosobistego.pl/api/thankyou?id=${order.id}`)
     }
 
-    // What about adding some products?
-    // P24.addProduct('Book', 'Product description', 1, price * 100)
+    P24.addProduct(state.product.name, state.product.description, state.quantity, state.product.price * 100);
+
+    if(state.extra){
+        P24.addProduct(state.extra.product.name, state.extra.product.description, state.extra.quantity, state.extra.product.price * 100);
+    }
 
     // Register our order
     try {
@@ -297,93 +456,6 @@ async function verify(state) {
     return false;
 }
 
-async function sendEmail(tid, email, name) {
-    await axios.post("https://api.sendgrid.com/v3/mail/send", {
-        "personalizations": [
-            {
-                "to": [
-                    {
-                        "email": email,
-                        "name": name
-                    }
-                ],
-            }
-        ],
-        "from": {
-            "email": "sergio@sergiosdorje.com",
-            "name": "Sergio S Dorje"
-        },
-        "template_id": tid
-    }, {
-        headers: {
-            "Authorization": process.env.SENDGRID_AUTH_TOKEN
-        }
-    })
-}
-async function sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip }) {
-    await axios.post("https://api.sendgrid.com/v3/mail/send", {
-        "personalizations": [
-            {
-                "to": [
-                    {
-                        "email": "sergio@sergiosdorje.com",
-                        "name": "Sergio S Dorje"
-                    }
-                ],
-                "dynamic_template_data": {
-                    "data": `<h2>Wyślij do:</h2>
-                    <div>
-                    Imię i nazwisko: ${cname} <br/>
-                    Adres: ${address} <br/>
-                    Kod: ${zip} <br/>
-                    Miejscowość: ${city} <br/>
-                    <br/>
-                    Tel: ${phone} <br/>
-                    Email: ${email}
-                    </div>
-                    <br/>
-                    <div>
-                    <h2>Zamówienie</h2>
-                    Produkt zamówiony: ${product}<br/>
-                    Ilość sztuk: ${quantity}<br/>
-                    Komentarz: ${comment}
-                    </div>
-                    <br/>
-                    <div>
-                    <h2>Dodatkowe informacje</h2>
-                    Polityka prywatnośći zaznaczona: ${privacy}<br/>
-                    Regulamin zaakceptowany: ${terms}<br/>
-                    Zapisał się do newslettera: ${newsletter}
-                    <br/>
-                    <br/>
-                    <h2>Dane do faktury</h2>
-                    Wystawić fakturę: ${vat}</br>
-                    Firma: ${vatCompany}</br>
-                    NIP: ${vatNip}</br>
-                    Adres: ${vatAddress} <br/>
-                    Kod: ${vatZip} <br/>
-                    Miejscowość: ${vatCity} <br/>
-                    <br/>
-                    <br/>
-                    Tytuł przelewu: ${statement}
-                    </div>
-                    `
-
-                    // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
-                },
-            },
-        ],
-        "from": {
-            "email": "sergio@sergiosdorje.com",
-            "name": "Sergio S Dorje"
-        },
-        "template_id": "d-e915b50ef86944e6a1c1b050174aca00"
-    }, {
-        headers: {
-            "Authorization": process.env.SENDGRID_AUTH_TOKEN
-        }
-    })
-}
 
 async function subscribeUser(email) {
     mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
