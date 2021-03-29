@@ -2,12 +2,13 @@ import React from "react";
 import Navbar from "../components/Layouts/Navbar";
 import Banner from '../components/Checkout/Banner';
 import Footer from "../components/Layouts/Footer";
-import RegulaminText from "../components/BookLanding/RegulaminText";
+import PrivacyPolicyText from "../components/BookLanding/PrivacyPolicyText";
 import NavbarSinglePage from "../components/Layouts/NavbarSinglePage";
+import RegulaminOpinii from "../components/BookLanding/RegulaminOpinii";
 
 
 export const finalPath = "";
-class Regulamin extends React.Component {
+class PrivacyPolicy extends React.Component {
   constructor(props) {
     super(props);
     this.state = {paymentSuccess:null};
@@ -18,8 +19,8 @@ class Regulamin extends React.Component {
     
       <React.Fragment>
          <NavbarSinglePage />
-         <Banner title="Regulamin" />
-        <RegulaminText />
+         <Banner title="Regulamin opinii" />
+        <RegulaminOpinii />
 
         <Footer />
       </React.Fragment>
@@ -28,4 +29,4 @@ class Regulamin extends React.Component {
   }
 }
 
-export default Regulamin;
+export default PrivacyPolicy;

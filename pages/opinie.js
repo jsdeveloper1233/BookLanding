@@ -4,10 +4,12 @@ import Banner from '../components/Checkout/Banner';
 import Footer from "../components/Layouts/Footer";
 import RegulaminText from "../components/BookLanding/RegulaminText";
 import NavbarSinglePage from "../components/Layouts/NavbarSinglePage";
+import LeaveAReview from "../components/BookLanding/LeaveAReview";
+import Feedback from "../components/BookLanding/Feedback";
 
 
 export const finalPath = "";
-class Regulamin extends React.Component {
+class Opinie extends React.Component {
   constructor(props) {
     super(props);
     this.state = {paymentSuccess:null};
@@ -17,9 +19,10 @@ class Regulamin extends React.Component {
     return (
     
       <React.Fragment>
-         <NavbarSinglePage />
-         <Banner title="Regulamin" />
-        <RegulaminText />
+         <Navbar />
+         <Banner title="Opinie i recenzje" />
+         <LeaveAReview limit={150} value="" />
+         <Feedback />
 
         <Footer />
       </React.Fragment>
@@ -28,4 +31,4 @@ class Regulamin extends React.Component {
   }
 }
 
-export default Regulamin;
+export default Opinie;

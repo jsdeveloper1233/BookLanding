@@ -284,7 +284,7 @@ td.product-name {
 }
 
 .navbar-nav {
-align-items:center;
+  align-items: center;
 }
 
 .crake-nav nav .navbar-nav li {
@@ -305,3 +305,25 @@ align-items:center;
   }
 }
 
+.reviewform {
+  .form-group.uploadphoto label {
+    margin-bottom: 0;
+  }
+
+  .form-check-label {
+    cursor:pointer;
+  }
+
+  label.sendphoto {
+    margin-right: 20px;
+  }
+
+  .wordcount {
+    display: flex;
+    justify-content: flex-end;
+    color: #888;
+  }
+  input::placeholder, textarea::placeholder  {
+    color:#888;
+  }
+}

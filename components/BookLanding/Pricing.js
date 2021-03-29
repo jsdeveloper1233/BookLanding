@@ -48,7 +48,7 @@ class Pricing extends Component {
                     href="/checkout?product=ebook"
                     onClick={this.showLoader.bind(this)}
                   >
-                    Get Started
+                    Zamawiam
                   </a>
                 </div>
               </div>
@@ -66,7 +66,7 @@ class Pricing extends Component {
                 <div className="price-footer">
                   <a className="btn btn-primary" href="/checkout?product=paperCopy"
                   onClick={this.showLoader.bind(this)}>
-                    Get Started
+                    Zamawiam
                   </a>
                 </div>
               </div>
@@ -84,7 +84,7 @@ class Pricing extends Component {
                 <div className="price-footer">
                   <a className="btn btn-primary" href="/checkout?product=bundle"
                   onClick={this.showLoader.bind(this)}>
-                    Get Started
+                    Zamawiam
                   </a>
                 </div>
               </div>
@@ -103,7 +103,25 @@ class Pricing extends Component {
                 <div className="price-footer">
                   <a className="btn btn-primary" href="/checkout?product=test"
                   onClick={this.showLoader.bind(this)}>
-                    Get Started
+                    Zamawiam
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+              <div className="pricing-table">
+                <div className="price-header">
+                  <h3 className="title">Czy grupa jest sektą <br /> test</h3>
+                  <div className="price">
+                    {buingOptions.czygrupajestsekta.price.toFixed(2)}<span className="dollar">zł</span>
+                  </div>
+                </div>
+
+                <div className="price-footer">
+                  <a className="btn btn-primary" href="/checkout?product=test"
+                  onClick={this.showLoader.bind(this)}>
+                    Zamawiam
                   </a>
                 </div>
               </div>
