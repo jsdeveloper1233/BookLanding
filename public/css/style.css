@@ -7649,6 +7649,10 @@ td.product-name .cart-items {
   color: #888;
 }
 
+.drogadoszczescialanding .app-download .section-title .download-btn a {
+  padding: 12px 35px 12px 35px;
+}
+
 .drogadoszczescialanding .drogadoszczesciaheader .navbar.navbar-expand-md.navbar-light a.navbar-brand {
   color: var(--paragraphColor);
 }
@@ -7671,7 +7675,7 @@ td.product-name .cart-items {
 
 .drogadoszczescialanding .drogadoszczesciabanner .omnie {
   max-width: 700px;
-  margin: 60px auto;
+  margin: 0px auto 60px auto;
   position: relative;
   -webkit-box-shadow: 4px 16px 30px 0px rgba(205, 141, 176, 0.39);
           box-shadow: 4px 16px 30px 0px rgba(205, 141, 176, 0.39);
@@ -7681,11 +7685,124 @@ td.product-name .cart-items {
   border-radius: 20px;
 }
 
-.drogadoszczescialanding .app-funfacts-area, .drogadoszczescialanding .dlaczego {
+.drogadoszczescialanding .wherevideois {
+  z-index: 9;
+}
+
+.drogadoszczescialanding .wherevideois .video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.drogadoszczescialanding .wherevideois .video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.drogadoszczescialanding .wherevideois .laptop-video {
+  width: 100%;
+  height: 100%;
+  max-width: 1034px;
+  max-height: 543px;
+  margin: 0 auto;
+  -webkit-animation: movebounce 5s linear infinite;
+          animation: movebounce 5s linear infinite;
+}
+
+.drogadoszczescialanding .wherevideois .laptop-video div {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+}
+
+.drogadoszczescialanding .wherevideois .laptop-video div iframe {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat;
+  background-size: contain;
+  padding: 11.9% 15.5% 14.8%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.drogadoszczescialanding .funfacts-area {
+  background: white;
+  padding-bottom: 100px;
+}
+
+.drogadoszczescialanding .funfacts-area .dlategojesli {
+  background: white;
+}
+
+.drogadoszczescialanding .funfacts-area .dlategojesli ul {
+  padding: 20px;
+}
+
+.drogadoszczescialanding .app-funfacts-area,
+.drogadoszczescialanding .dlaczego {
   background: var(--darkViolet);
 }
 
-.drogadoszczescialanding .app-funfacts-area:before, .drogadoszczescialanding .dlaczego:before {
+.drogadoszczescialanding .app-funfacts-area:before,
+.drogadoszczescialanding .dlaczego:before {
   content: none;
+}
+
+.drogadoszczescialanding .price-Value .currency {
+  position: unset;
+}
+
+.drogadoszczescialanding .pricingTable .pricing-content {
+  margin-left: 60px;
+  margin-right: 30px;
+}
+
+.drogadoszczescialanding .pricingTable .pricing-content ul {
+  list-style: none;
+}
+
+.drogadoszczescialanding .pricingTable .pricing-content ul li {
+  display: block;
+  background: url(/images/square-bullet.svg) no-repeat;
+  padding-left: 1.7em;
+  background-size: 14px;
+  background-position: 3px 5px;
+  text-align: left;
+}
+
+.drogadoszczescialanding .main-banner.drogadoszczesciabanner {
+  height: 100vh;
+}
+
+.drogadoszczescialanding .fun-facts-inner-area .fun-facts-inner-content p {
+  font-size: 22px;
+}
+
+.drogadoszczescialanding .fun-facts-inner-area .fun-facts-inner-content ul li {
+  font-size: 19px;
+}
+
+.simple-text-widget p {
+  background-color: var(--darkViolet);
+  color: var(--whiteColor);
+  padding-bottom: 0;
+}
+
+.simple-text-widget .aligncenter {
+  text-align: center;
+}
+
+.simple-text-widget .zrobto {
+  font-weight: 700;
+  font-size: 32px;
 }
 /*# sourceMappingURL=style.css.map */

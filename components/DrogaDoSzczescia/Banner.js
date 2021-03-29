@@ -3,6 +3,7 @@ import Link from "next/link";
 import ModalVideo from "react-modal-video";
 const isServer = typeof window === "undefined";
 const WOW = !isServer ? require("wowjs") : null;
+import Image from 'next/image';
 
 class Banner extends React.Component {
   state = {
@@ -71,8 +72,9 @@ class Banner extends React.Component {
                     </div>
                   </div>
 
-                  {/* <div className="col-lg-6 col-md-12">
-                                        <div className="marketing-image">
+                  <div className="col-lg-6 col-md-12">
+                  <img className="header-photo" src="/images/sergio-s.png"></img>
+                       {/*                  <div className="marketing-image">
                                             <img 
                                                 src='/images/marketing-shape/marketing-img1.png'
                                                 className="wow fadeInDown"
@@ -150,11 +152,12 @@ class Banner extends React.Component {
                                                 data-wow-delay="0.4s"
                                                 alt="img"
                                             />
-                                        </div>
-                                    </div> */}
+                                        </div>*/}
+                                    </div> 
+
 
                   <div className="omnie">
-                    <img
+                    {/* <img
                       src="/images/marketing-shape/marketing-img7.png"
                       className="wow flip"
                       data-wow-delay="0.4s"
@@ -163,7 +166,7 @@ class Banner extends React.Component {
                                                 bottom: 0,
                                                 right: 0,
                                                 transform: `translate(50%, 50%)`,}}
-                    />
+                    /> */}
                     <p>
                       Pochodzę z małego miasteczka na Sardynii. Z sukcesem na co
                       dzień wspieram ludzi na drodze do szczęścia i świadomego

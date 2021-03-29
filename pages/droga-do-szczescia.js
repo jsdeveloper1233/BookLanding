@@ -8,6 +8,8 @@ import DetailsContent from "../components/DrogaDoSzczescia/DetailsContent";
 import PricingPlan from "../components/DrogaDoSzczescia/PricingPlan";
 import Funfact2 from "../components/DrogaDoSzczescia/Funfact2";
 import Dlaczego from "../components/DrogaDoSzczescia/Dlaczego";
+import SimpleTextSection from "../components/Features/SimpleTextSection";
+import CourseContent from "../components/DrogaDoSzczescia/CourseContent";
 
 export const finalPath = "";
 class DrogaDoSzczescia extends React.Component {
@@ -21,10 +23,14 @@ class DrogaDoSzczescia extends React.Component {
 
           <Download />
           <Funfact />
-          <PricingPlan />
-          <DetailsContent />
-
           <Funfact2 />
+
+          <CourseContent />
+
+
+          <PricingPlan />
+
+<SimpleTextSection  pText="Zrób to dla siebie i zacznij żyć pełnią szczęścia - pomogę Ci to osiągnąć!" theClass="aligncenter zrobto"/>
 
           <Footer />
         </div>
