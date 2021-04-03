@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../components/Layouts/Navbar';
 import Footer from '../components/Layouts/Footer';
 import Banner from '../components/Project/Banner';
-import DetailsContent from '../components/Project/DetailsContent';
+import DetailsContent from '../components/DrogaDoSzczescia/DetailsContent';
 
 class ProjectDetails extends Component {
     render() {
