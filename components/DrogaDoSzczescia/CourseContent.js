@@ -12,9 +12,9 @@ const CourseContent = () => {
 
 
     return (
-      <div className="faq-accordion" id="faq">
-        <h2>Zobacz co będzie na warsztatach</h2>
-        <Accordion preExpanded={[1]}>
+      <div className="faq-accordion course-content" id="faq">
+        <h2>Zobacz, co będzie na warsztatach</h2>
+        <Accordion preExpanded={[1]} className="col-lg-8 col-md-10">
           <AccordionItem uuid={1}>
             <AccordionItemHeading>
               <AccordionItemButton>

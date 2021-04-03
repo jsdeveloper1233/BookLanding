@@ -53,6 +53,16 @@ span.chapter-number {
 }
 .faq-accordion h2 {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-accordion.course-content .accordion__button  {
+  background-color: var(--templateColor);
+  color:var(--whiteColor);
+  &:hover {
+    background-color: var(--whiteColor);
+    color:#444;
+  }
 }
 
 .pricing-content {
@@ -307,9 +317,13 @@ td.product-name {
 }
 
 .drogadoszczescialanding {
+  .btn {
+    padding: 29px 31px;
+    font-size: 22px;
+  }
   .app-download .section-title .download-btn a {
-    padding:12px 35px 12px 35px;
-    }
+    padding: 12px 35px 12px 35px;
+  }
   .drogadoszczesciaheader {
     .navbar.navbar-expand-md.navbar-light a.navbar-brand {
       color: var(--paragraphColor);
@@ -384,24 +398,33 @@ td.product-name {
     }
   }
 
-
   .funfacts-area {
     background: white;
     padding-bottom: 100px;
     .dlategojesli {
       background: white;
-     ul {
-        padding: 20px; 
-     }
+      ul {
+        padding: 20px;
+      }
+    }
   }
-  }
-  
+
   .app-funfacts-area,
   .dlaczego {
     background: var(--darkViolet);
     &:before {
       content: none;
     }
+  }
+
+  .app-funfacts-area {
+    padding-bottom: 100px;
+  }
+
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   //   .app-download .download-image .laptop-video {
   //     animation: movebounce 5s linear infinite;
@@ -434,14 +457,14 @@ td.product-name {
     height: 100vh;
   }
 
-  .fun-facts-inner-area .fun-facts-inner-content  {
+  .fun-facts-inner-area .fun-facts-inner-content {
     p {
       font-size: 22px;
     }
     ul li {
-    font-size:19px;
+      font-size: 19px;
+    }
   }
-}
 }
 .simple-text-widget {
   p {
@@ -459,5 +482,7 @@ td.product-name {
     font-size: 32px;
   }
 
-
+  .dividedInTwoInner {
+    align-self: center;
+}
 }

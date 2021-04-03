@@ -37,7 +37,7 @@ class Banner extends React.Component {
                     <div className="hero-content">
                       <h1>Zacznij żyć życiem, o jakim marzysz!</h1>
                       <p>
-                        Mój nowy projekt “Droga do szczęścia” to intensywny,
+                        Mój nowy program “Droga do szczęścia” to intensywny,
                         11-dniowy program rozwojowy, dzięki któremu możesz
                         stworzyć dla siebie rzeczywistość, o jakiej marzysz od
                         zawsze.{" "}

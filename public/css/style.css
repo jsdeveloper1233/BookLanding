@@ -7367,6 +7367,17 @@ span.chapter-number {
 
 .faq-accordion h2 {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-accordion.course-content .accordion__button {
+  background-color: var(--templateColor);
+  color: var(--whiteColor);
+}
+
+.faq-accordion.course-content .accordion__button:hover {
+  background-color: var(--whiteColor);
+  color: #444;
 }
 
 .pricing-content li {
@@ -7649,6 +7660,11 @@ td.product-name .cart-items {
   color: #888;
 }
 
+.drogadoszczescialanding .btn {
+  padding: 29px 31px;
+  font-size: 22px;
+}
+
 .drogadoszczescialanding .app-download .section-title .download-btn a {
   padding: 12px 35px 12px 35px;
 }
@@ -7757,6 +7773,23 @@ td.product-name .cart-items {
   content: none;
 }
 
+.drogadoszczescialanding .app-funfacts-area {
+  padding-bottom: 100px;
+}
+
+.drogadoszczescialanding .faq-accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .drogadoszczescialanding .price-Value .currency {
   position: unset;
 }
@@ -7804,5 +7837,11 @@ td.product-name .cart-items {
 .simple-text-widget .zrobto {
   font-weight: 700;
   font-size: 32px;
+}
+
+.simple-text-widget .dividedInTwoInner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=style.css.map */

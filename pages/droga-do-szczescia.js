@@ -12,8 +12,10 @@ import SimpleTextSection from "../components/Features/SimpleTextSection";
 import CourseContent from "../components/DrogaDoSzczescia/CourseContent";
 
 export const finalPath = "";
-class DrogaDoSzczescia extends React.Component {
-  render() {
+const singleText = ["Zrób to dla siebie i zacznij żyć pełnią szczęścia", <br />, "Pomogę Ci to osiągnąć!"];
+
+const DrogaDoSzczescia = () => {
+
     return (
       <React.Fragment>
         <div className="drogadoszczescialanding">
@@ -30,13 +32,12 @@ class DrogaDoSzczescia extends React.Component {
 
           <PricingPlan />
 
-<SimpleTextSection  pText="Zrób to dla siebie i zacznij żyć pełnią szczęścia - pomogę Ci to osiągnąć!" theClass="aligncenter zrobto"/>
+<SimpleTextSection  pText={singleText} theClass="aligncenter zrobto" isDividedInTwo />
 
           <Footer />
         </div>
       </React.Fragment>
     );
-  }
 }
 
 export default DrogaDoSzczescia;

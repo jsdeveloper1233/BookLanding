@@ -24,7 +24,7 @@ class PricingPlan extends React.Component {
                 400<span className="currency">zł</span>
                 </div>
                 <div className="pricingHeader">
-                  <h3 className="title">Pakiet podstawowy</h3>
+                  <h3 className="title">Program podstawowy</h3>
                 </div>
                 <div className="pricing-content">
                   <ul>
@@ -59,7 +59,7 @@ class PricingPlan extends React.Component {
                       Dzień 11: nauka odcinania i medytacja Tratak
                     </li>
                     <li>2 sesje mentorskie z Sergio S Dorje</li>
-                    <li>Radykalna prawda w związku - eBook</li>
+                    <li>Radykalna prawda w związku - eBook z ćwiczeniami</li>
                     <li>Dziecko - jak uzyskać jego zaufanie - eBook</li>
                   </ul>
                 </div>
@@ -78,7 +78,7 @@ class PricingPlan extends React.Component {
                   550<span className="currency">zł</span>
                 </div>
                 <div className="pricingHeader">
-                  <h3 className="title">Pakiet VIP</h3>
+                  <h3 className="title">Program VIP</h3>
                 </div>
                 <div className="pricing-content">
                   <ul>
@@ -117,7 +117,7 @@ class PricingPlan extends React.Component {
                 <p><strong>Kupując pakiet rozszerzony otrzymasz również narzędzia o łącznej wartości 750 zł</strong></p>
                     <ul>
                     <li className="active">2 sesje mentorskie z Sergio S Dorje</li>
-                    <li className="active">Radykalna prawda w związku - eBook</li>
+                    <li className="active">Radykalna prawda w związku - eBook z ćwiczeniami</li>
                     <li className="active">Dziecko - jak uzyskać jego zaufanie - eBook</li>
                   </ul>
                 </div>
