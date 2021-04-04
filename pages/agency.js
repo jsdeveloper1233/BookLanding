@@ -5,7 +5,6 @@ import Banner from '../components/Agency/Banner';
 import Partner from '../components/Agency/Partner';
 import Features from '../components/Agency/Features';
 import Overview from '../components/Agency/Overview';
-import Funfact from '../components/Agency/Funfact';
 import SaasTools from '../components/Agency/SaasTools';
 import Works from '../components/Agency/Works';
 import Team from '../components/Agency/Team';
@@ -26,7 +25,6 @@ class Agency extends React.Component {
                <Partner />
                <Features />
                <Overview />
-               <Funfact />
                <SaasTools />
                <Works />
                <Team />
