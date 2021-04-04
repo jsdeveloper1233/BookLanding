@@ -3,6 +3,7 @@ import Link from "next/link";
 import buingOptions from "../../buyingOptions";
 import Loader from "../Shared/Loader";
 import CornerRibbon from "react-corner-ribbon";
+import { finalPath } from "../../pages/index";
 
 class Pricing2 extends Component {
   constructor(props) {
@@ -39,24 +40,36 @@ class Pricing2 extends Component {
             <div className="col-lg-4 col-md-6">
               <div className="pricing-table-box">
                 <div className="pricingTable-header">
-                  <h3 className="title">
+       
+                <h3 className="title">
                     Tylko <span>książka</span>
                   </h3>
                   <div className="price-value">
                     &nbsp;&nbsp;{buingOptions.paperCopy.price.toFixed(2)}{" "}
                     <sup>zł</sup>
-                    <p>
-                      + {buingOptions.paperCopy.shipping.toFixed(2)} zł wysyłka
-                      kurierem
-                    </p>
+                 
                   </div>
+                 
+
                 </div>
+
+                <img src={finalPath + '/images/ksiazka.png'} alt="książka" />
+
+
+                  <p className="textbig">KSIĄŻKA</p>
+                 <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
                 <ul className="pricing-content">
                   <li>
-                    <i className="icofont-tick-mark"></i>Książka "Sekrety
-                    rozwoju osobistego" <br />w formacie papierowym
+                    <i className="icofont-tick-mark"></i>Wersja papierowa, 260 stron
                   </li>
                 </ul>
+
+                
+
+                {/* <p>
+                      + {buingOptions.paperCopy.shipping.toFixed(2)} zł wysyłka
+                      kurierem
+                    </p> */}
 
                 <a
                   className="btn btn-primary"
@@ -80,6 +93,14 @@ class Pricing2 extends Component {
                     <p>darmowa wysyłka</p>
                   </div>
                 </div>
+
+
+
+                <img src={finalPath + '/images/ksiazka.png'} alt="książka" />
+
+                <p className="textbig">EBOOK</p>
+                 <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
+
                 <ul className="pricing-content">
                   <li>
                     <i className="icofont-tick-mark"></i>Książka "Sekrety
@@ -94,6 +115,10 @@ class Pricing2 extends Component {
                     rozwoju osobistego" <br />w formacie PDF
                   </li>
                 </ul>
+
+
+
+                
                 <a
                   className="btn btn-primary"
                   href="/checkout?product=ebook"
@@ -105,7 +130,7 @@ class Pricing2 extends Component {
             </div>
 
             <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-              <div className="pricing-table-box">
+              <div className="pricing-table-box pakiet">
                 <CornerRibbon
                   position="top-right"
                   fontColor="#fff"
@@ -119,11 +144,23 @@ class Pricing2 extends Component {
                     <span>Pakiet</span>
                   </h3>
                   <div className="price-value">
-                    &nbsp;&nbsp; {buingOptions.bundle.price.toFixed(2)}{" "}
+                    &nbsp; {buingOptions.bundle.price.toFixed(2)}{" "}
                     <sup>zł</sup>
                     <p>darmowa wysyłka</p>
                   </div>
                 </div>
+
+                
+                <img src={finalPath + '/images/ksiazka.png'} alt="książka" />
+                
+                <p className="textbig">KSIĄŻKA<br />
+                +&nbsp;EBOOK<br />
+                +&nbsp;NARZĘDZIE</p>
+                 <p className="textmedium">"Radykalna prawda w związku"</p>
+
+<p className="textmedium"><strong>Najbardziej
+atrakcyjny pakiet</strong></p>
+
                 <ul className="pricing-content">
                   <li>
                     <i className="icofont-tick-mark"></i>Książka "Sekrety

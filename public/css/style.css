@@ -7400,7 +7400,7 @@ span.chapter-number {
   color: #fff;
   font-weight: 400;
   font-size: 17px;
-  line-height: 31px;
+  margin-top: -12px;
 }
 
 .you-save {
@@ -7651,6 +7651,49 @@ td.product-name .cart-items {
 
 .sklep-prices .row {
   row-gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+}
+
+.sklep-prices .row .pricing-table {
+  padding: 0 0 30px 0;
+  background-color: #7a3760;
+}
+
+.sklep-prices .row .pricing-table:hover {
+  border: 2px solid var(--templateColor2);
+}
+
+.sklep-prices .row .pricing-table .price-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sklep-prices .row .pricing-table .price-header .title {
+  margin: 30px auto;
+}
+
+.sklep-prices .row .pricing-table .readmore {
+  margin-right: 20px;
+  text-align: right;
+}
+
+.sklep-prices .row .pricing-table .readmore a {
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.sklep-prices .row .pricing-table .readmore a:hover {
+  border-bottom: 1px solid #ff8a73;
+  text-decoration-thickness: from-font;
+  font-weight: 700;
 }
 
 .reviewform .form-group.uploadphoto label {
@@ -7693,6 +7736,25 @@ td.product-name .cart-items {
 .reviewform input::placeholder,
 .reviewform textarea::placeholder {
   color: #888;
+}
+
+.pricing-area {
+  color: var(--paragraphColor);
+}
+
+.pricing-area .pricing-table-box.pakiet {
+  background-color: #ff5a5a61;
+}
+
+.pricing-area .textbig {
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.pricing-area .textmedium {
+  font-size: 36px;
+  line-height: 1.2;
 }
 
 .drogadoszczescialanding .btn {
@@ -7859,6 +7921,16 @@ td.product-name .cart-items {
   font-size: 19px;
 }
 
+.simple-text-widget.dividedInTwoSection {
+  padding: 0;
+}
+
+.simple-text-widget.dividedInTwoSection .dividedInTwoInner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .simple-text-widget p {
   background-color: var(--darkViolet);
   color: var(--whiteColor);
@@ -7872,11 +7944,5 @@ td.product-name .cart-items {
 .simple-text-widget .zrobto {
   font-weight: 700;
   font-size: 32px;
-}
-
-.simple-text-widget .dividedInTwoInner {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
 }
 /*# sourceMappingURL=style.css.map */

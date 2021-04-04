@@ -56,12 +56,12 @@ span.chapter-number {
   margin-bottom: 40px;
 }
 
-.faq-accordion.course-content .accordion__button  {
+.faq-accordion.course-content .accordion__button {
   background-color: var(--templateColor);
-  color:var(--whiteColor);
+  color: var(--whiteColor);
   &:hover {
     background-color: var(--whiteColor);
-    color:#444;
+    color: #444;
   }
 }
 
@@ -81,7 +81,7 @@ span.chapter-number {
   color: #fff;
   font-weight: 400;
   font-size: 17px;
-  line-height: 31px;
+  margin-top: -12px;
 }
 
 .you-save {
@@ -99,7 +99,6 @@ span.chapter-number {
     justify-content: center;
   }
 }
-
 
 .single-features-box {
   height: 100%;
@@ -121,8 +120,6 @@ span.chapter-number {
   padding-left: 40px;
   height: 100%;
 }
-
-
 
 .hidden-instagram-icon {
   display: none;
@@ -206,9 +203,9 @@ td.product-name {
   border-style: ridge;
   padding: 20px;
   .ordered-product {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   img {
     max-width: 40%;
@@ -267,14 +264,14 @@ td.product-name {
 
   .subtitle {
     font-weight: 700;
-     text-align: center;
+    text-align: center;
   }
 
   .discover-content ul li {
     width: unset;
     float: unset;
   }
-  
+
   .discover-content ul li:hover {
     color: #1b1b1b;
   }
@@ -283,14 +280,13 @@ td.product-name {
     margin-left: auto;
     margin-right: auto;
     display: block;
-}
+  }
 
-.thanksto {
-  font-size: 27px;
-  font-weight: 700;
-  margin-top: 56px;
-}
-
+  .thanksto {
+    font-size: 27px;
+    font-weight: 700;
+    margin-top: 56px;
+  }
 }
 
 .next-generation-virtual-reality {
@@ -318,6 +314,37 @@ td.product-name {
 .sklep-prices {
   .row {
     row-gap: 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    .pricing-table {
+      padding: 0 0 30px 0;
+      background-color: #7a3760;
+      &:hover {
+        border: 2px solid var(--templateColor2);
+      }
+      .price-header {
+        display: flex;
+        flex-direction: column;
+        .title {
+          margin: 30px auto;
+        }
+      }
+
+      .readmore {
+        margin-right: 20px;
+        text-align: right;
+        a {
+          color: #fff;
+          margin-bottom: 25px;
+          &:hover {
+            border-bottom: 1px solid #ff8a73;
+            text-decoration-thickness: from-font;
+            font-weight: 700;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -345,6 +372,21 @@ td.product-name {
   }
 }
 
+.pricing-area {
+  color: var(--paragraphColor);
+  .pricing-table-box.pakiet {
+    background-color: #ff5a5a61;
+  }
+  .textbig {
+    font-size: 46px;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+  .textmedium {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+}
 .drogadoszczescialanding {
   .btn {
     padding: 29px 31px;
@@ -496,6 +538,12 @@ td.product-name {
   }
 }
 .simple-text-widget {
+  &.dividedInTwoSection {
+    padding: 0;
+    .dividedInTwoInner {
+      align-self: center;
+    }
+  }
   p {
     background-color: var(--darkViolet);
     color: var(--whiteColor);
@@ -511,7 +559,4 @@ td.product-name {
     font-size: 32px;
   }
 
-  .dividedInTwoInner {
-    align-self: center;
-}
 }
