@@ -76,9 +76,12 @@ class Navbar extends React.Component {
       ? "navbar-toggler navbar-toggler-right collapsed"
       : "navbar-toggler navbar-toggler-right";
 
+
+const customClass = this.props.customClass;
+
     return (
       <React.Fragment>
-        <header id="header">
+        <header id="header" className={customClass}>
           <div id="navbar" className={`crake-nav ${layOutCls}`}>
             <div className="container" id="top">
               <nav className="navbar navbar-expand-md navbar-light">

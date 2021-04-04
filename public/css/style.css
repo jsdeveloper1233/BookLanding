@@ -72,6 +72,7 @@ Default CSS
   --whiteColor: #ffffff;
   --blackColor: #000000;
   --paragraphColor: #1d1d1d;
+  --darkViolet:#7A3760;
   --transition: .5s;
 }
 
@@ -7302,6 +7303,12 @@ html {
   scroll-behavior: inherit;
 }
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1350px;
+  }
+}
+
 p {
   font-size: 19px;
 }
@@ -7360,6 +7367,17 @@ span.chapter-number {
 
 .faq-accordion h2 {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-accordion.course-content .accordion__button {
+  background-color: var(--templateColor);
+  color: var(--whiteColor);
+}
+
+.faq-accordion.course-content .accordion__button:hover {
+  background-color: var(--whiteColor);
+  color: #444;
 }
 
 .pricing-content li {
@@ -7401,11 +7419,6 @@ span.chapter-number {
           justify-content: center;
 }
 
-.discover-content ul li {
-  width: unset;
-  float: unset;
-}
-
 .single-features-box {
   height: 100%;
 }
@@ -7428,10 +7441,6 @@ span.chapter-number {
   margin-bottom: 30px;
   padding-left: 40px;
   height: 100%;
-}
-
-.discover-content ul li:hover {
-  color: #1b1b1b;
 }
 
 .hidden-instagram-icon {
@@ -7510,6 +7519,10 @@ td.product-name .cart-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 30px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -7520,6 +7533,18 @@ td.product-name .cart-items {
   border: 1px;
   border-style: ridge;
   padding: 20px;
+}
+
+.order-image .ordered-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .order-image img {
@@ -7569,12 +7594,40 @@ td.product-name .cart-items {
           flex-direction: column;
 }
 
-.book-discover span {
-  font-size: 20px;
-}
-
 .book-discover ul {
   font-size: 18px;
+}
+
+.book-discover h3 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.book-discover .subtitle {
+  font-weight: 700;
+  text-align: center;
+}
+
+.book-discover .discover-content ul li {
+  width: unset;
+  float: unset;
+}
+
+.book-discover .discover-content ul li:hover {
+  color: #1b1b1b;
+}
+
+.book-discover img.brush {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.book-discover .thanksto {
+  font-size: 27px;
+  font-weight: 700;
+  margin-top: 56px;
 }
 
 .next-generation-virtual-reality .icon {
@@ -7598,6 +7651,10 @@ td.product-name .cart-items {
 
 .sklep-prices .row {
   row-gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
 }
 
 .sklep-prices .row .pricing-table {
@@ -7634,7 +7691,7 @@ td.product-name .cart-items {
 }
 
 .sklep-prices .row .pricing-table .readmore a:hover {
-  border-bottom: 1px solid #FF8A73;
+  border-bottom: 1px solid #ff8a73;
   text-decoration-thickness: from-font;
   font-weight: 700;
 }
@@ -7698,5 +7755,194 @@ td.product-name .cart-items {
 .pricing-area .textmedium {
   font-size: 36px;
   line-height: 1.2;
+}
+
+.drogadoszczescialanding .btn {
+  padding: 29px 31px;
+  font-size: 22px;
+}
+
+.drogadoszczescialanding .app-download .section-title .download-btn a {
+  padding: 12px 35px 12px 35px;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+  color: var(--paragraphColor);
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .crake-nav nav .navbar-nav li a {
+  color: var(--paragraphColor) !important;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .crake-nav.is-sticky .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+  color: #fff;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader .crake-nav.is-sticky nav .navbar-nav li a {
+  color: #fff !important;
+}
+
+.drogadoszczescialanding .drogadoszczesciaheader nav .nav-item.zamowteraz .btn-primary {
+  color: #fff !important;
+}
+
+.drogadoszczescialanding .drogadoszczesciabanner .omnie {
+  max-width: 700px;
+  margin: 0px auto 60px auto;
+  position: relative;
+  -webkit-box-shadow: 4px 16px 30px 0px rgba(205, 141, 176, 0.39);
+          box-shadow: 4px 16px 30px 0px rgba(205, 141, 176, 0.39);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.drogadoszczescialanding .wherevideois {
+  z-index: 9;
+}
+
+.drogadoszczescialanding .wherevideois .video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.drogadoszczescialanding .wherevideois .video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.drogadoszczescialanding .wherevideois .laptop-video {
+  width: 100%;
+  height: 100%;
+  max-width: 1034px;
+  max-height: 543px;
+  margin: 0 auto;
+  -webkit-animation: movebounce 5s linear infinite;
+          animation: movebounce 5s linear infinite;
+}
+
+.drogadoszczescialanding .wherevideois .laptop-video div {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+}
+
+.drogadoszczescialanding .wherevideois .laptop-video div iframe {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat;
+  background-size: contain;
+  padding: 11.9% 15.5% 14.8%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.drogadoszczescialanding .funfacts-area {
+  background: white;
+  padding-bottom: 100px;
+}
+
+.drogadoszczescialanding .funfacts-area .dlategojesli {
+  background: white;
+}
+
+.drogadoszczescialanding .funfacts-area .dlategojesli ul {
+  padding: 20px;
+}
+
+.drogadoszczescialanding .app-funfacts-area,
+.drogadoszczescialanding .dlaczego {
+  background: var(--darkViolet);
+}
+
+.drogadoszczescialanding .app-funfacts-area:before,
+.drogadoszczescialanding .dlaczego:before {
+  content: none;
+}
+
+.drogadoszczescialanding .app-funfacts-area {
+  padding-bottom: 100px;
+}
+
+.drogadoszczescialanding .faq-accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.drogadoszczescialanding .price-Value .currency {
+  position: unset;
+}
+
+.drogadoszczescialanding .pricingTable .pricing-content {
+  margin-left: 60px;
+  margin-right: 30px;
+}
+
+.drogadoszczescialanding .pricingTable .pricing-content ul {
+  list-style: none;
+}
+
+.drogadoszczescialanding .pricingTable .pricing-content ul li {
+  display: block;
+  background: url(/images/square-bullet.svg) no-repeat;
+  padding-left: 1.7em;
+  background-size: 14px;
+  background-position: 3px 5px;
+  text-align: left;
+}
+
+.drogadoszczescialanding .main-banner.drogadoszczesciabanner {
+  height: 100vh;
+}
+
+.drogadoszczescialanding .fun-facts-inner-area .fun-facts-inner-content p {
+  font-size: 22px;
+}
+
+.drogadoszczescialanding .fun-facts-inner-area .fun-facts-inner-content ul li {
+  font-size: 19px;
+}
+
+.simple-text-widget.dividedInTwoSection {
+  padding: 0;
+}
+
+.simple-text-widget.dividedInTwoSection .dividedInTwoInner {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.simple-text-widget p {
+  background-color: var(--darkViolet);
+  color: var(--whiteColor);
+  padding-bottom: 0;
+}
+
+.simple-text-widget .aligncenter {
+  text-align: center;
+}
+
+.simple-text-widget .zrobto {
+  font-weight: 700;
+  font-size: 32px;
 }
 /*# sourceMappingURL=style.css.map */

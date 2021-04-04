@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import buingOptions from "../../buyingOptions";
 import Loader from "../Shared/Loader";
 import { finalPath } from "../../pages/index";
+import Link from "next/link";
 class Pricing extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isLoading: false };
-      }
-
+  constructor(props) {
+    super(props);
+    this.state = { isLoading: false };
+  }
 
   componentDidMount() {
     this.setState({ isLoading: false });
@@ -33,60 +33,84 @@ class Pricing extends Component {
             </p>
           </div> */}
 
-
-
-
           <div className="row">
-
-          <div className="col-lg-6 col-md-6">
+            <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-              <img src={finalPath + '/images/sekrety-rozwoju-osobistego-papier-gr.jpg'} alt="screenshot" />
+                <img
+                  src={
+                    finalPath +
+                    "/images/sekrety-rozwoju-osobistego-papier-gr.jpg"
+                  }
+                  alt="screenshot"
+                />
                 <div className="price-header">
-                  <h3 className="title">KSIĄŻKA <br /> "Sekrety Rozwoju Osobistego"</h3>
+                  <h3 className="title">
+                    KSIĄŻKA <br /> "Sekrety Rozwoju Osobistego"
+                  </h3>
                   <div className="price">
-                    {buingOptions.paperCopy.price.toFixed(2)}<span className="dollar">zł</span>
+                    {buingOptions.paperCopy.price.toFixed(2)}
+                    <span className="dollar">zł</span>
                   </div>
                 </div>
-
                 <div className="price-footer">
-                  <a className="btn btn-primary" href="/checkout?product=paperCopy"
-                  onClick={this.showLoader.bind(this)}>
+                  <a
+                    className="btn btn-primary"
+                    href="/checkout?product=paperCopy"
+                    onClick={this.showLoader.bind(this)}
+                  >
                     Zamawiam
                   </a>
                 </div>
               </div>
             </div>
 
-          <div className="col-lg-6 col-md-6">
+            <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-              <img src={finalPath + '/images/sekrety-rozwoju-osobistego-ebook-gr.jpg'} alt="screenshot" />
+                <img
+                  src={
+                    finalPath +
+                    "/images/sekrety-rozwoju-osobistego-ebook-gr.jpg"
+                  }
+                  alt="screenshot"
+                />
                 <div className="price-header">
-                  <h3 className="title">EBOOK <br /> "Sekrety Rozwoju Osobistego"</h3>
+                  <h3 className="title">
+                    EBOOK <br /> "Sekrety Rozwoju Osobistego"
+                  </h3>
                   <div className="price">
-                  {buingOptions.ebook.price.toFixed(2)}<span className="dollar">zł</span>
+                    {buingOptions.ebook.price.toFixed(2)}
+                    <span className="dollar">zł</span>
                   </div>
                 </div>
-
                 <div className="price-footer">
-                  <a className="btn btn-primary" href="/checkout?product=paperCopy"
-                  onClick={this.showLoader.bind(this)}>
+                  <a
+                    className="btn btn-primary"
+                    href="/checkout?product=paperCopy"
+                    onClick={this.showLoader.bind(this)}
+                  >
                     Zamawiam
                   </a>
                 </div>
               </div>
             </div>
+</div>
 
-
-            <div className="col-lg-6 col-md-6">
+<div className="row">
+            <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-              <img src={finalPath + '/images/radykalna-prawda-w-zwiazku.jpg'} alt="screenshot" />
+                <img
+                  src={finalPath + "/images/radykalna-prawda-w-zwiazku.jpg"}
+                  alt="screenshot"
+                />
                 <div className="price-header">
-                <h3 className="title">EBOOK <br /> "Radykalna Prawda w Związku"</h3>
+                  <h3 className="title">
+                    EBOOK <br /> "Radykalna Prawda w Związku"
+                  </h3>
                   <div className="price">
-                    {buingOptions.ebook.price.toFixed(2)}<span className="dollar">zł</span>
+                    {buingOptions.ebook.price.toFixed(2)}
+                    <span className="dollar">zł</span>
                   </div>
                 </div>
-
                 <div className="price-footer">
                   <a
                     className="btn btn-primary"
@@ -99,72 +123,106 @@ class Pricing extends Component {
               </div>
             </div>
 
-
-
-            <div className="col-lg-6 col-md-6 offset-lg-0 offset-md-3">
+            <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <img src={finalPath + '/images/ksiazka-bundle.jpg'} alt="screenshot" />
+                <img
+                  src={finalPath + "/images/ksiazka-bundle.jpg"}
+                  alt="screenshot"
+                />
                 <div className="price-header">
-                  <h3 className="title">PAKIET <br /> KSIĄŻKA PAPIEROWA + EBOOK + RADYKALNA PRAWDA W ZWIĄZKU</h3>
+                  <h3 className="title">
+                    PAKIET <br /> KSIĄŻKA PAPIEROWA + EBOOK + RADYKALNA PRAWDA W
+                    ZWIĄZKU
+                  </h3>
                   <div className="price">
-                    {buingOptions.bundle.price.toFixed(2)}<span className="dollar">zł</span>
+                    {buingOptions.bundle.price.toFixed(2)}
+                    <span className="dollar">zł</span>
                   </div>
                 </div>
-
                 <div className="price-footer">
-                  <a className="btn btn-primary" href="/checkout?product=bundle"
-                  onClick={this.showLoader.bind(this)}>
+                  <a
+                    className="btn btn-primary"
+                    href="/checkout?product=bundle"
+                    onClick={this.showLoader.bind(this)}
+                  >
                     Zamawiam
                   </a>
                 </div>
               </div>
             </div>
-          
+            </div>
 
-            <div className="col-lg-6 col-md-6 offset-lg-0 offset-md-3">
+
+            <div className="row">
+            <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <img src={finalPath + '/images/droga-do-szczescia.jpg'} alt="screenshot" />
+                <img
+                  src={finalPath + "/images/droga-do-szczescia.jpg"}
+                  alt="screenshot"
+                />
                 <div className="price-header">
-                  <h3 className="title">KURS ONLINE<br /> PROGRAM: DROGA DO SZCZĘŚCIA</h3>
-                  <span className="readmore"><a href="/droga-do-szczescia">➜ Czytaj więcej o programie</a></span>
+                  <h3 className="title">
+                    KURS ONLINE
+                    <br /> PROGRAM: DROGA DO SZCZĘŚCIA
+                  </h3>
+                  <span className="readmore">
+                  <Link  href="/droga-do-szczescia">
+                      <a>
+                        ➜ Czytaj więcej o programie
+                      </a>
+                    </Link>
+                  </span>
                   <div className="price">
-                    {buingOptions.bundle.price.toFixed(2)}<span className="dollar">zł</span>
+                    {buingOptions.bundle.price.toFixed(2)}
+                    <span className="dollar">zł</span>
                   </div>
                 </div>
-
                 <div className="price-footer">
-                  <a className="btn btn-primary" href="/checkout?product=bundle"
-                  onClick={this.showLoader.bind(this)}>
+                  <a
+                    className="btn btn-primary"
+                    href="/checkout?product=bundle"
+                    onClick={this.showLoader.bind(this)}
+                  >
                     Zamawiam
                   </a>
                 </div>
               </div>
             </div>
 
-
-            <div className="col-lg-6 col-md-6 offset-lg-0 offset-md-3">
+            <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <img src={finalPath + '/images/droga-do-szczescia-vip.jpg'} alt="screenshot" />
+                <img
+                  src={finalPath + "/images/droga-do-szczescia-vip.jpg"}
+                  alt="screenshot"
+                />
                 <div className="price-header">
-                  <h3 className="title">KURS ONLINE<br /> PROGRAM: DROGA DO SZCZĘŚCIA vip</h3>
-                  <span className="readmore"><a href="/droga-do-szczescia">➜ Czytaj więcej o programie</a></span>
+                  <h3 className="title">
+                    KURS ONLINE
+                    <br /> PROGRAM: DROGA DO SZCZĘŚCIA vip
+                  </h3>
+                  <span className="readmore">
+                    <Link href="/droga-do-szczescia">
+                      <a>
+                        ➜ Czytaj więcej o programie
+                      </a>
+                    </Link>
+                  </span>
                   <div className="price">
-                    {buingOptions.bundle.price.toFixed(2)}<span className="dollar">zł</span>
+                    {buingOptions.bundle.price.toFixed(2)}
+                    <span className="dollar">zł</span>
                   </div>
                 </div>
-
                 <div className="price-footer">
-                  <a className="btn btn-primary" href="/checkout?product=bundle"
-                  onClick={this.showLoader.bind(this)}>
+                  <a
+                    className="btn btn-primary"
+                    href="/checkout?product=bundle"
+                    onClick={this.showLoader.bind(this)}
+                  >
                     Zamawiam
                   </a>
                 </div>
               </div>
             </div>
-
-
-
-
           </div>
         </div>
         <canvas id="canvas"></canvas>
