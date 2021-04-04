@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Layouts/Navbar';
 import Footer from '../components/Layouts/Footer';
-import Banner from '../components/DigitalMarketing/Banner';
 import Partner from '../components/DigitalMarketing/Partner';
 import Features from '../components/DigitalMarketing/Features';
 import Services from '../components/DigitalMarketing/Services';
@@ -22,7 +21,6 @@ class DigitalMarketing extends React.Component {
         return (
             <React.Fragment>
                <Navbar />
-               <Banner />
                <Partner />
                <Features />
                <Services />
