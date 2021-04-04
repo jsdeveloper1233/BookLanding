@@ -23,6 +23,19 @@ class Mails {
                         }
                     ],
                     "dynamic_template_data": {
+                        "data": `
+                        <p>Witaj ${cname}, <br />
+                        <br />
+                        Dziękujemy za Twój zakup na stronie sekretyrozwojuosobistego.pl<br />
+                        <p><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        </p>
+                        <strong>Zamówienie:</strong>
+                        <p>${product.name}, ${quantity} szt. <br />
+                        ${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}
+                        </p>
+                        <strong>Dostawa:</strong>
+                        <p>${electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`}</p>
+                    `,
                         "links": this.joinLinks(links)
                     }
                 }
