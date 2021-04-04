@@ -7,7 +7,6 @@ import Features from '../components/SoftwareLanding/Features';
 import Overview from '../components/SoftwareLanding/Overview';
 import CtaCard from '../components/SoftwareLanding/CtaCard';
 import SaasTools from '../components/SoftwareLanding/SaasTools';
-import Funfact from '../components/SoftwareLanding/Funfact';
 import GetStarted from '../components/SoftwareLanding/GetStarted';
 import Blog from '../components/SoftwareLanding/Blog';
 import Download from '../components/DrogaDoSzczescia/Download';
@@ -24,7 +23,6 @@ class HomeFive extends React.Component {
                <Overview />
                <CtaCard />
                <SaasTools />
-               <Funfact />
                <GetStarted />
                <Blog />
                <Download />
