@@ -461,11 +461,6 @@ class OrderSummary extends Component {
                       <h2>Zamawiasz:</h2>
                       <a>
                         {this.state.product.name}, {this.state.quantity} szt.
-                        {this.state.extra &&
-                          this.state.extra.product.name +
-                            "," +
-                            this.state.extra.quantity +
-                            " szt."}
                       </a>
                     </div>
                     <span className="arrow-right-order">
@@ -478,14 +473,12 @@ class OrderSummary extends Component {
                     ></img>
                   </div>
 
-                  {this.state.extra && (
+                  {this.state.extra ?
                     <div className="ordered-product">
                       <div>
                         <a>
-                          {this.state.product.name}, {this.state.quantity} szt.
-                          {this.state.extra &&
-                            this.state.extra.product.name +
-                              "," +
+                          {this.state.extra.product.name +
+                              ", " +
                               this.state.extra.quantity +
                               " szt."}
                         </a>
@@ -499,7 +492,7 @@ class OrderSummary extends Component {
                         alt={this.state.extra.product.name}
                       ></img>
                     </div>
-                  )}
+                  : null }
                 </div>
               </div>
             )}
