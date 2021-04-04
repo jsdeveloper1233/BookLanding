@@ -7600,6 +7600,45 @@ td.product-name .cart-items {
   row-gap: 30px;
 }
 
+.sklep-prices .row .pricing-table {
+  padding: 0 0 30px 0;
+  background-color: #7a3760;
+}
+
+.sklep-prices .row .pricing-table:hover {
+  border: 2px solid var(--templateColor2);
+}
+
+.sklep-prices .row .pricing-table .price-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sklep-prices .row .pricing-table .price-header .title {
+  margin: 30px auto;
+}
+
+.sklep-prices .row .pricing-table .readmore {
+  margin-right: 20px;
+  text-align: right;
+}
+
+.sklep-prices .row .pricing-table .readmore a {
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.sklep-prices .row .pricing-table .readmore a:hover {
+  border-bottom: 1px solid #FF8A73;
+  text-decoration-thickness: from-font;
+  font-weight: 700;
+}
+
 .reviewform .form-group.uploadphoto label {
   margin-bottom: 0;
 }
@@ -7622,19 +7661,23 @@ td.product-name .cart-items {
   color: #888;
 }
 
-.reviewform input::-webkit-input-placeholder, .reviewform textarea::-webkit-input-placeholder {
+.reviewform input::-webkit-input-placeholder,
+.reviewform textarea::-webkit-input-placeholder {
   color: #888;
 }
 
-.reviewform input:-ms-input-placeholder, .reviewform textarea:-ms-input-placeholder {
+.reviewform input:-ms-input-placeholder,
+.reviewform textarea:-ms-input-placeholder {
   color: #888;
 }
 
-.reviewform input::-ms-input-placeholder, .reviewform textarea::-ms-input-placeholder {
+.reviewform input::-ms-input-placeholder,
+.reviewform textarea::-ms-input-placeholder {
   color: #888;
 }
 
-.reviewform input::placeholder, .reviewform textarea::placeholder {
+.reviewform input::placeholder,
+.reviewform textarea::placeholder {
   color: #888;
 }
 
