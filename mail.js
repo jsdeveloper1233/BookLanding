@@ -81,6 +81,7 @@ class Mails {
                         "data": `
                         <p>Witaj ${cname}, <br />
                         <br />
+                        <br />
                         Dziękujemy za złożenie zamówienia w Sekretyrozwojuosobistego.pl.<br />
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
