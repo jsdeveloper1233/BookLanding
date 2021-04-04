@@ -234,7 +234,7 @@ app.prepare().then(() => {
                 }
 
                 await mail.sendAuthorEmail(state)
-                await mail.sendEmail(state.template, state.email, state.cname, links);
+                await mail.sendEmail(state, links);
                 state.status = 1;
                 await Order.update({body: JSON.stringify(state), state: 1}, {where: {id: parseInt(id)}});
             }

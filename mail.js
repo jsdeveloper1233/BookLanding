@@ -8,14 +8,18 @@ class Mails {
 
     // MAIL DO KLIENTA
     // transakcja zakończyła się sukcesem
-    async sendEmail(tid, email, name, links) {
+    async sendEmail(state, links) {
+
+        const {cname, email, template, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, quantity, shipping, electronicShipping, price, product, extra} = state;
+
+
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
                     "to": [
                         {
                             "email": email,
-                            "name": name
+                            "name": cname
                         }
                     ],
                     "dynamic_template_data": {
@@ -27,7 +31,7 @@ class Mails {
                 "email": "sergio@sergiosdorje.com",
                 "name": "Sergio S Dorje"
             },
-            "template_id": tid
+            "template_id": template
         }, {
             headers: {
                 "Authorization": process.env.SENDGRID_AUTH_TOKEN
