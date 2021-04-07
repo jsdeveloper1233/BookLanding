@@ -1,4 +1,16 @@
 var options = {
+    paperCopy: {
+        sku: 'papierowa',
+        name: 'Wersja papierowa książki',
+        description: 'Sekrety Rozwoju Osobistego - Wersja papierowa książki',
+        price: 39.90,
+        shipping: 14.90,
+        electronicShipping: false,
+        image: '/images/ksiazka-2.png',
+        template: 'd-9ac2fe11d35f4ab68a8da74c9ea760e0',
+        links: [
+        ]
+    },
     ebook: {
         sku: 'ebook',
         name: 'Wersja eBook',
@@ -18,18 +30,6 @@ var options = {
                 file: "files/sample.pdf",
                 name: "sample"
             }
-        ]
-    },
-    paperCopy: {
-        sku: 'papierowa',
-        name: 'Wersja papierowa książki',
-        description: 'Sekrety Rozwoju Osobistego - Wersja papierowa książki',
-        price: 39.90,
-        shipping: 14.90,
-        electronicShipping: false,
-        image: '/images/ksiazka-2.png',
-        template: 'd-889a4f6a165a425cb98e7dae11baa998',
-        links: [
         ]
     },
     bundle: {

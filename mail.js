@@ -24,9 +24,9 @@ class Mails {
                     ],
                     "dynamic_template_data": {
                         "data": `
-                        <p>Witaj ${cname}, <br />
+                        <p>Cześć ${cname}, <br />
                         <br />
-                        Dziękujemy za Twój zakup na stronie sekretyrozwojuosobistego.pl<br />
+                        Dziękuję za Twój zakup na stronie sekretyrozwojuosobistego.pl<br />
                         <p><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
                         </p>
                         <strong>Zamówienie:</strong>
@@ -35,8 +35,12 @@ class Mails {
                         </p>
                         <strong>Dostawa:</strong>
                         <p>${electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`}</p>
+                        ${links ? `
+                        <strong>Możesz pobrać tutaj:</strong>
+                        ${this.joinLinks(links)}
+                        ` : ''}
                     `,
-                        "links": this.joinLinks(links)
+                        // "links": this.joinLinks(links)
                     }
                 }
             ],
@@ -79,10 +83,10 @@ class Mails {
                     ],
                     "dynamic_template_data": {
                         "data": `
-                        <p>Witaj ${cname}, <br />
+                        <p>Cześć ${cname}, <br />
                         <br />
                         <br />
-                        Dziękujemy za złożenie zamówienia w Sekretyrozwojuosobistego.pl.<br />
+                        Dziękuję za złożenie zamówienia na stronie Sekretyrozwojuosobistego.pl.<br />
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
                         <strong>Szczegóły dotyczące zamówienia</strong>
