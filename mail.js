@@ -8,7 +8,7 @@ class Mails {
 
     // MAIL DO KLIENTA
     // transakcja zakończyła się sukcesem
-    async sendEmail(state, links) {
+    async sendEmail(order, state, links) {
 
         const {cname, email, template, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, quantity, shipping, electronicShipping, price, product, extra} = state;
 
