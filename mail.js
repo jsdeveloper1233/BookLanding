@@ -35,7 +35,7 @@ class Mails {
                         </p>
                         <strong>Dostawa:</strong>
                         <p>${electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`}</p>
-                        ${links ? `
+                        ${links && links.length > 0 ? `
                         <strong>Możesz pobrać tutaj:</strong>
                         ${this.joinLinks(links)}
                         ` : ''}
@@ -187,7 +187,7 @@ class Mails {
                     Miejscowość: ${vatCity} <br/>
                     <br/>
                     <br/>
-                    Kwota zapłacona: ${price}
+                    Kwota zapłacona: ${price / 100}
                     Tytuł przelewu: ${statement}
                     </div>
                     `
