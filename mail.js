@@ -111,7 +111,7 @@ class Mails {
 
                     "shippingMethod": electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`,
 
-                    "totalPrice": `<p>Kwota do zapłaty: ${price / 100} zł </p>`,
+                    "totalPrice": `<p>Kwota do zapłaty: ${(price / 100).toFixed(2)} zł </p>`,
 
                     "productBought": `${product.name}, ${quantity} szt.`,
                     "extraProduct": `${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}`
@@ -188,7 +188,7 @@ class Mails {
                     Miejscowość: ${vatCity} <br/>
                     <br/>
                     <br/>
-                    Kwota zapłacona: ${price / 100}
+                    Kwota zapłacona: ${(price / 100).toFixed(2)}
                     Tytuł przelewu: ${statement}
                     </div>
                     `
