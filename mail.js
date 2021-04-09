@@ -26,9 +26,10 @@ class Mails {
                         "data": `
                         <p>Cześć ${cname}, <br />
                         <br />
-                        Dziękuję za Twój zakup na stronie sekretyrozwojuosobistego.pl<br />
-                        <p><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        Dziękuję za Twój zakup na stronie 'sekretyrozwojuosobistego.pl'
                         </p>
+                        <p><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        
                         <strong>Zamówienie:</strong>
                         <p>${product.name}, ${quantity} szt. <br />
                         ${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}

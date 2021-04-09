@@ -1,7 +1,7 @@
 var options = {
     paperCopy: {
         sku: 'papierowa',
-        name: 'Wersja papierowa książki',
+        name: 'Wersja papierowa książki "Sekrety Rozwoju Osobistego',
         description: 'Sekrety Rozwoju Osobistego - Wersja papierowa książki',
         price: 39.90,
         shipping: 14.90,
