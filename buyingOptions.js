@@ -19,7 +19,7 @@ var options = {
         shipping: 0,
         electronicShipping: true,
         image: '/images/ebook-mockup.jpg',
-        template: 'd-43a4ce7ca5344d3c89282454be042e30',
+        template: 'd-9ac2fe11d35f4ab68a8da74c9ea760e0',
         extra: {
             key: 'paperCopy',
             title: 'Kup jeszcze książkę papierową!',
@@ -42,7 +42,7 @@ var options = {
         electronicShipping: false,
         discount: 0, // to pole jest automatycznie wyliczane poniżej
         image: '/images/pakiet.jpg',
-        template: 'd-58f0808630ff4b2483efc4b88e8995f0',
+        template: 'd-9ac2fe11d35f4ab68a8da74c9ea760e0',
         links: [
             {
                 file: "files/sample.pdf",
