@@ -63,7 +63,7 @@ class OrderSummary extends Component {
         console.log(d.data);
         console.log(d.data.link);
         this.setState((x) => ({ ...x, isLoading: false }));
-        window.open(d.data.link, "_blank");
+        window.location.href = d.data.link;
       });
   }
 

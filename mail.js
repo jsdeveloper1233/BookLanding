@@ -8,18 +8,40 @@ class Mails {
 
     // MAIL DO KLIENTA
     // transakcja zakończyła się sukcesem
-    async sendEmail(tid, email, name, links) {
+    async sendEmail(order, state, links) {
+
+        const {cname, email, template, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, quantity, shipping, electronicShipping, price, product, extra} = state;
+
+
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
                     "to": [
                         {
                             "email": email,
-                            "name": name
+                            "name": cname
                         }
                     ],
                     "dynamic_template_data": {
-                        "links": this.joinLinks(links)
+                        "data": `
+                        <p>Cześć ${cname}, <br />
+                        Dziękuję za Twój zakup na stronie 'sekretyrozwojuosobistego.pl'
+                        </p>
+                        <p><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        
+                        <p><strong>Zamówienie:</strong>
+                        ${product.name}, ${quantity} szt. <br />
+                        ${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}
+                        </p>
+                        <p><strong>Dostawa:</strong>
+                       ${electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`}</p>
+                        ${links && links.length > 0 ? `
+                        <strong>Możesz pobrać tutaj:</strong>
+                        ${this.joinLinks(links)}
+                        ` : ''}
+                        </p>
+                    `,
+                        // "links": this.joinLinks(links)
                     }
                 }
             ],
@@ -27,7 +49,7 @@ class Mails {
                 "email": "sergio@sergiosdorje.com",
                 "name": "Sergio S Dorje"
             },
-            "template_id": tid
+            "template_id": template
         }, {
             headers: {
                 "Authorization": process.env.SENDGRID_AUTH_TOKEN
@@ -62,9 +84,10 @@ class Mails {
                     ],
                     "dynamic_template_data": {
                         "data": `
-                        <p>Witaj ${cname}, <br />
+                        <p>Cześć ${cname}, <br />
                         <br />
-                        Dziękujemy za złożenie zamówienia w Sekretyrozwojuosobistego.pl.<br />
+                        <br />
+                        Dziękuję za złożenie zamówienia na stronie Sekretyrozwojuosobistego.pl.<br />
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
                         <strong>Szczegóły dotyczące zamówienia</strong>
@@ -88,7 +111,7 @@ class Mails {
 
                     "shippingMethod": electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`,
 
-                    "totalPrice": `<p>Kwota do zapłaty: ${price / 100} zł </p>`,
+                    "totalPrice": `<p>Kwota do zapłaty: ${(price / 100).toFixed(2)} zł </p>`,
 
                     "productBought": `${product.name}, ${quantity} szt.`,
                     "extraProduct": `${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}`
@@ -165,7 +188,7 @@ class Mails {
                     Miejscowość: ${vatCity} <br/>
                     <br/>
                     <br/>
-                    Kwota zapłacona: ${price}
+                    Kwota zapłacona: ${(price / 100).toFixed(2)}
                     Tytuł przelewu: ${statement}
                     </div>
                     `
