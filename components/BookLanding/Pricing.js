@@ -192,7 +192,7 @@ class Pricing extends Component {
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
                 <img
-                  src={finalPath + "/images/droga-do-szczescia-vip.jpg"}
+                  src={finalPath + "/images/droga-do-szczescia-VIP.jpg"}
                   alt="screenshot"
                 />
                 <div className="price-header">

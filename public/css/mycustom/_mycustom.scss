@@ -315,13 +315,13 @@ td.product-name {
   .row {
     row-gap: 30px;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 
     .pricing-table {
       padding: 0 0 30px 0;
       background-color: #7a3760;
       &:hover {
-        border: 2px solid var(--templateColor2);
+        border: 15px solid var(--templateColor2);
       }
       .price-header {
         display: flex;

@@ -7654,7 +7654,7 @@ td.product-name .cart-items {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 .sklep-prices .row .pricing-table {
@@ -7663,7 +7663,7 @@ td.product-name .cart-items {
 }
 
 .sklep-prices .row .pricing-table:hover {
-  border: 2px solid var(--templateColor2);
+  border: 15px solid var(--templateColor2);
 }
 
 .sklep-prices .row .pricing-table .price-header {
