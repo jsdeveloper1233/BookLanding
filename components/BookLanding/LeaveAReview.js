@@ -251,7 +251,7 @@ const LeaveAReview = ({ limit, value }) => {
 
                   </div>
 
-                  <Reaptcha sitekey="6LcggrMaAAAAAAbfOlIICwVk37ve2_AXOrM09uYa" onVerify={(captcha) => setCaptcha({captcha: captcha, captchaError: ''}) } />
+                  <Reaptcha sitekey={process.env.CAPTCHA_CLIENT} onVerify={(captcha) => setCaptcha({captcha: captcha, captchaError: ''}) } />
 
       
                   <div className="help-block with-errors">

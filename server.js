@@ -128,8 +128,8 @@ app.prepare().then(() => {
         
 
         console.log(req.body);
-
-        let googleUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=6LcggrMaAAAAAPzZOgYSLPp8bAmPxEuHfS7wYzI_&response='+req.body.captcha; 
+        let key = process.env.CAPTCHA_SERVER;
+        let googleUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${key}&response=`+req.body.captcha; 
 
     let captchaResponse = await axios({
         url : googleUrl                 
