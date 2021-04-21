@@ -25,6 +25,18 @@ const mail = new Mails();
 const { Sequelize, DataTypes, Op } = require('sequelize');
 const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
 
+var multer  = require('multer')
+
+var storage = multer.diskStorage({
+    destination: function (req, file, callback) {
+        callback(null, './uploads');
+    },
+    filename: function (req, file, callback) {
+        callback(null, file.originalname);
+    }
+});
+
+var upload = multer({ storage: storage });
 
 try {
     sequelize.authenticate();
@@ -110,6 +122,31 @@ app.prepare().then(() => {
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: true }));
 
+
+
+    server.post('/api/review', upload.single('sendphoto'), async (req, res) => {
+        
+
+        console.log(req.body);
+
+        let googleUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=6LcggrMaAAAAAPzZOgYSLPp8bAmPxEuHfS7wYzI_&response='+req.body.captcha; 
+
+    let captchaResponse = await axios({
+        url : googleUrl                 
+    }); 
+
+    if(captchaResponse.data.success){
+      
+        if(!!req.body.newsletter){
+            subscribeUser(req.body.email)
+        }
+
+        mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda)
+
+    }  
+
+        res.redirect('/opinie');
+    });
 
     // server.post('/api/stripe/checkout', async (req, res) => {
     //     await stripe.charges.create({

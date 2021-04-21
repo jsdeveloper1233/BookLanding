@@ -1,4 +1,6 @@
-const axios = require('axios')
+const axios = require('axios');
+const e = require('express');
+const fs = require("fs");
 
 class Mails {
 
@@ -10,7 +12,7 @@ class Mails {
     // transakcja zakończyła się sukcesem
     async sendEmail(order, state, links) {
 
-        const {cname, email, template, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, quantity, shipping, electronicShipping, price, product, extra} = state;
+        const { cname, email, template, address, zip, city, phone, vatCompany, vatNip, vatAddress, vatZip, vatCity, quantity, shipping, electronicShipping, price, product, extra } = state;
 
 
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
@@ -59,9 +61,9 @@ class Mails {
 
     joinLinks(links) {
         let result = '';
-        
-        for(let i=0; i<links.length; i++){
-            result+=links[i] + '<br />';
+
+        for (let i = 0; i < links.length; i++) {
+            result += links[i] + '<br />';
         }
 
         return result;
@@ -72,7 +74,7 @@ class Mails {
     //email do klienta, zamówienie zostało przyjęte, transakcja została rozpoczęta
     //*********************************************** */
     async sendNewOrderEmail(order, state) {
-        const {cname, email, address, zip, city, phone, vatCompany, vatNip,  vatAddress, vatZip, vatCity, quantity, shipping, electronicShipping, price, product, extra} = state;
+        const { cname, email, address, zip, city, phone, vatCompany, vatNip, vatAddress, vatZip, vatCity, quantity, shipping, electronicShipping, price, product, extra } = state;
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
@@ -94,29 +96,29 @@ class Mails {
                         <p><strong>Numer zamówienia:</strong> #${order.id} <br />
                         <strong>Data zamówienia:</strong> ${(new Date()).toLocaleDateString('pl-PL')}</p>
                     `,
-                    "shippingAddress": `
+                        "shippingAddress": `
                     <p>
                     ${cname}<br />
                     ${address} <br/>
                     ${zip} ${city} <br/>
                     ${phone}
                     </p>`,
-                    
-                    "invoiceData": `<p>
+
+                        "invoiceData": `<p>
                     Firma: ${vatCompany}</br>
                     NIP: ${vatNip}</br>
                     Adres: ${vatAddress} <br/>
                     Kod: ${vatZip} ${vatCity}
                     </p>`,
 
-                    "shippingMethod": electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`,
+                        "shippingMethod": electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`,
 
-                    "totalPrice": `<p>Kwota do zapłaty: ${(price / 100).toFixed(2)} zł </p>`,
+                        "totalPrice": `<p>Kwota do zapłaty: ${(price / 100).toFixed(2)} zł </p>`,
 
-                    "productBought": `${product.name}, ${quantity} szt.`,
-                    "extraProduct": `${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}`
-                },
-                    
+                        "productBought": `${product.name}, ${quantity} szt.`,
+                        "extraProduct": `${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}`
+                    },
+
                 },
             ],
             "from": {
@@ -133,9 +135,9 @@ class Mails {
 
 
 
-// MAIL DO ADMINA
-// email do Admina, potwierdzenie że transakcja zakończyła się sukcesem
-//*********************************************** */
+    // MAIL DO ADMINA
+    // email do Admina, potwierdzenie że transakcja zakończyła się sukcesem
+    //*********************************************** */
     async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, extra, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price }) {
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
@@ -209,7 +211,7 @@ class Mails {
         })
     }
 
-    
+
     // MAIL DO KLIENTA
     //email do klienta, zamówienie zostało anulowane
     //*********************************************** */
@@ -243,6 +245,55 @@ class Mails {
                 "email": "sergio@sergiosdorje.com",
                 "name": "Sergio S Dorje"
             },
+            "template_id": "d-b97ae7ab1f064a99806de5119286b3ba"
+        }, {
+            headers: {
+                "Authorization": process.env.SENDGRID_AUTH_TOKEN
+            }
+        })
+    }
+
+    // MAIL DO AUTORA
+    //email do autora, dodano opinie
+    //*********************************************** */
+    async reviewEmail(name, email, message, clientInfo, file, newsletter, zgoda) {
+
+        var attachment = fs.readFileSync(file.path).toString("base64");
+        var fileName = file.filename;
+        var mimeType = file.mimetype;
+
+        await axios.post("https://api.sendgrid.com/v3/mail/send", {
+            "personalizations": [
+                {
+                    "to": [
+                        {
+                            "email": "sergio@sergiosdorje.com",
+                            "name": "Sergio S Dorje"
+                        }],
+                    "dynamic_template_data": {
+                        "data": `
+        name: ${name} <br />
+        info: ${clientInfo} <br />
+        email: ${email} <br />
+        message: ${message} <br />
+        newsletter: ${!!newsletter ? "TAK" : "NIE"} <br />
+        zgoda: ${!!zgoda ? "TAK" : "NIE"} <br />
+                    `
+                    },
+                },
+            ],
+            "from": {
+                "email": "sergio@sergiosdorje.com",
+                "name": "Sergio S Dorje"
+            },
+            "attachments": [
+                {
+                  "content": attachment,
+                  "filename": fileName,
+                  "type": mimeType,
+                  "disposition": "attachment"
+                }
+              ],
             "template_id": "d-b97ae7ab1f064a99806de5119286b3ba"
         }, {
             headers: {

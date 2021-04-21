@@ -1,20 +1,31 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Reaptcha from 'reaptcha';
+var axios = require('axios');
 
 const LeaveAReview = ({ limit, value }) => {
-  const [{ content, wordCount }, setContent] = useState({
+  const [{ content, charCount, contentError }, setContent] = useState({
     content: value,
-    wordCount: 0,
+    charCount: 0,
+    contentError: ''
   });
+
+  const [{ name, nameError }, setName] = useState({name: '', nameError: ''});
+  const [{ email, emailError }, setEmail] = useState({email: '', emailError: '' });
+  const [{ client, clientError }, setClient] = useState({client: '', clientError: ''});
+  const [{ captcha, captchaError }, setCaptcha] = useState({captcha: '', captchaError: ''});
+  const [newsletter, setNewsletter] = useState(false);
+  const [{ agree, agreeError }, setAgree] = useState({agree: false, agreeError: ''});
+  const [{ file, fileError }, setFile] = useState({file: '', fileError: ''});
 
   const setFormattedContent = useCallback(
     (text, e) => {
-      let words = text.split(" ").filter(Boolean);
-      if (words.length > limit) {
+      let chars = text.length;
+      if (chars > limit) {
         e.preventDefault();
         e.stopPropagation();
       } else {
-        setContent({ content: text, wordCount: words.length });
+        setContent({ content: text, charCount: chars, contentError: '' });
       }
     },
     [limit, setContent]
@@ -23,6 +34,81 @@ const LeaveAReview = ({ limit, value }) => {
   useEffect(() => {
     setFormattedContent(content);
   }, []);
+
+  const errorStyle = {
+    color: "red",
+    fontSize: "13px"
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+
+    let valid = true;
+
+    if(!name) {
+      setName({name: name, nameError: 'To pole jest wymagane'});
+      valid = false;
+    }
+
+    if(!email) {
+      setEmail({email: email, emailError: 'To pole jest wymagane'});
+      valid = false;
+    }
+
+    if(!client) {
+      setClient({client: client, clientError: 'Proszę wpisz tutaj Twój coś o sobie, np. Twój zawód'});
+      valid = false;
+    }
+
+    if(!content) {
+      setContent({content: content, contentError: 'Napisz tutaj tekst recenzji', charCount: charCount});
+      valid = false;
+    }
+
+    if(charCount < 40 || charCount > limit) {
+      setContent({content: content, contentError: `To pole musi zawierać od 40 do ${limit} znaków.`, charCount: charCount});
+      valid = false;
+    }
+
+    if(!agree) {
+      setAgree({agree: agree, agreeError: 'To pole jest wymagane'});
+      valid = false;
+    }
+
+    if(!captcha) {
+      setCaptcha({captcha: captcha, captchaError: 'To pole jest wymagane'});
+      valid = false;
+    }
+
+    if(!file) {
+      setFile({file: file, fileError: 'To pole jest wymagane'});
+      valid = false;
+    }
+
+    if(valid) {
+
+      const formData = new FormData();
+      formData.append('sendphoto', file);
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('client', client);
+      formData.append('message', content);
+      formData.append('captcha', captcha);
+      formData.append('newsletter', newsletter ? 'true' : '');
+      formData.append('zgoda', agree ? 'true' : '');
+
+      const config = {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
+     }
+
+      axios.post("/api/review", formData, config)
+        .then((x) => {
+          window.location.href="/opinie"
+      });
+    }
+  };
 
   return (
     <section className="contact-area ptb-100">
@@ -45,12 +131,14 @@ const LeaveAReview = ({ limit, value }) => {
                   <div className="form-group">
                     <input
                       type="text"
+                      name="name"
                       className="form-control"
-                      required={true}
-                      data-error="Proszę wpisz tutaj Twoje imię"
+                      onChange={(e) => setName({name: e.target.value, nameError: ''})}
                       placeholder="Imię i nazwisko"
                     />
-                    <div className="help-block with-errors"></div>
+                    <div className="help-block with-errors">
+                     {nameError && <p style={errorStyle}>{nameError}</p>}
+                    </div>
                   </div>
                 </div>
 
@@ -58,12 +146,15 @@ const LeaveAReview = ({ limit, value }) => {
                   <div className="form-group">
                     <input
                       type="email"
+                      name="email"
                       className="form-control"
-                      required={true}
-                      data-error="Proszę wpisz tutaj Twój adres email"
+              
+                      onChange={(e) => setEmail({email: e.target.value, emailError: ''})}
                       placeholder="Twój adres email"
                     />
-                    <div className="help-block with-errors"></div>
+                    <div className="help-block with-errors">
+                    {emailError && <p style={errorStyle}>{emailError}</p>}
+                    </div>
                   </div>
                 </div>
 
@@ -71,12 +162,14 @@ const LeaveAReview = ({ limit, value }) => {
                   <div className="form-group">
                     <input
                       type="text"
+                      name="client"
                       className="form-control"
-                      required={true}
-                      data-error="Proszę wpisz tutaj Twój coś o sobie, np. Twój zawód"
+                      onChange={(e) => setClient({client: e.target.value, clientError: ''})}
                       placeholder="O Tobie / Twój zawód (pojawi się pod Twoim imieniem)"
                     />
-                    <div className="help-block with-errors"></div>
+                    <div className="help-block with-errors">
+                    {clientError && <p style={errorStyle}>{clientError}</p>}
+                    </div>
                   </div>
                 </div>
 
@@ -88,15 +181,14 @@ const LeaveAReview = ({ limit, value }) => {
                       id="message"
                       cols="30"
                       rows="5"
-                      required
-                      data-error="Napisz tutaj tekst recenzji"
-                      placeholder={`Twoja recenzja, minimum 40 słów, maksymalnie ${limit}.`}
+                      placeholder={`Twoja recenzja, minimum 40 znaków, maksymalnie ${limit}.`}
                       onChange={(e) => setFormattedContent(e.target.value, e)}
-                      value={content}
                     />
-                    <div className="help-block with-errors"></div>
+                    <div className="help-block with-errors">
+                    {contentError && <p style={errorStyle}>{contentError}</p>}
+                    </div>
                     <em className="wordcount">
-                      {wordCount}/{limit} słów
+                      {charCount}/{limit} znaków
                     </em>
                   </div>
 
@@ -106,13 +198,17 @@ const LeaveAReview = ({ limit, value }) => {
                     </label>
 
                     <input
-                      required
                       id="sendphoto"
                       name="sendphoto"
                       type="file"
-                      accept="image/*"
-                      //   onChange={this.selectFile}
+                      accept="image/png, image/jpeg, image/jpg"
+                      onChange={e=>setFile({file: e.target.files[0], fileError: ''})}
+                    //   onChange={this.selectFile}
                     />
+
+                    <div className="help-block with-errors">
+                    {fileError && <p style={errorStyle}>{fileError}</p>}
+                    </div>
                   </div>
                 </div>
 
@@ -121,7 +217,7 @@ const LeaveAReview = ({ limit, value }) => {
                     <input
                       type="checkbox"
                       // value={state.newsletter.value}
-                      // onChange={handleCheckBoxOnChange}
+                      onChange={(e) => setNewsletter(e.target.checked)}
                       name="newsletter"
                       className="form-check-input form-controla"
                       id="newsletter"
@@ -137,20 +233,32 @@ const LeaveAReview = ({ limit, value }) => {
                       type="checkbox"
                       // value={state.newsletter.value}
                       // onChange={handleCheckBoxOnChange}
-                      name="zgoda-opinie"
+                      onChange={(e) => setAgree({agree: e.target.checked, agreeError: ''})}
+                      name="zgoda"
                       className="form-check-input form-controla"
                       id="zgoda-opinie"
-                      required
                     />
                     <label className="form-check-label" htmlFor="zgoda-opinie">
                       Zgadzam się na dodawanie opinij zgodnie z{" "}
                       <Link href="/regulamin-opinii">
-                        <a  target="_blank">Regulaminem opinii.</a>
+                        <a target="_blank">Regulaminem opinii.</a>
                       </Link>
                     </label>
+
+                    <div className="help-block with-errors">
+                    {agreeError && <p style={errorStyle}>{agreeError}</p>}
+                    </div>
+
                   </div>
 
-                  <button type="submit" className="btn btn-primary">
+                  <Reaptcha sitekey="6LcggrMaAAAAAAbfOlIICwVk37ve2_AXOrM09uYa" onVerify={(captcha) => setCaptcha({captcha: captcha, captchaError: ''}) } />
+
+      
+                  <div className="help-block with-errors">
+                    {captchaError && <p style={errorStyle}>{captchaError}</p>}
+                    </div>
+
+                  <button type="button" className="btn btn-primary" onClick={submit}>
                     Wyślij opinię
                   </button>
                   <div id="msgSubmit" className="h3 text-center hidden"></div>
