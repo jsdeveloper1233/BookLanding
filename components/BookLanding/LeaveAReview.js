@@ -124,7 +124,7 @@ const LeaveAReview = ({ limit, value }) => {
             <img src="/images/marketing.png" alt="image" />
           </div>
 
-          <div className="col-lg-6 col-md-12">
+          <div className="col-lg-6 col-md-12 checkout-area">
             <form id="contactForm" className="reviewform">
               <div className="row">
                 <div className="col-lg-12 col-md-12">
@@ -133,6 +133,7 @@ const LeaveAReview = ({ limit, value }) => {
                       type="text"
                       name="name"
                       className="form-control"
+              
                       onChange={(e) => setName({name: e.target.value, nameError: ''})}
                       placeholder="Imię i nazwisko"
                     />
@@ -182,6 +183,7 @@ const LeaveAReview = ({ limit, value }) => {
                       cols="30"
                       rows="5"
                       placeholder={`Twoja recenzja, minimum 40 znaków, maksymalnie ${limit}.`}
+                      value={content || ''}
                       onChange={(e) => setFormattedContent(e.target.value, e)}
                     />
                     <div className="help-block with-errors">
@@ -216,6 +218,7 @@ const LeaveAReview = ({ limit, value }) => {
                   <div className="form-check">
                     <input
                       type="checkbox"
+                      className="orm-check-input form-controla"
                       // value={state.newsletter.value}
                       onChange={(e) => setNewsletter(e.target.checked)}
                       name="newsletter"
@@ -231,6 +234,7 @@ const LeaveAReview = ({ limit, value }) => {
                   <div className="form-check">
                     <input
                       type="checkbox"
+                      className="orm-check-input form-controla"
                       // value={state.newsletter.value}
                       // onChange={handleCheckBoxOnChange}
                       onChange={(e) => setAgree({agree: e.target.checked, agreeError: ''})}
@@ -251,7 +255,8 @@ const LeaveAReview = ({ limit, value }) => {
 
                   </div>
 
-                  <Reaptcha sitekey={process.env.CAPTCHA_CLIENT} onVerify={(captcha) => setCaptcha({captcha: captcha, captchaError: ''}) } />
+                  <br />
+                  <Reaptcha sitekey={process.env.NEXT_PUBLIC_CAPTCHA_CLIENT} onVerify={(captcha) => setCaptcha({captcha: captcha, captchaError: ''}) } />
 
       
                   <div className="help-block with-errors">
