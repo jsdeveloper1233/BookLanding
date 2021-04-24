@@ -1,37 +1,39 @@
-import React from 'react';
+import React, { useState } from "react";
 
-export class ExpandText extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showFull: false
-        };
-    }
+const ExpandText = ({text, maxLength}) => {
+  const [showFull, setShowFull] = useState(false);
 
-    render() {
-        let visibleText = null;
-        let expander = null;
+  console.log(showFull);
 
-        if (this.state.showFull || this.props.text.length <= this.props.maxLength) {
-            visibleText = this.props.text;
-        } else {
-            visibleText = this.props.text.substring(0, this.props.maxLength);
-        }
+  let visibleText = null;
+  let expander = null;
 
-        const self = this;
-        const clickHandler = () => {
-            self.setState({showFull: !self.state.showFull});
-        }
 
-        if(this.props.text.length > this.props.maxLength){
-            expander = this.state.showFull
-                ? <span onClick={clickHandler}><b>Zwiń</b></span>
-                : <span onClick={clickHandler}><b>Rozwiń</b></span>;
-        }
 
-        return <React.Fragment>
-            {visibleText} {expander}
+  const clickHandler = () => {
+    setShowFull(!showFull);
+  };
 
-        </React.Fragment>;
+  if (showFull || text.length <= maxLength) {
+    visibleText = text;
+  } else {
+    visibleText = text.substring(0, maxLength);
   }
-}
+
+
+  if (text.length >= maxLength) {
+    expander = showFull ? (
+      <span onClick={clickHandler} className="expand-opinion"><b>&lt;Zwiń</b>&gt;</span>
+    ) : (
+      <span onClick={clickHandler} className="expand-opinion"> ...<b>&lt;Rozwiń&gt;</b></span>
+    );
+  }
+
+  return (
+    <>
+    <small>sdgasdgsdagas</small>
+      {visibleText}{expander}
+    </>
+  );
+};
+export default ExpandText;

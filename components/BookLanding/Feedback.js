@@ -3,11 +3,14 @@ import dynamic from "next/dynamic";
 const OwlCarousel = dynamic(import("react-owl-carousel3"));
 import { finalPath } from "../../pages/index";
 import Link from "next/link";
-import {ExpandText} from "./ExpandText";
+import ExpandText from "./ExpandText";
 
 
 const options = {
-  loop: true,
+  loop: false,
+  rewind: true,
+  items:3,
+  startPosition:1,
   nav: true,
   autoplay: true,
   autoplayHoverPause: true,
@@ -39,7 +42,7 @@ const Feedback = () => {
   });
 
   return (
-    <section className="feedback-area ptb-100 bg-gray" id="references">
+    <section className="feedback-area ptb-100 bg-gray move" id="references">
       <div className="container">
         <div className="section-title">
           <h2>Opinie i recenzje</h2>
@@ -70,7 +73,7 @@ const Feedback = () => {
                     <span>Web Developer</span>
                   </div>
                   <p>
-                    <ExpandText maxLength={100} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
+                    <ExpandText maxLength={150} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
                   </p>
                 </div>
               </div>
@@ -83,8 +86,7 @@ const Feedback = () => {
                     <span>SEO Expert</span>
                   </div>
                   <p>
-                  <ExpandText maxLength={100} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glancePlan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glancePlan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glancePlan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
-                  
+                  <ExpandText maxLength={150} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glancePlan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glancePlan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glancePlan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
                   </p>
                 </div>
               </div>
@@ -97,7 +99,7 @@ const Feedback = () => {
                     <span>Web Developer</span>
                   </div>
                   <p>
-                  <ExpandText maxLength={100} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
+                  <ExpandText maxLength={150} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
                   </p>
                 </div>
               </div>
@@ -110,7 +112,7 @@ const Feedback = () => {
                     <span>Web Developer</span>
                   </div>
                   <p>
-                  <ExpandText maxLength={100} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
+                  <ExpandText maxLength={150} text={"Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual. Plan ahead by day, week, or month, and see project status at a glance."} />
                   </p>
                 </div>
               </div>
