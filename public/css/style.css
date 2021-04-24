@@ -86,7 +86,6 @@ a {
   color: var(--blackColor);
   text-decoration: none;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   display: inline-block;
   outline: 0;
@@ -144,8 +143,7 @@ button {
   color: var(--whiteColor);
   background: var(--templateColor);
   -webkit-transform: translateY(-5px);
-          -ms-transform: translateY(-5px);
-      transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .btn-primary.focus, .btn-primary:focus {
@@ -162,8 +160,7 @@ button {
   color: var(--whiteColor);
   background: var(--templateColor);
   -webkit-transform: translateY(-5px);
-          -ms-transform: translateY(-5px);
-      transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
@@ -189,7 +186,6 @@ button {
           box-shadow: 0 13px 27px 0 rgba(163, 48, 53, 0.25);
   z-index: 1;
   -webkit-transition: .9s;
-  -o-transition: .9s;
   transition: .9s;
 }
 
@@ -200,7 +196,6 @@ button {
   height: 100%;
   width: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   background: var(--templateColor);
   z-index: -1;
@@ -300,7 +295,6 @@ button {
   border: 1px solid #eeeeee;
   border-radius: 5px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   color: var(--paragraphColor);
   background: var(--whiteColor);
@@ -315,10 +309,6 @@ button {
 }
 
 .form-control::-ms-input-placeholder {
-  color: var(--paragraphColor);
-}
-
-.form-control::-moz-placeholder {
   color: var(--paragraphColor);
 }
 
@@ -462,7 +452,6 @@ Navbar CSS
   border-radius: 50%;
   visibility: hidden;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -498,7 +487,6 @@ Navbar CSS
   border-radius: 5px;
   visibility: hidden;
   -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -671,7 +659,6 @@ Navbar CSS
   border-radius: 50%;
   margin-bottom: 2px;
   -webkit-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
@@ -685,7 +672,6 @@ Navbar CSS
   background: var(--whiteColor);
   border-radius: 50%;
   -webkit-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
@@ -702,7 +688,6 @@ Navbar CSS
   display: block;
   border-radius: 50%;
   -webkit-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
@@ -716,7 +701,6 @@ Navbar CSS
   background: var(--whiteColor);
   border-radius: 50%;
   -webkit-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
@@ -733,7 +717,6 @@ Navbar CSS
   display: block;
   border-radius: 50%;
   -webkit-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
@@ -747,14 +730,12 @@ Navbar CSS
   background: var(--whiteColor);
   border-radius: 50%;
   -webkit-transition: all 0.6s ease-in-out;
-  -o-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
 }
 
 .crake-nav nav .others-option .navbar-nav li .side-menu .bar-3::after {
   right: -24px;
   -webkit-transition: all 0.8s ease-in-out;
-  -o-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
 }
 
@@ -762,16 +743,14 @@ Navbar CSS
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateX(-100%);
-          -ms-transform: translateX(-100%);
-      transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .crake-nav nav .others-option .navbar-nav li .side-menu:hover .bar-3::after, .crake-nav nav .others-option .navbar-nav li .side-menu:hover .bar-3::before, .crake-nav nav .others-option .navbar-nav li .side-menu:focus .bar-3::after, .crake-nav nav .others-option .navbar-nav li .side-menu:focus .bar-3::before {
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateX(-100%);
-          -ms-transform: translateX(-100%);
-      transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 .crake-nav.marketing-navbar nav .navbar-nav li a {
@@ -836,11 +815,9 @@ Navbar CSS
   height: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-transform: translate(0px, -100%) scale(0, 0);
-          -ms-transform: translate(0px, -100%) scale(0, 0);
-      transform: translate(0px, -100%) scale(0, 0);
+          transform: translate(0px, -100%) scale(0, 0);
   opacity: 0;
   visibility: hidden;
   z-index: 9999;
@@ -853,8 +830,7 @@ Navbar CSS
   left: 0;
   right: 0;
   -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+          transform: translateY(-50%);
   max-width: 950px;
   margin: 0 auto;
 }
@@ -870,7 +846,6 @@ Navbar CSS
   outline: none;
   background: transparent;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -889,8 +864,7 @@ Navbar CSS
 
 .header-search .header-search-form .btn:hover {
   -webkit-transform: translateY(0);
-          -ms-transform: translateY(0);
-      transform: translateY(0);
+          transform: translateY(0);
 }
 
 .header-search .close {
@@ -909,7 +883,6 @@ Navbar CSS
   height: 35px;
   border: 1px solid var(--templateColor2);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   right: 24%;
   margin: -100px auto 0;
@@ -925,8 +898,7 @@ Navbar CSS
 
 .header-search.open {
   -webkit-transform: translate(0px, 0px) scale(1, 1);
-          -ms-transform: translate(0px, 0px) scale(1, 1);
-      transform: translate(0px, 0px) scale(1, 1);
+          transform: translate(0px, 0px) scale(1, 1);
   opacity: 1;
   visibility: visible;
 }
@@ -951,14 +923,12 @@ Navbar CSS
 .sidebar-modal .modal.right.fade.show .modal-dialog {
   right: 0;
   -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .sidebar-modal .modal.right.fade .modal-dialog {
   right: -320px;
   -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1055,7 +1025,6 @@ Navbar CSS
   line-height: 50px;
   font-size: 25px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -1116,7 +1085,6 @@ Navbar CSS
   padding: 0px;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border: none;
   opacity: 1;
@@ -1126,13 +1094,11 @@ Navbar CSS
   background: var(--templateColor2);
   color: var(--whiteColor);
   -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
 .sidebar-modal .modal-header h2 {
-  background: -o-linear-gradient(308deg, #3ec9cf 0%, #2d136a 100%);
   background: linear-gradient(142deg, #3ec9cf 0%, #2d136a 100%);
   padding: 30px 25px;
 }
@@ -1171,8 +1137,7 @@ Main Banner CSS
 
 .main-banner .hero-content .btn:hover {
   -webkit-transform: translateY(0);
-          -ms-transform: translateY(0);
-      transform: translateY(0);
+          transform: translateY(0);
 }
 
 .main-banner .hero-content .btn:hover::after, .main-banner .hero-content .btn:hover::before {
@@ -1203,7 +1168,6 @@ Main Banner CSS
   margin-left: 10px;
   top: 4px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -1240,10 +1204,6 @@ Main Banner CSS
   color: var(--whiteColor);
 }
 
-.main-banner .hero-content form .form-control::-moz-placeholder {
-  color: var(--whiteColor);
-}
-
 .main-banner .hero-content form .form-control::placeholder {
   color: var(--whiteColor);
 }
@@ -1276,7 +1236,6 @@ Main Banner CSS
   margin: auto;
   border-radius: 3px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -1800,7 +1759,6 @@ Main Banner CSS
   border-radius: 5px;
   margin-top: -25px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2188,7 +2146,6 @@ Features CSS
 .single-features {
   text-align: center;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   margin-bottom: 40px;
 }
@@ -2203,7 +2160,6 @@ Features CSS
   font-size: 30px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2215,8 +2171,7 @@ Features CSS
 
 .single-features:hover {
   -webkit-transform: translateY(-10px);
-          -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .single-features:hover .icon {
@@ -2234,7 +2189,6 @@ Features CSS
   border-radius: 5px;
   padding: 30px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2251,8 +2205,7 @@ Features CSS
 
 .single-holder-box:hover {
   -webkit-transform: translateY(-7px);
-          -ms-transform: translateY(-7px);
-      transform: translateY(-7px);
+          transform: translateY(-7px);
 }
 
 .single-holder-box.mt-30 {
@@ -2291,7 +2244,6 @@ Features CSS
           box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
   border-radius: 3px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2306,7 +2258,6 @@ Features CSS
   font-size: 30px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2318,8 +2269,7 @@ Features CSS
 
 .single-features-box:hover {
   -webkit-transform: translateY(-10px);
-          -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .single-features-box:hover .icon {
@@ -2340,7 +2290,6 @@ Features CSS
   position: relative;
   padding-left: 90px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2363,7 +2312,6 @@ Features CSS
   -webkit-box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1) !important;
           box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1) !important;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2375,8 +2323,7 @@ Features CSS
 
 .features-inner-area .features-inner-content .features-item:hover {
   -webkit-transform: translateY(-10px);
-          -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .features-inner-area .features-inner-content .features-item:hover .icon {
@@ -2476,7 +2423,6 @@ Services CSS
           box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.08);
   border-radius: 5px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2491,7 +2437,6 @@ Services CSS
   font-size: 25px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2504,8 +2449,7 @@ Services CSS
 
 .single-services:hover {
   -webkit-transform: translateY(-8px);
-          -ms-transform: translateY(-8px);
-      transform: translateY(-8px);
+          transform: translateY(-8px);
   -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
           box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
 }
@@ -2884,7 +2828,6 @@ SAAS Tools CSS
   border-radius: 50%;
   margin-bottom: 15px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2959,7 +2902,6 @@ Fun Facts CSS
   padding-bottom: 30px;
   padding-right: 30px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   border-radius: 5px;
 }
@@ -2974,7 +2916,6 @@ Fun Facts CSS
   font-size: 25px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -2992,8 +2933,7 @@ Fun Facts CSS
   -webkit-box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
           box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
   -webkit-transform: translate(0, -10px);
-          -ms-transform: translate(0, -10px);
-      transform: translate(0, -10px);
+          transform: translate(0, -10px);
   background-color: var(--whiteColor);
 }
 
@@ -3020,7 +2960,6 @@ Fun Facts CSS
   font-size: 25px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3180,7 +3119,6 @@ Work Process CSS
   -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
           box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   z-index: 1;
 }
@@ -3199,7 +3137,6 @@ Work Process CSS
   margin: auto;
   border-radius: 3px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3214,7 +3151,6 @@ Work Process CSS
   font-size: 25px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3228,8 +3164,7 @@ Work Process CSS
   -webkit-box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
           box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
   -webkit-transform: translate(0, -10px);
-          -ms-transform: translate(0, -10px);
-      transform: translate(0, -10px);
+          transform: translate(0, -10px);
   background-color: var(--whiteColor);
 }
 
@@ -3262,7 +3197,6 @@ Pricing CSS
   border-radius: 5px;
   position: relative;
   -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
           box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
@@ -3282,10 +3216,8 @@ Pricing CSS
           box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
   font-size: 30px;
   -webkit-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+          transform: translateX(-50%);
   -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 
@@ -3327,7 +3259,6 @@ Pricing CSS
   left: 0;
   z-index: -1;
   -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 
@@ -3344,7 +3275,6 @@ Pricing CSS
   z-index: 1;
   border-radius: 5px;
   -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 
@@ -3378,8 +3308,7 @@ Pricing CSS
   -webkit-box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
           box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
   -webkit-transform: translate(0, -10px);
-          -ms-transform: translate(0, -10px);
-      transform: translate(0, -10px);
+          transform: translate(0, -10px);
 }
 
 .pricingTable:hover .pricing-icon {
@@ -3401,7 +3330,6 @@ Pricing CSS
   text-align: center;
   padding: 30px 0;
   -webkit-transition: .3s ease-in;
-  -o-transition: .3s ease-in;
   transition: .3s ease-in;
   position: relative;
   z-index: 1;
@@ -3424,7 +3352,6 @@ Pricing CSS
   font-size: 45px;
   font-weight: 700;
   -webkit-transition: .3s ease-in;
-  -o-transition: .3s ease-in;
   transition: .3s ease-in;
   text-align: left;
   position: relative;
@@ -3443,8 +3370,7 @@ Pricing CSS
   content: '';
   height: 100%;
   -webkit-transform: skewX(-35deg);
-  -ms-transform: skewX(-35deg);
-      transform: skewX(-35deg);
+  transform: skewX(-35deg);
   z-index: -1;
 }
 
@@ -3491,8 +3417,7 @@ Pricing CSS
 
 .pricing-table:hover {
   -webkit-transform: translateY(-7px);
-          -ms-transform: translateY(-7px);
-      transform: translateY(-7px);
+          transform: translateY(-7px);
 }
 
 /* Pricing Table Style Three */
@@ -3509,7 +3434,6 @@ Pricing CSS
   -webkit-box-shadow: 7px 5px 30px 0 rgba(72, 73, 121, 0.15);
           box-shadow: 7px 5px 30px 0 rgba(72, 73, 121, 0.15);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3529,10 +3453,8 @@ Pricing CSS
   position: absolute;
   right: -50%;
   top: -130%;
-  background: -o-repeating-radial-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2) 20%);
   background: repeating-radial-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2) 20%);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3590,8 +3512,7 @@ Pricing CSS
 
 .pricing-table-box:hover {
   -webkit-transform: translateY(-10px);
-          -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .pricing-table-box:hover .pricingTable-header::before {
@@ -3620,7 +3541,6 @@ Project CSS
   cursor: pointer;
   border-radius: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   border: 1px solid #eee;
   line-height: 1;
@@ -3677,10 +3597,8 @@ Project CSS
   visibility: hidden;
   border-radius: 5px;
   -webkit-transform: scale(0.8);
-          -ms-transform: scale(0.8);
-      transform: scale(0.8);
+          transform: scale(0.8);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3696,11 +3614,9 @@ Project CSS
   visibility: hidden;
   margin-top: -20px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-      transform: scale(0);
+          transform: scale(0);
 }
 
 .single-project .project-image a:hover {
@@ -3717,16 +3633,14 @@ Project CSS
   visibility: visible;
   opacity: .8;
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
 }
 
 .single-project:hover .project-image a {
   visibility: visible;
   opacity: 1;
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
 }
 
 /*================================================
@@ -3750,7 +3664,6 @@ Project Details CSS
   opacity: 0;
   visibility: hidden;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3843,10 +3756,8 @@ Gallery CSS
   opacity: 0;
   visibility: hidden;
   -webkit-transform: scale(0.8);
-          -ms-transform: scale(0.8);
-      transform: scale(0.8);
+          transform: scale(0.8);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3862,11 +3773,9 @@ Gallery CSS
   visibility: hidden;
   margin-top: -20px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-      transform: scale(0);
+          transform: scale(0);
 }
 
 .single-image a:hover {
@@ -3877,16 +3786,14 @@ Gallery CSS
   visibility: visible;
   opacity: .8;
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
 }
 
 .single-image:hover a {
   visibility: visible;
   opacity: 1;
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
 }
 
 /*================================================
@@ -3973,7 +3880,6 @@ How App Works CSS
 .single-app-works {
   text-align: center;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -3988,7 +3894,6 @@ How App Works CSS
   font-size: 30px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -4006,8 +3911,7 @@ How App Works CSS
 
 .single-app-works:hover {
   -webkit-transform: translateY(-7px);
-          -ms-transform: translateY(-7px);
-      transform: translateY(-7px);
+          transform: translateY(-7px);
 }
 
 .single-app-works:hover .icon {
@@ -4032,7 +3936,6 @@ Screenshot CSS
   cursor: pointer;
   border-radius: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   border: 1px solid #eee;
   line-height: 1;
@@ -4094,10 +3997,8 @@ Screenshot CSS
   opacity: 0;
   visibility: hidden;
   -webkit-transform: scale(0.8);
-          -ms-transform: scale(0.8);
-      transform: scale(0.8);
+          transform: scale(0.8);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -4114,11 +4015,9 @@ Screenshot CSS
   visibility: hidden;
   margin-top: -20px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-      transform: scale(0);
+          transform: scale(0);
 }
 
 .page-from-book .screenshot-item .popup-btn:hover {
@@ -4135,16 +4034,14 @@ Screenshot CSS
   visibility: visible;
   opacity: .8;
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
 }
 
 .page-from-book .screenshot-item:hover .popup-btn {
   visibility: visible;
   opacity: 1;
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
 }
 
 /*================================================
@@ -4169,7 +4066,6 @@ Team CSS
   cursor: pointer;
   border-radius: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   border: 1px solid #eee;
   line-height: 1;
@@ -4329,8 +4225,7 @@ Team CSS
 
 .single-team-member-box .team-content ul li a:hover {
   -webkit-transform: translateY(-5px);
-          -ms-transform: translateY(-5px);
-      transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .single-team-member-box .team-content ul li a.facebook {
@@ -4369,7 +4264,6 @@ Next Generation CSS
   font-size: 35px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -4406,7 +4300,6 @@ Feedback CSS
   padding: 30px;
   background: var(--whiteColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   text-align: center;
   border-radius: 3px;
@@ -4456,7 +4349,6 @@ Feedback CSS
   background: var(--templateColor);
   border-radius: 0 0 3px 3px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -4505,7 +4397,6 @@ Feedback CSS
 .feedback-slides .owl-item .single-feedback {
   opacity: .5;
   -webkit-transition: .5s;
-  -o-transition: .5s;
   transition: .5s;
 }
 
@@ -4517,7 +4408,6 @@ Feedback CSS
 .feedback-slides .owl-item.active.center .single-feedback {
   opacity: 1;
   -webkit-transition: .5s;
-  -o-transition: .5s;
   transition: .5s;
   -webkit-box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
           box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1);
@@ -4547,7 +4437,6 @@ Feedback CSS
   cursor: pointer;
   border-radius: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   border: 1px solid #eee;
   line-height: 1;
@@ -4619,8 +4508,7 @@ App Download CSS
 .app-download .section-title .download-btn a:hover, .app-download .section-title .download-btn a:focus {
   background: var(--templateColor);
   -webkit-transform: translateY(-5px);
-          -ms-transform: translateY(-5px);
-      transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .app-download .download-image {
@@ -4671,7 +4559,6 @@ Platform Connect CSS
   padding: 15px 15px 15px 80px;
   border-radius: 5px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   background: var(--whiteColor);
 }
@@ -4701,15 +4588,13 @@ Platform Connect CSS
   margin-top: -8px;
   color: var(--paragraphColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   font-size: 25px;
 }
 
 .platform-connect .box:hover {
   -webkit-transform: translateY(-10px);
-          -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .platform-connect .box:hover i {
@@ -4741,7 +4626,6 @@ Blog CSS
   cursor: pointer;
   border-radius: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   border: 1px solid #eee;
   line-height: 1;
@@ -5049,7 +4933,6 @@ Boxes CSS
           box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
   border-radius: 3px;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -5064,7 +4947,6 @@ Boxes CSS
   font-size: 25px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -5076,8 +4958,7 @@ Boxes CSS
 
 .boxes-area .single-box:hover {
   -webkit-transform: translateY(-10px);
-          -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .boxes-area .single-box:hover .icon {
@@ -5283,10 +5164,6 @@ Subscribe CSS
   color: var(--paragraphColor);
 }
 
-.subscribe-area .newsletter-form .form-control::-moz-placeholder {
-  color: var(--paragraphColor);
-}
-
 .subscribe-area .newsletter-form .form-control::placeholder {
   color: var(--paragraphColor);
 }
@@ -5300,8 +5177,7 @@ Subscribe CSS
 
 .subscribe-area .newsletter-form .btn:hover, .subscribe-area .newsletter-form .btn:focus {
   -webkit-transform: translateY(0);
-          -ms-transform: translateY(0);
-      transform: translateY(0);
+          transform: translateY(0);
 }
 
 .subscribe-area .newsletter-form #validator-newsletter {
@@ -5716,10 +5592,8 @@ Product CSS
 
 .single-product .product-img img {
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -5739,7 +5613,6 @@ Product CSS
   font-size: 14px;
   overflow: hidden;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -5787,8 +5660,7 @@ Product CSS
 
 .single-product:hover .product-img img {
   -webkit-transform: scale(1.09);
-          -ms-transform: scale(1.09);
-      transform: scale(1.09);
+          transform: scale(1.09);
 }
 
 .single-product:hover .product-img .add-to-cart-btn {
@@ -5809,7 +5681,6 @@ Product CSS
   cursor: pointer;
   border-radius: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -5933,7 +5804,6 @@ Product Details CSS
   cursor: pointer;
   border-radius: 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -6154,7 +6024,6 @@ Sidebar CSS
   background: transparent;
   cursor: pointer;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -6240,7 +6109,6 @@ Sidebar CSS
   opacity: 0;
   visibility: hidden;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -6283,7 +6151,6 @@ Sidebar CSS
   opacity: 0;
   visibility: hidden;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -6569,7 +6436,6 @@ FAQ CSS
 
 .faq-accordion .accordion__button {
   -webkit-transition: .5s;
-  -o-transition: .5s;
   transition: .5s;
   background-color: #f5f9ff;
   font-size: 18px;
@@ -6634,8 +6500,7 @@ Error 404 CSS
   width: 100%;
   height: 100%;
   -webkit-transform: scale(2.4);
-          -ms-transform: scale(2.4);
-      transform: scale(2.4);
+          transform: scale(2.4);
   border-radius: 50%;
   background-color: #f2f5f8;
   z-index: -1;
@@ -6731,7 +6596,6 @@ Coming Soon CSS
   font-weight: 700;
   border-radius: 0 50px 50px 0;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -6824,7 +6688,6 @@ Cart CSS
   border: none;
   background: var(--templateColor2);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   cursor: pointer;
   border-radius: 0 5px 5px 0;
@@ -7057,7 +6920,6 @@ Checkout CSS
   left: 3px;
   border-radius: 50%;
   -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
@@ -7065,16 +6927,14 @@ Checkout CSS
   opacity: 0;
   visibility: hidden;
   -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-      transform: scale(0);
+          transform: scale(0);
 }
 
 .order-details .payment-method p [type="radio"]:checked + label::after, .order-details .shipping-method p [type="radio"]:checked + label::after {
   opacity: 1;
   visibility: visible;
   -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-      transform: scale(1);
+          transform: scale(1);
 }
 
 .order-details .btn.order-btn {
@@ -7105,7 +6965,6 @@ Contact Us CSS
 .contact-info-box {
   text-align: center;
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
   -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
           box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
@@ -7123,7 +6982,6 @@ Contact Us CSS
   font-size: 30px;
   color: var(--templateColor);
   -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -7147,8 +7005,7 @@ Contact Us CSS
 
 .contact-info-box:hover {
   -webkit-transform: translateY(-10px);
-          -ms-transform: translateY(-10px);
-      transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .contact-info-box:hover .icon {
@@ -7318,7 +7175,6 @@ Back To Top CSS
   visibility: hidden;
   outline: 0 !important;
   -webkit-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   background-color: var(--paragraphColor);
 }
@@ -7385,7 +7241,6 @@ Back To Top CSS
   height: 100%;
   line-height: 50px;
   -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -7423,10 +7278,6 @@ Back To Top CSS
 }
 
 .input-counter input::-ms-input-placeholder {
-  color: var(--blackColor);
-}
-
-.input-counter input::-moz-placeholder {
   color: var(--blackColor);
 }
 
@@ -7495,8 +7346,7 @@ span.chapter-number {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-size: 25px;
   color: #fff;
 }
@@ -7534,9 +7384,9 @@ span.chapter-number {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   font-size: 18px;
 }
 
@@ -7544,6 +7394,10 @@ span.chapter-number {
   color: var(--templateColor2);
   font-size: 20px;
   padding-right: 2px;
+}
+
+.pricing-content .icofont-tick-mark:before {
+  margin-right: 20px;
 }
 
 .price-value p {
@@ -7580,7 +7434,6 @@ span.chapter-number {
 .next-generation-virtual-reality .single-item:hover {
   background-color: #edf5ff;
   -webkit-transition: 200ms ease-in;
-  -o-transition: 200ms ease-in;
   transition: 200ms ease-in;
 }
 
@@ -7622,7 +7475,6 @@ a.add-product-btn {
   height: 29px;
   font-size: 14px;
   -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -7885,22 +7737,6 @@ td.product-name .cart-items {
   color: #888;
 }
 
-.reviewform input::-webkit-input-placeholder, .reviewform textarea::-webkit-input-placeholder {
-  color: #888;
-}
-
-.reviewform input::-moz-placeholder, .reviewform textarea::-moz-placeholder {
-  color: #888;
-}
-
-.reviewform input:-ms-input-placeholder, .reviewform textarea:-ms-input-placeholder {
-  color: #888;
-}
-
-.reviewform input::-ms-input-placeholder, .reviewform textarea::-ms-input-placeholder {
-  color: #888;
-}
-
 .reviewform input::placeholder,
 .reviewform textarea::placeholder {
   color: #888;
@@ -8113,3 +7949,13 @@ td.product-name .cart-items {
   font-weight: 700;
   font-size: 32px;
 }
+
+.expand-opinion {
+  cursor: pointer;
+  color: var(--darkViolet);
+}
+
+.feedback-area.move {
+  cursor: move;
+}
+/*# sourceMappingURL=style.css.map */

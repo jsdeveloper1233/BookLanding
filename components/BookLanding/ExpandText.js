@@ -1,46 +1,40 @@
-import React from 'react';
 
-export class ExpandText extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showFull: false
-        };
-    }
+import React, { useState } from "react";
 
-    expanderStyle = {
-        cursor: "pointer",
-        display: "inline-block"
-    };
+const ExpandText = ({text, maxLength}) => {
+  const [showFull, setShowFull] = useState(false);
 
-    render() {
-        let visibleText = null;
-        let expander = null;
+  console.log(showFull);
 
-        if (this.state.showFull || this.props.text.length <= this.props.maxLength) {
-            visibleText = this.props.text;
-        } else {
-            visibleText = this.props.text.substring(0, this.props.maxLength);
-        }
+  let visibleText = null;
+  let expander = null;
 
-        const collapse = () => {
-            this.setState({showFull: false});
-        }
 
-        const expand = () => {
-            this.setState({showFull: true});
-            console.log('expand')
-        }
 
-        if(this.props.text.length > this.props.maxLength){
-            expander = this.state.showFull
-                ? <span onClick={collapse} style={this.expanderStyle}><b>Zwiń</b></span>
-                : <span onClick={expand} style={this.expanderStyle}><b>Rozwiń</b></span>;
-        }
+  const clickHandler = () => {
+    setShowFull(!showFull);
+  };
 
-        return <React.Fragment>
-            {visibleText} {expander}
-
-        </React.Fragment>;
+  if (showFull || text.length <= maxLength) {
+    visibleText = text;
+  } else {
+    visibleText = text.substring(0, maxLength);
   }
-}
+
+
+  if (text.length >= maxLength) {
+    expander = showFull ? (
+      <span onClick={clickHandler} className="expand-opinion"><b>&lt;Zwiń</b>&gt;</span>
+    ) : (
+      <span onClick={clickHandler} className="expand-opinion"> ...<b>&lt;Rozwiń&gt;</b></span>
+    );
+  }
+
+  return (
+    <>
+    <small>sdgasdgsdagas</small>
+      {visibleText}{expander}
+    </>
+  );
+};
+export default ExpandText;
