@@ -258,9 +258,23 @@ class Mails {
     //*********************************************** */
     async reviewEmail(name, email, message, clientInfo, file, newsletter, zgoda) {
 
-        var attachment = fs.readFileSync(file.path).toString("base64");
-        var fileName = file.filename;
-        var mimeType = file.mimetype;
+
+        var attachments = "[]";
+        if (file) {
+
+            var attachment = fs.readFileSync(file.path).toString("base64");
+            var fileName = file.filename;
+            var mimeType = file.mimetype;
+
+            var a =`{
+                content: ${attachment},
+                filename: ${fileName},
+                type: ${mimeType},
+                disposition: "attachment"
+            }`;
+
+            attachments = `[${a}]`;
+        }
 
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
@@ -286,14 +300,7 @@ class Mails {
                 "email": "sergio@sergiosdorje.com",
                 "name": "Sergio S Dorje"
             },
-            "attachments": [
-                {
-                  "content": attachment,
-                  "filename": fileName,
-                  "type": mimeType,
-                  "disposition": "attachment"
-                }
-              ],
+            "attachments": {attachments},
             "template_id": "d-b97ae7ab1f064a99806de5119286b3ba"
         }, {
             headers: {

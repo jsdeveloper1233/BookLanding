@@ -80,11 +80,6 @@ const LeaveAReview = ({ limit, value }) => {
       valid = false;
     }
 
-    if(!file) {
-      setFile({file: file, fileError: 'To pole jest wymagane'});
-      valid = false;
-    }
-
     if(valid) {
 
       const formData = new FormData();
