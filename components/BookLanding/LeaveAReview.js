@@ -213,7 +213,7 @@ const LeaveAReview = ({ limit, value }) => {
                   <div className="form-check">
                     <input
                       type="checkbox"
-                      className="orm-check-input form-controla"
+                      className="form-check-input form-controla"
                       // value={state.newsletter.value}
                       onChange={(e) => setNewsletter(e.target.checked)}
                       name="newsletter"
@@ -229,7 +229,7 @@ const LeaveAReview = ({ limit, value }) => {
                   <div className="form-check">
                     <input
                       type="checkbox"
-                      className="orm-check-input form-controla"
+                      className="form-check-input form-controla"
                       // value={state.newsletter.value}
                       // onChange={handleCheckBoxOnChange}
                       onChange={(e) => setAgree({agree: e.target.checked, agreeError: ''})}
