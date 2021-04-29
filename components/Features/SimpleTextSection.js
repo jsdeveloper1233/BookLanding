@@ -14,11 +14,11 @@ const SimpleTextSection = (props) => {
             <p className={theClass}>{pText}</p>
           </div>
 
-          {
+          
             <div className={`${dividedInTwoInner}`}>
               <img src="/images/sergio3-s.png" ></img>
             </div>
-          }
+          
         </div>
       </div>
     </section>

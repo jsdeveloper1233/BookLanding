@@ -7693,7 +7693,7 @@ td.product-name .cart-items {
 }
 
 .sklep-prices .row .pricing-table .readmore a {
-  color: #fff;
+  color: var(--paragraphColor);
   margin-bottom: 25px;
 }
 
@@ -7701,6 +7701,7 @@ td.product-name .cart-items {
   border-bottom: 1px solid #ff8a73;
   text-decoration-thickness: from-font;
   font-weight: 700;
+  color: var(--darkViolet);
 }
 
 .reviewform .form-group.uploadphoto label {
@@ -7762,6 +7763,19 @@ td.product-name .cart-items {
 .pricing-area .textmedium {
   font-size: 36px;
   line-height: 1.2;
+}
+
+.faq-accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .drogadoszczescialanding .btn {
@@ -7881,19 +7895,6 @@ td.product-name .cart-items {
   padding-bottom: 100px;
 }
 
-.drogadoszczescialanding .faq-accordion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .drogadoszczescialanding .price-Value .currency {
   position: unset;
 }
@@ -7951,5 +7952,9 @@ td.product-name .cart-items {
 .simple-text-widget .zrobto {
   font-weight: 700;
   font-size: 32px;
+}
+
+.btn.btn-primary.whitetext {
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

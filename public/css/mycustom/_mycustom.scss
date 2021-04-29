@@ -341,12 +341,13 @@ td.product-name {
         margin-right: 20px;
         text-align: right;
         a {
-          color: #fff;
+          color: var(--paragraphColor);
           margin-bottom: 25px;
           &:hover {
             border-bottom: 1px solid #ff8a73;
             text-decoration-thickness: from-font;
             font-weight: 700;
+            color: var(--darkViolet);
           }
         }
       }
@@ -392,6 +393,11 @@ td.product-name {
     font-size: 36px;
     line-height: 1.2;
   }
+}
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .drogadoszczescialanding {
   .btn {
@@ -498,11 +504,7 @@ td.product-name {
     padding-bottom: 100px;
   }
 
-  .faq-accordion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
   //   .app-download .download-image .laptop-video {
   //     animation: movebounce 5s linear infinite;
   //     position: absolute;
@@ -565,4 +567,7 @@ td.product-name {
     font-size: 32px;
   }
 
+}
+.btn.btn-primary.whitetext { 
+  color:#fff;
 }

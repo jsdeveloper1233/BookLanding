@@ -4,7 +4,7 @@ import Link from "next/link";
 class PricingPlan extends React.Component {
   render() {
     return (
-      <section className="pricing-area ptb-100 bg-gray">
+      <section className="pricing-area ptb-100 bg-gray" id="ceny">
         <div className="container" id="pakiety">
           <div className="section-title">
             <h2>Droga do szczęścia</h2>

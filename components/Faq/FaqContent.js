@@ -12,7 +12,7 @@ class FaqContent extends Component {
         return (
             <div className="faq-accordion" id="faq">
                 <h2>FAQ</h2>
-                <Accordion>
+                <Accordion preExpanded={[1]} className="col-lg-8 col-md-10">
                     <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>

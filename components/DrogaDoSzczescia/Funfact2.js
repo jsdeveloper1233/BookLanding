@@ -1,5 +1,8 @@
 import React from "react";
-import Link from "next/link";
+import {default as NextLink}  from "next/link";
+import {
+  Link,
+} from "react-scroll";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
@@ -68,9 +71,20 @@ class Funfact2 extends React.Component {
                       </li>
                     </ul>
                     </div>
-                    <Link href="#">
+                    <Link
+                        className="btn btn-primary whitetext"
+                        activeClass="active"
+                        to="ceny"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        onSetActive={this.handleSetActive}
+                      >
+                        Jest dla mnie - chcę więcej!
+                      </Link>
+                    {/* <Link href="#">
                       <a className="btn btn-primary">Jest dla mnie - chcę więcej!</a>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
