@@ -36,11 +36,11 @@ class FaqContent extends Component {
                     <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
-                            Jak długo muszę czekać na zamówienie?
+                            Jak długo muszę czekać na realizację zamówienia?
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Nie mogę pozwolić, by ktoś długo czekał na moją książkę :) Moim celem jest, by trafiła jak najszybciej w Twoje ręce, dlatego książki są najczęściej wysyłane następnego dnia lub najpóźniej dwa dni robocze od daty zamówienia.</p>
+                            <p className="accordion-content">Nie mogę pozwolić, by ktoś długo czekał na moją książkę :) Moim celem jest, by trafiła jak najszybciej w Twoje ręce, dlatego książki są najczęściej wysyłane następnego dnia lub najpóźniej w ciągu dwóch dni roboczych od daty zamówienia.</p>
                         </AccordionItemPanel>
                     </AccordionItem>
                     <AccordionItem>
@@ -60,7 +60,7 @@ class FaqContent extends Component {
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p className="accordion-content">Dobry kurier powinien zadzwonić do Ciebie, jeśli nie zastanie Cię w domu, ale cóż... To nie jest jego obowiązek i pewnie często zależy od humoru :) Jeśli Tobie i kurierowi nie uda się ''złapać'', jest szansa, że wróci on do Ciebie ponownie następnego dnia. Jeśli wiesz, że kurier był z Twoją paczką, gdy Ciebie akurat nie było - zadzwoń do niego czym prędzej i ustal, co dalej.
+                            <p className="accordion-content">Dobry kurier powinien zadzwonić do Ciebie, jeśli nie zastanie Cię w domu, ale cóż... To nie jest jego obowiązek i pewnie cczęsto zależy to od jego humoru :) Jeśli Tobie i kurierowi nie uda się ''złapać'', jest szansa, że wróci on do Ciebie następnego dnia. Jeśli wiesz, że kurier był z Twoją paczką, gdy Ciebie akurat nie było - zadzwoń do niego czym prędzej i ustal, co dalej.
 </p>
                         </AccordionItemPanel>
                     </AccordionItem>
