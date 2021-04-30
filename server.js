@@ -25,14 +25,17 @@ const mail = new Mails();
 const { Sequelize, DataTypes, Op } = require('sequelize');
 const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
 
-var multer  = require('multer')
+var multer = require('multer')
 
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
         callback(null, './uploads');
     },
     filename: function (req, file, callback) {
-        callback(null, file.originalname);
+        var filename = file.originalname;
+        var now = new Date();
+        filename = `${now.getFullYear()}_${now.getMonth()}_${now.getDate()}_${now.getHours()}_${now.getMinutes()}_${now.getSeconds()}_${filename}`;
+        callback(null, filename);
     }
 });
 
@@ -94,7 +97,7 @@ const Download = sequelize.define('Download', {
     time: {
         type: Sequelize.DATE,
         allowNull: false
-    }, 
+    },
     linkId: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -125,27 +128,27 @@ app.prepare().then(() => {
 
 
     server.post('/api/review', upload.single('sendphoto'), async (req, res) => {
-        
 
-        console.log(req.body);
         let key = process.env.CAPTCHA_SERVER;
-        let googleUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${key}&response=`+req.body.captcha; 
+        let googleUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${key}&response=` + req.body.captcha;
 
-    let captchaResponse = await axios({
-        url : googleUrl                 
-    }); 
+        let captchaResponse = await axios({
+            url: googleUrl
+        });
 
-    if(captchaResponse.data.success){
-      
-        if(!!req.body.newsletter){
-            subscribeUser(req.body.email)
+        if (captchaResponse.data.success) {
+
+            if (!!req.body.newsletter) {
+                subscribeUser(req.body.email)
+            }
+
+            mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda)
+            res.json({error: ''});
         }
-
-        mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda)
-
-    }  
-
-        res.redirect('/opinie');
+        else {
+            res.status(401);
+            res.json({error: 'no captcha'});
+        }
     });
 
     // server.post('/api/stripe/checkout', async (req, res) => {
@@ -202,7 +205,7 @@ app.prepare().then(() => {
     })
 
     server.get("/api/status", async (req, res) => {
-        var state = await Order.findByPk(parseInt(req.query.id)); 
+        var state = await Order.findByPk(parseInt(req.query.id));
 
         if (state) {
             res.json({ status: state.status });
@@ -214,10 +217,10 @@ app.prepare().then(() => {
     server.get("/api/download", async (req, res) => {
         let id = req.query.id;
 
-        let link = await Link.findOne({where: {link: id}});
-        if(link) {
-            await Download.create({linkId: link.id, time: new Date()});
-            
+        let link = await Link.findOne({ where: { link: id } });
+        if (link) {
+            await Download.create({ linkId: link.id, time: new Date() });
+
             let file = `${__dirname}/public/${link.file}`;
             res.download(file);
 
@@ -234,7 +237,7 @@ app.prepare().then(() => {
 
         if (result) {
             var id = req.body.p24_session_id;
-            var order = await Order.findByPk(parseInt(id)); 
+            var order = await Order.findByPk(parseInt(id));
 
             if (order) {
                 let state = JSON.parse(order.body);
@@ -242,19 +245,19 @@ app.prepare().then(() => {
 
                 let files = [];
                 let names = [];
-                
-                if(state.product.links) {
+
+                if (state.product.links) {
                     state.product.links.forEach(l => {
-                        if(!files.some(f => f == l.file)){
+                        if (!files.some(f => f == l.file)) {
                             files.push(l.file);
                             names.push(l.name);
                         }
                     });
                 }
 
-                if(state.extra && state.extra.product.links) {
+                if (state.extra && state.extra.product.links) {
                     state.extra.product.links.forEach(l => {
-                        if(!files.some(f => f == l.file)){
+                        if (!files.some(f => f == l.file)) {
                             files.push(l.file);
                             names.push(l.name);
                         }
@@ -263,9 +266,9 @@ app.prepare().then(() => {
 
                 let links = [];
 
-                for (let fff=0; fff<files.length; fff++) {
+                for (let fff = 0; fff < files.length; fff++) {
                     downloadLink = uuid.v4();
-                    await Link.create({link: downloadLink, orderId: order.id, file: files[fff]});
+                    await Link.create({ link: downloadLink, orderId: order.id, file: files[fff] });
                     downloadLink = `https://sekretyrozwojuosobistego.pl/api/download?id=${encodeURI(downloadLink)}`;
                     links.push(`<a href="${downloadLink}">${names[fff]}</a>`);
                 }
@@ -273,7 +276,7 @@ app.prepare().then(() => {
                 await mail.sendAuthorEmail(state)
                 await mail.sendEmail(order, state, links);
                 state.status = 1;
-                await Order.update({body: JSON.stringify(state), state: 1}, {where: {id: parseInt(id)}});
+                await Order.update({ body: JSON.stringify(state), state: 1 }, { where: { id: parseInt(id) } });
             }
         }
     })
@@ -327,7 +330,7 @@ app.prepare().then(() => {
             }
 
             var electronicShipping = product.electronicShipping;
-            if(extraProduct){
+            if (extraProduct) {
                 electronicShipping = electronicShipping && extraProduct.electronicShipping;
             }
 
@@ -391,21 +394,20 @@ app.prepare().then(() => {
     });
 })
 
-async function synchronize(){
+async function synchronize() {
     var time = new Date();
     time = moment(time).add(-15, 'm').toDate();
-    var result = await Order.findAll({where: {state:0, createdAt: { [Op.lt]: time }}});
+    var result = await Order.findAll({ where: { state: 0, createdAt: { [Op.lt]: time } } });
 
-    for(let i=0; i<result.length; i++)
-    {
+    for (let i = 0; i < result.length; i++) {
         let item = result[i];
         await rejectOrder(item);
     }
 }
 
-async function rejectOrder(order){
+async function rejectOrder(order) {
     await mail.sendRejectOrderEmail(order, JSON.parse(order.body));
-    await Order.update({state: -1}, { where: {id: order.id}});
+    await Order.update({ state: -1 }, { where: { id: order.id } });
 }
 
 async function getPaymentLink(order, state) {
@@ -456,7 +458,7 @@ async function getPaymentLink(order, state) {
 
     P24.addProduct(state.product.name, state.product.description, state.quantity, state.product.price * 100);
 
-    if(state.extra){
+    if (state.extra) {
         P24.addProduct(state.extra.product.name, state.extra.product.description, state.extra.quantity, state.extra.product.price * 100);
     }
 

@@ -48,6 +48,7 @@
         "react-image-lightbox": "^5.1.0",
         "react-modal-video": "^1.2.6",
         "react-no-ssr": "^1.1.0",
+        "react-notifications": "^1.7.2",
         "react-owl-carousel3": "^2.2.5",
         "react-preloading-screen": "^1.0.2",
         "react-recaptcha-google": "^1.1.1",

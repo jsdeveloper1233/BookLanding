@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Reaptcha from 'reaptcha';
+
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 var axios = require('axios');
 
 const LeaveAReview = ({ limit, value }) => {
@@ -100,13 +103,16 @@ const LeaveAReview = ({ limit, value }) => {
 
       axios.post("/api/review", formData, config)
         .then((x) => {
-          window.location.href="/opinie"
+          NotificationManager.success('Dziękujemy za Twoją opinię!');
+      }).catch(e => {
+          NotificationManager.error("Błąd. Twoja opinia nie została dodana.");
       });
     }
   };
 
   return (
     <section className="contact-area ptb-100">
+      <NotificationContainer></NotificationContainer>
       <div className="container">
         <div className="section-title">
           <h2>Napisz swoją opinię lub recenzję</h2>
