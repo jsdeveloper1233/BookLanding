@@ -10,7 +10,7 @@ class VirtualReality extends Component {
             <h2>Spis treści</h2>
             <div className="bar"></div>
             <p>
-            Poznaj spis treści książki ‘’Sekrety Rozwoju Osobistego’’ i dowiedz się, jakie obszary Twojego życia będziemy uzdrawiać. Musisz wiedzieć, że ten spis treści nie jest przypadkowy. Każda część książki to intymna rozmowa o najważniejszych aspektach Twojego życia… Najpierw ja rozmawiam z Tobą, a później Ty sam - wprowadzając zdobytą wiedzę - prowadzisz wewnętrzny dialog i zmieniasz swoje życie.
+            Poznaj spis treści książki ‘’Sekrety Rozwoju Osobistego’’ i dowiedz się, jakie obszary Twojego życia będziemy uzdrawiać. Musisz wiedzieć, że ten spis treści nie jest przypadkowy. Każda część książki to intymna rozmowa o najważniejszych aspektach Twojego życia… Najpierw ja rozmawiam z Tobą, a później Ty sam - wprowadzając do użytku (praktykując) zdobytą wiedzę - prowadzisz wewnętrzny dialog i zmieniasz swoje życie.
             </p>
           </div>
 
@@ -26,7 +26,7 @@ class VirtualReality extends Component {
                 </div>
                 <h3>"Energia"</h3>
                 <p>
-                Dowiesz się jakimi zasobami energetycznymi dysponujesz i jakie powinieneś rozwijać, abyś przemieszczał się w wybranym przez siebie kierunku.
+                Dowiesz się jakimi zasobami energetycznymi dysponujesz i jakie powinieneś rozwijać, abyś mógł przemieszczać się w wybranym przez siebie kierunku.
                 </p>
               </div>
             </div>
@@ -39,7 +39,7 @@ class VirtualReality extends Component {
                 </div>
                 <h3>"Pierwsze kroki do celu"</h3>
                 <p>
-                To ważna wiedza na temat wszystkich narzędzi, które musisz poznać, aby rzeczywiście realizować swoje największe cele.  
+                To ważna wiedza na temat wszystkich narzędzi, które musisz poznać, aby zrealizować swoje największe cele.  
                 </p>
               </div>
             </div>
@@ -92,7 +92,7 @@ class VirtualReality extends Component {
                 </div>
                 <h3>"Seks i relacje uczuciowe"</h3>
                 <p>
-                Przydatne informacje i porady jak być z drugim człowiekiem i jak unikać konfliktów, by związek mógł się rozwijać i nam służyć. 
+                Przydatne informacje i porady, jak być z drugim człowiekiem i jak unikać konfliktów, by związek mógł się rozwijać i dobrze nam służyć.
                 </p>
             
               </div>
@@ -106,7 +106,7 @@ class VirtualReality extends Component {
                 </div>
                 <h3>"Unikaj przeszkód i problemów"</h3>
                 <p>
-                Rozwój duchowy ma również swoją ciemną stronę. Wiedza o tym, jak nie wpaść w pułapkę uchroni Cię przed zostaniem ofiarą manipulacji.
+                Rozwój duchowy ma również swoją ciemną stronę. Wiedza o tym, jak nie wpaść w pułapkę uchroni Cię przed staniem się ofiarą manipulacji.
                 </p>
               </div>
             </div>

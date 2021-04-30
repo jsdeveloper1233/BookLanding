@@ -8,7 +8,7 @@ class Platform extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 col-md-12">
-              <h2>Obserwuj Autora w social mediach</h2>
+              <h2>Obserwuj Autora w mediach społecznościowych</h2>
             </div>
 
 
