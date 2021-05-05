@@ -28,11 +28,10 @@ const Subscribe = () => {
     <section className="subscribe-area ptb-100">
       <div className="container">
         <div className="section-title">
-          <h2>Dołącz społeczności Sergio S Dorje</h2>
+          <h2>Dołącz do społeczności Sergio S Dorje</h2>
           <div className="bar"></div>
           <p>
-            Zapisz się do newslettera. Otrzymasz wartościowe informajce
-            bezpośrednio od Autora
+            Zapisz się do newslettera. Otrzymasz wartościowe informacje bezpośrednio od Autora
           </p>
         </div>
 

@@ -48,7 +48,7 @@ const Feedback = () => {
           <h2>Opinie i recenzje</h2>
           <div className="bar"></div>
           <p>
-            Zobacz, co o książęce „Sekrety Rozwoju Osobistego” mówią ci, którzy
+            Zobacz, co o książce „Sekrety Rozwoju Osobistego” mówią ci, którzy
             już ją przeczytali.
           </p>
           <p>
