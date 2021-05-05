@@ -7384,9 +7384,9 @@ span.chapter-number {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   font-size: 18px;
 }
 
@@ -7394,6 +7394,10 @@ span.chapter-number {
   color: var(--templateColor2);
   font-size: 20px;
   padding-right: 2px;
+}
+
+.pricing-content .icofont-tick-mark:before {
+  margin-right: 20px;
 }
 
 .price-value p {
@@ -7951,5 +7955,14 @@ td.product-name .cart-items {
 .simple-text-widget .zrobto {
   font-weight: 700;
   font-size: 32px;
+}
+
+.expand-opinion {
+  cursor: pointer;
+  color: var(--darkViolet);
+}
+
+.feedback-area.move {
+  cursor: move;
 }
 /*# sourceMappingURL=style.css.map */

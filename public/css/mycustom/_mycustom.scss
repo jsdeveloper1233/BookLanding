@@ -68,13 +68,16 @@ span.chapter-number {
 .pricing-content {
   li {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     font-size: 18px;
   }
   .icofont-tick-mark {
     color: var(--templateColor2);
     font-size: 20px;
     padding-right: 2px;
+    &:before {
+      margin-right: 20px;
+    }
   }
 }
 .price-value p {
@@ -565,4 +568,11 @@ td.product-name {
     font-size: 32px;
   }
 
+}
+.expand-opinion {
+  cursor: pointer;
+  color: var(--darkViolet);
+}
+.feedback-area.move {
+  cursor:move;
 }

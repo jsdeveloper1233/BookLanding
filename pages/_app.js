@@ -6,6 +6,7 @@ import "react-image-lightbox/style.css";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "../public/css/style.scss";
 import "../public/css/responsive.css";
+import '../node_modules/react-notifications/lib/notifications.css';
 
 import { Provider } from "react-redux";
 import { Preloader, Placeholder } from "react-preloading-screen";
