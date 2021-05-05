@@ -301,7 +301,7 @@ class Mails {
                 "name": "Sergio S Dorje"
             },
             "attachments": attachments,
-            "template_id": "d-b97ae7ab1f064a99806de5119286b3ba"
+            "template_id": "d-1ef26a7c2d414d15b0e8f2daa4b17e3f"
         }, {
             headers: {
                 "Authorization": process.env.SENDGRID_AUTH_TOKEN
