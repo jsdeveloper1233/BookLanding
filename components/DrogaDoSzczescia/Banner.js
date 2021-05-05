@@ -42,7 +42,7 @@ class Banner extends React.Component {
                         stworzyć dla siebie rzeczywistość, o jakiej marzysz od
                         zawsze.{" "}
                         <strong>
-                          Stań się autorem swojego własnego szczęścia.
+                          Stań się twórcą swojego własnego szczęścia.
                         </strong>
                       </p>
 
@@ -168,11 +168,10 @@ class Banner extends React.Component {
                                                 transform: `translate(50%, 50%)`,}}
                     /> */}
                     <p>
-                      Pochodzę z małego miasteczka na Sardynii. Z sukcesem na co
-                      dzień wspieram ludzi na drodze do szczęścia i świadomego
+                      Pochodzę z małego miasteczka na Sardynii. Z sukcesem wspieram ludzi na drodze do szczęścia i świadomego
                       życia. Moi klienci od wielu lat osiągają swoje cele,
                       transformują traumy oraz zranienia i otwierają się na
-                      miłość. Uczę, jak budować wiarę w siebie i świadomie
+                      miłość. Uczę jak budować wiarę w siebie i świadomie
                       kreować własne życie. Przebyłem już swoją podróż do
                       szczęścia - teraz wybiorę się w nią razem z Tobą.
                     </p>

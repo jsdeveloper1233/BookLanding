@@ -10,7 +10,7 @@ class PricingPlan extends React.Component {
             <h2>Droga do szczęścia</h2>
             <div className="bar"></div>
             <p>
-              Przygotowałem dla Ciebie 2 pakiety. Zamawiając Pakiet VIP otrzymasz również sesje mentorskie ze mną, narzędzie "Radykalna prawda w związu" oraz eBook "Dziecko - jak uzyskać jego zaufanie".
+              Przygotowałem dla Ciebie 2 pakiety. Zamawiając Pakiet VIP otrzymasz również sesje mentorskie ze mną, narzędzie "Radykalna prawda w związku" oraz e-book "Dziecko - jak uzyskać jego zaufanie".
             </p>
           </div>
 
@@ -52,11 +52,10 @@ class PricingPlan extends React.Component {
                       Dzień 9: toksyczne relacje i wewnętrzne dziecko
                     </li>
                     <li className="active">
-                      Dzień 10: unikanie przeszkód i grup toksycznych podczas w
-                      drodze rozwoju osobistego
+                      Dzień 10: unikanie przeszkód i toksycznych grup na drodze rozwoju osobistego
                     </li>
                     <li className="active">
-                      Dzień 11: nauka odcinania i medytacja Tratak
+                      Dzień 11: nauka odcinania się i medytacja Tratak
                     </li>
                     <li>2 sesje mentorskie z Sergio S Dorje</li>
                     <li>Radykalna prawda w związku - eBook z ćwiczeniami</li>
@@ -106,19 +105,18 @@ class PricingPlan extends React.Component {
                       Dzień 9: toksyczne relacje i wewnętrzne dziecko
                     </li>
                     <li className="active">
-                      Dzień 10: unikanie przeszkód i grup toksycznych podczas w
-                      drodze rozwoju osobistego
+                      Dzień 10: unikanie przeszkód i toksycznych grup na drodze rozwoju osobistego
                     </li>
                     <li className="active">
-                      Dzień 11: nauka odcinania i medytacja Tratak
+                      Dzień 11: nauka odcinania się i medytacja Tratak
                     </li>
                 </ul>
                 <br />
                 <p><strong>Kupując pakiet rozszerzony otrzymasz również narzędzia o łącznej wartości 750 zł</strong></p>
                     <ul>
                     <li className="active">2 sesje mentorskie z Sergio S Dorje</li>
-                    <li className="active">Radykalna prawda w związku - eBook z ćwiczeniami</li>
-                    <li className="active">Dziecko - jak uzyskać jego zaufanie - eBook</li>
+                    <li className="active">"Radykalna prawda w związku" - e-book z ćwiczeniami</li>
+                    <li className="active">"Dziecko - jak uzyskać jego zaufanie" - e-book</li>
                   </ul>
                 </div>
                 <Link href="/">

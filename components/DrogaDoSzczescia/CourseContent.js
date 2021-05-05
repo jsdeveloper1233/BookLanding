@@ -26,14 +26,13 @@ const CourseContent = () => {
                 <ul>
                   <li>Wprowadzenie</li>
                   <li>
-                    Poznawanie siebie - pierwszy krąg - wytłumaczenie reguły, że
-                    co jest w kręgu zostanie w kręgu (o bezpieczeństwie)
+                    Poznawanie siebie - pierwszy krąg - wytłumaczenie reguły, że to co jest w kręgu zostanie w kręgu (o bezpieczeństwie)
                   </li>
-                  <li>Składniki szczęścia, co musi być, żeby było szczęście</li>
+                  <li>Składniki szczęścia, co musi zaistnieć, żeby pojawiło się szczęście</li>
                   <li>Agenda na następne spotkania</li>
                   <li>Będą medytacje - jak się przygotować?</li>
                   <li>Łączenie praktyki i teorii - dlaczego są ważne razem</li>
-                  <li>Medytacja na szczęście</li>
+                  <li>Medytacja skupiona na szczęściu</li>
                   <li>Pytania i dzielenie się w kręgu</li>
                 </ul>
               </p>

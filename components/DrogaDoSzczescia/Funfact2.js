@@ -31,7 +31,7 @@ class Funfact2 extends React.Component {
                   <div className="fun-facts-inner-content">
                     <h3>Dla kogo jest “Droga do szczęścia’’?</h3>
                     <p>
-                      Każdy z nas spotyka problemy. Każdy z nas był kiedyś
+                      Każdy z nas napotyka problemy. Każdy z nas był kiedyś
                       zraniony. Każdy z nas toczy jakąś walkę. Ten program
                       pomoże Ci radzić sobie z kłodami, które czasem lądują pod
                       Twoimi nogami.
@@ -43,27 +43,27 @@ class Funfact2 extends React.Component {
                     <div className="dlategojesli">
                     <p>Dlatego jeśli…</p>
                     <ul>
-                      <li>Zdarza Ci się czuć źle i nieszczęśliwie</li>
+                      <li>zdarza Ci się czuć źle i nieszczęśliwie;</li>
                       <li>
-                        Otaczasz się ludźmi, którzy negatywnie wpływają na Twoje
+                        ptaczasz się ludźmi, którzy negatywnie wpływają na Twoje
                         samopoczucie
                       </li>
-                      <li>Pragniesz w końcu spełniać swoje marzenia</li>
+                      <li>pragniesz w końcu spełnić swoje marzenia;</li>
                       <li>
-                        Wiesz, że możesz żyć pełnią szczęścia, ale nie wiesz jak
+                        wiesz, że możesz żyć pełnią szczęścia, ale nie wiesz jak;
                       </li>
                       <li>
-                        Chcesz stworzyć dobry i wartościowy związek miłosny
+                        chcesz stworzyć dobry i wartościowy związek miłosny;
                       </li>
-                      <li>Chcesz zrozumieć siebie i swoje potrzeby</li>
+                      <li>chcesz zrozumieć siebie i swoje potrzeby;</li>
                       <li>
-                        Potrzebujesz wiedzy, która pomoże Ci walczyć z
-                        negatywnymi emocjami
+                        potrzebujesz wiedzy, która pomoże Ci walczyć z
+                        negatywnymi emocjami;
                       </li>
-                      <li>Chcesz nauczyć się pracy z intencją</li>
-                      <li>Pragniesz wyciszenia i spokoju</li>
+                      <li>chcesz nauczyć się pracy z intencją;</li>
+                      <li>pragniesz wyciszenia i spokoju;</li>
                       <li>
-                        Potrzebujesz mentora, który poprowadzi Cię za rękę przez
+                        potrzebujesz mentora, który poprowadzi Cię za rękę przez
                         Twoją drogę do szczęścia…
                       </li>
                     </ul>

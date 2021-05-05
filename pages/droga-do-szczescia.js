@@ -12,32 +12,33 @@ import SimpleTextSection from "../components/Features/SimpleTextSection";
 import CourseContent from "../components/DrogaDoSzczescia/CourseContent";
 
 export const finalPath = "";
-const singleText = ["Zrób to dla siebie i zacznij żyć pełnią szczęścia", <br />, "Pomogę Ci to osiągnąć!"];
+const singleText = [
+  "Zrób to dla siebie i zacznij żyć pełnią szczęścia.",
+  <br />,
+  "Pomogę Ci to osiągnąć!",
+];
 
 const DrogaDoSzczescia = () => {
-
-    return (
-      <React.Fragment>
-        <div className="drogadoszczescialanding">
-          <Navbar customClass="drogadoszczesciaheader" />
-          <Banner />
-          <Dlaczego />
-
-          <Download />
-          <Funfact />
-          <Funfact2 />
-
-          <CourseContent />
-
-
-          <PricingPlan />
-
-<SimpleTextSection  pText={singleText} theClass="aligncenter zrobto" isDividedInTwo />
-
-          <Footer />
-        </div>
-      </React.Fragment>
-    );
-}
+  return (
+    <React.Fragment>
+      <div className="drogadoszczescialanding">
+        <Navbar customClass="drogadoszczesciaheader" />
+        <Banner />
+        <Dlaczego />
+        <Download />
+        <Funfact />
+        <Funfact2 />
+        <CourseContent />
+        <PricingPlan />
+        <SimpleTextSection
+          pText={singleText}
+          theClass="aligncenter zrobto"
+          isDividedInTwo
+        />
+        <Footer />
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default DrogaDoSzczescia;

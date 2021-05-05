@@ -44,7 +44,7 @@ const Dlaczego = ({ timing = 150 }) => {
                     <div className="section-title" >
                         <h2>Dlaczego program <span style={style}>“Droga do szczęścia”</span><br /> jest tym, co <span style={style}>Ci pomoże</span>?</h2>
                         <div className="bar"></div>
-                        <p>Często obserwujesz ludzi, którzy żyją szczęśliwie i w zgodzie ze samym sobą, prawda? Zastanawiasz,również Tobie!</p>
+                        <p>Często obserwujesz ludzi, którzy żyją szczęśliwie i w zgodzie z samymi sobą, prawda? Zastanawiasz,również Tobie!</p>
                     </div>
 
                     <div className="row">
