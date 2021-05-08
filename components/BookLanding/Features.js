@@ -6,8 +6,8 @@ class Features extends Component {
     return (
       <section className="features-area book-features ptb-100">
         <div className="container">
-        <div className="section-title">
-        <h2>Bądźmy szczerzy...</h2>
+          <div className="section-title">
+            <h2>Bądźmy szczerzy...</h2>
             <div className="bar"></div>
           </div>
           <div className="row">
@@ -20,8 +20,8 @@ class Features extends Component {
                 <p>
                   Jeśli szukasz łatwych rozwiązań, tu ich nie znajdziesz. Jeśli
                   szukasz miłych i ‘’obiecujących złote góry’’ porad, jak stać
-                  się szczęśliwym w zaledwie 5 minut… Nie kupuj tej książki. To
-                  narzędzie pomoże Ci wykreować życie, o jakim marzysz, ale
+                  się szczęśliwym w zaledwie 5 minut, to… nie kupuj tej książki.
+                  To narzędzie pomoże Ci wykreować życie, o jakim marzysz, ale
                   wymaga również Twojej pracy.
                 </p>
               </div>
@@ -35,11 +35,10 @@ class Features extends Component {
                 <h3>PRAWDA</h3>
                 <p>
                   Nie napisałem tej książki po to, by mówić ludziom to, co chcą
-                  usłyszeć. Napisałem ją, by Ci, którzy są otwarci na duchowy
-                  samorozwój, poznali potężne narzędzia, dzięki którym
-                  rzeczywistość zacznie być ich największym dziełem. Ta
-                  książka pomoże Ci przejąć ster i poznać tajemnice
-                  rozwoju osobistego.
+                  usłyszeć. Napisałem ją, byCi, którzy są otwarci na samorozwój
+                  duchowy poznali potężne narzędzia, dzięki którym rzeczywistość
+                  zacznie być ich największym dziełem. Ta książka pomoże Ci
+                  przejąć ster i poznać tajemnice rozwoju osobistego.
                 </p>
               </div>
             </div>
@@ -53,7 +52,7 @@ class Features extends Component {
                 <p>
                   SEKRETY ROZWOJU OSOBISTEGO to książka tylko dla osób, które
                   chcą dokonywać w sobie prawdziwych zmian i chcą odkryć prawdy,
-                  o których mało kto mówi. Tajna wiedza, którą powinien poznać
+                  o których mało kto mówi. To tajna wiedza, którą powinien poznać
                   każdy człowiek na drodze do samoświadomości.
                 </p>
               </div>
@@ -70,11 +69,14 @@ class Features extends Component {
                     <div className="icon">
                       <i className="icofont-win-trophy"></i>
                     </div>
-                    <h3>Czy czujesz w swoim życiu, że czasem wpadasz na mur?</h3>
+                    <h3>
+                      Czy czujesz w swoim życiu, że czasem wpadasz na mur?
+                    </h3>
                     <p>
-                    Mam na myśli mur, który broni Tobie dostępu do spełnienia i samoświadomości. 
-Tym murem często są błędne przekonania kreowane przez społeczeństwo, toksyczni ludzie, brak wiedzy o sobie samym.
-
+                      Mam na myśli mur, który broni Ci dostępu do spełnienia
+                      i samoświadomości. Tym murem często są błędne przekonania
+                      kreowane przez społeczeństwo, toksyczni ludzie, brak
+                      wiedzy o sobie samym.
                     </p>
                   </div>
 
@@ -84,7 +86,11 @@ Tym murem często są błędne przekonania kreowane przez społeczeństwo, toksy
                     </div>
                     <h3>...Ale to nie jest Twoje przeznaczenie!</h3>
                     <p>
-                    Tylko Ty - nikt inny - odpowiadasz za jakość swojego życia. Możesz stworzyć rzeczywistość bez toksyczności, bez nienawiści, bez osądów. Zasługujesz na coś więcej, ale pamiętaj… Musisz po to sięgnąć - musisz podjąć najważniejszą decyzję. Decyzję o zmianie.
+                      Tylko Ty - nikt inny - odpowiadasz za jakość swojego
+                      życia. Możesz stworzyć rzeczywistość bez toksyczności, bez
+                      nienawiści, bez osądów. Zasługujesz na coś więcej, ale
+                      pamiętaj… Musisz po to sięgnąć - musisz podjąć
+                      najważniejszą decyzję. Decyzję o zmianie.
                     </p>
                   </div>
 
@@ -92,9 +98,17 @@ Tym murem często są błędne przekonania kreowane przez społeczeństwo, toksy
                     <div className="icon">
                       <i className="icofont-verification-check"></i>
                     </div>
-                    <h3>Książka ‘’Sekrety Rozwoju Osobistego’’ jest jak dobra przyjaciółka.</h3>
+                    <h3>
+                      Książka ‘’Sekrety Rozwoju Osobistego’’ jest jak dobra
+                      przyjaciółka.
+                    </h3>
                     <p>
-                      Prawdziwa przyjaźń nie ma oczekiwań, nie osądza, nie narzuca swojego zdania. Służy swoją mądrością i daje siłę, ale nie wymaga od Ciebie niczego. Tak samo jest z tą książką - dostarczy Ci cenne wskazówki i przeprowadzi za rękę przez proces zmiany, ale to Ty na końcu drogi decydujesz, jakiego życia pragniesz.
+                      Prawdziwa przyjaźń nie ma oczekiwań, nie osądza, nie
+                      narzuca swojego zdania. Służy swoją mądrością i daje siłę,
+                      ale nie wymaga od Ciebie niczego. Tak samo jest z tą
+                      książką - dostarczy Ci cenne wskazówki i przeprowadzi za
+                      rękę przez proces zmiany, ale to Ty na końcu drogi
+                      zdecydujesz, jakiego życia pragniesz.
                     </p>
                   </div>
                 </div>

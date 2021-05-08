@@ -68,13 +68,16 @@ span.chapter-number {
 .pricing-content {
   li {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     font-size: 18px;
   }
   .icofont-tick-mark {
     color: var(--templateColor2);
     font-size: 20px;
     padding-right: 2px;
+    &:before {
+      margin-right: 20px;
+    }
   }
 }
 .price-value p {
@@ -570,4 +573,10 @@ td.product-name {
 }
 .btn.btn-primary.whitetext { 
   color:#fff;
+}
+
+.btn.order-btn.btn-disabled {
+  background-color: #717070;
+    border-color: #717070;
+    cursor: not-allowed;
 }

@@ -62,7 +62,7 @@ class Screenshot extends Component {
                     <div className="section-title">
                         <h2>Przykładowe strony z książki</h2>
                         <div className="bar"></div>
-                        <p>Musisz wiedzieć, że jako autor tej książki, jestem tylko człowiekiem… Mnie również spotykają problemy i ja również - tak jak i Ty - musiałem przejść przez drogę prowadzącą do samoświadomości… Przedstawię Ci moją wiedzę w sposób, jakbym mówił do najlepszego przyjaciela. W tej książce nie znajdziesz wywyższania się i narzucania mojego zdania. Zaprezentuję Ci Sekrety Rozwoju Osobistego, które pomogły mi i setkom innych świadomych osób zbudować życie marzeń.</p>
+                        <p>Musisz wiedzieć, że jako autor tej książki jestem tylko człowiekiem… Ja również miewam trudności i ja również - tak jak i Ty - musiałem przejść przez drogę prowadzącą do samoświadomości… Przedstawię Ci moją wiedzę w taki sposób, jakbym mówił do najlepszego przyjaciela. W tej książce nie znajdziesz wywyższania się i narzucania mojego zdania. Zaprezentuję Ci Sekrety Rozwoju Osobistego, które pomogły mnie i setkom innych świadomych osób zbudować życie marzeń.</p>
                     </div>
 
                     <div className="row">

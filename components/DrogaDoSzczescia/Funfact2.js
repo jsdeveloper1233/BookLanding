@@ -18,6 +18,7 @@ class Funfact2 extends React.Component {
   };
 
   render() {
+    const {disable} = this.props;
     return (
       <React.Fragment>
         <section className="fun-facts-area ptb-100 ">
@@ -71,8 +72,12 @@ class Funfact2 extends React.Component {
                       </li>
                     </ul>
                     </div>
+
+                    <button disabled={disable} className={`btn btn-primary order-btn ${
+                    disable ? "btn-disabled" : ""
+                  }`}>
                     <Link
-                        className="btn btn-primary whitetext"
+                        // className="btn btn-primary whitetext"
                         activeClass="active"
                         to="ceny"
                         spy={true}
@@ -82,6 +87,8 @@ class Funfact2 extends React.Component {
                       >
                         Jest dla mnie - chcę więcej!
                       </Link>
+                </button>
+
                     {/* <Link href="#">
                       <a className="btn btn-primary">Jest dla mnie - chcę więcej!</a>
                     </Link> */}

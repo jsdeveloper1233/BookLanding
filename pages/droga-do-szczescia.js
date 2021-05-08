@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import NavbarSinglePage from "../components/Layouts/NavbarSinglePage";
 import Banner from "../components/DrogaDoSzczescia/Banner";
 import Footer from "../components/Layouts/Footer";
@@ -20,23 +20,31 @@ export const finalPath = "";
 // ];
 
 const DrogaDoSzczescia = () => {
+
+  const [disable, setDisable] = useState(true);
+
+  useEffect(() => {
+    setDisable(true);
+  }, []);
+
+
   return (
     <React.Fragment>
       <div className="drogadoszczescialanding">
         <NavbarSinglePage customClass="drogadoszczesciaheader" />
-        <Banner />
+        <Banner disable={disable}/>
         <Dlaczego />
 
-        <Download />
+        <Download disable={disable} />
         <Funfact />
-        <Funfact2 />
+        <Funfact2 disable={disable} />
 
         <CourseContent />
 
         <PricingPlan />
 
         <SimpleTextSection
-          pText={<>Zrób to dla siebie i zacznij żyć pełnią szczęścia <br /> Pomogę Ci to osiągnąć!.</>}
+          pText={<>Zrób to dla siebie i zacznij żyć pełnią szczęścia <br /> Pomogę Ci to osiągnąć!</>}
           theClass="aligncenter zrobto"
           isDividedInTwo
         />

@@ -22,61 +22,61 @@ class Discover2 extends Component {
               <div className="discover-content">
                 <ul>
                   <li>
-                    <i className="icofont-check"></i> Rozciągniesz swoją
+                    <i className="icofont-check"></i> Rozszerzysz swoją
                     świadomość.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Nauczysz się odbierać
-                    świat w sposób duchowy
+                    świat w sposób duchowy.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Dowiesz się jak
                     minimalizować błędy, zwiększać skuteczność swoich działań i
-                    unikać traum
+                    unikać traum.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Poznasz typy energii i
-                    nauczysz się być w równowadze energetycznej
+                    nauczysz się być w równowadze energetycznej.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Nauczysz się pracy z
-                    intencją
+                    intencją.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Zdobędziesz siłę, by
-                    uwolnić się od negatywnych osób
+                    uwolnić się od negatywnych osób.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Poznasz sekret udanej
-                    komunikacji w związki
+                    komunikacji w związku.
                   </li>
                   <li>
-                    <i className="icofont-check"></i> Dowiesz się jak wyznaczać
-                    cele, by spełniać swoje najgłębsze pragnienia
+                    <i className="icofont-check"></i> Dowiesz się, jak wyznaczać
+                    cele, by spełniać swoje najgłębsze pragnienia.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Uświadomisz sobie moc
-                    samodyscypliny
+                    samodyscypliny.
                   </li>
                   <li>
-                    <i className="icofont-check"></i> Dowiesz się jak oczyszczać
-                    umysł z negatywnych wpływów
-                  </li>
-                  <li>
-                    <i className="icofont-check"></i> Zrozumiesz swoje
-                    wewnętrzne dziecko
-                  </li>
-                  <li>
-                    <i className="icofont-check"></i> Dowiesz się czym jest
-                    PRAWDZIWA tantra
-                  </li>
-                  <li>
-                    <i className="icofont-check"></i> Zobaczy jak nie paść
-                    ofiarą manipulacji złego lidera
+                    <i className="icofont-check"></i> Dowiesz się, jak oczyszczać
+                    umysł z negatywnych wpływów.
                   </li>
                   <li>
                     <i className="icofont-check"></i> Zrozumiesz swoje
-                    wewnętrzne dziecko
+                    wewnętrzne dziecko.
+                  </li>
+                  <li>
+                    <i className="icofont-check"></i> Dowiesz się, czym jest
+                    PRAWDZIWA tantra.
+                  </li>
+                  <li>
+                    <i className="icofont-check"></i> Zobaczysz jak nie paść
+                    ofiarą manipulacji złego lidera.
+                  </li>
+                  <li>
+                    <i className="icofont-check"></i> Zrozumiesz swoje
+                    wewnętrzne dziecko.
                   </li>
                 </ul>
               </div>

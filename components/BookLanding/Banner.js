@@ -59,7 +59,7 @@ class Banner extends Component {
                         </a>
                       </Link> */}
                       <em className="inlucdebooks">
-                        * eBook zawiera wersje MOBI, EPUB i PDF
+                        * E-book zawiera wersje MOBI, EPUB i PDF
                       </em>
                     </div>
                   </div>
