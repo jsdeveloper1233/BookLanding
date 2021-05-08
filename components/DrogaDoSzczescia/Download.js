@@ -4,6 +4,7 @@ import YoutubeEmbed from "../Features/YoutubeEmbed";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 class Download extends React.Component {
   render() {
+    const {disable} = this.props;
     return (
       <section className="app-download ptb-100 bg-gray">
         <div className="container">
@@ -16,8 +17,12 @@ class Download extends React.Component {
                 Intensywny program rozwojowy “Droga do szczęścia’’ będzie Twoim najlepszym przyjacielem, który rozwija Cię, wspiera, pomaga być lepszym człowiekiem i chce dla Ciebie wszystkiego, co najlepsze.
                 </p>
 
-                <div className="download-btn">
-                <Link
+                {/* <div className="download-btn"> */}
+
+                <button disabled={disable} className={`btn btn-primary order-btn ${
+                    disable ? "btn-disabled" : ""
+                  }`}>
+                  <Link
                         className=""
                         to="pakiety"
                         href="#pakiety"
@@ -27,13 +32,16 @@ class Download extends React.Component {
                         onSetActive={this.handleSetActive}
                       >ZAPISZĘ SIĘ!
                       </Link>
+                </button>
+
+                
                   {/* <Link href="/">
                     <a>
                       <i className="icofont-brand-android-robot"></i> Available
                       On <span>Google Store</span>
                     </a>
                   </Link> */}
-                </div>
+                {/* </div> */}
               </div>
             </div>
 
