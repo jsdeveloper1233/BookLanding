@@ -234,7 +234,6 @@ class Mails {
                     
                     <p>Serdecznie pozdrawiamy,</p>
                     <p>Sekretyrozwojuosobistego.pl</p>
-                    <
                     `
 
                         // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment
