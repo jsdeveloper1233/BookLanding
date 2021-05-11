@@ -452,8 +452,8 @@ async function getPaymentLink(order, state) {
         P24.setUrlStatus(`http://localhost:${PORT}/api/verify`)
         P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${order.id}`)
     } else {
-        P24.setUrlStatus(`https://sekretyrozwojuosobistego.pl/api/verify`)
-        P24.setUrlReturn(`https://sekretyrozwojuosobistego.pl/api/thankyou?id=${order.id}`)
+        P24.setUrlStatus(`https://www.sekretyrozwojuosobistego.pl/api/verify`)
+        P24.setUrlReturn(`https://www.sekretyrozwojuosobistego.pl/api/thankyou?id=${order.id}`)
     }
 
     P24.addProduct(state.product.name, state.product.description, state.quantity, state.product.price * 100);
