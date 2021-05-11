@@ -92,7 +92,7 @@ class Mails {
                         Dziękuję za złożenie zamówienia na stronie Sekretyrozwojuosobistego.pl.<br />
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
-                        <p><strong>Szczegóły dotyczące zamówienia</strong>
+                        <p style="margin-top:30px"><strong>Szczegóły dotyczące zamówienia</strong><br />
                         <strong>Numer zamówienia:</strong> #${order.id} <br />
                         <strong>Data zamówienia:</strong> ${(new Date()).toLocaleDateString('pl-PL')}</p>
                     `,
