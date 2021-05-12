@@ -26,10 +26,10 @@ class Mails {
                     ],
                     "dynamic_template_data": {
                         "data": `
-                        <p>Cześć ${cname}, <br />
-                        Dziękuję za Twój zakup na stronie 'sekretyrozwojuosobistego.pl'
+                        <p style="margin-top:30px">Cześć ${cname}, <br />
+                        Dziękuję za Twój zakup na stronie sekretyrozwojuosobistego.pl
                         </p>
-                        <p><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        <p style="margin-top:30px"><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
                         
                         <p><strong>Zamówienie:</strong>
                         ${product.name}, ${quantity} szt. <br />
@@ -38,7 +38,7 @@ class Mails {
                         <p><strong>Dostawa:</strong>
                        ${electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`}</p>
                         ${links && links.length > 0 ? `
-                        <strong>Możesz pobrać tutaj:</strong>
+                        <strong  style="margin-top:30px">Możesz pobrać tutaj:</strong>
                         ${this.joinLinks(links)}
                         ` : ''}
                         </p>
