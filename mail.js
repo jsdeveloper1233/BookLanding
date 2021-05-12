@@ -35,9 +35,13 @@ class Mails {
                         ${product.name}, ${quantity} szt. <br />
                         ${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}
                         </p>
+
                         <p><strong>Dostawa:</strong>
-                       ${electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`}</p>
+                       ${electronicShipping ? `Wysyłka elektroniczna` : `Kurierem 24h-48h`}
+                       </p>
+                       
                         ${links && links.length > 0 ? `
+                        <p>
                         <strong  style="margin-top:30px">Możesz pobrać tutaj:</strong>
                         ${this.joinLinks(links)}
                         ` : ''}
@@ -101,7 +105,7 @@ class Mails {
                     ${cname}<br />
                     ${address} <br/>
                     ${zip} ${city} <br/>
-                    ${phone}
+                    ${phone} <br/>
                     </p>`,
 
                         "invoiceData": `<p>
