@@ -29,7 +29,7 @@ class Mails {
                         <p>Cześć ${cname}, <br />
                         Dziękuję za Twój zakup na stronie 'sekretyrozwojuosobistego.pl'
                         </p>
-                        <p><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        <p><strong>Numer zamówienia:</strong> #${order.orderNumber} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
                         
                         <p><strong>Zamówienie:</strong>
                         ${product.name}, ${quantity} szt. <br />
@@ -93,7 +93,7 @@ class Mails {
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
                         <strong>Szczegóły dotyczące zamówienia</strong>
-                        <p><strong>Numer zamówienia:</strong> #${order.id} <br />
+                        <p><strong>Numer zamówienia:</strong> #${order.orderNumber} <br />
                         <strong>Data zamówienia:</strong> ${(new Date()).toLocaleDateString('pl-PL')}</p>
                     `,
                         "shippingAddress": `
@@ -229,7 +229,7 @@ class Mails {
                         "data": `
                     <p>Witaj,</p>
 
-                    <p>Zamówienie #${order.id} z dnia ${order.createdAt.toLocaleDateString('pl-PL')} zostało anulowane. W razie jakichkolwiek pytań prosimy o kontakt.</p>
+                    <p>Zamówienie #${order.orderNumber} z dnia ${order.createdAt.toLocaleDateString('pl-PL')} zostało anulowane. W razie jakichkolwiek pytań prosimy o kontakt.</p>
                     
                     
                     <p>Serdecznie pozdrawiamy,</p>
