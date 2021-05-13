@@ -70,7 +70,7 @@ class Mails {
             result += `<li>${links[i]}</li>`;
         }
 
-        result = ''.concat('<ul>', result, '</ul>')
+        result = ''.concat('<ul style="text-align: left;">', result, '</ul>')
         return result;
     }
 
