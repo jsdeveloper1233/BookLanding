@@ -39,10 +39,10 @@ class Mails {
                         <p><strong>Dostawa:</strong>
                        ${electronicShipping ? `Wysyłka elektroniczna` : `Kurierem 24h-48h`}
                        </p>
-                       
+
                         ${links && links.length > 0 ? `
-                        <p>
-                        <strong  style="margin-top:30px">Możesz pobrać tutaj:</strong>
+                        <p style="margin-top:30px">
+                        <strong>Możesz pobrać tutaj:</strong>
                         ${this.joinLinks(links)}
                         ` : ''}
                         </p>
@@ -67,9 +67,10 @@ class Mails {
         let result = '';
 
         for (let i = 0; i < links.length; i++) {
-            result += links[i] + '<br />';
+            result += `<li>${links[i]}</li>`;
         }
 
+        result = ''.concat('<ul>', result, '</ul>')
         return result;
     }
 
