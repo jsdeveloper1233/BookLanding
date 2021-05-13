@@ -75,5 +75,5 @@
     "browserslist": [
         "last 2 versions",
         "> 1%"
-      ]
+    ]
 }

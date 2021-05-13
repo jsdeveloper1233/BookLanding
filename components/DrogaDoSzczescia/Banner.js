@@ -26,6 +26,7 @@ class Banner extends React.Component {
 
 
   render() {
+    const {disable} = this.props;
     return (
       <React.Fragment>
         <div className="main-banner marketing-home drogadoszczesciabanner">
@@ -56,9 +57,12 @@ class Banner extends React.Component {
                       </p>
 
                       <Link href="/">
-                        <a className="btn btn-primary">
-                          &#10140; Chcę uczestniczyć !
-                        </a>
+                      <button disabled={disable} className={`btn btn-primary order-btn ${
+                    disable ? "btn-disabled" : ""
+                  }`}>
+                  &#10140; Chcę uczestniczyć !
+                </button>
+
                       </Link>
                       {/* <Link href="#">
                                                 <a

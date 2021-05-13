@@ -26,18 +26,22 @@ class Mails {
                     ],
                     "dynamic_template_data": {
                         "data": `
-                        <p>Cześć ${cname}, <br />
-                        Dziękuję za Twój zakup na stronie 'sekretyrozwojuosobistego.pl'
+                        <p style="margin-top:30px">Cześć ${cname}, <br />
+                        Dziękuję za Twój zakup na stronie sekretyrozwojuosobistego.pl
                         </p>
-                        <p><strong>Numer zamówienia:</strong> #${order.orderNumber} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        <p style="margin-top:30px"><strong>Numer zamówienia:</strong> #${order.orderNumber} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
                         
                         <p><strong>Zamówienie:</strong>
                         ${product.name}, ${quantity} szt. <br />
                         ${extra ? `${extra.product.name}, ${extra.quantity} szt.` : ''}
                         </p>
+
                         <p><strong>Dostawa:</strong>
-                       ${electronicShipping ? `<p>Wysyłka elektroniczna</p>` : `<p>Kurierem 24h-48h</p>`}</p>
+                       ${electronicShipping ? `Wysyłka elektroniczna` : `Kurierem 24h-48h`}
+                       </p>
+
                         ${links && links.length > 0 ? `
+                        <p style="margin-top:30px">
                         <strong>Możesz pobrać tutaj:</strong>
                         ${this.joinLinks(links)}
                         ` : ''}
@@ -63,9 +67,10 @@ class Mails {
         let result = '';
 
         for (let i = 0; i < links.length; i++) {
-            result += links[i] + '<br />';
+            result += `<li>${links[i]}</li>`;
         }
 
+        result = ''.concat('<ul style="text-align: left;">', result, '</ul>')
         return result;
     }
 
@@ -92,8 +97,10 @@ class Mails {
                         Dziękuję za złożenie zamówienia na stronie Sekretyrozwojuosobistego.pl.<br />
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
-                        <strong>Szczegóły dotyczące zamówienia</strong>
-                        <p><strong>Numer zamówienia:</strong> #${order.orderNumber} <br />
+
+                        <p style="margin-top:30px"><strong>Szczegóły dotyczące zamówienia</strong><br />
+                        <strong>Numer zamówienia:</strong> #${order.orderNumber} <br />
+
                         <strong>Data zamówienia:</strong> ${(new Date()).toLocaleDateString('pl-PL')}</p>
                     `,
                         "shippingAddress": `
@@ -101,7 +108,7 @@ class Mails {
                     ${cname}<br />
                     ${address} <br/>
                     ${zip} ${city} <br/>
-                    ${phone}
+                    ${phone} <br/>
                     </p>`,
 
                         "invoiceData": `<p>
@@ -234,7 +241,6 @@ class Mails {
                     
                     <p>Serdecznie pozdrawiamy,</p>
                     <p>Sekretyrozwojuosobistego.pl</p>
-                    <
                     `
 
                         // "data": "Name: "+cname+" <br/> Email: "+email+"<br/> Phone: "+phone+"<br/> Address: "+address+"<br/> City: "+city+"<br/> State: "+state+"<br/>ZIP: "+zip+ "<br/> Subscribed to newsletter: "+newsletter +"<br/> Product:" + product + "<br/> Quantity:" + quantity + "<br/> Privacy:" + privacy + "<br /> Terms:" +  terms+ "<br/> Comment: "+comment

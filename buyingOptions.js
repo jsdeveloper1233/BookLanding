@@ -7,7 +7,7 @@ var options = {
         shipping: 14.90,
         electronicShipping: false,
         image: '/images/sekrety-rozwoju-osobistego-papier-gr-s.jpg',
-        template: 'd-9ac2fe11d35f4ab68a8da74c9ea760e0',
+        template: 'd-6160895a947c42fba0dd968343725a14',
         links: [
         ]
     },
@@ -19,7 +19,7 @@ var options = {
         shipping: 0,
         electronicShipping: true,
         image: '/images/sekrety-rozwoju-osobistego-ebook-gr-s.jpg',
-        template: 'd-9ac2fe11d35f4ab68a8da74c9ea760e0',
+        template: 'd-6160895a947c42fba0dd968343725a14',
         extra: {
             key: 'paperCopy',
             title: 'Kup jeszcze książkę papierową!',
@@ -42,7 +42,7 @@ var options = {
         electronicShipping: false,
         discount: 0, // to pole jest automatycznie wyliczane poniżej
         image: '/images/ksiazka-bundle-s.jpg',
-        template: 'd-9ac2fe11d35f4ab68a8da74c9ea760e0',
+        template: 'd-6160895a947c42fba0dd968343725a14',
         links: [
             {
                 file: "files/sample.pdf",
