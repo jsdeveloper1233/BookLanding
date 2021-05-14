@@ -9,7 +9,8 @@ var options = {
         image: '/images/sekrety-rozwoju-osobistego-papier-gr-s.jpg',
         template: 'd-6160895a947c42fba0dd968343725a14',
         links: [
-        ]
+        ],
+        mailerLiteGroupID: 2
     },
     ebook: {
         sku: 'ebook',
@@ -30,7 +31,8 @@ var options = {
                 file: "files/sample.pdf",
                 name: "sample"
             }
-        ]
+        ],
+        mailerLiteGroupID: 3
     },
     bundle: {
         sku: 'pakiet',
