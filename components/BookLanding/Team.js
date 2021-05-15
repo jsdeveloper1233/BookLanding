@@ -186,6 +186,34 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
+                    <img
+                      src={finalPath + "/images/team-mireli.jpg"}
+                      alt="team"
+                    />
+
+                    <div className="team-content">
+                      <h3>
+                      Mireli
+                        <br /> Production
+                      </h3>
+                      <span>Film promujacy ksiazkę</span>
+
+                      <ul>
+                        <li>
+                          <a
+                            className="instagram"
+                            href="https://www.instagram.com/mireliproduction/"
+                          >
+                            <i className="icofont-instagram"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-lg-12">
+                  <div className="single-team-member-box">
                     <img src={finalPath + "/images/team-maja.png"} alt="Maja" />
 
                     <div className="team-content">

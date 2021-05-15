@@ -45,8 +45,8 @@ class Banner extends Component {
                       >
                         ZAMÓW TERAZ
                       </Link>
-                      {/* </Link> */}
-                      {/* <Link href="#">
+        
+                      <Link href="#">
                         <a
                           onClick={(e) => {
                             e.preventDefault();
@@ -57,10 +57,11 @@ class Banner extends Component {
                           Obejrzyj zwiastun
                           <i className="icofont-play-alt-3"></i>
                         </a>
-                      </Link> */}
-                      <em className="inlucdebooks">
+                      </Link>
+
+                      {/* <em className="inlucdebooks">
                         * E-book zawiera wersje MOBI, EPUB i PDF
-                      </em>
+                      </em> */}
                     </div>
                   </div>
 
@@ -104,7 +105,7 @@ class Banner extends Component {
         <ModalVideo
           channel="youtube"
           isOpen={this.state.isOpen}
-          videoId="szuchBiLrEM"
+          videoId="exHgJ528eYI"
           onClose={() => this.setState({ isOpen: false })}
         />
       </React.Fragment>
