@@ -277,7 +277,7 @@ app.prepare().then(() => {
                     links.push(`<a href="${downloadLink}">${names[fff]}</a>`);
                 }
 
-                await mail.sendAuthorEmail(state)
+                await mail.sendAuthorEmail(state, order.id, order.orderNumber)
                 await mail.sendEmail(order, state, links);
                 state.status = 1;
                 await Order.update({ body: JSON.stringify(state), state: 1 }, { where: { id: parseInt(id) } });
