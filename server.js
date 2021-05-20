@@ -18,6 +18,7 @@ var uuid = require('uuid');
 const app = next({ dir: '.', dev });
 const handle = routes.getRequestHandler(app);
 const buingOptions = require('./buyingOptions');
+const newsletterOptions = require('./newsletterOptions');
 
 const Mails = require('./mail');
 const mail = new Mails();
@@ -142,7 +143,7 @@ app.prepare().then(() => {
         if (captchaResponse.data.success) {
 
             if (!!req.body.newsletter) {
-                subscribeUser(req.body.email)
+                await subscribeUser(req.body.email, newsletterOptions.defaultGroup)
             }
 
             mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda)
@@ -384,7 +385,21 @@ app.prepare().then(() => {
             res.json({ "link": u })
 
             if (body.newsletter) {
-                subscribeUser(body.email)
+                var subscribed = false;
+                
+                if(product.mailerLiteGroupID) {
+                    await subscribeUser(body.email, product.mailerLiteGroupID)
+                    subscribed = true;
+                }
+
+                if(extraProduct && extraProduct.mailerLiteGroupID && extraProduct.mailerLiteGroupID != product.mailerLiteGroupID) {
+                    await subscribeUser(body.email, extraProduct.mailerLiteGroupID)
+                    subscribed = true;
+                }
+
+                if(!subscribed){
+                    await subscribeUser(body.email, newsletterOptions.defaultGroup)
+                }
             }
 
         } else {
@@ -510,8 +525,8 @@ function reverseBits(num) {
     return parseInt(reversed.split('').reverse().join(''), 2);
 }
 
-async function subscribeUser(email) {
-    mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
+async function subscribeUser(email, group) {
+    await mailerLite.addSubscriberToGroup(group, {
         "email": email
     })
 }
@@ -519,19 +534,13 @@ async function takeAction(newSubEmail, status) {
 
     switch (status) {
         case '200_sub':
-            mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
-                "email": newSubEmail
-            })
+            await subscribeUser(newSubEmail, newsletterOptions.defaultGroup)
             return { "message": "success" }
         case '404_sub':
-            mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
-                "email": newSubEmail
-            })
+            await subscribeUser(newSubEmail, newsletterOptions.defaultGroup)
             return { "message": "success" }
         case '200_sub_404_group':
-            mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {
-                "email": newSubEmail
-            })
+            await subscribeUser(newSubEmail, newsletterOptions.defaultGroup)
             return { "message": "success" }
         case '200_sub_200_group':
             return { "message": "already_subscribed" }
