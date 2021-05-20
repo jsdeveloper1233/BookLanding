@@ -19,6 +19,7 @@ import GoTop from "../components/Shared/GoTop";
 import Loader from "../components/Shared/Loader";
 import Router from "next/router";
 import withAnalytics from "next-analytics";
+import Gtm from 'next-gtm'
 
   const  MyApp = props =>  {
       const { Component, pageProps, store } = props;
@@ -140,7 +141,7 @@ import withAnalytics from "next-analytics";
               }}
             />
           </Head>
-
+          <Gtm id='GTM-KVLNWK4'/>
           <Preloader>
             <Provider store={store}>
               <Component {...pageProps} />
@@ -155,4 +156,4 @@ import withAnalytics from "next-analytics";
         </React.Fragment>
       );
     }
-     export default withAnalytics(Router, { ga: "UA-xxxxxxxxx-1", fbq: "139xxxxxxxxx3" })(withRedux(initStore)(MyApp));
+     export default withAnalytics(Router, { fbq: "139xxxxxxxxx3" })(withRedux(initStore)(MyApp));
