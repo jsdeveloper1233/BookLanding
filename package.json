@@ -32,6 +32,7 @@
         "mysql2": "^2.2.5",
         "next": "^10.0.3",
         "next-analytics": "^2.0.0",
+        "next-gtm": "^1.0.0",
         "next-redux-wrapper": "^3.0.0-alpha.3",
         "next-routes": "^1.4.2",
         "next-seo": "^4.20.0",
