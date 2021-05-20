@@ -54,6 +54,9 @@ const Order = sequelize.define('Order', {
         autoIncrement: true,
         primaryKey: true
     },
+    orderNumber: {
+        type: Sequelize.BIGINT
+    },
     body: {
         type: DataTypes.STRING(2048),
         allowNull: false
@@ -205,7 +208,8 @@ app.prepare().then(() => {
     })
 
     server.get("/api/status", async (req, res) => {
-        var state = await Order.findByPk(parseInt(req.query.id));
+        var orderNumber = parseInt(req.query.id);
+        var state = await Order.findOne({ where: { orderNumber: orderNumber } });
 
         if (state) {
             res.json({ status: state.status });
@@ -273,7 +277,7 @@ app.prepare().then(() => {
                     links.push(`<a href="${downloadLink}">${names[fff]}</a>`);
                 }
 
-                await mail.sendAuthorEmail(state)
+                await mail.sendAuthorEmail(state, order.id, order.orderNumber)
                 await mail.sendEmail(order, state, links);
                 state.status = 1;
                 await Order.update({ body: JSON.stringify(state), state: 1 }, { where: { id: parseInt(id) } });
@@ -369,6 +373,10 @@ app.prepare().then(() => {
                 state: 0
             });
 
+            order.orderNumber = reverseBits(order.id);
+
+            await Order.update({orderNumber: order.orderNumber}, { where: { id: order.id } });
+
             var u = await getPaymentLink(order, state);
 
             await mail.sendNewOrderEmail(order, state);
@@ -450,10 +458,10 @@ async function getPaymentLink(order, state) {
 
     if (dev) {
         P24.setUrlStatus(`http://localhost:${PORT}/api/verify`)
-        P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${order.id}`)
+        P24.setUrlReturn(`http://localhost:${PORT}/api/thankyou?id=${order.orderNumber}`)
     } else {
         P24.setUrlStatus(`https://www.sekretyrozwojuosobistego.pl/api/verify`)
-        P24.setUrlReturn(`https://www.sekretyrozwojuosobistego.pl/api/thankyou?id=${order.id}`)
+        P24.setUrlReturn(`https://www.sekretyrozwojuosobistego.pl/api/thankyou?id=${order.orderNumber}`)
     }
 
     P24.addProduct(state.product.name, state.product.description, state.quantity, state.product.price * 100);
@@ -495,6 +503,12 @@ async function verify(state) {
     return false;
 }
 
+function reverseBits(num) {
+    let reversed = num.toString(2);
+    const padding = "0";
+    reversed = padding.repeat(32 - reversed.length) + reversed;
+    return parseInt(reversed.split('').reverse().join(''), 2);
+}
 
 async function subscribeUser(email) {
     mailerLite.addSubscriberToGroup(process.env.GROUP_ID, {

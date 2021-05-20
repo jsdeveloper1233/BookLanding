@@ -29,7 +29,7 @@ class Mails {
                         <p style="margin-top:30px">Cześć ${cname}, <br />
                         Dziękuję za Twój zakup na stronie sekretyrozwojuosobistego.pl
                         </p>
-                        <p style="margin-top:30px"><strong>Numer zamówienia:</strong> #${order.id} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
+                        <p style="margin-top:30px"><strong>Numer zamówienia:</strong> #${order.orderNumber} z dnia ${(new Date()).toLocaleDateString('pl-PL')}</p>
                         
                         <p><strong>Zamówienie:</strong>
                         ${product.name}, ${quantity} szt. <br />
@@ -97,8 +97,10 @@ class Mails {
                         Dziękuję za złożenie zamówienia na stronie Sekretyrozwojuosobistego.pl.<br />
                         Jak tylko płatność będzie potwierdzona, wyślemy Ci kolejną wiadomość z potwierdzeniem zaksięgowania płatności.
                         </p>
+
                         <p style="margin-top:30px"><strong>Szczegóły dotyczące zamówienia</strong><br />
-                        <strong>Numer zamówienia:</strong> #${order.id} <br />
+                        <strong>Numer zamówienia:</strong> #${order.orderNumber} <br />
+
                         <strong>Data zamówienia:</strong> ${(new Date()).toLocaleDateString('pl-PL')}</p>
                     `,
                         "shippingAddress": `
@@ -143,7 +145,7 @@ class Mails {
     // MAIL DO ADMINA
     // email do Admina, potwierdzenie że transakcja zakończyła się sukcesem
     //*********************************************** */
-    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, extra, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price }) {
+    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, extra, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price }, id, orderNumber) {
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
@@ -168,6 +170,10 @@ class Mails {
                     <br/>
                     <div>
                     <h2>Zamówienie</h2>
+                    <p>
+                    ID: ${id}<br/>
+                    Numer zamówienia: ${orderNumber}<br/>
+                    </p>
                     <p>
                     Produkt zamówiony: ${product.name}<br/>
                     Ilość sztuk: ${quantity}<br/>
@@ -234,7 +240,7 @@ class Mails {
                         "data": `
                     <p>Witaj,</p>
 
-                    <p>Zamówienie #${order.id} z dnia ${order.createdAt.toLocaleDateString('pl-PL')} zostało anulowane. W razie jakichkolwiek pytań prosimy o kontakt.</p>
+                    <p>Zamówienie #${order.orderNumber} z dnia ${order.createdAt.toLocaleDateString('pl-PL')} zostało anulowane. W razie jakichkolwiek pytań prosimy o kontakt.</p>
                     
                     
                     <p>Serdecznie pozdrawiamy,</p>
