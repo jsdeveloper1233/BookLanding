@@ -24,6 +24,7 @@ import Services from "../components/DigitalMarketing/Services";
 import VirtualReality from "../components/BookLanding/VirtualReality";
 import CtaCard from "../components/BookLanding/CtaCard";
 import Pricing2 from "../components/BookLanding/Pricing2";
+import VideoComp from "../components/BookLanding/VideoComp";
 
 
 export const finalPath = "";
@@ -48,6 +49,7 @@ class BookLanding extends React.Component {
           <Navbar />
           <Banner />
           <AboutContent />
+          <VideoComp />
           <Discover2 />
           <Features />
           <CtaCard />
