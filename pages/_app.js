@@ -156,4 +156,4 @@ import Gtm from 'next-gtm'
         </React.Fragment>
       );
     }
-     export default withAnalytics(Router, { fbq: "139xxxxxxxxx3" })(withRedux(initStore)(MyApp));
+     export default withAnalytics(Router, { fbq: "811155822939073" })(withRedux(initStore)(MyApp));
