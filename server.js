@@ -382,7 +382,7 @@ app.prepare().then(() => {
 
             await mail.sendNewOrderEmail(order, state);
 
-            res.json({ "link": u })
+            res.json({ "link": u, "order": order.orderNumber })
 
             if (body.newsletter) {
                 var subscribed = false;

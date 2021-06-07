@@ -60,8 +60,7 @@ class OrderSummary extends Component {
         extra: this.state.extra,
       })
       .then((d) => {
-        console.log(d.data);
-        console.log(d.data.link);
+        window.localStorage.setItem("order", d.data.order);
         this.setState((x) => ({ ...x, isLoading: false }));
         window.location.href = d.data.link;
       });
