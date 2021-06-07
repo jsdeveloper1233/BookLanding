@@ -26,6 +26,20 @@ const mail = new Mails();
 const { Sequelize, DataTypes, Op } = require('sequelize');
 const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
 
+const bizSdk = require('facebook-nodejs-business-sdk');
+const Content = bizSdk.Content;
+const CustomData = bizSdk.CustomData;
+const DeliveryCategory = bizSdk.DeliveryCategory;
+const EventRequest = bizSdk.EventRequest;
+const UserData = bizSdk.UserData;
+const ServerEvent = bizSdk.ServerEvent;
+
+const pixel_access_token = process.env.PIXEL_ACCESS_TOKEN;
+const pixel_id = process.env.PIXEL_ADS_PIXEL_ID;
+const pixelApi = bizSdk.FacebookAdsApi.init(pixel_access_token);
+
+let current_timestamp = Math.floor(new Date() / 1000);
+
 var multer = require('multer')
 
 var storage = multer.diskStorage({
@@ -282,6 +296,8 @@ app.prepare().then(() => {
                 await mail.sendEmail(order, state, links);
                 state.status = 1;
                 await Order.update({ body: JSON.stringify(state), state: 1 }, { where: { id: parseInt(id) } });
+
+                sendPixelEvent('zamówienie - płatność potwierdzona');
             }
         }
     })
@@ -382,7 +398,9 @@ app.prepare().then(() => {
 
             await mail.sendNewOrderEmail(order, state);
 
-            res.json({ "link": u })
+            res.json({ "link": u });
+
+            sendPixelEvent('nowe zamówienie');
 
             if (body.newsletter) {
                 var subscribed = false;
@@ -416,6 +434,26 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
+
+function sendPixelEvent(event) {
+    const serverEvent = (new ServerEvent())
+        .setEventName(event)
+        .setEventTime(current_timestamp)
+        .setActionSource('server');
+
+    const eventsData = [serverEvent];
+    const eventRequest = (new EventRequest(pixel_access_token, pixel_id))
+                    .setEvents(eventsData);
+
+    eventRequest.execute().then(
+        response => {
+            console.log('Pixel response: ', response);
+        },
+        err => {
+            console.error('Pixel error: ', err);
+        }
+    );
+}
 
 async function synchronize() {
     var time = new Date();
