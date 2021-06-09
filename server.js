@@ -26,17 +26,8 @@ const mail = new Mails();
 const { Sequelize, DataTypes, Op } = require('sequelize');
 const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
 
-const bizSdk = require('facebook-nodejs-business-sdk');
-const Content = bizSdk.Content;
-const CustomData = bizSdk.CustomData;
-const DeliveryCategory = bizSdk.DeliveryCategory;
-const EventRequest = bizSdk.EventRequest;
-const UserData = bizSdk.UserData;
-const ServerEvent = bizSdk.ServerEvent;
-
 const pixel_access_token = process.env.PIXEL_ACCESS_TOKEN;
 const pixel_id = process.env.PIXEL_ADS_PIXEL_ID;
-const pixelApi = bizSdk.FacebookAdsApi.init(pixel_access_token);
 
 let current_timestamp = Math.floor(new Date() / 1000);
 
@@ -297,7 +288,7 @@ app.prepare().then(() => {
                 state.status = 1;
                 await Order.update({ body: JSON.stringify(state), state: 1 }, { where: { id: parseInt(id) } });
 
-                sendPixelEvent('zamówienie - płatność potwierdzona');
+                await sendPixelEvent('zamówienie - płatność potwierdzona', req);
             }
         }
     })
@@ -400,7 +391,7 @@ app.prepare().then(() => {
 
             res.json({ "link": u });
 
-            sendPixelEvent('nowe zamówienie');
+            await sendPixelEvent('nowe zamówienie', req);
 
             if (body.newsletter) {
                 var subscribed = false;
@@ -435,24 +426,21 @@ app.prepare().then(() => {
     });
 })
 
-function sendPixelEvent(event) {
-    const serverEvent = (new ServerEvent())
-        .setEventName(event)
-        .setEventTime(current_timestamp)
-        .setActionSource('server');
+async function sendPixelEvent(event, request) {
+    var response = await axios.post(`https://graph.facebook.com/v11.0/${pixel_id}/events`, {
+        access_token: pixel_access_token,
+        data: [{
+            event_name: event,
+            event_time: current_timestamp,
+            opt_out: true,
+            user_data: {
+                client_ip_address: request.connection.remoteAddress,
+                client_user_agent: request.headers['user-agent']
+            }
+        }],
+    });
 
-    const eventsData = [serverEvent];
-    const eventRequest = (new EventRequest(pixel_access_token, pixel_id))
-                    .setEvents(eventsData);
-
-    eventRequest.execute().then(
-        response => {
-            console.log('Pixel response: ', response);
-        },
-        err => {
-            console.error('Pixel error: ', err);
-        }
-    );
+    console.log(response);
 }
 
 async function synchronize() {
