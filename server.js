@@ -389,8 +389,7 @@ app.prepare().then(() => {
 
             await mail.sendNewOrderEmail(order, state);
 
-            res.json({ "link": u });
-
+            res.json({ "link": u, "order": order.orderNumber });
             await sendPixelEvent('nowe zamówienie', req);
 
             if (body.newsletter) {

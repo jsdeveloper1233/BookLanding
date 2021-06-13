@@ -14,6 +14,16 @@ class TeamOne extends Component {
     }
 
     componentDidMount() {
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const localId = window.localStorage.getItem("order");
+
+        if(id != localId) {
+            window.location.href = "/404.html";
+        }
+
         this.setState({ status: 0 });
         this.getTheData();
     }
