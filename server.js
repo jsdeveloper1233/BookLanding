@@ -26,6 +26,11 @@ const mail = new Mails();
 const { Sequelize, DataTypes, Op } = require('sequelize');
 const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`)
 
+const pixel_access_token = process.env.PIXEL_ACCESS_TOKEN;
+const pixel_id = process.env.PIXEL_ADS_PIXEL_ID;
+
+let current_timestamp = Math.floor(new Date() / 1000);
+
 var multer = require('multer')
 
 var storage = multer.diskStorage({
@@ -282,6 +287,8 @@ app.prepare().then(() => {
                 await mail.sendEmail(order, state, links);
                 state.status = 1;
                 await Order.update({ body: JSON.stringify(state), state: 1 }, { where: { id: parseInt(id) } });
+
+                await sendPixelEvent('zamówienie - płatność potwierdzona', req);
             }
         }
     })
@@ -382,7 +389,8 @@ app.prepare().then(() => {
 
             await mail.sendNewOrderEmail(order, state);
 
-            res.json({ "link": u, "order": order.orderNumber })
+            res.json({ "link": u, "order": order.orderNumber });
+            await sendPixelEvent('nowe zamówienie', req);
 
             if (body.newsletter) {
                 var subscribed = false;
@@ -416,6 +424,23 @@ app.prepare().then(() => {
         console.log(`> Read on http://localhost:${PORT}`)
     });
 })
+
+async function sendPixelEvent(event, request) {
+    var response = await axios.post(`https://graph.facebook.com/v11.0/${pixel_id}/events`, {
+        access_token: pixel_access_token,
+        data: [{
+            event_name: event,
+            event_time: current_timestamp,
+            opt_out: true,
+            user_data: {
+                client_ip_address: request.connection.remoteAddress,
+                client_user_agent: request.headers['user-agent']
+            }
+        }],
+    });
+
+    console.log(response);
+}
 
 async function synchronize() {
     var time = new Date();
