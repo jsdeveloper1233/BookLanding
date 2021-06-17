@@ -8169,6 +8169,7 @@ td.product-name .cart-items {
   }
   .radyknalnalanding .brochure-section .row .brochure {
     max-height: 100%;
+    height: auto;
   }
   .radyknalnalanding .nawet-jesli {
     margin-top: 50px;
