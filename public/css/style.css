@@ -8170,6 +8170,7 @@ td.product-name .cart-items {
         flex-wrap: unset;
   }
   .radyknalnalanding .brochure-section .row .brochure {
+    display: block;
     max-height: 100%;
     height: auto;
   }
