@@ -73,6 +73,7 @@ Default CSS
   --blackColor: #000000;
   --paragraphColor: #1d1d1d;
   --darkViolet:#7A3760;
+  --lightBlue: #9ad9e6;
   --transition: .5s;
 }
 
@@ -7782,36 +7783,41 @@ td.product-name .cart-items {
           align-items: center;
 }
 
-.drogadoszczescialanding .btn {
+.landing .btn {
   padding: 29px 31px;
   font-size: 22px;
 }
 
-.drogadoszczescialanding .app-download .section-title .download-btn a {
+.landing .app-download .section-title .download-btn a {
   padding: 12px 35px 12px 35px;
 }
 
-.drogadoszczescialanding .drogadoszczesciaheader .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+.landing .drogadoszczesciaheader .navbar.navbar-expand-md.navbar-light a.navbar-brand {
   color: var(--paragraphColor);
 }
 
-.drogadoszczescialanding .drogadoszczesciaheader .crake-nav nav .navbar-nav li a {
+.landing .drogadoszczesciaheader .crake-nav nav .navbar-nav li a {
   color: var(--paragraphColor) !important;
 }
 
-.drogadoszczescialanding .drogadoszczesciaheader .crake-nav.is-sticky .navbar.navbar-expand-md.navbar-light a.navbar-brand {
+.landing .drogadoszczesciaheader .crake-nav.is-sticky .navbar.navbar-expand-md.navbar-light a.navbar-brand {
   color: #fff;
 }
 
-.drogadoszczescialanding .drogadoszczesciaheader .crake-nav.is-sticky nav .navbar-nav li a {
+.landing .drogadoszczesciaheader .crake-nav.is-sticky nav .navbar-nav li a {
   color: #fff !important;
 }
 
-.drogadoszczescialanding .drogadoszczesciaheader nav .nav-item.zamowteraz .btn-primary {
+.landing .drogadoszczesciaheader nav .nav-item.zamowteraz .btn-primary {
   color: #fff !important;
 }
 
-.drogadoszczescialanding .drogadoszczesciabanner .omnie {
+.landing .drogadoszczesciaheader .navbar-toggler {
+  background-color: var(--darkViolet);
+}
+
+.landing .drogadoszczesciabanner .omnie,
+.landing .radykalnaprawdabanner .omnie {
   max-width: 700px;
   margin: 0px auto 60px auto;
   position: relative;
@@ -7823,18 +7829,40 @@ td.product-name .cart-items {
   border-radius: 20px;
 }
 
-.drogadoszczescialanding .wherevideois {
+.landing .main-banner.drogadoszczesciabanner {
+  height: 100vh;
+}
+
+@media (max-width: 1295px) {
+  .landing .main-banner.drogadoszczesciabanner .omnie {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  .landing .btn {
+    font-size: unset;
+  }
+  .landing .main-banner.drogadoszczesciabanner {
+    height: 100%;
+  }
+  .landing .main-banner.drogadoszczesciabanner .omnie {
+    margin-top: 0;
+  }
+}
+
+.landing .wherevideois {
   z-index: 9;
 }
 
-.drogadoszczescialanding .wherevideois .video-responsive {
+.landing .wherevideois .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
 }
 
-.drogadoszczescialanding .wherevideois .video-responsive iframe {
+.landing .wherevideois .video-responsive iframe {
   left: 0;
   top: 0;
   height: 100%;
@@ -7842,7 +7870,7 @@ td.product-name .cart-items {
   position: absolute;
 }
 
-.drogadoszczescialanding .wherevideois .laptop-video {
+.landing .wherevideois .laptop-video {
   width: 100%;
   height: 100%;
   max-width: 1034px;
@@ -7852,14 +7880,14 @@ td.product-name .cart-items {
           animation: movebounce 5s linear infinite;
 }
 
-.drogadoszczescialanding .wherevideois .laptop-video div {
+.landing .wherevideois .laptop-video div {
   position: relative;
   padding-top: 25px;
   padding-bottom: 67.5%;
   height: 0;
 }
 
-.drogadoszczescialanding .wherevideois .laptop-video div iframe {
+.landing .wherevideois .laptop-video div iframe {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat;
@@ -7872,47 +7900,47 @@ td.product-name .cart-items {
   height: 100%;
 }
 
-.drogadoszczescialanding .funfacts-area {
+.landing .funfacts-area {
   background: white;
   padding-bottom: 100px;
 }
 
-.drogadoszczescialanding .funfacts-area .dlategojesli {
+.landing .funfacts-area .dlategojesli {
   background: white;
 }
 
-.drogadoszczescialanding .funfacts-area .dlategojesli ul {
+.landing .funfacts-area .dlategojesli ul {
   padding: 20px;
 }
 
-.drogadoszczescialanding .app-funfacts-area,
-.drogadoszczescialanding .dlaczego {
+.landing .app-funfacts-area,
+.landing .dlaczego {
   background: var(--darkViolet);
 }
 
-.drogadoszczescialanding .app-funfacts-area:before,
-.drogadoszczescialanding .dlaczego:before {
+.landing .app-funfacts-area:before,
+.landing .dlaczego:before {
   content: none;
 }
 
-.drogadoszczescialanding .app-funfacts-area {
+.landing .app-funfacts-area {
   padding-bottom: 100px;
 }
 
-.drogadoszczescialanding .price-Value .currency {
+.landing .price-Value .currency {
   position: unset;
 }
 
-.drogadoszczescialanding .pricingTable .pricing-content {
+.landing .pricingTable .pricing-content {
   margin-left: 60px;
   margin-right: 30px;
 }
 
-.drogadoszczescialanding .pricingTable .pricing-content ul {
+.landing .pricingTable .pricing-content ul {
   list-style: none;
 }
 
-.drogadoszczescialanding .pricingTable .pricing-content ul li {
+.landing .pricingTable .pricing-content ul li {
   display: block;
   background: url(/images/square-bullet.svg) no-repeat;
   padding-left: 1.7em;
@@ -7921,15 +7949,11 @@ td.product-name .cart-items {
   text-align: left;
 }
 
-.drogadoszczescialanding .main-banner.drogadoszczesciabanner {
-  height: 100vh;
-}
-
-.drogadoszczescialanding .fun-facts-inner-area .fun-facts-inner-content p {
+.landing .fun-facts-inner-area .fun-facts-inner-content p {
   font-size: 22px;
 }
 
-.drogadoszczescialanding .fun-facts-inner-area .fun-facts-inner-content ul li {
+.landing .fun-facts-inner-area .fun-facts-inner-content ul li {
   font-size: 19px;
 }
 
@@ -7966,5 +7990,211 @@ td.product-name .cart-items {
   background-color: #717070;
   border-color: #717070;
   cursor: not-allowed;
+}
+
+.videoComp {
+  background-color: var(--darkViolet);
+}
+
+.videoComp .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5% 0;
+}
+
+.videoComp .wherevideois .video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.videoComp .wherevideois .video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.background-light-blue {
+  background-color: var(--lightBlue) !important;
+  color: #000 !important;
+}
+
+.background-light-blue h1,
+.background-light-blue h2,
+.background-light-blue h3,
+.background-light-blue h4 {
+  color: #000 !important;
+}
+
+.radyknalnalanding .radykalnaprawdabanner {
+  margin-top: 70px;
+  height: 100vh;
+}
+
+.radyknalnalanding .radykalnaprawdabanner .left-side {
+  height: 603px;
+  margin: auto;
+  padding-left: 60px;
+}
+
+.radyknalnalanding .btn-primary {
+  background-color: #78368c;
+  color: #f3e31b;
+}
+
+.radyknalnalanding .btn-primary a {
+  color: #f3e31b;
+}
+
+.radyknalnalanding .btn:not(.in-navbar):after, .radyknalnalanding .btn:not(.in-navbar):before {
+  background: #b777cb !important;
+  color: #f3e31b !important;
+}
+
+.radyknalnalanding .btn:not(.in-navbar):hover {
+  color: yellow !important;
+}
+
+.radyknalnalanding .hero-content {
+  margin-top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.radyknalnalanding .radykalnaprawdabanner .omnie {
+  max-width: 90%;
+}
+
+.radyknalnalanding .zacznijzyc .divimage {
+  margin: 20px auto;
+}
+
+.radyknalnalanding .dlaczego.hearts {
+  background-image: url(/images/sky-hearts.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.radyknalnalanding .dlaczego .container .row {
+  row-gap: 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.radyknalnalanding .jest-cytat {
+  padding: 100px 0px;
+}
+
+.radyknalnalanding .jest-cytat cite {
+  color: #fff;
+}
+
+.radyknalnalanding .brochure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.radyknalnalanding .kupteraz .owl-carousel .owl-stage-outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.radyknalnalanding .cta-area::before {
+  background-color: var(--darkViolet);
+}
+
+.radyknalnalanding .cta-area .btn {
+  color: #000 !important;
+}
+
+.radyknalnalanding span.btn.btn-primary.dodaj-do-koszyka {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 7px;
+  font-size: 18px;
+  text-transform: none;
+  margin-top: 10px;
+}
+
+.radyknalnalanding span.btn.btn-primary.dodaj-do-koszyka .icofont-shopping-cart {
+  margin-left: 8px;
+}
+
+@media (max-width: 1200px) {
+  .radyknalnalanding .radykalnaprawdabanner .left-side {
+    height: 550px;
+  }
+}
+
+@media (max-width: 992px) {
+  .radyknalnalanding .radykalnaprawdabanner {
+    height: 100%;
+  }
+  .radyknalnalanding .radykalnaprawdabanner .left-side {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 5%;
+  }
+  .radyknalnalanding .nawet-jesli {
+    margin-top: 50px;
+  }
+  .radyknalnalanding .hero-content {
+    margin-top: 0;
+    -webkit-transform: unset;
+            transform: unset;
+  }
+  .radyknalnalanding .hero-content h1 {
+    text-align: center;
+  }
+  .radyknalnalanding .hero-content p {
+    text-align: center;
+  }
+  .radyknalnalanding .hero-content .btn-primary {
+    padding: 18px;
+    margin: 0 auto;
+    display: block;
+  }
+  .radyknalnalanding .unikaj-cierpienia .tobeflex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 40px;
+  }
+  .radyknalnalanding .unikaj-cierpienia .tobeflex .wherevideois {
+    text-align: center;
+  }
+  .radyknalnalanding .unikaj-cierpienia .tobeflex .wherevideois img {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

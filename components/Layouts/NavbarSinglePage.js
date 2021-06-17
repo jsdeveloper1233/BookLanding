@@ -74,8 +74,8 @@ class NavbarSinglePage extends React.Component {
       ? "navbar-toggler navbar-toggler-right collapsed"
       : "navbar-toggler navbar-toggler-right";
 
-      const customClass = this.props.customClass;
-
+      const {customClass, orderButtonText} = this.props;
+   
     return (
       <React.Fragment>
         <header id="header" className={customClass}>
@@ -147,8 +147,8 @@ class NavbarSinglePage extends React.Component {
                     </li>
                     <li className="nav-item zamowteraz">
                     <NextLink href="/#kupteraz">
-                        <a className="btn btn-primary">
-                          ZAMÓW TERAZ
+                        <a className="btn btn-primary in-navbar">
+                          {orderButtonText ? orderButtonText : 'ZAMÓW TERAZ'}
                         </a>
                       </NextLink>
                     </li>

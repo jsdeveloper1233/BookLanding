@@ -30,7 +30,7 @@ const DrogaDoSzczescia = () => {
 
   return (
     <React.Fragment>
-      <div className="drogadoszczescialanding">
+      <div className="drogadoszczescialanding landing">
         <NavbarSinglePage customClass="drogadoszczesciaheader" />
         <Banner disable={disable}/>
         <Dlaczego />

@@ -56,7 +56,51 @@ var options = {
             }
         ],
         mailerLiteGroupID: 107311903
-    }
+    },
+    radykalnaEbook: {
+        sku: 'radykalnaPrawdaEbook',
+        name: 'Radykalna prawda w związku e-book',
+        description: 'Radykalna prawda w związku - Wersja e-book',
+        price: 16.90,
+        shipping: 0,
+        electronicShipping: true,
+        image: '/images/radykalna-prawda-w-zwiazku-s.jpg',
+        template: 'd-6160895a947c42fba0dd968343725a14',
+        extra: {
+            key: 'paperCopy',
+            title: 'Kup jeszcze książkę papierową!',
+            text: 'Testowy tekst. Dodaj jeszcze to do koszyka'
+        },
+        links: [
+            {
+                file: "files/sample.pdf",
+                name: "sample"
+            }
+        ],
+        mailerLiteGroupID: 107311903
+    },
+    ebookRadykalnaSekrety: {
+        sku: 'ebookRadykalnaSekrety',
+        name: 'Radykalna prawda w związku e-book + Sekrety rozwoju osobistego ebook',
+        description: 'Radykalna prawda w związku i Sekrety rozwoju osobistego - Wersje e-book',
+        price: 48.90,
+        shipping: 0,
+        electronicShipping: true,
+        image: '/images/radykalna-sekrety-ebooks.jpg',
+        template: 'd-6160895a947c42fba0dd968343725a14',
+        // extra: {
+        //     key: 'paperCopy',
+        //     title: 'Kup jeszcze książkę papierową!',
+        //     text: 'Testowy tekst. Dodaj jeszcze to do koszyka'
+        // },
+        links: [
+            {
+                file: "files/sample.pdf",
+                name: "sample"
+            }
+        ],
+        mailerLiteGroupID: 107311903
+    },
 }
 
 options.bundle.discount = Math.round((options.bundle.originalPrice - options.bundle.price) * 100) / 100;
