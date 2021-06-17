@@ -755,6 +755,7 @@ td.product-name {
     .brochure-section {
       .row {
         flex-direction: column;
+        flex-wrap: unset;
         .brochure {
           max-height: 100%;
           height:auto;

@@ -8166,6 +8166,8 @@ td.product-name .cart-items {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-wrap: unset;
+        flex-wrap: unset;
   }
   .radyknalnalanding .brochure-section .row .brochure {
     max-height: 100%;
