@@ -18,10 +18,10 @@ class Funfact2 extends React.Component {
   };
 
   render() {
-    const {disable} = this.props;
+    const {disable, sectionClass} = this.props;
     return (
       <React.Fragment>
-        <section className="fun-facts-area ptb-100 ">
+        <section className={`fun-facts-area ptb-100 ${sectionClass}`}>
           <div className="fun-facts-inner-area mt-0">
             <div className="container-fluid">
               <div className="row justify-content-center align-items-center">

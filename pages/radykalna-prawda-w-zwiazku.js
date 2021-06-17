@@ -67,7 +67,7 @@ const DrogaDoSzczescia = () => {
 
         {/* <Funfact /> */}
 
-        <Funfact2 />
+        <Funfact2 sectionClass="brochure-section"/>
 
         <CourseContent />
 
