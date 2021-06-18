@@ -13,6 +13,7 @@ import CourseContent from "../components/RadykalnaPrawda/CourseContent";
 import OSergio from "../components/RadykalnaPrawda/OSergio";
 import LatestProducts from "../components/RadykalnaPrawda/LatestProducts";
 import CtaCard from "../components/RadykalnaPrawda/CtaCard";
+import Head from "next/head";
 
 export const finalPath = "";
 // const singleText = {<>Zrób to dla siebie i zacznij żyć pełnią szczęścia <br /> Pomogę Ci to osiągnąć!.</>};
@@ -31,6 +32,201 @@ const DrogaDoSzczescia = () => {
 
   return (
     <React.Fragment>
+               <Head>
+            <title>
+              Radykalna prawda w związku
+            </title>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
+            <meta
+              name="description"
+              content="Radykalna prawda w związku. Narędzie, który pomaga w tworzeniu zdrowych związków. Autor: Sergio S Dorje"
+            />
+            <meta property="og:type" content="book"></meta>
+            <meta
+              name="og:title"
+              property="og:title"
+              content="Radykalna prawda w związku"
+            ></meta>
+            <meta property="og:locale" content="pl"></meta>
+            <meta
+              property="og:url"
+              content="https://www.sekretyrozwojuosobistego.pl"
+            ></meta>
+            <meta
+              property="og:image"
+              content="https://www.sekretyrozwojuosobistego.pl/images/radykalna-s.png"
+            ></meta>{" "}
+            //tofix
+            <meta
+              property="og:image:secure_url"
+              content="https://www.sekretyrozwojuosobistego.pl/images/sekrety-rozwoju-osobistego-mkp-sm.png"
+            ></meta>
+            <meta property="og:image:width" content="50"></meta>
+            <meta property="og:image:height" content="50"></meta>
+            <meta property="og:image:type" content="image/png"></meta>
+            <meta property="book:author" content="Sergio S Dorje"></meta>
+            <meta property="book:isbn" content="978-83-960230-2-5"></meta>
+            <meta property="book:release_date" content="2021-08-01"></meta>
+            <meta property="book:tag" content="Sergio S Dorje"></meta>
+            <meta property="book:tag" content="radykalna"></meta>
+            <meta property="book:tag" content="prawda"></meta>
+            <meta property="book:tag" content="związku"></meta>
+            <meta property="book:tag" content="relacje"></meta>
+            <meta property="book:tag" content="rodzina"></meta>
+            <meta property="book:tag" content="ebook"></meta>
+            <meta property="book:tag" content="książka"></meta>
+            <meta
+              name="twitter:card"
+              content="Radykalna prawda w związku"
+            ></meta>
+            <link rel="profile" href="//gmpg.org/xfn/11" />
+            <meta name="robots" content="index, follow" />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "http://schema.org",
+                  "@type": "Book",
+                  publisher: "Anahata Bliss",
+                  url: "https://sekretyrozwojuosobistego.pl/",
+                  name: "Radykalna prawda w związku",
+                  author: {
+                    "@type": "Person",
+                    name: "Sergio S Dorje",
+                    sameAs: [
+                      "https://www.anahatatantra.com/pl/",
+                      "https://www.sergiosdorje.com/",
+                    ],
+                  },
+                  bookFormat: "http://schema.org/EBook",
+                  datePublished: "2021-04-01",
+                  image: "https://sekretyrozwojuosobistego.pl/images/sekrety-rozwoju-osobistego-mkp-sm.png",
+                  inLanguage: "Polish",
+                  isbn: "978-83-960230-2-5",
+                  numberOfPages: "44",
+                  offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/InStock",
+                    price: "16.90",
+                    priceCurrency: "PLN",
+                  },
+                  "review": [
+                    {
+                      "@type": "Review",
+                      "author": "John Doe",
+                      "datePublished": "2006-05-04",
+                      "name": "A masterpiece of literature",
+                      "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
+                      "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                   }
+                    },
+                  ],
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "reviewCount": "1",
+                    ratingValue: "5",
+                    bestRating: "5",
+                    worstRating: "5"
+                  },
+                  "potentialAction": {
+                    "@type": "ReadAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://sekretyrozwojuosobistego.pl/radykalna-prawda-w-zwiazku",
+                      "actionPlatform": [
+                        "http://schema.org/DesktopWebPlatform",
+                        "http://schema.org/AndroidPlatform",
+                        "http://schema.org/IOSPlatform"
+                      ]
+                    },
+                  }
+                }),
+              }}
+            />
+
+{/* // Ebook start */}
+<script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "http://schema.org",
+                  "@type": "Book",
+                  publisher: "Anahata Bliss",
+                  url: "https://sekretyrozwojuosobistego.pl/",
+                  name: "Sekrety rozwoju osobistego. Medytacja, joga, energia, seks, tantra.",
+                  author: {
+                    "@type": "Person",
+                    name: "Sergio S Dorje",
+                    sameAs: [
+                      "https://www.anahatatantra.com/pl/",
+                      "https://www.sergiosdorje.com/",
+                    ],
+                  },
+                  bookFormat: "http://schema.org/EBook",
+                  datePublished: "2021-04-01",
+                  image: "https://sekretyrozwojuosobistego.pl//images/sekrety-rozwoju-osobistego-mkp-sm.png",
+                  inLanguage: "Polish",
+                  isbn: "978-83-960230-3-2",
+                  numberOfPages: "224",
+                  offers: {
+                    "@type": "Offer",
+                    availability: "https://schema.org/InStock",
+                    price: "38.90",
+                    priceCurrency: "PLN",
+                  },
+                  "review": [
+                    {
+                      "@type": "Review",
+                      "author": "John Doe",
+                      "datePublished": "2006-05-04",
+                      "name": "A masterpiece of literature",
+                      "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
+                      "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5"
+                   }
+                    },
+                    {
+                      "@type": "Review",
+                      "author": "Bob Smith",
+                      "datePublished": "2006-06-15",
+                      "name": "A good read.",
+                      "reviewBody": "Catcher in the Rye is a fun book. It's a good book to read.",
+                      "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                       }
+                    },
+                  ],
+                  "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "reviewCount": "2",
+                    ratingValue: "5",
+                    bestRating: "5",
+                    worstRating: "5"
+                  },
+                    "potentialAction": {
+                    "@type": "ReadAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://www.sekretyrozwojuosobistego.pl/checkout?product=ebook",
+                      "actionPlatform": [
+                        "http://schema.org/DesktopWebPlatform",
+                        "http://schema.org/AndroidPlatform",
+                        "http://schema.org/IOSPlatform"
+                      ]
+                    },
+                  }
+                }),
+              }}
+            />
+
+          </Head>
       <div className="radyknalnalanding landing">
         <NavbarSinglePage
           customClass="drogadoszczesciaheader"
