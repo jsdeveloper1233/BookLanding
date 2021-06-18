@@ -107,14 +107,14 @@ class Pricing extends Component {
                     EBOOK <br /> "Radykalna Prawda w Związku"
                   </h3>
                   <div className="price">
-                    {buingOptions.ebook.price.toFixed(2)}
+                    {buingOptions.radykalnaEbook.price.toFixed(2)}
                     <span className="dollar">zł</span>
                   </div>
                 </div>
                 <div className="price-footer">
                   <a
                     className="btn btn-primary"
-                    href="/checkout?product=ebook"
+                    href="/checkout?product=radykalnaEbook"
                     onClick={this.showLoader.bind(this)}
                   >
                     Zamawiam
@@ -153,7 +153,7 @@ class Pricing extends Component {
             </div>
 
 
-            <div className="row">
+            {/* <div className="row">
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
                 <img
@@ -217,13 +217,18 @@ class Pricing extends Component {
                     className="btn btn-primary"
                     href="/checkout?product=bundle"
                     onClick={this.showLoader.bind(this)}
+                    disabled
                   >
                     Zamawiam
                   </a>
                 </div>
               </div>
             </div>
-          </div>
+
+            
+          </div> */}
+
+
         </div>
         <canvas id="canvas"></canvas>
       </section>

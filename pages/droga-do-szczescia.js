@@ -10,6 +10,7 @@ import Funfact2 from "../components/DrogaDoSzczescia/Funfact2";
 import Dlaczego from "../components/DrogaDoSzczescia/Dlaczego";
 import SimpleTextSection from "../components/Features/SimpleTextSection";
 import CourseContent from "../components/DrogaDoSzczescia/CourseContent";
+import Head from "next/head";
 
 export const finalPath = "";
 // const singleText = {<>Zrób to dla siebie i zacznij żyć pełnią szczęścia <br /> Pomogę Ci to osiągnąć!.</>};
@@ -28,9 +29,27 @@ const DrogaDoSzczescia = () => {
   }, []);
 
 
+
+
   return (
     <React.Fragment>
-      <div className="drogadoszczescialanding">
+                  <script
+              type="application/ld+json" dangerouslySetInnerHTML=
+              {{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Course",
+                  "name": 'Program "Droga do szczęścia" - Kurs',
+                  "description": '“Droga do szczęścia” to intensywny, 11-dniowy program rozwojowy, dzięki któremu możesz stworzyć dla siebie rzeczywistość, o jakiej marzysz od zawsze. Stań się autorem swojego własnego szczęścia.',
+                  "provider": {
+                    "@type": "Person",
+                    "name": "Sergio S Dorje",
+                  }
+                }),
+              }}
+              
+            />
+      <div className="drogadoszczescialanding landing">
         <NavbarSinglePage customClass="drogadoszczesciaheader" />
         <Banner disable={disable}/>
         <Dlaczego />
