@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sekretyrozwojuosobistego.pl
+
+# Sitemaps
+Sitemap: https://www.sekretyrozwojuosobistego.pl/sitemap.xml
