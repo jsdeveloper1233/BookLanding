@@ -102,7 +102,7 @@ const DrogaDoSzczescia = () => {
                     ],
                   },
                   bookFormat: "http://schema.org/EBook",
-                  datePublished: "2021-04-01",
+                  datePublished: "2021-07-28",
                   image: "https://sekretyrozwojuosobistego.pl/images/sekrety-rozwoju-osobistego-mkp-sm.png",
                   inLanguage: "Polish",
                   isbn: "978-83-960230-2-5",
@@ -113,26 +113,26 @@ const DrogaDoSzczescia = () => {
                     price: "16.90",
                     priceCurrency: "PLN",
                   },
-                  "review": [
-                    {
-                      "@type": "Review",
-                      "author": "John Doe",
-                      "datePublished": "2006-05-04",
-                      "name": "A masterpiece of literature",
-                      "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
-                      "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5"
-                   }
-                    },
-                  ],
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "reviewCount": "1",
-                    ratingValue: "5",
-                    bestRating: "5",
-                    worstRating: "5"
-                  },
+                  // "review": [
+                  //   {
+                  //     "@type": "Review",
+                  //     "author": "John Doe",
+                  //     "datePublished": "2021-07-28",
+                  //     "name": "A masterpiece of literature",
+                  //     "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
+                  //     "reviewRating": {
+                  //   "@type": "Rating",
+                  //   "ratingValue": "5"
+                  //  }
+                  //   },
+                  // ],
+                  // "aggregateRating": {
+                  //   "@type": "AggregateRating",
+                  //   "reviewCount": "1",
+                  //   ratingValue: "5",
+                  //   bestRating: "5",
+                  //   worstRating: "5"
+                  // },
                   "potentialAction": {
                     "@type": "ReadAction",
                     "target": {
@@ -148,84 +148,6 @@ const DrogaDoSzczescia = () => {
                 }),
               }}
             />
-
-{/* // Ebook start */}
-<script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "http://schema.org",
-                  "@type": "Book",
-                  publisher: "Anahata Bliss",
-                  url: "https://sekretyrozwojuosobistego.pl/",
-                  name: "Sekrety rozwoju osobistego. Medytacja, joga, energia, seks, tantra.",
-                  author: {
-                    "@type": "Person",
-                    name: "Sergio S Dorje",
-                    sameAs: [
-                      "https://www.anahatatantra.com/pl/",
-                      "https://www.sergiosdorje.com/",
-                    ],
-                  },
-                  bookFormat: "http://schema.org/EBook",
-                  datePublished: "2021-04-01",
-                  image: "https://sekretyrozwojuosobistego.pl//images/sekrety-rozwoju-osobistego-mkp-sm.png",
-                  inLanguage: "Polish",
-                  isbn: "978-83-960230-3-2",
-                  numberOfPages: "224",
-                  offers: {
-                    "@type": "Offer",
-                    availability: "https://schema.org/InStock",
-                    price: "38.90",
-                    priceCurrency: "PLN",
-                  },
-                  "review": [
-                    {
-                      "@type": "Review",
-                      "author": "John Doe",
-                      "datePublished": "2006-05-04",
-                      "name": "A masterpiece of literature",
-                      "reviewBody": "I really enjoyed this book. It captures the essential challenge people face as they try make sense of their lives and grow to adulthood.",
-                      "reviewRating": {
-                    "@type": "Rating",
-                    "ratingValue": "5"
-                   }
-                    },
-                    {
-                      "@type": "Review",
-                      "author": "Bob Smith",
-                      "datePublished": "2006-06-15",
-                      "name": "A good read.",
-                      "reviewBody": "Catcher in the Rye is a fun book. It's a good book to read.",
-                      "reviewRating": {
-                        "@type": "Rating",
-                        "ratingValue": "5"
-                       }
-                    },
-                  ],
-                  "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "reviewCount": "2",
-                    ratingValue: "5",
-                    bestRating: "5",
-                    worstRating: "5"
-                  },
-                    "potentialAction": {
-                    "@type": "ReadAction",
-                    "target": {
-                      "@type": "EntryPoint",
-                      "urlTemplate": "https://www.sekretyrozwojuosobistego.pl/checkout?product=ebook",
-                      "actionPlatform": [
-                        "http://schema.org/DesktopWebPlatform",
-                        "http://schema.org/AndroidPlatform",
-                        "http://schema.org/IOSPlatform"
-                      ]
-                    },
-                  }
-                }),
-              }}
-            />
-
           </Head>
       <div className="radyknalnalanding landing">
         <NavbarSinglePage
