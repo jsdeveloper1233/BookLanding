@@ -10,7 +10,8 @@
         "start": "NODE_ENV=production node server.js -p $PORT",
         "prod": "BASE_PATH=/out next build && next export",
         "prod2": "next build && next export",
-        "start2": "next start"
+        "start2": "next start",
+        "postbuild": "next-sitemap"
     },
     "keywords": [
         "next.js",
@@ -72,6 +73,7 @@
     },
     "devDependencies": {
         "file-loader": "^6.2.0",
+        "next-sitemap": "^1.6.116",
         "url-loader": "^4.1.1"
     },
     "browserslist": [
