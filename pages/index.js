@@ -14,7 +14,7 @@ import Pricing from "../components/BookLanding/Pricing";
 import Feedback from "../components/BookLanding/Feedback";
 import Blog from "../components/BookLanding/Blog";
 import Platform from "../components/BookLanding/Platform";
-import Subscribe from "../components/BookLanding/Subscribe";
+import Subscribe from "../components/Shared/Subscribe";
 import FaqContent from "../components/Faq/FaqContent";
 import BlogOne from "../components/Blog/BlogOne";
 import AboutContent from "../components/BookLanding/AboutContent";
