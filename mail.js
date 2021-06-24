@@ -266,7 +266,7 @@ class Mails {
     // MAIL DO AUTORA
     //email do autora, dodano opinie
     //*********************************************** */
-    async reviewEmail(name, email, message, clientInfo, file, newsletter, zgoda) {
+    async reviewEmail(name, email, message, clientInfo, file, newsletter, zgoda, product) {
 
 
         var attachments = null;
@@ -299,6 +299,7 @@ class Mails {
         name: ${name} <br />
         info: ${clientInfo} <br />
         email: ${email} <br />
+        produkt: ${product} <br />
         message: ${message} <br />
         newsletter: ${!!newsletter ? "TAK" : "NIE"} <br />
         zgoda: ${!!zgoda ? "TAK" : "NIE"} <br />

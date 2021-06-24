@@ -32,6 +32,17 @@ function useForm(stateSchema, validationSchema = {}, callback) {
         return hasErrorInState;
     }, [state, validationSchema]);
 
+    function handleSelectAllOnChange(event) {
+        setIsDirty(true);
+
+        const value = !state.selectAll.value;
+
+        changeCheckBox("selectAll", value, false);
+        changeCheckBox("privacy", value, false);
+        changeCheckBox("terms", value, false);
+        changeCheckBox("newsletter", value, false);
+    }
+
     function handleOnChange(event) {
         setIsDirty(true);
 
@@ -65,6 +76,11 @@ function useForm(stateSchema, validationSchema = {}, callback) {
 
         const name = event.target.name;
         const value = event.target.checked;
+        changeCheckBox(name, value, true);
+    }
+
+    function changeCheckBox(name, value, check)
+    {
         let error = "";
         if (validationSchema[name].required || (validationSchema[name].vatRequired && state['vat'].value)) {
             if (!value) {
@@ -87,6 +103,18 @@ function useForm(stateSchema, validationSchema = {}, callback) {
             ...prevState,
             [name]: { value, error }
         }));
+
+        if(check){
+            checkAll();
+        }
+
+    }
+
+    function checkAll() {
+        setState(prevState => ({
+            ...prevState,
+            ["selectAll"]: { value: prevState.terms.value && prevState.newsletter.value && prevState.privacy.value }
+        }));
     }
 
     function handleOnSubmit(event) {
@@ -99,7 +127,7 @@ function useForm(stateSchema, validationSchema = {}, callback) {
         }
     }
 
-    return { state, disable, handleOnChange, handleOnSubmit, handleCheckBoxOnChange };
+    return { state, disable, handleOnChange, handleOnSubmit, handleCheckBoxOnChange, handleSelectAllOnChange };
 }
 
 export default useForm;
