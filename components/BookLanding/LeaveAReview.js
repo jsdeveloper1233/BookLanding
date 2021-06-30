@@ -120,6 +120,7 @@ const LeaveAReview = ({ limit, value }) => {
       formData.append('captcha', captcha);
       formData.append('newsletter', newsletter ? 'true' : '');
       formData.append('zgoda', agree ? 'true' : '');
+      formData.append('selectAll', selectAll ? 'true' : '');
 
       const config = {
         headers: {

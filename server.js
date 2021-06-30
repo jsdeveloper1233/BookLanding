@@ -151,7 +151,7 @@ app.prepare().then(() => {
                 await subscribeUser(req.body.email, newsletterOptions.defaultGroup)
             }
 
-            mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda, req.body.product)
+            mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda, req.body.product, req.body.selectAll)
             res.json({error: ''});
         }
         else {

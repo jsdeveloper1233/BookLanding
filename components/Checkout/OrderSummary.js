@@ -58,6 +58,7 @@ class OrderSummary extends Component {
         vatState: this.props.vatState,
         vatZip: this.props.vatZip,
         extra: this.state.extra,
+        selectAll: this.props.selectAll
       })
       .then((d) => {
         window.localStorage.setItem("order", d.data.order);

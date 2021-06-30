@@ -505,6 +505,7 @@ function CheckoutBody({ total, shipping }) {
                             vatCity={state.vatCity.value} 
                             vatState={state.vatState.value} 
                             vatZip={state.vatZip.value} 
+                            selectAll={state.selectAll.value}
                         />
 
                     </div>
