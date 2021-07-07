@@ -145,7 +145,7 @@ class Mails {
     // MAIL DO ADMINA
     // email do Admina, potwierdzenie że transakcja zakończyła się sukcesem
     //*********************************************** */
-    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, extra, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price }, id, orderNumber) {
+    async sendAuthorEmail({ cname, email, phone, address, city, state, zip, newsletter, product, extra, quantity, privacy, terms, comment, statement, vat, vatCompany, vatNip, vatAddress, vatCity, vatState, vatZip, price, selectAll}, id, orderNumber) {
         await axios.post("https://api.sendgrid.com/v3/mail/send", {
             "personalizations": [
                 {
@@ -187,6 +187,7 @@ class Mails {
                     <br/>
                     <div>
                     <h2>Dodatkowe informacje</h2>
+		            Zaznaczył "Select all": ${selectAll}<br/>
                     Polityka prywatnośći zaznaczona: ${privacy}<br/>
                     Regulamin zaakceptowany: ${terms}<br/>
                     Zapisał się do newslettera: ${newsletter}
@@ -266,7 +267,7 @@ class Mails {
     // MAIL DO AUTORA
     //email do autora, dodano opinie
     //*********************************************** */
-    async reviewEmail(name, email, message, clientInfo, file, newsletter, zgoda) {
+    async reviewEmail(name, email, message, clientInfo, file, newsletter, zgoda, product, selectAll) {
 
 
         var attachments = null;
@@ -299,9 +300,11 @@ class Mails {
         name: ${name} <br />
         info: ${clientInfo} <br />
         email: ${email} <br />
+        produkt: ${product} <br />
         message: ${message} <br />
         newsletter: ${!!newsletter ? "TAK" : "NIE"} <br />
         zgoda: ${!!zgoda ? "TAK" : "NIE"} <br />
+        zaznacz wszystko: ${!!selectAll ? "TAK" : "NIE"} <br />
                     `
                     },
                 },

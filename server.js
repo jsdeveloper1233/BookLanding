@@ -151,7 +151,7 @@ app.prepare().then(() => {
                 await subscribeUser(req.body.email, newsletterOptions.defaultGroup)
             }
 
-            mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda)
+            mail.reviewEmail(req.body.name, req.body.email, req.body.message, req.body.client, req.file, req.body.newsletter, req.body.zgoda, req.body.product, req.body.selectAll)
             res.json({error: ''});
         }
         else {
@@ -373,7 +373,8 @@ app.prepare().then(() => {
                 vatState: body.vatState,
                 vatZip: body.vatZip,
                 status: 0,
-                extra: body.extra
+                extra: body.extra,
+                selectAll: body.selectAll
             };
 
             let order = await Order.create({
