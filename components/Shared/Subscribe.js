@@ -4,13 +4,13 @@ const MailerLite = require("mailerlite-api-v2-node").default;
 
 const mailerLite = MailerLite("xxx");
 
-const Subscribe = () => {
+const Subscribe = (props) => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState(null);
 
   // GET THE SUBSCRIBER ID
   const getTheSubscriberId = async (newSubEmail) => {
-    var req = await axios.post("/api/newSubscriber", { "newEmail": newSubEmail })
+    var req = await axios.post("/api/newSubscriber", { "newEmail": newSubEmail, "group": props.group })
     console.log(req.data) // success if a new user subscribes
     if (req.data.message === "success") {
       setStatus("success")

@@ -171,6 +171,7 @@ app.prepare().then(() => {
     // });
     server.post('/api/newSubscriber', async (req, res) => {
         var newSubEmail = req.body.newEmail
+        var group = req.body.group || process.env.GROUP_ID;
         var status = null
         // loops on all subscribers to find the current one
         mailerLite
@@ -182,7 +183,7 @@ app.prepare().then(() => {
                         // Means he's subscribed
                         status = "200_sub"
                         // Loops over the subscribers in the choosed group
-                        mailerLite.getGroupSubscribers(process.env.GROUP_ID).then(async (groupSubList) => {
+                        mailerLite.getGroupSubscribers(group).then(async (groupSubList) => {
                             await groupSubList.some((groupSingleSub) => {
                                 if (groupSingleSub.email === newSubEmail) {
                                     // Means that he's subscribed and in the group
