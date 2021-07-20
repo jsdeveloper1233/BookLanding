@@ -43,7 +43,7 @@ const Feedback = () => {
 
   return (
     <section className="feedback-area ptb-100 bg-gray move" id="references">
-      <div className="container" itemprop="mainEntity" itemscope itemtype="https://schema.org/Book">
+      <div className="container" itemProp="mainEntity" itemScope itemType="https://schema.org/Book">
         <div className="section-title">
           <h2>Opinie i recenzje</h2>
           <div className="bar"></div>
