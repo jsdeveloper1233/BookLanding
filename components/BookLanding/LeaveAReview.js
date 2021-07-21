@@ -207,8 +207,9 @@ const LeaveAReview = ({ limit, value }) => {
                     <select
                       name="product"
                       className="form-control"
+                      value={product}
                       onChange={(e) => setProduct({product: e.target.value, productError: ''})}>
-                        <option key="empty" value="" disabled selected>Produkt którego dotyczy recenzja</option>
+                        <option key="empty" value="" disabled>Produkt którego dotyczy recenzja</option>
                       {products.map(x =>
                         <option key={x} value={x}>{x}</option>
                       )}
