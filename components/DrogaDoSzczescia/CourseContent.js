@@ -36,7 +36,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={2}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 2: Energia męska i żeńska
@@ -53,7 +53,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={3}>
           <AccordionItemHeading>
             <AccordionItemButton>Moduł 3: Intencje</AccordionItemButton>
           </AccordionItemHeading>
@@ -68,7 +68,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={4}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 4: Relacje i związki
@@ -84,7 +84,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={5}>
           <AccordionItemHeading>
             <AccordionItemButton>Moduł 5: Neuropsychologia</AccordionItemButton>
           </AccordionItemHeading>
@@ -103,7 +103,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={6}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 6: Wpływ patriarchatu na nasze życie
@@ -120,7 +120,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={7}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 7: Integracja i dzielenie się
@@ -134,7 +134,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={8}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 8: Hormony, orgazmy i seks z perspektywy nauki i medycyny
@@ -152,7 +152,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={9}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 9: Wewnętrzne dziecko
@@ -170,7 +170,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={10}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 10: Unikanie szkód i grup toksycznych
@@ -187,7 +187,7 @@ const CourseContent = () => {
             </p>
           </AccordionItemPanel>
         </AccordionItem>
-        <AccordionItem>
+        <AccordionItem uuid={11}>
           <AccordionItemHeading>
             <AccordionItemButton>
               Moduł 11: Nauka odcinania się
