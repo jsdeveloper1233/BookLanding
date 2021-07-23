@@ -295,12 +295,12 @@ class OrderSummary extends Component {
                           {this.state.product.originalPrice && (
                             <>
                               <span className="strikeout">
-                                {this.state.product.originalPrice} zł
+                                {this.state.product.originalPrice.toFixed(2)} zł
                               </span>
                               <br />
                             </>
                           )}
-                          <span>{this.state.product.price} zł</span>
+                          <span>{this.state.product.price.toFixed(2)} zł</span>
                         </span>
                       </td>
                     </tr>
@@ -338,12 +338,12 @@ class OrderSummary extends Component {
                             {this.state.extra.product.originalPrice && (
                               <>
                                 <span className="strikeout">
-                                  {this.state.extra.product.originalPrice} zł
+                                  {this.state.extra.product.originalPrice.toFixed(2)} zł
                                 </span>
                                 <br />
                               </>
                             )}
-                            <span>{this.state.extra.product.price} zł</span>
+                            <span>{this.state.extra.product.price.toFixed(2)} zł</span>
                           </span>
                         </td>
                       </tr>
@@ -359,12 +359,12 @@ class OrderSummary extends Component {
                           {this.state.product.originalPrice && (
                             <>
                               <span className="strikeout">
-                                {productOriginalTotal} zł
+                                {productOriginalTotal.toFixed(2)} zł
                               </span>
                               <br />
                             </>
                           )}
-                          {productTotal} zł
+                          {productTotal.toFixed(2)} zł
                         </span>
                       </td>
                     </tr>
@@ -375,7 +375,7 @@ class OrderSummary extends Component {
                       </td>
 
                       <td className="shipping-price">
-                        <span>{shipping} zł</span>
+                        <span>{shipping.toFixed(2)} zł</span>
                       </td>
                     </tr>
                     <tr>
@@ -384,7 +384,7 @@ class OrderSummary extends Component {
                       </td>
 
                       <td className="product-total">
-                        <span className="total-amount">{total} zł</span>
+                        <span className="total-amount">{total.toFixed(2)} zł</span>
                       </td>
                     </tr>
                   </tbody>
