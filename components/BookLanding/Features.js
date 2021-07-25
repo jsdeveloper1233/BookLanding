@@ -4,13 +4,13 @@ import { finalPath } from "../../pages/index";
 class Features extends Component {
   render() {
     return (
-      <section className="features-area book-features ptb-100">
+      <section className="features-area book-features">
         <div className="container">
           <div className="section-title">
             <h2>Bądźmy szczerzy...</h2>
             <div className="bar"></div>
           </div>
-          <div className="row">
+          <div className="row rg-50">
             <div className="col-lg-4 col-md-6">
               <div className="single-features-box">
                 <div className="icon">
@@ -102,7 +102,7 @@ class Features extends Component {
                       Książka ‘’Sekrety Rozwoju Osobistego’’ jest jak dobra
                       przyjaciółka.
                     </h3>
-                    <p>
+                    <p class="pb-100">
                       Prawdziwa przyjaźń nie ma oczekiwań, nie osądza, nie
                       narzuca swojego zdania. Służy swoją mądrością i daje siłę,
                       ale nie wymaga od Ciebie niczego. Tak samo jest z tą
@@ -114,10 +114,10 @@ class Features extends Component {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-12">
-                <div className="features-image">
+              <div className="col-lg-6 col-md-12 div-with-featured-image">
+                <div className="features-image ">
                   <img
-                    src={finalPath + "/images/features-img1.png"}
+                    src={finalPath + "/images/sergio-4-sm.jpg"}
                     alt="image"
                   />
                 </div>
@@ -128,9 +128,6 @@ class Features extends Component {
 
         <div className="shape7">
           <img src={finalPath + "/images/shape7.png"} alt="shape" />
-        </div>
-        <div className="shape3">
-          <img src={finalPath + "/images/shape3.png"} alt="img" />
         </div>
         <div className="bg-gray shape-1"></div>
         <div className="shape6">
