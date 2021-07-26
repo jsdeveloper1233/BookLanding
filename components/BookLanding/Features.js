@@ -67,7 +67,7 @@ class Features extends Component {
                 <div className="features-inner-content">
                   <div className="features-item">
                     <div className="icon">
-                      <i className="icofont-win-trophy"></i>
+                      <i className="icofont-wall"></i>
                     </div>
                     <h3>
                       Czy czujesz w swoim życiu, że czasem wpadasz na mur?
@@ -82,7 +82,7 @@ class Features extends Component {
 
                   <div className="features-item">
                     <div className="icon">
-                      <i className="icofont-responsive"></i>
+                      <i className="icofont-flag"></i>
                     </div>
                     <h3>...Ale to nie jest Twoje przeznaczenie!</h3>
                     <p>
@@ -96,7 +96,7 @@ class Features extends Component {
 
                   <div className="features-item">
                     <div className="icon">
-                      <i className="icofont-verification-check"></i>
+                      <i className="icofont-heart-alt"></i>
                     </div>
                     <h3>
                       Książka ‘’Sekrety Rozwoju Osobistego’’ jest jak dobra

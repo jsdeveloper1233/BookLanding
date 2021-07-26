@@ -837,3 +837,15 @@ td.product-name {
     }
   }
 }
+
+.usa-flag {
+color:#fff;
+  .usa-flag-img {
+    width:60px;
+    padding-right:10px;
+  }
+}
+
+.crake-nav nav .navbar-nav li a.nodot::before {
+  content:none;
+}
