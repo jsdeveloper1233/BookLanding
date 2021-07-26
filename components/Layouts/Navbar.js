@@ -4,10 +4,8 @@ import { connect } from "react-redux";
 import SideDrawer from "./SideDrawer";
 import SearchForm from "./SearchForm";
 import { finalPath } from "../../pages/index";
-import {default as NextLink}  from "next/link";
-import {
-  Link,
-} from "react-scroll";
+import { default as NextLink } from "next/link";
+import { Link } from "react-scroll";
 
 class Navbar extends React.Component {
   _isMounted = false;
@@ -76,8 +74,7 @@ class Navbar extends React.Component {
       ? "navbar-toggler navbar-toggler-right collapsed"
       : "navbar-toggler navbar-toggler-right";
 
-
-const customClass = this.props.customClass;
+    const customClass = this.props.customClass;
 
     return (
       <React.Fragment>
@@ -86,11 +83,11 @@ const customClass = this.props.customClass;
             <div className="container" id="top">
               <nav className="navbar navbar-expand-md navbar-light">
                 <NextLink href="/">
-                <a className="navbar-brand">
-                  {/* <img src={logo} alt="logo" /> */}
-                  Sekrety Rozwoju
-                  <br /> Osobistego
-                </a>
+                  <a className="navbar-brand">
+                    {/* <img src={logo} alt="logo" /> */}
+                    Sekrety Rozwoju
+                    <br /> Osobistego
+                  </a>
                 </NextLink>
                 <button
                   onClick={this.toggleNavbar}
@@ -108,7 +105,7 @@ const customClass = this.props.customClass;
                 <div className={classOne} id="navbarSupportedContent">
                   <ul className="navbar-nav nav ml-auto">
                     <li className="nav-item">
-                    <Link
+                      <Link
                         className="nav-link"
                         activeClass="active"
                         to="header"
@@ -150,7 +147,7 @@ const customClass = this.props.customClass;
                     </li>
 
                     <li className="nav-item">
-                    <Link
+                      <Link
                         className="nav-link"
                         activeClass="active"
                         to="references"
@@ -163,7 +160,7 @@ const customClass = this.props.customClass;
                       </Link>
                     </li>
                     <li className="nav-item">
-                    <Link
+                      <Link
                         className="nav-link"
                         activeClass="active"
                         to="faq"
@@ -175,17 +172,12 @@ const customClass = this.props.customClass;
                         FAQ
                       </Link>
                     </li>
-                      <li className="nav-item">
-                    <NextLink
-                        href="/sklep"
-                      >
-                        Sklep
-                      </NextLink>
+                    <li className="nav-item">
+                      <NextLink href="/sklep">Sklep</NextLink>
                     </li>
                     <li className="nav-item zamowteraz">
-
                       <Link
-                        className="btn btn-primary"
+                        className="btn btn-primary nodot"
                         to="kupteraz"
                         href="#kupteraz"
                         smooth={true}
@@ -194,6 +186,9 @@ const customClass = this.props.customClass;
                       >
                         ZAMÓW TERAZ
                       </Link>
+                    </li>
+                    <li className="nav-item usa-flag">
+                      <a href="https://www.thepowerofspiritualdevelopmentbook.com/" target="_blank" className="nodot"><><img className="usa-flag-img" src='/images/usaflag.svg' alt="shape" />EN</></a>
                     </li>
 
                     {/* <li className="nav-item">

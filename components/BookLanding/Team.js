@@ -49,7 +49,8 @@ class Team extends Component {
             <div className="bar"></div>
             <p>
               Poznaj osoby, które wspierały mnie podczas tworzenia mojego
-              dzieła. Bez nich byłoby bardzo trudno. Z całego serca dziękuję, że
+              dzieła. Bez nich byłoby bardzo trudno.<br />
+              Z całego serca dziękuję, że
               byliście!
             </p>
           </div>
