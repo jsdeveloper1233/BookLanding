@@ -170,7 +170,8 @@ app.prepare().then(() => {
     //     res.send({})
     // });
     server.post('/api/newSubscriber', async (req, res) => {
-        var newSubEmail = req.body.newEmail
+        var newSubEmail = req.body.newEmail;
+        var group = req.body.group || process.env.GROUP_ID;
         var status = null
         // loops on all subscribers to find the current one
         mailerLite
@@ -182,7 +183,7 @@ app.prepare().then(() => {
                         // Means he's subscribed
                         status = "200_sub"
                         // Loops over the subscribers in the choosed group
-                        mailerLite.getGroupSubscribers(process.env.GROUP_ID).then(async (groupSubList) => {
+                        mailerLite.getGroupSubscribers(group).then(async (groupSubList) => {
                             await groupSubList.some((groupSingleSub) => {
                                 if (groupSingleSub.email === newSubEmail) {
                                     // Means that he's subscribed and in the group
@@ -201,7 +202,7 @@ app.prepare().then(() => {
                     }
                 });
                 // A function that takes action based on the status and returns the result
-                var action = await takeAction(newSubEmail, status)
+                var action = await takeAction(newSubEmail, status, group)
                 res.json(action)
             })
             .catch((error) => {
@@ -556,17 +557,17 @@ async function subscribeUser(email, group) {
         "email": email
     })
 }
-async function takeAction(newSubEmail, status) {
+async function takeAction(newSubEmail, status, group) {
 
     switch (status) {
         case '200_sub':
-            await subscribeUser(newSubEmail, newsletterOptions.defaultGroup)
+            await subscribeUser(newSubEmail, group)
             return { "message": "success" }
         case '404_sub':
-            await subscribeUser(newSubEmail, newsletterOptions.defaultGroup)
+            await subscribeUser(newSubEmail, group)
             return { "message": "success" }
         case '200_sub_404_group':
-            await subscribeUser(newSubEmail, newsletterOptions.defaultGroup)
+            await subscribeUser(newSubEmail, group)
             return { "message": "success" }
         case '200_sub_200_group':
             return { "message": "already_subscribed" }

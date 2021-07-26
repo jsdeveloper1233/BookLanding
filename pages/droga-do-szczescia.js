@@ -12,6 +12,7 @@ import SimpleTextSection from "../components/Features/SimpleTextSection";
 import CourseContent from "../components/DrogaDoSzczescia/CourseContent";
 import { useRouter } from 'next/router'
 import Custom404 from "./404";
+import Subscribe from "../components/Shared/Subscribe";
 
 export const finalPath = "";
 // const singleText = {<>Zrób to dla siebie i zacznij żyć pełnią szczęścia <br /> Pomogę Ci to osiągnąć!.</>};
@@ -73,8 +74,7 @@ const DrogaDoSzczescia = () => {
           theClass="aligncenter zrobto"
           isDividedInTwo
         />
-
-
+        <Subscribe group="108027394" />
         <Footer />
       </div>
       </>

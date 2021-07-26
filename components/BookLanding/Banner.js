@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ModalVideo from "react-modal-video";
 import { finalPath } from "../../pages/index";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import {default as NextLink}  from "next/link";
 
 class Banner extends Component {
   state = {
@@ -46,7 +47,7 @@ class Banner extends Component {
                         ZAMÓW TERAZ
                       </Link>
         
-                      <Link href="#">
+                      <NextLink href="/">
                         <a
                           onClick={(e) => {
                             e.preventDefault();
@@ -57,7 +58,7 @@ class Banner extends Component {
                           Obejrzyj zwiastun
                           <i className="icofont-play-alt-3"></i>
                         </a>
-                      </Link>
+                      </NextLink>
 
                       {/* <em className="inlucdebooks">
                         * E-book zawiera wersje MOBI, EPUB i PDF
