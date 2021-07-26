@@ -8,6 +8,16 @@ html {
   }
 }
 
+.pb-100 {
+  padding-bottom: 100px;
+}
+.mw-100p {
+  max-width: 100%;
+}
+.rg-50 {
+  row-gap:50px;
+}
+
 p {
   font-size: 19px;
 }
@@ -795,4 +805,47 @@ td.product-name {
       }
     }
   }
+}
+
+
+@media (max-width: 750px) {
+  .features-area.book-features {
+    .features-item {
+      p.pb-100 {
+        padding-bottom:0;
+      }
+    }
+    .div-with-featured-image {
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+.features-area.book-features {
+  background-image: none;
+
+  .div-with-featured-image {
+    display: flex;
+    align-self: flex-end;
+    img {
+      max-width: unset;
+      @media (max-width: 1663px) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.usa-flag {
+color:#fff;
+  .usa-flag-img {
+    width:60px;
+    padding-right:10px;
+  }
+}
+
+.crake-nav nav .navbar-nav li a.nodot::before {
+  content:none;
 }

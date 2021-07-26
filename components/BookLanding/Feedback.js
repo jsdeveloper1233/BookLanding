@@ -44,12 +44,11 @@ const Feedback = () => {
   return (
     <section className="feedback-area ptb-100 bg-gray move" id="references">
       <div className="container" itemprop="mainEntity" itemscope itemtype="https://schema.org/Book">
-        <div className="section-title">
+        <div className="section-title mw-100p">
           <h2>Opinie i recenzje</h2>
           <div className="bar"></div>
-          <p>
-            Zobacz, co o książce „Sekrety Rozwoju Osobistego” mówią ci, którzy
-            już ją przeczytali.
+          <p className="mw-100p">
+            Zobacz, co o książce „Sekrety Rozwoju Osobistego” mówią ci, którzy już ją przeczytali.
           </p>
           <p>
             Już przeczytana?{" "}
