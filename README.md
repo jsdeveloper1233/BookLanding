@@ -44,4 +44,26 @@ To redirect all users to a single page with the information that there are works
 const turnOnWorkInProgress = false;
 ```
 
+## Sample .env file
 
+```bashd
+SITE_URL=https://www.sekretyrozwojuosobistego.pl
+MAILERLITE_API_KEY=
+GROUP_ID=
+PORT=3006
+P24_MERCHANT_ID=
+P24_POS_ID=
+P24_SALT=
+SENDGRID_AUTH_TOKEN=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+DB_HOST=localhost
+DB_PORT=3306
+NEXT_PUBLIC_CAPTCHA_CLIENT=
+CAPTCHA_SERVER=
+PIXEL_ACCESS_TOKEN=
+PIXEL_ADS_PIXEL_ID=
+P24_USE_SANDBOX=1
+MAINTENANCE_MODE=1
+```
