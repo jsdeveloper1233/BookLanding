@@ -102,7 +102,7 @@ class Features extends Component {
                       Książka ‘’Sekrety Rozwoju Osobistego’’ jest jak dobra
                       przyjaciółka.
                     </h3>
-                    <p class="pb-100">
+                    <p className="pb-100">
                       Prawdziwa przyjaźń nie ma oczekiwań, nie osądza, nie
                       narzuca swojego zdania. Służy swoją mądrością i daje siłę,
                       ale nie wymaga od Ciebie niczego. Tak samo jest z tą

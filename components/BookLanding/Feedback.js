@@ -5,6 +5,15 @@ import { finalPath } from "../../pages/index";
 import Link from "next/link";
 import ExpandText from "./ExpandText";
 
+const imagesToPublish = ["/images/feedbacks/feedback-0.jpg", "/images/feedbacks/feedback-1.jpg", "/images/feedbacks/feedback-2.jpg", "/images/feedbacks/feedback-3.jpg" ];
+const FeedBackScreenshots = ({imagesArr}) => {
+  const imgs = imagesArr.map((image, index) => {
+    return (
+        <img src={finalPath + image} alt={`opinia o książce ${index}` } key={index} />
+    )
+  })
+return imgs;
+}
 
 const options = {
   loop: false,
@@ -130,6 +139,9 @@ const Feedback = () => {
       >
         <path d="M0,70 C30,130 70,50 100,70 L100,100 0,100 Z" fill="#ffffff" />
       </svg>
+      <div className="container feedbacks-screenshots">
+      <FeedBackScreenshots imagesArr={imagesToPublish} />
+      </div>
     </section>
   );
 };

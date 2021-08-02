@@ -58,7 +58,7 @@ class OrderSummary extends Component {
         vatState: this.props.vatState,
         vatZip: this.props.vatZip,
         extra: this.state.extra,
-        selectAll: this.props.selectAll
+        selectAll: this.props.selectAll,
       })
       .then((d) => {
         window.localStorage.setItem("order", d.data.order);
@@ -338,12 +338,17 @@ class OrderSummary extends Component {
                             {this.state.extra.product.originalPrice && (
                               <>
                                 <span className="strikeout">
-                                  {this.state.extra.product.originalPrice.toFixed(2)} zł
+                                  {this.state.extra.product.originalPrice.toFixed(
+                                    2
+                                  )}{" "}
+                                  zł
                                 </span>
                                 <br />
                               </>
                             )}
-                            <span>{this.state.extra.product.price.toFixed(2)} zł</span>
+                            <span>
+                              {this.state.extra.product.price.toFixed(2)} zł
+                            </span>
                           </span>
                         </td>
                       </tr>
@@ -384,7 +389,9 @@ class OrderSummary extends Component {
                       </td>
 
                       <td className="product-total">
-                        <span className="total-amount">{total.toFixed(2)} zł</span>
+                        <span className="total-amount">
+                          {total.toFixed(2)} zł
+                        </span>
                       </td>
                     </tr>
                   </tbody>
@@ -444,6 +451,20 @@ class OrderSummary extends Component {
             {!this.state.load ? (
               <></>
             ) : (
+              <>
+              
+            {(() => {
+                    switch (this.state.product.sku) {
+                      case "papierowa":
+                        return <p className="przedsprzedaz-info-box">Każda książka papierowa zamówiona podczas przedsprzedaży będzie z autografem autora!</p>;
+                        break;
+                      case "bundle":
+                        return <p className="przedsprzedaz-info-box">Każda książka papierowa zamówiona podczas przedsprzedaży będzie z autografem autora!</p>;
+                        break;
+                      default:
+                        return "";
+                    }
+                  })()}
               <div className="order-btn">
                 <button
                   disabled={this.props.disabled}
@@ -452,7 +473,22 @@ class OrderSummary extends Component {
                     this.props.disabled ? "btn-disabled" : ""
                   }`}
                 >
-                  Zamawiam
+                  {/* Tutaj można dać "Zamawiam po przedsprzedaży - zamiast switch" */}
+                  {(() => {
+                    switch (this.state.product.sku) {
+                      case "papierowa":
+                        return "Zamawiam w przedsprzedaży";
+                        break;
+                      case "ebook":
+                        return "Zamawiam w przedsprzedaży";
+                        break;
+                      case "bundle":
+                        return  "Zamawiam w przedsprzedaży";
+                        break;
+                      default:
+                        return "Zamawiam";
+                    }
+                  })()}
                 </button>
 
                 <div className="order-image">
@@ -473,14 +509,14 @@ class OrderSummary extends Component {
                     ></img>
                   </div>
 
-                  {this.state.extra ?
+                  {this.state.extra ? (
                     <div className="ordered-product">
                       <div>
                         <a>
                           {this.state.extra.product.name +
-                              ", " +
-                              this.state.extra.quantity +
-                              " szt."}
+                            ", " +
+                            this.state.extra.quantity +
+                            " szt."}
                         </a>
                       </div>
                       <span className="arrow-right-order">
@@ -492,9 +528,10 @@ class OrderSummary extends Component {
                         alt={this.state.extra.product.name}
                       ></img>
                     </div>
-                  : null }
+                  ) : null}
                 </div>
               </div>
+              </>
             )}
             {/* <Payment 
                         amount={totalAmount * 100}
