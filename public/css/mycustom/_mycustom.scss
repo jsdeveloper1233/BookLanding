@@ -849,3 +849,63 @@ color:#fff;
 .crake-nav nav .navbar-nav li a.nodot::before {
   content:none;
 }
+
+.przedsprzedaz-info-box {
+  margin-top: 30px;
+  background: #e2faff;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+
+@mixin blinkingdot($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }  
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@include blinkingdot(blink) {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.freeshipping {
+  margin-left: 21px;
+  .blinking-dot {
+    @include animation('1s blink ease infinite');
+  }
+}
+
+.feedbacks-screenshots {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  img {
+    align-self:center;
+  }
+}

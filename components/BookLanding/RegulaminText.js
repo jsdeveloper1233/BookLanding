@@ -22,10 +22,6 @@ class RegulaminText extends Component {
         <section className="about-area ptb-100">
           <div className="container">
             <div className="privacy-policy row h-100 justify-content-center align-items-center row-reverse">
-              <div className="section-title all-width">
-                <h2>Polityka Prywatności</h2>
-                <div className="bar"></div>
-              </div>
               <div className="col-lg-8 col-md-12">
                 <div className="about-content">
                   <p>
@@ -866,7 +862,19 @@ class RegulaminText extends Component {
                       (UOKiK).
                     </li>
                   </ol>
-                  <h2>XVII - Postanowienia końcowe</h2>
+                  <h2>XVII - Regulamin przedsprzedaży</h2>
+                  <ol>
+                    <li>Książki i ebooki zaznaczone jako produkty w przedsprzedaży mogą być kupione w każdej chwili od rozpoczęcia przedsprzedaży.</li>
+                    <li>Dostawa książki w formacie papierowym będzie uruchomiona tuż po rozpoczęciu oficjalnej sprzedaży.</li>
+                    <li>Ebooki zakupione będą wysłane elektronicznie kupującemu w ciągu tygodnia od uruchomienia ww. sprzedaży.</li>
+                    <li>Sprzedaż, o której mowa w poprzednim punkcie, rozpocznie się w momencie zakończenia przedsprzedaży.</li>
+                    <li>Przewidywany czas zakończenia przedsprzedaży to listopad 2021 r.</li>
+                    <li>Zamawiając produkt w przedsprzedaży Kupujący zgadza się czekać na zamówiony produkt aż do końca trwania przedsprzedaży.</li>
+                    <li>Przedsprzedaż może być krótsza (tj. zakończyć się przed listopadem 2021) lub dłuższa. Jednak nie dłuższa niż do końca 2021 roku.</li>
+                    <li>W przypadku, gdy zamówione produkty nie będą jeszcze dostarczone Kupującemu do końa 2021r., Sprzedawca zobowiązuje zwrócić już zapłaconą kwotę Kupującemu.</li>
+                    <li>Dostawa produktów materialnych (np. książki) odbędzie się kurierem (1-2 dni roboczych) od momentu odbioru towaru przez kuriera.</li>
+                    </ol>
+                  <h2>XVIII - Postanowienia końcowe</h2>
                   <ol>
                     <li>
                       W sprawach nieuregulowanych niniejszym Regulaminem Sklepu

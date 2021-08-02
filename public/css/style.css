@@ -8267,4 +8267,57 @@ td.product-name .cart-items {
 .crake-nav nav .navbar-nav li a.nodot::before {
   content: none;
 }
+
+.przedsprzedaz-info-box {
+  margin-top: 30px;
+  background: #e2faff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px;
+}
+
+@-webkit-keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.freeshipping {
+  margin-left: 21px;
+}
+
+.freeshipping .blinking-dot {
+  -webkit-animation: 1s blink ease infinite;
+  animation: 1s blink ease infinite;
+}
+
+.feedbacks-screenshots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.feedbacks-screenshots img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
 /*# sourceMappingURL=style.css.map */

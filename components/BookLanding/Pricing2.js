@@ -5,6 +5,22 @@ import Loader from "../Shared/Loader";
 import CornerRibbon from "react-corner-ribbon";
 import { finalPath } from "../../pages/index";
 
+const FreeShipping = () => {
+  return(
+    <p className="freeshipping">
+      darmowa wysyłka
+      <svg
+        height="10"
+        width="20"
+        className="blinking-dot"
+        style={{ height: "50px" }}
+      >
+        <circle cx="10" cy="15" r="4" fill="lime"></circle>Sorry, your browser
+        does not support inline SVG.
+      </svg>
+    </p>
+  );
+};
 class Pricing2 extends Component {
   constructor(props) {
     super(props);
@@ -40,31 +56,26 @@ class Pricing2 extends Component {
             <div className="col-lg-4 col-md-6">
               <div className="pricing-table-box">
                 <div className="pricingTable-header">
-       
-                <h3 className="title">
+                  <h3 className="title">
                     Tylko <span>książka</span>
                   </h3>
                   <div className="price-value">
                     &nbsp;&nbsp;{buingOptions.paperCopy.price.toFixed(2)}{" "}
                     <sup>zł</sup>
-                 
                   </div>
-                 
-
                 </div>
 
-                <img src={finalPath + '/images/ksiazka.png'} alt="książka" />
+                <img src={finalPath + "/images/ksiazka.png"} alt="książka" />
 
-
-                  <p className="textbig">KSIĄŻKA</p>
-                 <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
+                <p className="textbig">KSIĄŻKA</p>
+                <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
+                <small>*w przedsprzedaży</small>
                 <ul className="pricing-content">
                   <li>
-                    <i className="icofont-tick-mark"></i>Wersja papierowa, 260 stron
+                    <i className="icofont-tick-mark"></i>Wersja papierowa, 260
+                    stron
                   </li>
                 </ul>
-
-                
 
                 {/* <p>
                       + {buingOptions.paperCopy.shipping.toFixed(2)} zł wysyłka
@@ -90,17 +101,18 @@ class Pricing2 extends Component {
                   <div className="price-value">
                     &nbsp;&nbsp;{buingOptions.ebook.price.toFixed(2)}{" "}
                     <sup>zł</sup>
-                    <p>darmowa wysyłka</p>
+                    <FreeShipping />
                   </div>
                 </div>
 
-
-
-                <img src={finalPath + '/images/ksiazka.png'} alt="książka" />
+                <img
+                  src={finalPath + "/images/sekrety-rozwoju-osobistego.png"}
+                  alt="książka"
+                />
 
                 <p className="textbig">EBOOK</p>
-                 <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
-
+                <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
+                <small>*w przedsprzedaży</small>
                 <ul className="pricing-content">
                   <li>
                     <i className="icofont-tick-mark"></i>Książka "Sekrety
@@ -116,9 +128,6 @@ class Pricing2 extends Component {
                   </li>
                 </ul>
 
-
-
-                
                 <a
                   className="btn btn-primary"
                   href="/checkout?product=ebook"
@@ -135,31 +144,38 @@ class Pricing2 extends Component {
                   position="top-right"
                   fontColor="#fff"
                   backgroundColor="#7A3760"
-                  style={{letterSpacing: '1px', fontWeight:700, border: '2px dashed #FF8A73'}}
+                  style={{
+                    letterSpacing: "1px",
+                    fontWeight: 700,
+                    border: "2px dashed #FF8A73",
+                  }}
                 >
-                   Oszczędź {buingOptions.bundle.discount.toFixed(2)} zł
+                  Oszczędź {buingOptions.bundle.discount.toFixed(2)} zł
                 </CornerRibbon>
                 <div className="pricingTable-header">
                   <h3 className="title">
                     <span>Pakiet</span>
                   </h3>
                   <div className="price-value">
-                    &nbsp; {buingOptions.bundle.price.toFixed(2)}{" "}
-                    <sup>zł</sup>
-                    <p>darmowa wysyłka</p>
+                    &nbsp; {buingOptions.bundle.price.toFixed(2)} <sup>zł</sup>
+                    <FreeShipping />
                   </div>
                 </div>
 
-                
-                <img src={finalPath + '/images/ksiazka.png'} alt="książka" />
-                
-                <p className="textbig">KSIĄŻKA<br />
-                +&nbsp;EBOOK<br />
-                +&nbsp;NARZĘDZIE</p>
-                 <p className="textmedium">"Radykalna prawda w związku"</p>
+                <img src={finalPath + "/images/bundle-h.png"} alt="książka" />
 
-<p className="textmedium"><strong>Najbardziej
-atrakcyjny pakiet</strong></p>
+                <p className="textbig">
+                  KSIĄŻKA
+                  <br />
+                  +&nbsp;EBOOK
+                  <br />
+                  +&nbsp;NARZĘDZIE
+                </p>
+                <p className="textmedium">"Radykalna prawda w związku"</p>
+                <small>*w przedsprzedaży</small>
+                <p className="textmedium">
+                  <strong>Najbardziej atrakcyjny pakiet</strong>
+                </p>
 
                 <ul className="pricing-content">
                   <li>
@@ -179,7 +195,9 @@ atrakcyjny pakiet</strong></p>
                     rozwoju osobistego" <br />w formacie PDF
                   </li>
                   <li>
-                    <i className="icofont-tick-mark"></i>Narzędzie "Radykalna Prawda w Związku"<br />w formacie PDF
+                    <i className="icofont-tick-mark"></i>Narzędzie "Radykalna
+                    Prawda w Związku"
+                    <br />w formacie PDF
                   </li>
                 </ul>
                 <a
