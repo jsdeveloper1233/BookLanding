@@ -29,6 +29,11 @@ const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB
 const pixel_access_token = process.env.PIXEL_ACCESS_TOKEN;
 const pixel_id = process.env.PIXEL_ADS_PIXEL_ID;
 
+let useSandbox = true;
+if(process.env.P24_USE_SANDBOX == 0) {
+    useSandbox = false;
+}
+
 let current_timestamp = Math.floor(new Date() / 1000);
 
 var multer = require('multer')
@@ -461,7 +466,7 @@ async function rejectOrder(order) {
 }
 
 async function getPaymentLink(order, state) {
-    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, true) // todo dev zamiast true
+    const P24 = new Przelewy24(process.env.P24_MERCHANT_ID, process.env.P24_POS_ID, process.env.P24_SALT, useSandbox)
     const PORT = process.env.PORT || 3006;
     // Set obligatory data
     P24.setSessionId(order.id + '')
