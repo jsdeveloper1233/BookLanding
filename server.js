@@ -70,7 +70,10 @@ const Order = sequelize.define('Order', {
     state: {
         type: DataTypes.INTEGER,
         allowNull: false
-    }
+    },
+    send: {
+        type: DataTypes.STRING(256)
+    },
 }, {
 
 })
@@ -135,6 +138,33 @@ app.prepare().then(() => {
     server.use(bodyParser.urlencoded({ extended: true }));
 
 
+    server.get('/api/admin/orders', async (req, res) => {
+        var page = parseInt(req.query.page || "1");
+        var pageSize = parseInt(req.query.pageSize || "10");
+        var offset = (page - 1) * pageSize;
+        var total = await Order.count();
+        var orders = await Order.findAll({
+            order: [['createdAt', 'DESC']],
+            offset: offset,
+            limit: pageSize
+        });
+
+        res.json({ data: orders, page: page, total: total, pageSize: pageSize });
+    })
+
+    server.post('/api/admin/orders/state', async (req, res) => {
+        let id = req.body.id;
+        let state = req.body.state;
+        await Order.update({ state: state }, { where: { id: id } });
+        res.json({error: ''});
+    })
+
+    server.post('/api/admin/orders/send', async (req, res) => {
+        let id = req.body.id;
+        let send = req.body.send;
+        await Order.update({ send: send }, { where: { id: id } });
+        res.json({error: ''});
+    })
 
     server.post('/api/review', upload.single('sendphoto'), async (req, res) => {
 
