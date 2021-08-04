@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 const OwlCarousel = dynamic(import("react-owl-carousel3"));
 import { finalPath } from "../../pages/index";
-import Link from "next/link";
+
+import {default as NextLink}  from "next/link";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+
 import ExpandText from "./ExpandText";
 
 const imagesToPublish = ["/images/feedbacks/feedback-0.jpg", "/images/feedbacks/feedback-1.jpg", "/images/feedbacks/feedback-2.jpg", "/images/feedbacks/feedback-3.jpg" ];
@@ -61,9 +64,9 @@ const Feedback = () => {
           </p>
           <p>
             Już przeczytana?{" "}
-            <Link href="/opinie">
+            <NextLink href="/opinie">
               <a>Zostaw opinię.</a>
-            </Link>
+            </NextLink>
           </p>
         </div>
 
@@ -142,6 +145,21 @@ const Feedback = () => {
       <div className="container feedbacks-screenshots">
       <FeedBackScreenshots imagesArr={imagesToPublish} />
       </div>
+      <div className="text-center">
+
+
+      <Link
+                        className="btn btn-primary mt-5"
+                        href="#kupteraz"
+                        to="kupteraz"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        // onSetActive={this.handleSetActive}
+                      >
+                        Biorę to!
+            </Link>
+                  </div>
     </section>
   );
 };

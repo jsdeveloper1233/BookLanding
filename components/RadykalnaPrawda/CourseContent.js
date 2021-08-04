@@ -71,7 +71,7 @@ const CourseContent = () => {
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
-            <p className="accordion-content">
+            <div className="accordion-content">
               <ul>
                 <li>To połączenie na poziomie serca</li>
                 <li>To połączenie na poziomie ciała/seksualności</li>
@@ -81,7 +81,7 @@ const CourseContent = () => {
               Twój partner macie połączenie na poziomie świadomości... Ponieważ
               zdrowy związek to więcej niż wspólny ulubiony serial i zgodność w
               wyborze restauracji!
-            </p>
+            </div>
           </AccordionItemPanel>
         </AccordionItem>
       </Accordion>

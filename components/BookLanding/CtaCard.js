@@ -6,8 +6,8 @@ class CtaCard extends React.Component {
     return (
       <div className="cta-area">
         <div className="container">
-          <div className="row h-100 justify-content-center align-items-center">
-            <div className="col-lg-7 col-md-7">
+          <div className="row h-100 justify-content-center align-items-center flex-column">
+            <div className="col-lg-7 col-md-7  text-center">
               <p>Zrób pierwszy krok - to Twój czas!</p>
               <p>
                 Zamów ‘’Sekrety Rozwoju Osobistego’’ i wyrusz w swoją własną
@@ -15,7 +15,7 @@ class CtaCard extends React.Component {
               </p>
             </div>
 
-            <div className="col-lg-5 col-md-5 text-right">
+            <div className="col-lg-5 col-md-50 text-center mt-5">
             <Link
                         className="btn btn-primary"
                         href="#kupteraz"
@@ -26,7 +26,7 @@ class CtaCard extends React.Component {
                         onSetActive={this.handleSetActive}
                       >
                         Zamów teraz!
-                      </Link>
+            </Link>
             </div>
           </div>
         </div>

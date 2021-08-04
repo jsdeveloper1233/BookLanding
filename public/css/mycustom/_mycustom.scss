@@ -909,3 +909,63 @@ color:#fff;
     align-self:center;
   }
 }
+
+@media (max-width: 992px) {
+  .poznaj-sekretne {
+    .about-content {
+      text-align:center;
+    }
+    .image-container {
+      display: flex;
+      justify-content: center;
+  }
+  }
+}
+
+.icon-scroll {
+  width: 40px;
+  height: 70px;
+  margin-top: -35px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+  position: absolute;
+    bottom: 15px;
+    left: 50%;
+
+  &.icon-scroll:before {
+    position: absolute;
+    left: 50%;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    margin-left: -4px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+  }
+}
+
+
+
+@keyframes scroll {
+  0% {
+    opacity: 1
+  }100%{
+    opacity: 0;
+  transform: translateY(46px);
+} 
+}
+
+@media (min-width: 1910px) {
+  .remove-on-big-screens {
+    display:none;
+  }
+}
+@media (max-width:1909px) {
+  .icon-scroll {
+    display:none;
+  }
+}

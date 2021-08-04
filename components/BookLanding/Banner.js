@@ -79,10 +79,10 @@ class Banner extends Component {
             </div>
           </div>
 
-          <div className="creative-shape">
+           <div className="creative-shape remove-on-big-screens">
             <img src={finalPath + "/images/bg3.png"} alt="bg" />
           </div>
-          <div className="bg-gray shape-1"></div>
+       {/*   <div className="bg-gray shape-1"></div>
           <div className="shape1">
             <img src={finalPath + "/images/shape1.png"} alt="img" />
           </div>
@@ -100,7 +100,8 @@ class Banner extends Component {
           </div>
           <div className="shape9">
             <img src={finalPath + "/images/shape9.svg"} alt="shape" />
-          </div>
+          </div> */}
+          <div className='icon-scroll' />
         </div>
 
         <ModalVideo
