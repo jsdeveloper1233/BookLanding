@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
-import buingOptions from "../../buyingOptions";
+import buyingOptions from "../../buyingOptions";
 
 const options = {
     autoplay: false,
@@ -66,7 +66,7 @@ class LatestProducts extends Component {
                                             <Link href="/checkout?product=radykalnaEbook">
                                                 <a>Radykalna prawda w związku<br />
                                                 <small>Narzędzie w formacie e-book</small>
-                                                <span className="btn btn-primary dodaj-do-koszyka">Dodaj do koszyka<i class="icofont-shopping-cart"></i></span>
+                                                <span className="btn btn-primary dodaj-do-koszyka">Dodaj do koszyka<i className="icofont-shopping-cart"></i></span>
                                                 </a>
                                             </Link>
 
@@ -74,7 +74,7 @@ class LatestProducts extends Component {
 
                                         <div className="row h-100 justify-content-center align-items-center">
                                             <div className="col-lg-5 col-6">
-                                                <h5>{buingOptions.radykalnaEbook.price.toFixed(2)}<small>zł</small></h5>
+                                                <h5>{buyingOptions.radykalnaEbook.price.toFixed(2)}<small>zł</small></h5>
                                             </div>
 
                                             <div className="col-lg-7 col-6">
@@ -93,7 +93,7 @@ class LatestProducts extends Component {
 
 
 
-                            <div className="col-lg-12">
+                            {/* <div className="col-lg-12">
                                 <div className="single-product">
                                     <div className="product-img">
                                         <img src='/images/radykalna-sekrety-ebooks.jpg' alt="item" />
@@ -108,14 +108,14 @@ class LatestProducts extends Component {
                                             <Link href="/checkout?product=ebookRadykalnaSekrety">
                                                 <a>Radykalna prawda w związku + Sekrety rozwoju osobistego<br />
                                                 <small>Narzędzie i książka w formacie e-book</small>  
-                                                                                              <span className="btn btn-primary dodaj-do-koszyka">Dodaj do koszyka<i class="icofont-shopping-cart"></i></span>
+                                                                                              <span className="btn btn-primary dodaj-do-koszyka">Dodaj do koszyka<i className="icofont-shopping-cart"></i></span>
                                                 </a>
                                             </Link>
                                         </h3>
 
                                         <div className="row h-100 justify-content-center align-items-center">
                                             <div className="col-lg-5 col-6">
-                                                <h5>{buingOptions.ebookRadykalnaSekrety.price.toFixed(2)}<small>zł</small></h5>
+                                                <h5>{buyingOptions.ebookRadykalnaSekrety.price.toFixed(2)}<small>zł</small></h5>
                                             </div>
 
                                             <div className="col-lg-7 col-6">
@@ -130,7 +130,7 @@ class LatestProducts extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
 
 
@@ -149,14 +149,14 @@ class LatestProducts extends Component {
                                             <Link href="/checkout?product=bundle">
                                                 <a>Radykalna prawda w związku + Sekrety rozwoju osobistego książka/ebook<br />
                                                 <small>Narzędzie i książka w formacie e-book + książka papierowa</small>
-                                                <span className="btn btn-primary dodaj-do-koszyka">Dodaj do koszyka<i class="icofont-shopping-cart"></i></span>
+                                                <span className="btn btn-primary dodaj-do-koszyka">Dodaj do koszyka<i className="icofont-shopping-cart"></i></span>
                                                 </a>
                                             </Link>
                                         </h3>
 
                                         <div className="row h-100 justify-content-center align-items-center">
                                             <div className="col-lg-5 col-6">
-                                                <h5>{buingOptions.bundle.price.toFixed(2)}<small>zł</small></h5>
+                                                <h5>{buyingOptions.bundle.price.toFixed(2)}<small>zł</small></h5>
                                             </div>
 
                                             <div className="col-lg-7 col-6">

@@ -103,9 +103,10 @@ class Pricing extends Component {
                   alt="screenshot"
                 />
                 <div className="price-header">
-                  <h3 className="title">
+                  <h3 className="title" style={{marginBottom: "20px"}}>
                     EBOOK <br /> "Radykalna Prawda w Związku"
                   </h3>
+                  <small style={{textAlign:"right", marginRight: "20px", marginBottom: "20px"}}><a target="_blank" rel="noopener noreferrer" href="/radykalna-prawda-w-zwiazku" >Czytaj więcej o Radykalnej prawdzie w związku</a></small>
                   <div className="price">
                     {buingOptions.radykalnaEbook.price.toFixed(2)}
                     <span className="dollar">zł</span>

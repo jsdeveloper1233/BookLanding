@@ -126,7 +126,7 @@ class Features extends Component {
           </div>
         </div>
 
-        <div className="shape7">
+        {/* <div className="shape7">
           <img src={finalPath + "/images/shape7.png"} alt="shape" />
         </div>
         <div className="bg-gray shape-1"></div>
@@ -144,7 +144,7 @@ class Features extends Component {
         </div>
         <div className="shape11 rotateme">
           <img src={finalPath + "/images/shape11.svg"} alt="shape" />
-        </div>
+        </div> */}
       </section>
     );
   }

@@ -195,9 +195,8 @@ class Pricing2 extends Component {
                     rozwoju osobistego" <br />w formacie PDF
                   </li>
                   <li>
-                    <i className="icofont-tick-mark"></i>Narzędzie "Radykalna
-                    Prawda w Związku"
-                    <br />w formacie PDF
+                    <i className="icofont-tick-mark"></i><span>Narzędzie <a target="_blank" rel="noopener noreferrer" href="/radykalna-prawda-w-zwiazku"  style={{display: "inline"}}>"Radykalna
+                    Prawda w Związku"</a><br />w formacie PDF</span>
                   </li>
                 </ul>
                 <a
