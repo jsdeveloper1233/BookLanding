@@ -18,7 +18,7 @@ module.exports = {
         : null,
     ].filter(Boolean);
   },
-  imges:{
+  images:{
     domains:['https://sekretyrozwojuosobistego.pl/']
   }
 };
