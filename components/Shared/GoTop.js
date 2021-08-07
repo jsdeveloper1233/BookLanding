@@ -1,3 +1,4 @@
+import React from 'react'
 class GoTop extends React.Component {
     _isMounted = false;
     constructor(props) {

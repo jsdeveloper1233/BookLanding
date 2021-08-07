@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { finalPath } from "../../pages/index";
-
+import Image from 'next/image'
 class Features extends Component {
   render() {
     return (
@@ -116,10 +116,13 @@ class Features extends Component {
 
               <div className="col-lg-6 col-md-12 div-with-featured-image">
                 <div className="features-image ">
-                  <img
-                    src={finalPath + "/images/sergio-4-sm.jpg"}
-                    alt="image"
-                  />
+                  <div className="features-image-sergio-4-sm">
+                      <Image
+                        layout="fill"
+                        src={finalPath + "/images/sergio-4-sm.jpg"}
+                        alt="image"
+                      />
+                    </div>
                 </div>
               </div>
             </div>
