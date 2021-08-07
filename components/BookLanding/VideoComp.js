@@ -4,7 +4,8 @@ import ModalVideo from "react-modal-video";
 const isServer = typeof window === "undefined";
 const WOW = !isServer ? require("wowjs") : null;
 import Image from "next/image";
-import YoutubeEmbed from "../Features/YoutubeEmbed";
+import dynamic from "next/dynamic";
+const YoutubeEmbed = dynamic(()=>import('../Features/YoutubeEmbed'))
 
 
 class VideoComp extends React.Component {

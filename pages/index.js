@@ -27,7 +27,6 @@ import CtaCard from "../components/BookLanding/CtaCard";
 import Pricing2 from "../components/BookLanding/Pricing2";
 const VideoComp = dynamic(()=>import('../components/BookLanding/VideoComp'))
 import Head from "next/head";
-
 export const finalPath = "";
 class BookLanding extends React.Component {
   constructor(props) {
