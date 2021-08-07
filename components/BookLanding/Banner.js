@@ -4,7 +4,7 @@ import ModalVideo from "react-modal-video";
 import { finalPath } from "../../pages/index";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import {default as NextLink}  from "next/link";
-
+import Head from 'next/head';
 class Banner extends Component {
   state = {
     isOpen: false,
@@ -16,6 +16,13 @@ class Banner extends Component {
   render() {
     return (
       <React.Fragment>
+      <Head> 
+        <link
+          rel="preload"
+          href={finalPath + "/images/sekrety-rozwoju-osobistego-mkp-sm.png"}
+          as="image"
+        />
+      </Head>
         <div
           className="main-banner book-home"
           style={{
