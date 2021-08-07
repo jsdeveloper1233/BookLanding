@@ -2000,10 +2000,10 @@
     bottom: -60px;
   }
   .main-banner .book-image .banner_image {
-    bottom: -136px !important;
+    bottom: -120px !important;
     right: 0 !important;
     width:92vw;
-    height:75vw;
+    height:75vh;
   }
   .main-banner .shape4 {
     left: 20%;
