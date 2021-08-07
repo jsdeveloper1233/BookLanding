@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Image from 'next/image'
 import ModalVideo from "react-modal-video";
 import { finalPath } from "../../pages/index";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
@@ -68,10 +69,16 @@ class Banner extends Component {
 
                   <div className="col-lg-6 col-md-12">
                     <div className="book-image">
-                      <img
-                        src={finalPath + "/images/sekrety-rozwoju-osobistego-mkp-sm.png"}
-                        alt="image"
-                      />
+                      <div className="banner_image">
+                        <Image
+                          layout='responsive'
+                          width={1}
+                          height={1.015}
+                          objectFit='contain'
+                          src={finalPath + "/images/sekrety-rozwoju-osobistego-mkp-sm.png"}
+                          alt="image"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -80,7 +87,13 @@ class Banner extends Component {
           </div>
 
            <div className="creative-shape remove-on-big-screens">
-            <img src={finalPath + "/images/bg3.png"} alt="bg" />
+            <div className="creative-shape-bg">
+                <Image
+                  layout="fill"
+                  src={finalPath + "/images/bg3.png"}
+                  alt="bg"
+                />
+              </div>
           </div>
        {/*   <div className="bg-gray shape-1"></div>
           <div className="shape1">

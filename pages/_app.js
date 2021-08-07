@@ -1,3 +1,4 @@
+import React from "react";
 import "../public/css/bootstrap.min.css";
 import "../public/css/icofont.min.css";
 import "../public/css/animate.css";

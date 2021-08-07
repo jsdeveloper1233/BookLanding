@@ -184,10 +184,12 @@
   .main-banner.book-home .book-image {
     margin-top: 40px;
   }
-  .main-banner.book-home .book-image img {
+  .main-banner.book-home .book-image .banner_image {
     position: relative;
     bottom: 0;
     right: 0;
+    width:92vw;
+    height:75vh;
   }
   .main-banner.book-home .shape9, .main-banner.book-home .shape2 {
     display: none;
@@ -228,6 +230,9 @@
   }
   .creative-shape {
     bottom: -5px;
+  }
+  .creative-shape-bg {
+    height: 37.5px;
   }
   .features-area .shape10, .features-area .shape11, .features-area .shape6, .features-area .shape3 {
     display: none;
@@ -1190,6 +1195,18 @@
   .modal-video-close-btn {
     right: 0;
   }
+  .discover-img-ksiazka-2 {
+    width: 100%;
+    height: 43vh;
+  }
+  .discover-img-sergiosdorje {
+    width: 100%;
+    height: 78vh;
+  }
+  .image-container-ksiazka-ig-sm{
+    width: 100%;
+    height:50vh;
+  }
 }
 
 /* Min width (768px) to Max width (991px) */
@@ -1271,10 +1288,12 @@
   .main-banner.book-home .book-image {
     text-align: center;
   }
-  .main-banner.book-home .book-image img {
+  .main-banner.book-home .book-image .banner_image {
     position: relative;
     bottom: 0;
     right: 0;
+    width:92vw;
+    height:75vh;
   }
   .main-banner .paymant-processing-image {
     text-align: center;
@@ -1807,10 +1826,11 @@
   .main-banner.marketing-home .marketing-image img:last-child {
     display: block;
   }
-  .main-banner.book-home .book-image img {
+  .main-banner.book-home .book-image .banner_image {
     bottom: -134px;
     right: 45px;
-    width: 350px;
+    width:92vw;
+    height:75vh;
   }
   .main-banner .shape4, .main-banner .shape1 {
     display: none;
@@ -1979,9 +1999,11 @@
     right: -145px;
     bottom: -60px;
   }
-  .main-banner .book-image img {
+  .main-banner .book-image .banner_image {
     bottom: -136px !important;
     right: 0 !important;
+    width:92vw;
+    height:75vw;
   }
   .main-banner .shape4 {
     left: 20%;

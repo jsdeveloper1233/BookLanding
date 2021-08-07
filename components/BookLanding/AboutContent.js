@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-
+import Image from 'next/image'
 class AboutContent extends Component {
   render() {
     return (
@@ -45,7 +45,13 @@ class AboutContent extends Component {
             </div>
 
             <div className="col-lg-4 col-md-12 image-container">
-              <img src="/images/ksiazka-ig-sm.jpg" alt="image" />
+            <div className="image-container-ksiazka-ig-sm">
+                <Image
+                  layout="fill"
+                  src="/images/ksiazka-ig-sm.jpg"
+                  alt="image"
+                />
+              </div>
             </div>
           </div>
         </div>
