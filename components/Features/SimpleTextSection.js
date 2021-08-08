@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from 'next/image'
 const SimpleTextSection = (props) => {
   const {
     pText,
@@ -39,7 +39,9 @@ const SimpleTextSection = (props) => {
 
           {!thereIsNoSideImage && (
             <div className={`${dividedInTwoInner} divimage`}>
-              <img src={image}></img>
+              <div className='custom-divi-image'>
+                <Image layout='fill' src={image}></Image>
+              </div>
             </div>
           )}
         </div>

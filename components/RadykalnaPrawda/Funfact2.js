@@ -5,7 +5,7 @@ import {
 } from "react-scroll";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
-
+import Image from 'next/image'
 class Funfact2 extends React.Component {
   state = {
     didViewCountUp: false,
@@ -27,7 +27,9 @@ class Funfact2 extends React.Component {
               <div className="row justify-content-center align-items-center">
                 <div className="col-lg-6 col-md-12">
                   <div className="fun-facts-image brochure">
-                    <img src="/images/radykalna-brochure.jpg" alt="image" />
+                    <div className="radykalna-brochure-image">
+                      <Image layout='fill' src="/images/radykalna-brochure.jpg" alt="image" />
+                    </div>
                   </div>
                 </div>
 

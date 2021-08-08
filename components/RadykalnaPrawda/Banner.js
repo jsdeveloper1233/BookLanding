@@ -64,7 +64,9 @@ class Banner extends React.Component {
                   </div>
 
                   <div className="col-lg-6 col-md-12 right-side">
-                  <img className="header-photo" src="/images/radykalna-s.png"></img>
+                  <div className="radykalna-s-image">
+                    <Image layout='fill' className="header-photo" src="/images/radykalna-s.png"/>
+                  </div>
                        {/*                  <div className="marketing-image">
                                             <img 
                                                 src='/images/marketing-shape/marketing-img1.png'

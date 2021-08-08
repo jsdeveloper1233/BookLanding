@@ -17,8 +17,5 @@ module.exports = {
         ? { source: "/((?!maintenance).*)", destination: "/maintenance.html", permanent: false }
         : null,
     ].filter(Boolean);
-  },
-  images:{
-    domains: ["www.sekretyrozwojuosobistego.pl"]
   }
 };
