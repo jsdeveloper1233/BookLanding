@@ -3,6 +3,7 @@ import buingOptions from "../../buyingOptions";
 import Loader from "../Shared/Loader";
 import { finalPath } from "../../pages/index";
 import Link from "next/link";
+import Image from 'next/image';
 class Pricing extends Component {
   constructor(props) {
     super(props);
@@ -36,13 +37,16 @@ class Pricing extends Component {
           <div className="row">
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <img
-                  src={
-                    finalPath +
-                    "/images/sekrety-rozwoju-osobistego-papier-gr.jpg"
-                  }
-                  alt="screenshot"
-                />
+                <div className="sekrety-rozwoju-osobistego-papier-gr-image">
+                  <Image
+                    layout='fill'
+                    src={
+                      finalPath +
+                      "/images/sekrety-rozwoju-osobistego-papier-gr.jpg"
+                    }
+                    alt="screenshot"
+                  />
+                </div>
                 <div className="price-header">
                   <h3 className="title">
                     KSIĄŻKA <br /> "Sekrety Rozwoju Osobistego"
@@ -66,13 +70,16 @@ class Pricing extends Component {
 
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <img
-                  src={
-                    finalPath +
-                    "/images/sekrety-rozwoju-osobistego-ebook-gr.jpg"
-                  }
-                  alt="screenshot"
-                />
+                <div className="sekrety-rozwoju-osobistego-ebook-gr-image">
+                  <Image
+                    layout='fill'
+                    src={
+                      finalPath +
+                      "/images/sekrety-rozwoju-osobistego-ebook-gr.jpg"
+                    }
+                    alt="screenshot"
+                  />
+                </div>
                 <div className="price-header">
                   <h3 className="title">
                     EBOOK <br /> "Sekrety Rozwoju Osobistego"
@@ -98,10 +105,13 @@ class Pricing extends Component {
 <div className="row">
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <img
+              <div className="radykalna-prawda-w-zwiazku-image">
+                <Image
+                  layout='fill'
                   src={finalPath + "/images/radykalna-prawda-w-zwiazku.jpg"}
                   alt="screenshot"
                 />
+              </div>
                 <div className="price-header">
                   <h3 className="title" style={{marginBottom: "20px"}}>
                     EBOOK <br /> "Radykalna Prawda w Związku"
@@ -126,10 +136,13 @@ class Pricing extends Component {
 
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <img
-                  src={finalPath + "/images/ksiazka-bundle.jpg"}
-                  alt="screenshot"
-                />
+                <div className="ksiazka-bundle-image">
+                  <Image
+                    layout='fill'
+                    src={finalPath + "/images/ksiazka-bundle.jpg"}
+                    alt="screenshot"
+                  />
+                </div>
                 <div className="price-header">
                   <h3 className="title">
                     PAKIET <br /> KSIĄŻKA PAPIEROWA + EBOOK + RADYKALNA PRAWDA W
