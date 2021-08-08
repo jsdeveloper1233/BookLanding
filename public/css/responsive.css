@@ -2000,7 +2000,7 @@
     bottom: -60px;
   }
   .main-banner .book-image .banner_image {
-    bottom: -120px !important;
+    bottom: -20vh !important;
     right: 0 !important;
     width:92vw;
     height:75vh;
