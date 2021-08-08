@@ -1231,11 +1231,70 @@
   }
   .discover-img-sergiosdorje {
     width: 100%;
-    height: 78vh;
+    height: 70vh;
   }
   .image-container-ksiazka-ig-sm {
     width: 100%;
     height: 50vh;
+  }
+  .bundle-h-image {
+    width: 100%;
+  }
+  .feedback-0-image-page1 {
+    width: 100%;
+    height: 25vh;
+  }
+  .feedback-1-image-page1 {
+    width: 100%;
+    height: 35vh;
+  }
+  .feedback-2-image-page1 {
+    width: 100%;
+    height: 15vh;
+  }
+  .feedback-3-image-page1 {
+    width: 100%;
+    height: 65vh;
+  }
+  .sekrety-rozwoju-osobistego-papier-gr-image {
+    width: 100%;
+    height:28vh;
+  }
+  .sekrety-rozwoju-osobistego-ebook-gr-image {
+    width: 100%;
+    height:28vh;
+  }
+  .radykalna-prawda-w-zwiazku-image {
+    width: 100%;
+    height:28vh;
+  }
+  .ksiazka-bundle-image {
+    width: 100%;
+    height:28vh;
+  }
+  .radykalna-s-image {
+    width: 100%;
+    height: 45vh;
+  }
+  .couple-s-image {
+    width: 100%;
+    height: 35vh;
+  }
+  .radykalna-brochure-image {
+    width: 100%;
+    height: 40vh;
+  }
+  .custom-divi-image {
+    width: 100%;
+    height: 28vh;
+  }
+  .radykalna-s-image-custom {
+    width: 100%;
+    height: 40vh;
+  }
+  .single-team-member-box-team-image {
+    width: 100%;
+    height: 38vh;
   }
 }
 
@@ -1831,6 +1890,44 @@
   .modal-video-close-btn {
     right: 0;
   }
+  .bundle-h-image {
+    width: 100%;
+  }
+  .discover-img-sergiosdorje {
+    width: 100%;
+  }
+  .sekrety-rozwoju-osobistego-ebook-gr-image{
+    width:20rem;
+    height:11.5rem;
+  }
+  .sekrety-rozwoju-osobistego-papier-gr-image{
+    width:20rem;
+    height:12rem;
+  }
+  .ksiazka-bundle-image{
+    width:20rem;
+    height:13rem;
+  }
+  .radykalna-prawda-w-zwiazku-image{
+    width:20rem;
+    height:13rem;
+  }
+  .radykalna-s-image{
+    width:100%;
+  }
+  .couple-s-image{
+    width:100%;
+    height:25rem;
+  }
+  .radykalna-brochure-image{
+    width:100%;
+  }
+  .custom-divi-image{
+    width:100%;
+  }
+  .radykalna-s-image-custom{
+    width:100%;
+  }
 }
 
 /* Min width (992px) to Max width (1199px) */
@@ -1871,8 +1968,8 @@
   .main-banner.book-home .book-image .banner_image {
     bottom: -134px;
     right: 45px;
-    width: 92vw;
-    height: 75vh;
+    width: 29vw;
+    height: 45vh;
   }
   .main-banner .shape4,
   .main-banner .shape1 {
@@ -1989,6 +2086,61 @@
   .four-columns-wide .single-project .project-content h3 {
     font-size: 16px;
   }
+  .features-image-sergio-4-sm{
+    width:34rem;
+    height:32rem;
+  }
+  .discover-img-sergiosdorje{
+    width:28rem;
+    height: 44rem;
+  }
+  .image-container-ksiazka-ig-sm{
+    width: 18rem;
+    height:18rem
+  }
+  .single-team-member-box-team-image{
+    width:10rem;
+    height:10rem;
+  }
+  .bundle-h-image{
+    width:15rem;
+    height:8rem;
+  }
+  .sekrety-rozwoju-osobistego-ebook-gr-image{
+    width:22rem;
+    height:14rem;
+  }
+  .sekrety-rozwoju-osobistego-papier-gr-image{
+    width:22rem;
+    height:14rem;
+  }
+  .ksiazka-bundle-image{
+    width:22rem;
+    height:14rem;
+  }
+  .radykalna-prawda-w-zwiazku-image{
+    width:22rem;
+    height:14rem;
+  }
+  .radykalna-s-image{
+    width:28rem;
+    height:28rem;
+  }
+  .couple-s-image{
+    width:100%;
+  }
+  .radykalna-brochure-image{
+    width:100%;
+    height:43vh;
+  }
+  .custom-divi-image{
+    width:25rem;
+    height:18rem;
+  }
+  .radykalna-s-image-custom{
+    width: 100%;
+  }
+  
 }
 
 /* Min width (1200px) to Max width (1350px) */
@@ -2018,6 +2170,46 @@
   .app-download .download-image img:last-child {
     left: 200px;
     top: 0;
+  }
+  .features-image-sergio-4-sm {
+    width: 35rem;
+    height:37rem;
+  }
+  .image-container-ksiazka-ig-sm{
+    width:23rem;
+    height:23rem;
+  }
+  .discover-img-sergiosdorje{
+    width:34rem;
+    height:53rem;
+  }
+  .sekrety-rozwoju-osobistego-papier-gr-image{
+    width:28rem;
+    height:18rem;
+  }
+  .sekrety-rozwoju-osobistego-ebook-gr-image{
+    width:28rem;
+    height:18rem;
+  }
+  .radykalna-prawda-w-zwiazku-image{
+    width:28rem;
+    height:18rem;
+  }
+  .ksiazka-bundle-image{
+    width:28rem;
+    height:18rem;
+  }
+  .radykalna-s-image{
+    width:34rem;
+    height:33.8rem;
+  }
+  .custom-divi-image{
+    width:32rem;
+    height:19rem;
+  }
+  .radykalna-s-image-custom{
+    width:100%;
+    height:20rem;
   }
 }
 
@@ -2060,6 +2252,9 @@
   .app-download .download-image img:last-child {
     left: 280px;
     top: 0;
+  }
+  .radykalna-s-image-custom{
+    width:100%;
   }
 }
 
