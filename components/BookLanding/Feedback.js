@@ -81,7 +81,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client1.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill' src={finalPath + "/images/client1.jpg"} alt="client" />
+                    </div>
                     <h3>Alit John</h3>
                     <span>Web Developer</span>
                   </div>
@@ -94,7 +96,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client2.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill'src={finalPath + "/images/client2.jpg"} alt="client" />
+                    </div>
                     <h3>Alit John</h3>
                     <span>SEO Expert</span>
                   </div>
@@ -107,7 +111,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client3.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill' src={finalPath + "/images/client3.jpg"} alt="client" />
+                    </div>
                     <h3>Steven John</h3>
                     <span>Web Developer</span>
                   </div>
@@ -120,7 +126,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client4.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill' src={finalPath + "/images/client4.jpg"} alt="client" />
+                    </div>
                     <h3>David Warner</h3>
                     <span>Web Developer</span>
                   </div>
