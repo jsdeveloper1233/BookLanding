@@ -6952,147 +6952,127 @@ Back To Top CSS
 
 @import './mycustom/mycustom';
 .banner_image {
-    position: absolute;
+    width: min-content;
+    height: auto;
+    min-width: 76%;
+    max-width: 100%;
+    position:absolute;
     bottom: -215px;
     right: 45px;
-    width: 493px;
-    height: 678px;
-    max-width: 100%;
-    top: auto;
-    left: auto;
-    min-width: inherit;
-    max-height: inherit;
   }
   .banner_image img {
-    /* all: unset !important; */
-    /* position: absolute !important;
-    bottom: -215px !important;
-    right: 45px !important;
-    width: 493px !important;
-    height: 678px !important;
-    max-width: 100% !important;
-    top: auto !important;
-    left: auto !important;
-    min-width: inherit !important;
-    max-height: inherit !important; */
+    position: inherit !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit: contain !important;
   }
-  .banner_image div {
-    all: unset !important;
-  }
-  .banner_image div div {
-    all: unset !important;
-  }
+  
   .creative-shape-bg {
     width: 100%;
     height: 150px;
   }
-  .creative-shape-bg div {
-    all: unset !important;
-  }
-  .creative-shape-bg div div {
-    all: unset !important;
-  }
   .image-container-ksiazka-ig-sm {
-    width: 25rem;
-    height: 25rem;
+    width: min-content;
+    height: auto;
+    min-width: 95%;
+    max-width: 100%;
   }
   .image-container-ksiazka-ig-sm img {
     position: inherit !important;
-  }
-  .image-container-ksiazka-ig-sm div {
-    all: unset !important;
-  }
-  .image-container-ksiazka-ig-sm div div {
-    all: unset !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit: contain !important;
   }
   .discover-img-ksiazka-2 {
-    width: 23rem;
-    height: 21rem;
+    width: min-content;
+    height: auto;
+    min-width: 95%;
+    max-width: 100%;
   }
-  .discover-img-ksiazka-2 div {
-    all: unset !important;
-  }
-  .discover-img-ksiazka-2 div div {
-    all: unset !important;
-  }
+  
   .discover-img-ksiazka-2 img {
     position: inherit !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit: contain !important;
   }
   .features-image-sergio-4-sm img {
     position: inherit !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit: contain !important;
   }
   .features-image-sergio-4-sm {
-    width: 40.32rem;
-    height: 38.26rem;
-  }
-  .features-image-sergio-4-sm div {
-    all: unset !important;
-  }
-  .features-image-sergio-4-sm div div {
-    all: unset !important;
+    height: auto;
+    min-width: 50%;
+    max-width: 100%;
+    position: relative;
+    bottom: -8.5rem;
   }
   .discover-img-sergiosdorje {
-    width: 37.5rem;
-    height: 56.25rem;
+    width: min-content;
+    height: auto;
+    min-width: 92%;
+    max-width: 100%;
   }
   .discover-img-sergiosdorje img {
     position: inherit !important;
-  }
-  .discover-img-sergiosdorje div {
-    all: unset !important;
-  }
-  .discover-img-sergiosdorje div div {
-    all: unset !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit: contain !important;
   }
   .single-team-member-box-team-image img{
-      position: inherit !important;
+    position: inherit !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit: contain !important;
   }
   .single-team-member-box-team-image{
-      width:15rem;
-      height:15rem;
+    width: min-content;
+    height: auto;
+    min-width: 92%;
+    max-width: 100%;
   }
-  .single-team-member-box-team-image div{
-    all: unset !important;
+ 
+  .features-image-sergio-4-sm,.discover-img-sergiosdorje,.single-team-member-box-team-image,.feedback-0-image-page1,.discover-img-ksiazka-2,.feedback-1-image-page1,.feedback-2-image-page1 ,.creative-shape-bg,.feedback-3-image-page1,.banner_image,.image-container-ksiazka-ig-sm{
+      div{
+          all: unset !important;
+          div{
+            all: unset !important;
+          }
+      }
   }
-  .feedback-0-image-page1 div{
-    all: unset !important;
-  }
-  .feedback-0-image-page1 img{
-    position:inherit !important;
+  .feedback-0-image-page1 , .feedback-1-image-page1 ,  .feedback-2-image-page1, .feedback-3-image-page1{
+      img{
+          position:inherit !important;
+          width:auto !important;
+          height:auto !important;
+          object-fit: contain !important;
+      }
   }
   .feedback-0-image-page1{
-      width:63rem;
-      height:25rem;
-  }
-  .feedback-1-image-page1 div{
-    all: unset !important;
-  }
-  .feedback-1-image-page1 img{
-    position:inherit !important;
+    width: min-content;
+    height: auto;
+    min-width: 75%;
+    max-width: 100%;
   }
   .feedback-1-image-page1{
-      width:31.28rem;
-      height:24.6rem;
-  }
-  .feedback-2-image-page1 div{
-    all: unset !important;
-  }
-  .feedback-2-image-page1 img{
-    position:inherit !important;
+    width: min-content;
+    height: auto;
+    min-width: 40%;
+    max-width: 100%;
   }
   .feedback-2-image-page1{
-      width:31.28rem;
-      height:10rem;
-  }
-  .feedback-3-image-page1 div{
-    all: unset !important;
-  }
-  .feedback-3-image-page1 img{
-    position:inherit !important;
+    width: min-content;
+    height: auto;
+    min-width: 35%;
+    max-width: 100%;
   }
   .feedback-3-image-page1{
-      width:31.28rem;
-      height:46.6rem;
+    width: min-content;
+    height: auto;
+    min-width: 35%;
+    max-width: 100%;
   }
   .ksiazka-image div{
     all: unset !important;
@@ -7121,11 +7101,16 @@ Back To Top CSS
   }
   .bundle-h-image img{
     position:inherit !important;
+    width:auto !important;
+    height:auto !important;
+    object-fit: contain !important;
   }
   .bundle-h-image{
       display:inline-block;
-      width:23.6rem;
-      height:13.85rem;
+      width: min-content;
+    height: auto;
+    min-width: 70%;
+    max-width: 100%;
   }
   .ksiazka-bundle-image div{
     all: unset !important;
