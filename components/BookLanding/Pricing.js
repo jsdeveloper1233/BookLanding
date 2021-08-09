@@ -37,7 +37,7 @@ class Pricing extends Component {
           <div className="row">
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <div className="sekrety-rozwoju-osobistego-papier-gr-image">
+                <div className="pricing-custom-image">
                   <Image
                     layout='fill'
                     src={
@@ -70,7 +70,7 @@ class Pricing extends Component {
 
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <div className="sekrety-rozwoju-osobistego-ebook-gr-image">
+                <div className="pricing-custom-image">
                   <Image
                     layout='fill'
                     src={
@@ -105,7 +105,7 @@ class Pricing extends Component {
 <div className="row">
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-              <div className="radykalna-prawda-w-zwiazku-image">
+              <div className="pricing-custom-image">
                 <Image
                   layout='fill'
                   src={finalPath + "/images/radykalna-prawda-w-zwiazku.jpg"}
@@ -136,7 +136,7 @@ class Pricing extends Component {
 
             <div className="col-lg-5 col-md-6">
               <div className="pricing-table">
-                <div className="ksiazka-bundle-image">
+                <div className="pricing-custom-image">
                   <Image
                     layout='fill'
                     src={finalPath + "/images/ksiazka-bundle.jpg"}

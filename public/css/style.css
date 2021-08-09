@@ -1117,7 +1117,6 @@ Main Banner CSS
 =================================================*/
 .main-banner {
   height: 840px;
-  background: var(--templateColor);
   position: relative;
   z-index: 1;
 }
