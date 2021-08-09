@@ -197,8 +197,7 @@
     position: relative;
     bottom: 0;
     right: 0;
-    width: 92vw;
-    height: 75vh;
+    min-width: 100%;
   }
   .main-banner.book-home .shape9,
   .main-banner.book-home .shape2 {
@@ -1226,35 +1225,34 @@
     right: 0;
   }
   .discover-img-ksiazka-2 {
-    width: 100%;
-    height: 43vh;
+    min-width: 100%;
   }
   .discover-img-sergiosdorje {
-    width: 100%;
-    height: 70vh;
+    min-width: 100%;
   }
   .image-container-ksiazka-ig-sm {
-    width: 100%;
-    height: 50vh;
+   min-width: 100%;
   }
   .bundle-h-image {
-    width: 100%;
+    /* width: 100%; */
   }
   .feedback-0-image-page1 {
-    width: 100%;
-    height: 25vh;
+    /* width: 100%;
+    height: 25vh; */
+    min-width: 100%;
   }
   .feedback-1-image-page1 {
-    width: 100%;
-    height: 35vh;
+    /* width: 100%;
+    height: 35vh; */
+    min-width: 100%;
   }
   .feedback-2-image-page1 {
-    width: 100%;
-    height: 15vh;
+    /* width: 100%;
+    height: 15vh; */
+    min-width:100%;
   }
   .feedback-3-image-page1 {
-    width: 100%;
-    height: 65vh;
+    min-width: 100%;
   }
   .sekrety-rozwoju-osobistego-papier-gr-image {
     width: 100%;
@@ -1293,8 +1291,8 @@
     height: 40vh;
   }
   .single-team-member-box-team-image {
-    width: 100%;
-    height: 38vh;
+    display: inline-block;
+    min-width: 100%;
   }
 }
 
@@ -1381,8 +1379,8 @@
     position: relative;
     bottom: 0;
     right: 0;
-    width: 92vw;
-    height: 75vh;
+    min-width: 70%;
+    display: inline-block;
   }
   .main-banner .paymant-processing-image {
     text-align: center;
@@ -1891,10 +1889,10 @@
     right: 0;
   }
   .bundle-h-image {
-    width: 100%;
+    /* width: 100%; */
   }
   .discover-img-sergiosdorje {
-    width: 100%;
+    min-width: 100%;
   }
   .sekrety-rozwoju-osobistego-ebook-gr-image{
     width:20rem;
@@ -1927,6 +1925,13 @@
   }
   .radykalna-s-image-custom{
     width:100%;
+  }
+  .discover-img-ksiazka-2{
+    display:inline-block;
+    min-width: 57%;
+  }
+  .features-image-sergio-4-sm{
+    bottom:0;
   }
 }
 
@@ -1968,8 +1973,6 @@
   .main-banner.book-home .book-image .banner_image {
     bottom: -134px;
     right: 45px;
-    width: 29vw;
-    height: 45vh;
   }
   .main-banner .shape4,
   .main-banner .shape1 {
@@ -2087,24 +2090,24 @@
     font-size: 16px;
   }
   .features-image-sergio-4-sm{
-    width:34rem;
-    height:32rem;
+    min-width: 100%;
+    bottom: -16.6rem;
   }
   .discover-img-sergiosdorje{
-    width:28rem;
-    height: 44rem;
+    /* width:28rem;
+    height: 44rem; */
+    min-width: 100%;
   }
   .image-container-ksiazka-ig-sm{
-    width: 18rem;
-    height:18rem
+    min-width: 100%;
   }
   .single-team-member-box-team-image{
-    width:10rem;
-    height:10rem;
+    min-width: 100%;
+    display: inline-block;
   }
   .bundle-h-image{
-    width:15rem;
-    height:8rem;
+    /* width:15rem;
+    height:8rem; */
   }
   .sekrety-rozwoju-osobistego-ebook-gr-image{
     width:22rem;
@@ -2172,16 +2175,16 @@
     top: 0;
   }
   .features-image-sergio-4-sm {
-    width: 35rem;
-    height:37rem;
+    min-width: 100%;
+    bottom:-11rem;
   }
   .image-container-ksiazka-ig-sm{
-    width:23rem;
-    height:23rem;
+    min-width: 100%;
   }
   .discover-img-sergiosdorje{
-    width:34rem;
-    height:53rem;
+    /* width:34rem;
+    height:53rem; */
+    min-width: 100%;
   }
   .sekrety-rozwoju-osobistego-papier-gr-image{
     width:28rem;

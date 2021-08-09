@@ -114,7 +114,7 @@ class Features extends Component {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-12 div-with-featured-image">
+              <div className="col-lg-6 col-md-12">
                 <div className="features-image ">
                   <div className="features-image-sergio-4-sm">
                       <Image
