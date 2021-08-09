@@ -6951,6 +6951,31 @@ Back To Top CSS
 }
 
 @import './mycustom/mycustom';
+.client-info-image,.feedback-0-image-page1 , .feedback-1-image-page1 ,  .feedback-2-image-page1, .feedback-3-image-page1,.banner_image ,.single-team-member-box-team-image,.image-container-ksiazka-ig-sm , .discover-img-ksiazka-2,.features-image-sergio-4-sm,.discover-img-sergiosdorje {
+    img{
+        position: inherit !important;
+        width:auto !important;
+        height:auto !important;
+        object-fit: contain !important;
+    }
+}
+.client-info-image,.features-image-sergio-4-sm,.discover-img-sergiosdorje,.single-team-member-box-team-image,.feedback-0-image-page1,.discover-img-ksiazka-2,.feedback-1-image-page1,.feedback-2-image-page1 ,.creative-shape-bg,.feedback-3-image-page1,.banner_image,.image-container-ksiazka-ig-sm{
+    div{
+        all: unset !important;
+        div{
+          all: unset !important;
+        }
+    }
+}
+.client-info-image{
+    position: absolute;
+    left: -30px;
+    width: 60px !important;
+    height: 60px;
+    top: 30px;
+    border-radius: 50%;
+    border: 3px solid var(--whiteColor);
+}
 .banner_image {
     width: min-content;
     height: auto;
@@ -6960,13 +6985,6 @@ Back To Top CSS
     bottom: -215px;
     right: 45px;
   }
-  .banner_image img {
-    position: inherit !important;
-    width:auto !important;
-    height:auto !important;
-    object-fit: contain !important;
-  }
-  
   .creative-shape-bg {
     width: 100%;
     height: 150px;
@@ -6977,30 +6995,12 @@ Back To Top CSS
     min-width: 95%;
     max-width: 100%;
   }
-  .image-container-ksiazka-ig-sm img {
-    position: inherit !important;
-    width:auto !important;
-    height:auto !important;
-    object-fit: contain !important;
-  }
+  
   .discover-img-ksiazka-2 {
     width: min-content;
     height: auto;
     min-width: 95%;
     max-width: 100%;
-  }
-  
-  .discover-img-ksiazka-2 img {
-    position: inherit !important;
-    width:auto !important;
-    height:auto !important;
-    object-fit: contain !important;
-  }
-  .features-image-sergio-4-sm img {
-    position: inherit !important;
-    width:auto !important;
-    height:auto !important;
-    object-fit: contain !important;
   }
   .features-image-sergio-4-sm {
     height: auto;
@@ -7015,18 +7015,7 @@ Back To Top CSS
     min-width: 92%;
     max-width: 100%;
   }
-  .discover-img-sergiosdorje img {
-    position: inherit !important;
-    width:auto !important;
-    height:auto !important;
-    object-fit: contain !important;
-  }
-  .single-team-member-box-team-image img{
-    position: inherit !important;
-    width:auto !important;
-    height:auto !important;
-    object-fit: contain !important;
-  }
+  
   .single-team-member-box-team-image{
     width: min-content;
     height: auto;
@@ -7034,22 +7023,7 @@ Back To Top CSS
     max-width: 100%;
   }
  
-  .features-image-sergio-4-sm,.discover-img-sergiosdorje,.single-team-member-box-team-image,.feedback-0-image-page1,.discover-img-ksiazka-2,.feedback-1-image-page1,.feedback-2-image-page1 ,.creative-shape-bg,.feedback-3-image-page1,.banner_image,.image-container-ksiazka-ig-sm{
-      div{
-          all: unset !important;
-          div{
-            all: unset !important;
-          }
-      }
-  }
-  .feedback-0-image-page1 , .feedback-1-image-page1 ,  .feedback-2-image-page1, .feedback-3-image-page1{
-      img{
-          position:inherit !important;
-          width:auto !important;
-          height:auto !important;
-          object-fit: contain !important;
-      }
-  }
+  
   .feedback-0-image-page1{
     width: min-content;
     height: auto;
