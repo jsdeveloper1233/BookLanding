@@ -34,7 +34,9 @@ class Admin extends React.Component {
                             orderNumber: d.orderNumber,
                             body: JSON.parse(d.body),
                             state: d.state,
-                            send: d.send
+                            send: d.send,
+                            createdAt: d.createdAt,
+                            updatedAt: d.updatedAt
                         }
                     })
                 });
@@ -70,29 +72,30 @@ class Admin extends React.Component {
     }
 
     getActions(id, state, send) {
+
+        let sendText = !!send ? "Edytuj numer przesyłki" : "Nadaj nr przesyłki";
+
         if (state === 1) {
             return <div>
-                <p>
-                    <button onClick={() => this.changeOrderState(id, 2)}>Anuluj</button>
-                </p>
-                <p>
-                    <button onClick={() => this.setSend(id, send)}>Nadaj nr przesyłki</button>
-                </p>
-                <p>
-                    <button onClick={() => this.changeOrderState(id, 3)}>Wysłano</button>
-                </p>
+                <a href="#" onClick={() => this.changeOrderState(id, 2)}>Anuluj</a>&nbsp;|&nbsp; 
+                <a href="#" onClick={() => this.setSend(id, send)}>{sendText}</a>&nbsp;|&nbsp;
+                <a href="#" onClick={() => this.changeOrderState(id, 3)}>Wysłano</a>
             </div>
         } else if (state === 3) {
             return <div>
-                <p>
-                    <button onClick={() => this.setSend(id, send)}>Nadaj nr przesyłki</button>
-                </p>
-                <p>
-                    <button onClick={() => this.changeOrderState(id, 4)}>Zwrócono</button>
-                </p>
-
+                <a href="#" onClick={() => this.setSend(id, send)}>{sendText}</a>&nbsp;|&nbsp;
+                    <a href="#" onClick={() => this.changeOrderState(id, 1)}>Anuluj (zapłacono)</a>&nbsp;|&nbsp; 
+                    <a href="#" onClick={() => this.changeOrderState(id, 4)}>Zwrócono</a>
             </div>
         }
+    }
+
+    getExtraListItem(s) {
+        if(!!s.body.extra) {
+            return <li>{s.body.extra.product.sku} (ilość: {s.body.extra.quantity})</li>
+        }
+
+        return null;
     }
 
     render() {
@@ -104,34 +107,79 @@ class Admin extends React.Component {
             pageCount = pageCount + 1;
         }
 
-
         return (
 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-lg-12 col-md-12">
+                    <div>
                         <div className="cart-table table-responsive">
-                            <table className="table table-bordered">
+                            <table className="table table-bordered" style={{width:'auto'}}>
                                 <thead>
                                     <tr>
                                         <th>Id</th>
                                         <th>Numer zamówienia</th>
-                                        <th style={{ maxWidth: "200px" }}>Zamówienie</th>
+                                        <th>Dodano</th>
+                                        <th>Zaktualizowano</th>
+                                        <th>Cena</th>
+                                        <th>Koszt dostawy</th>
+                                        <th>Całkowity koszt</th>
+                                        <th>Dostawa elektryczna</th>
+                                        <th>Produkty</th>
+                                        <th>Klient</th>
+                                        <th>Email</th>
+                                        <th>Telefon</th>
+                                        <th>Adres</th>
+                                        <th>Miasto</th>
+                                        <th>Kod pocztowy</th>
+                                        <th>Województwo</th>
+                                        <th>Faktura VAT</th>
+                                        <th>VAT Firma</th>
+                                        <th>VAT Adres</th>
+                                        <th>VAT Miasto</th>
+                                        <th>VAT Kod pocztowy</th>
+                                        <th>VAT Województwo</th>
+                                        <th>Newsletter</th>
+                                        <th>Prywatność</th>
+                                        <th>Regulamin</th>
+                                        <th>Zaznacz wszystko</th>
                                         <th>Stan</th>
                                         <th>Numer przesyłki</th>
-                                        <th>Akcje</th>
+                                        <th style={{minWidth: '400px'}}>Akcje</th>
                                     </tr>
                                 </thead>
                                 <tbody style={{ textAlign: "left" }}>
                                     {this.state.data.map((s) => <tr key={s.id}>
                                         <td>{s.id}</td>
                                         <td>{s.orderNumber}</td>
+                                        <td>{new Date(s.createdAt).toLocaleString()}</td>
+                                        <td>{new Date(s.updatedAt).toLocaleString()}</td>
+                                        <td>{s.body.price/100}</td>
+                                        <td>{s.body.shipping}</td>
+                                        <td>{s.body.price/100 + s.body.shipping}</td>
+                                        <td>{s.body.electronicShipping ? "TAK" : "NIE"}</td>
                                         <td>
-                                            {
-                                                Object.keys(s.body).map((key) =>
-                                                    <div key={key}><b>{key}</b>: {JSON.stringify(s.body[key])}</div>)
-                                            }
+                                            <ul>
+                                                <li>{s.body.product.sku} (ilość: {s.body.quantity})</li>
+                                                {this.getExtraListItem(s)}
+                                            </ul>
                                         </td>
+                                        <td>{s.body.cname}</td>
+                                        <td>{s.body.email}</td>
+                                        <td>{s.body.phone}</td>
+                                        <td>{s.body.address}</td>
+                                        <td>{s.body.city}</td>
+                                        <td>{s.body.zip}</td>
+                                        <td>{s.body.state}</td>
+                                        <td>{s.body.vat  ? "TAK" : "NIE"}</td>
+                                        <td>{s.body.vatCompany}</td>
+                                        <td>{s.body.vatAddress}</td>
+                                        <td>{s.body.vatCity}</td>
+                                        <td>{s.body.vatZip}</td>
+                                        <td>{s.body.vatState}</td>
+                                        <td>{s.body.newsletter ? "TAK" : "NIE"}</td>
+                                        <td>{s.body.privacy ? "TAK" : "NIE"}</td>
+                                        <td>{s.body.terms ? "TAK" : "NIE"}</td>
+                                        <td>{s.body.selectAll ? "TAK" : "NIE"}</td>
                                         <td>{this.getState(s.state)}</td>
                                         <td>{s.send}</td>
                                         <td>{this.getActions(s.id, s.state, s.send)}</td>
