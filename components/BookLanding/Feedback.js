@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-const OwlCarousel = dynamic(import("react-owl-carousel3"));
+const OwlCarousel = dynamic(()=>import("react-owl-carousel3"));
 import { finalPath } from "../../pages/index";
 
 import {default as NextLink}  from "next/link";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 import ExpandText from "./ExpandText";
-
+import Image from 'next/image'
 const imagesToPublish = ["/images/feedbacks/feedback-0.jpg", "/images/feedbacks/feedback-1.jpg", "/images/feedbacks/feedback-2.jpg", "/images/feedbacks/feedback-3.jpg" ];
 const FeedBackScreenshots = ({imagesArr}) => {
   const imgs = imagesArr.map((image, index) => {
     return (
-        <img src={finalPath + image} alt={`opinia o książce ${index}` } key={index} />
+      <div className="feedback-image-page1">
+        <Image layout='fill'  src={finalPath + image} alt={`opinia o książce ${index}` } key={index} />
+      </div>
     )
   })
 return imgs;
@@ -79,7 +81,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client1.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill' src={finalPath + "/images/client1.jpg"} alt="client" />
+                    </div>
                     <h3>Alit John</h3>
                     <span>Web Developer</span>
                   </div>
@@ -92,7 +96,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client2.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill'src={finalPath + "/images/client2.jpg"} alt="client" />
+                    </div>
                     <h3>Alit John</h3>
                     <span>SEO Expert</span>
                   </div>
@@ -105,7 +111,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client3.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill' src={finalPath + "/images/client3.jpg"} alt="client" />
+                    </div>
                     <h3>Steven John</h3>
                     <span>Web Developer</span>
                   </div>
@@ -118,7 +126,9 @@ const Feedback = () => {
               <div className="col-lg-12">
                 <div className="single-feedback-box">
                   <div className="client-info">
-                    <img src={finalPath + "/images/client4.jpg"} alt="client" />
+                    <div className="client-info-image">
+                      <Image layout='fill' src={finalPath + "/images/client4.jpg"} alt="client" />
+                    </div>
                     <h3>David Warner</h3>
                     <span>Web Developer</span>
                   </div>
@@ -143,7 +153,18 @@ const Feedback = () => {
         <path d="M0,70 C30,130 70,50 100,70 L100,100 0,100 Z" fill="#ffffff" />
       </svg>
       <div className="container feedbacks-screenshots">
-      <FeedBackScreenshots imagesArr={imagesToPublish} />
+        <div className="feedback-0-image-page1">
+          <Image layout='fill'  src={finalPath + '/images/feedbacks/feedback-0.jpg'} alt={`opinia o książce 0` }  />
+        </div>
+        <div className="feedback-1-image-page1">
+          <Image layout='fill'  src={finalPath + '/images/feedbacks/feedback-1.jpg'} alt={`opinia o książce 1` }  />
+        </div>
+        <div className="feedback-2-image-page1">
+          <Image layout='fill'  src={finalPath + '/images/feedbacks/feedback-2.jpg'} alt={`opinia o książce 2` }  />
+        </div>
+        <div className="feedback-3-image-page1">
+          <Image layout='fill'  src={finalPath + '/images/feedbacks/feedback-3.jpg'} alt={`opinia o książce 3` }  />
+        </div>
       </div>
       <div className="text-center">
 

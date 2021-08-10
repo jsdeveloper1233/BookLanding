@@ -3,7 +3,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
 import buyingOptions from "../../buyingOptions";
-
+import Image from 'next/image'
 const options = {
     autoplay: false,
     nav: false,
@@ -54,7 +54,9 @@ class LatestProducts extends Component {
                             <div className="col-lg-12">
                                 <div className="single-product">
                                     <div className="product-img">
-                                        <img src='/images/radykalna-s.png' alt="item" />
+                                        <div className='radykalna-s-image-custom'>
+                                            <Image layout='fill' src='/images/radykalna-s.png' alt="item" />
+                                        </div>
 
                                         <Link href="/checkout?product=radykalnaEbook">
                                             <a className="add-to-cart-btn">Dodaj do koszyka<i className="icofont-shopping-cart"></i></a>
@@ -137,7 +139,9 @@ class LatestProducts extends Component {
                             <div className="col-lg-12">
                                 <div className="single-product">
                                     <div className="product-img">
-                                        <img src='/images/bundle.jpg' alt="item" />
+                                        <div className="radykalna-s-image-custom">
+                                            <Image layout='fill' src='/images/bundle.jpg' alt="item" />
+                                        </div>
 
                                         <Link href="/checkout?product=bundle">
                                             <a className="add-to-cart-btn">Dodaj do koszyka<i className="icofont-shopping-cart"></i></a>

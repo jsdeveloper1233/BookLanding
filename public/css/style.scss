@@ -6951,3 +6951,184 @@ Back To Top CSS
 }
 
 @import './mycustom/mycustom';
+.sekrety-rozwoju-osobistego-image,.radykalna-s-image-custom,.custom-divi-image,.radykalna-brochure-image,.couple-s-image,.radykalna-prawda-w-zwiazku-image,.bundle-h-image,.ksiazka-image,.sekrety-rozwoju-osobistego-papier-gr-image,.ksiazka-bundle-image,.radykalna-s-image,.pricing-custom-image,.client-info-image,.feedback-0-image-page1 , .feedback-1-image-page1 ,  .feedback-2-image-page1, .feedback-3-image-page1,.banner_image ,.single-team-member-box-team-image,.image-container-ksiazka-ig-sm , .discover-img-ksiazka-2,.features-image-sergio-4-sm,.discover-img-sergiosdorje {
+    img{
+        position: inherit !important;
+        width:auto !important;
+        height:auto !important;
+        object-fit: contain !important;
+    }
+}
+.sekrety-rozwoju-osobistego-image,.radykalna-s-image-custom,.custom-divi-image,.couple-s-image,.radykalna-brochure-image,.radykalna-prawda-w-zwiazku-image,.bundle-h-image,.ksiazka-image,.sekrety-rozwoju-osobistego-papier-gr-image,.ksiazka-bundle-image,.radykalna-s-image,.pricing-custom-image,.client-info-image,.features-image-sergio-4-sm,.discover-img-sergiosdorje,.single-team-member-box-team-image,.feedback-0-image-page1,.discover-img-ksiazka-2,.feedback-1-image-page1,.feedback-2-image-page1 ,.creative-shape-bg,.feedback-3-image-page1,.banner_image,.image-container-ksiazka-ig-sm{
+    div{
+        all: unset !important;
+        div{
+          all: unset !important;
+        }
+    }
+}
+.client-info-image{
+    position: absolute;
+    left: -30px;
+    width: 60px !important;
+    height: 60px;
+    top: 30px;
+    border-radius: 50%;
+    border: 3px solid var(--whiteColor);
+}
+.banner_image {
+    width: min-content;
+    height: auto;
+    min-width: 76%;
+    max-width: 100%;
+    position:absolute;
+    bottom: -215px;
+    right: 45px;
+  }
+  .creative-shape-bg {
+    width: 100%;
+    height: 150px;
+  }
+  .image-container-ksiazka-ig-sm {
+    width: min-content;
+    height: auto;
+    min-width: 95%;
+    max-width: 100%;
+  }
+  
+  .discover-img-ksiazka-2 {
+    width: min-content;
+    height: auto;
+    min-width: 95%;
+    max-width: 100%;
+  }
+  .features-image-sergio-4-sm {
+    height: auto;
+    min-width: 50%;
+    max-width: 100%;
+    position: relative;
+  }
+  .discover-img-sergiosdorje {
+    width: min-content;
+    height: auto;
+    min-width: 92%;
+    max-width: 100%;
+  }
+  
+  .single-team-member-box-team-image{
+    width: min-content;
+    height: auto;
+    min-width: 92%;
+    max-width: 100%;
+  }
+ 
+  
+  .feedback-0-image-page1{
+    width: min-content;
+    height: auto;
+    min-width: 75%;
+    max-width: 100%;
+  }
+  .feedback-1-image-page1{
+    width: min-content;
+    height: auto;
+    min-width: 40%;
+    max-width: 100%;
+  }
+  .feedback-2-image-page1{
+    width: min-content;
+    height: auto;
+    min-width: 35%;
+    max-width: 100%;
+  }
+  .feedback-3-image-page1{
+    width: min-content;
+    height: auto;
+    min-width: 35%;
+    max-width: 100%;
+  }
+  .ksiazka-image{
+    display: inline-block;
+    width: min-content;
+    height: auto;
+    min-width: 50%;
+    max-width: 100%; 
+  }
+  
+  .sekrety-rozwoju-osobistego-image{
+      display: inline-block;
+    width: min-content;
+    height: auto;
+    min-width: 60%;
+    max-width: 100%; 
+  }
+  
+  .bundle-h-image{
+    display:inline-block;
+    width: min-content;
+    height: auto;
+    min-width: 70%;
+    max-width: 100%;
+  }
+  
+  .ksiazka-bundle-image{
+      display:inline-block;
+      width:33.78rem;
+      height:21.8rem;
+  }
+  .radykalna-prawda-w-zwiazku-image{
+      display:inline-block;
+      width:33.78rem;
+      height:21.8rem;
+  }
+  .sekrety-rozwoju-osobistego-papier-gr-image{
+      display:inline-block;
+      width:33.78rem;
+      height:21.8rem;
+  }
+  
+  .pricing-custom-image{
+      display:inline-block;
+      min-width: 100%;
+
+  }
+  
+  .radykalna-s-image{
+    width: min-content;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .couple-s-image{
+    display:inline-block;
+    width: min-content;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .radykalna-brochure-image{
+    display:inline-block;
+    width: min-content;
+    height: auto;
+    min-width: 85%;
+    max-width: 100%;
+  }
+  .custom-divi-image{
+    display:inline-block;
+    width: min-content;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .radykalna-s-image-custom{
+    display:inline-block;
+    width: min-content;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+  }
+.flex-features-image{
+    align-self: flex-end;
+}
+

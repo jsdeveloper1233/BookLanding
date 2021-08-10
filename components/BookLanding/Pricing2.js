@@ -4,7 +4,7 @@ import buingOptions from "../../buyingOptions";
 import Loader from "../Shared/Loader";
 import CornerRibbon from "react-corner-ribbon";
 import { finalPath } from "../../pages/index";
-
+import Image from 'next/image'
 const FreeShipping = () => {
   return(
     <p className="freeshipping">
@@ -64,8 +64,9 @@ class Pricing2 extends Component {
                     <sup>zł</sup>
                   </div>
                 </div>
-
-                <img src={finalPath + "/images/ksiazka.png"} alt="książka" />
+                <div className="ksiazka-image">
+                  <Image layout='fill' src={finalPath + "/images/ksiazka.png"} alt="książka" />
+                </div>
 
                 <p className="textbig">KSIĄŻKA</p>
                 <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
@@ -104,11 +105,13 @@ class Pricing2 extends Component {
                     <FreeShipping />
                   </div>
                 </div>
-
-                <img
-                  src={finalPath + "/images/sekrety-rozwoju-osobistego.png"}
-                  alt="książka"
-                />
+                <div className="sekrety-rozwoju-osobistego-image">
+                  <Image
+                    layout="fill"
+                    src={finalPath + "/images/sekrety-rozwoju-osobistego.png"}
+                    alt="książka"
+                  />
+                </div>
 
                 <p className="textbig">EBOOK</p>
                 <p className="textmedium">"Sekrety Rozwoju Osobistego"</p>
@@ -161,8 +164,9 @@ class Pricing2 extends Component {
                     <FreeShipping />
                   </div>
                 </div>
-
-                <img src={finalPath + "/images/bundle-h.png"} alt="książka" />
+                <div className="bundle-h-image">
+                  <Image layout='fill' src={finalPath + "/images/bundle-h.png"} alt="książka" />
+                </div>
 
                 <p className="textbig">
                   KSIĄŻKA

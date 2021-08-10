@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-const OwlCarousel = dynamic(import("react-owl-carousel3"));
+const OwlCarousel = dynamic(()=>import("react-owl-carousel3"));
 import { finalPath } from "../../pages/index";
-
+import Image from 'next/image'
 const options = {
   loop: false,
   nav: true,
@@ -63,10 +63,13 @@ class Team extends Component {
               >
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img
-                      src={finalPath + "/images/team-sergio.jpg"}
-                      alt="Sergio"
-                    />
+                    <div className="single-team-member-box-team-image">
+                      <Image
+                        layout='fill'
+                        src={finalPath + "/images/team-sergio.jpg"}
+                        alt="Sergio"
+                      />
+                    </div>
 
                     <div className="team-content">
                       <h3>
@@ -103,10 +106,13 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img
-                      src={finalPath + "/images/team-wojtek.jpeg"}
-                      alt="Wojtek"
-                    />
+                    <div className="single-team-member-box-team-image">
+                      <Image
+                        layout='fill'
+                        src={finalPath + "/images/team-wojtek.jpeg"}
+                        alt="Wojtek"
+                      />
+                    </div>
 
                     <div className="team-content">
                       <h3>
@@ -128,10 +134,13 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img
-                      src={finalPath + "/images/lucjan-wesolowski.jpg"}
-                      alt="Lucjan"
-                    />
+                    <div className="single-team-member-box-team-image">
+                      <Image
+                        layout='fill'
+                        src={finalPath + "/images/lucjan-wesolowski.jpg"}
+                        alt="Lucjan"
+                      />
+                    </div>
 
                     <div className="team-content">
                       <h3>
@@ -159,10 +168,13 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img
-                      src={finalPath + "/images/NikolaHahn_2020_S_Sergio.png"}
-                      alt="team"
-                    />
+                    <div className="single-team-member-box-team-image">
+                      <Image
+                        layout='fill'
+                        src={finalPath + "/images/NikolaHahn_2020_S_Sergio.png"}
+                        alt="team"
+                      />
+                    </div>
 
                     <div className="team-content">
                       <h3>
@@ -187,10 +199,13 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img
-                      src={finalPath + "/images/team-mireli.jpg"}
-                      alt="team"
-                    />
+                    <div className="single-team-member-box-team-image">
+                      <Image
+                        layout='fill'
+                        src={finalPath + "/images/team-mireli.jpg"}
+                        alt="team"
+                      />
+                    </div>
 
                     <div className="team-content">
                       <h3>
@@ -215,7 +230,9 @@ class Team extends Component {
 
                 <div className="col-lg-12">
                   <div className="single-team-member-box">
-                    <img src={finalPath + "/images/team-maja.png"} alt="Maja" />
+                    <div className="single-team-member-box-team-image">
+                      <Image layout='fill' src={finalPath + "/images/team-maja.png"} alt="Maja" />
+                    </div>
 
                     <div className="team-content">
                       <h3>

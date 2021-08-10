@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-const OwlCarousel = dynamic(import('react-owl-carousel3'));
+const OwlCarousel = dynamic(()=>import('react-owl-carousel3'));
 import {finalPath} from '../../pages/index';
 
 const options = {

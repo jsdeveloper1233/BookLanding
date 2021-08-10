@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Image from 'next/image'
 class Discover2 extends Component {
   render() {
     return (
@@ -84,10 +84,13 @@ class Discover2 extends Component {
 
             <div className="col-lg-4 col-md-12">
               <div className="discover-img">
-                <img
-                  src="/images/ksiazka-2.png"
-                  alt="Sekrety Rozwoju Osobistego"
-                />
+                <div className="discover-img-ksiazka-2">
+                    <Image
+                      layout="fill"
+                      src="/images/ksiazka-2.png"
+                      alt="Sekrety Rozwoju Osobistego"
+                    />
+                  </div>
               </div>
             </div>
           </div>

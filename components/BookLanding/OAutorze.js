@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { finalPath } from "../../pages/index";
-
+import Image from 'next/image';
 class OAutorze extends Component {
   render() {
     return (
@@ -32,8 +32,14 @@ Książka SEKRETY ROZWOJU OSOBISTEGO jest owocem kilkunastoletniego intensywnego
 
             <div className="col-lg-6 col-md-12">
               <div className="discover-img">
-                <img src={finalPath + "/images/sergiosdorje.jpg"} alt="Sekrety rozwoju osobistego" />
-              </div>
+                <div className="discover-img-sergiosdorje">
+                    <Image
+                      layout="fill"
+                      src={finalPath + "/images/sergiosdorje.jpg"}
+                      alt="Sekrety rozwoju osobistego"
+                    />
+                  </div>
+                </div>
             </div>
           </div>
         </div>

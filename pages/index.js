@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import Navbar from "../components/Layouts/Navbar";
 import Footer from "../components/Layouts/Footer";
 import Banner from "../components/BookLanding/Banner";
@@ -24,9 +25,10 @@ import Services from "../components/DigitalMarketing/Services";
 import VirtualReality from "../components/BookLanding/VirtualReality";
 import CtaCard from "../components/BookLanding/CtaCard";
 import Pricing2 from "../components/BookLanding/Pricing2";
-import VideoComp from "../components/BookLanding/VideoComp";
-import Head from "next/head";
+import VideoComp from '../components/BookLanding/VideoComp';
 
+
+import Head from "next/head";
 export const finalPath = "";
 class BookLanding extends React.Component {
   constructor(props) {
