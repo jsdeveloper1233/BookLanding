@@ -114,8 +114,8 @@ class Features extends Component {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-12">
-                <div className="features-image ">
+              <div className="col-lg-6 col-md-12 flex-features-image">
+                <div className="features-image">
                   <div className="features-image-sergio-4-sm">
                       <Image
                         layout="fill"
