@@ -7007,7 +7007,6 @@ Back To Top CSS
     min-width: 50%;
     max-width: 100%;
     position: relative;
-    bottom: -8.5rem;
   }
   .discover-img-sergiosdorje {
     width: min-content;
@@ -7129,5 +7128,7 @@ Back To Top CSS
     min-width: 100%;
     max-width: 100%;
   }
-
+.flex-features-image{
+    align-self: flex-end;
+}
 
