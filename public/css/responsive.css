@@ -1258,9 +1258,8 @@
     width: 100%;
     height:28vh;
   }
-  .sekrety-rozwoju-osobistego-ebook-gr-image {
-    width: 100%;
-    height:28vh;
+  .pricing-custom-image {
+    min-width: 100%;
   }
   .radykalna-prawda-w-zwiazku-image {
     width: 100%;
@@ -1271,24 +1270,19 @@
     height:28vh;
   }
   .radykalna-s-image {
-    width: 100%;
-    height: 45vh;
+    min-width: 100%;
   }
   .couple-s-image {
-    width: 100%;
-    height: 35vh;
+    min-width: 100%;
   }
   .radykalna-brochure-image {
-    width: 100%;
-    height: 40vh;
+    min-width: 100%;
   }
   .custom-divi-image {
-    width: 100%;
-    height: 28vh;
+    min-width: 100%;
   }
   .radykalna-s-image-custom {
-    width: 100%;
-    height: 40vh;
+    min-width: 100%;
   }
   .single-team-member-box-team-image {
     display: inline-block;
@@ -1894,9 +1888,8 @@
   .discover-img-sergiosdorje {
     min-width: 100%;
   }
-  .sekrety-rozwoju-osobistego-ebook-gr-image{
-    width:20rem;
-    height:11.5rem;
+  .pricing-custom-image{
+    min-width: 100%;
   }
   .sekrety-rozwoju-osobistego-papier-gr-image{
     width:20rem;
@@ -1911,20 +1904,19 @@
     height:13rem;
   }
   .radykalna-s-image{
-    width:100%;
+    min-width: 100%;
   }
   .couple-s-image{
-    width:100%;
-    height:25rem;
+    min-width: 100%;
   }
   .radykalna-brochure-image{
-    width:100%;
+    min-width: 100%;
   }
   .custom-divi-image{
-    width:100%;
+    min-width: 100%;
   }
   .radykalna-s-image-custom{
-    width:100%;
+    min-width: 100%;
   }
   .discover-img-ksiazka-2{
     display:inline-block;
@@ -2109,9 +2101,8 @@
     /* width:15rem;
     height:8rem; */
   }
-  .sekrety-rozwoju-osobistego-ebook-gr-image{
-    width:22rem;
-    height:14rem;
+  .pricing-custom-image{
+    min-width: 100%
   }
   .sekrety-rozwoju-osobistego-papier-gr-image{
     width:22rem;
@@ -2126,22 +2117,19 @@
     height:14rem;
   }
   .radykalna-s-image{
-    width:28rem;
-    height:28rem;
+    min-width: 100%;
   }
   .couple-s-image{
-    width:100%;
+    min-width: 100%;
   }
   .radykalna-brochure-image{
-    width:100%;
-    height:43vh;
+    min-width: 100%;
   }
   .custom-divi-image{
-    width:25rem;
-    height:18rem;
+    min-width: 100%;
   }
   .radykalna-s-image-custom{
-    width: 100%;
+    min-width: 100%;
   }
   
 }
@@ -2190,9 +2178,8 @@
     width:28rem;
     height:18rem;
   }
-  .sekrety-rozwoju-osobistego-ebook-gr-image{
-    width:28rem;
-    height:18rem;
+  .pricing-custom-image{
+    min-width: 100%
   }
   .radykalna-prawda-w-zwiazku-image{
     width:28rem;
@@ -2203,16 +2190,16 @@
     height:18rem;
   }
   .radykalna-s-image{
-    width:34rem;
-    height:33.8rem;
+    min-width: 95%;
   }
   .custom-divi-image{
-    width:32rem;
-    height:19rem;
+    min-width: 100%;
   }
   .radykalna-s-image-custom{
-    width:100%;
-    height:20rem;
+    min-width: 100%;
+  }
+  .radykalna-brochure-image{
+    min-width: 95%;
   }
 }
 
@@ -2257,8 +2244,14 @@
     top: 0;
   }
   .radykalna-s-image-custom{
-    width:100%;
+    min-width: 100%;
   }
+ .radykalna-s-image{
+   min-width: 100%;
+ } 
+ .radykalna-brochure-image{
+  min-width: 65%;
+}
 }
 
 @media only screen and (min-width: 1824px) {

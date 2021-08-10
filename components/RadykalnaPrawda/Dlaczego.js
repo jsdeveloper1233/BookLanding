@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-
 const Dlaczego = ({ timing = 150 }) => {
 
     const [isBooped, setIsBooped] = React.useState(false);
