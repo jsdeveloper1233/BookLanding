@@ -29,6 +29,9 @@ const sequelize = new Sequelize(`mysql://${process.env.DB_USER}:${process.env.DB
 const pixel_access_token = process.env.PIXEL_ACCESS_TOKEN;
 const pixel_id = process.env.PIXEL_ADS_PIXEL_ID;
 
+var adminIps = process.env.ADMIN_IPS || '';
+adminIps = adminIps.split(',').filter(x => x.length > 0);
+
 let current_timestamp = Math.floor(new Date() / 1000);
 
 var multer = require('multer')
@@ -139,6 +142,13 @@ app.prepare().then(() => {
 
 
     server.get('/api/admin/orders', async (req, res) => {
+        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+        if(!adminIps.some(x => ip.includes(x))) {
+            console.log('BLOCKED IP: ' + ip);
+            return;
+        }
+
         var page = parseInt(req.query.page || "1");
         var pageSize = parseInt(req.query.pageSize || "10");
         var offset = (page - 1) * pageSize;
@@ -153,6 +163,12 @@ app.prepare().then(() => {
     })
 
     server.post('/api/admin/orders/state', async (req, res) => {
+        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+        if(!adminIps.some(x => ip.includes(x))) {
+            console.log('BLOCKED IP: ' + ip);
+            return;
+        }
         let id = req.body.id;
         let state = req.body.state;
         await Order.update({ state: state }, { where: { id: id } });
@@ -160,6 +176,13 @@ app.prepare().then(() => {
     })
 
     server.post('/api/admin/orders/send', async (req, res) => {
+        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+        if(!adminIps.some(x => ip.includes(x))) {
+            console.log('BLOCKED IP: ' + ip);
+            return;
+        }
+
         let id = req.body.id;
         let send = req.body.send;
         await Order.update({ send: send }, { where: { id: id } });
