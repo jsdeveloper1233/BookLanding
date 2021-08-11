@@ -1117,6 +1117,7 @@ Main Banner CSS
 =================================================*/
 .main-banner {
   height: 840px;
+  background: var(--templateColor);
   position: relative;
   z-index: 1;
 }
@@ -8230,6 +8231,9 @@ td.product-name .cart-items {
   .features-area.book-features .div-with-featured-image img {
     display: none;
   }
+  .features-area.book-features .features-image-sergio-4-sm {
+    display: none;
+  }
 }
 
 .features-area.book-features {
@@ -8276,7 +8280,8 @@ td.product-name .cart-items {
 }
 
 @-webkit-keyframes blink {
-  from, to {
+  from,
+  to {
     opacity: 0;
   }
   50% {
@@ -8285,7 +8290,8 @@ td.product-name .cart-items {
 }
 
 @keyframes blink {
-  from, to {
+  from,
+  to {
     opacity: 0;
   }
   50% {
@@ -8318,5 +8324,383 @@ td.product-name .cart-items {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media (max-width: 992px) {
+  .poznaj-sekretne .about-content {
+    text-align: center;
+  }
+  .poznaj-sekretne .image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.icon-scroll {
+  width: 40px;
+  height: 70px;
+  margin-top: -35px;
+  -webkit-box-shadow: inset 0 0 0 1px #fff;
+          box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+}
+
+.icon-scroll.icon-scroll:before {
+  position: absolute;
+  left: 50%;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
+}
+
+@media (min-width: 1910px) {
+  .remove-on-big-screens {
+    display: none;
+  }
+}
+
+@media (max-width: 1909px) {
+  .icon-scroll {
+    display: none;
+  }
+}
+
+.first-time .divided .section-title h2,
+.first-time .divided .section-title p {
+  text-align: left;
+  line-height: normal;
+}
+
+.first-time .divided .flex-50 {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+}
+
+.first-time .divided .flex-50.img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.first-time .three-boxes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
+}
+
+.first-time .three-boxes-container .features-item {
+  width: 27%;
+  position: relative;
+  position: relative;
+}
+
+.first-time .three-boxes-container .features-item .icon {
+  left: 0;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  line-height: 75px;
+  background: var(--whiteColor);
+  border-radius: 50%;
+  font-size: 25px;
+  text-align: center;
+  color: var(--templateColor);
+  -webkit-box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1) !important;
+          box-shadow: 0 0 1.25rem rgba(108, 118, 134, 0.1) !important;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.first-time .three-boxes-container .features-item p {
+  margin-top: 30px;
+  line-height: 21px;
+}
+
+.sekrety-rozwoju-osobistego-image img, .radykalna-s-image-custom img, .custom-divi-image img, .radykalna-brochure-image img, .couple-s-image img, .radykalna-prawda-w-zwiazku-image img, .bundle-h-image img, .ksiazka-image img, .sekrety-rozwoju-osobistego-papier-gr-image img, .ksiazka-bundle-image img, .radykalna-s-image img, .pricing-custom-image img, .client-info-image img, .feedback-0-image-page1 img, .feedback-1-image-page1 img, .feedback-2-image-page1 img, .feedback-3-image-page1 img, .banner_image img, .single-team-member-box-team-image img, .image-container-ksiazka-ig-sm img, .image-container-sergio-5s img, .discover-img-ksiazka-2 img, .features-image-sergio-4-sm img, .discover-img-sergiosdorje img {
+  position: inherit !important;
+  width: auto !important;
+  height: auto !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+}
+
+.sekrety-rozwoju-osobistego-image div, .radykalna-s-image-custom div, .custom-divi-image div, .couple-s-image div, .radykalna-brochure-image div, .radykalna-prawda-w-zwiazku-image div, .bundle-h-image div, .ksiazka-image div, .sekrety-rozwoju-osobistego-papier-gr-image div, .ksiazka-bundle-image div, .radykalna-s-image div, .pricing-custom-image div, .client-info-image div, .features-image-sergio-4-sm div, .discover-img-sergiosdorje div, .single-team-member-box-team-image div, .feedback-0-image-page1 div, .discover-img-ksiazka-2 div, .feedback-1-image-page1 div, .feedback-2-image-page1 div, .creative-shape-bg div, .feedback-3-image-page1 div, .banner_image div, .image-container-ksiazka-ig-sm div, .image-container-sergio-5s div {
+  all: unset !important;
+}
+
+.sekrety-rozwoju-osobistego-image div div, .radykalna-s-image-custom div div, .custom-divi-image div div, .couple-s-image div div, .radykalna-brochure-image div div, .radykalna-prawda-w-zwiazku-image div div, .bundle-h-image div div, .ksiazka-image div div, .sekrety-rozwoju-osobistego-papier-gr-image div div, .ksiazka-bundle-image div div, .radykalna-s-image div div, .pricing-custom-image div div, .client-info-image div div, .features-image-sergio-4-sm div div, .discover-img-sergiosdorje div div, .single-team-member-box-team-image div div, .feedback-0-image-page1 div div, .discover-img-ksiazka-2 div div, .feedback-1-image-page1 div div, .feedback-2-image-page1 div div, .creative-shape-bg div div, .feedback-3-image-page1 div div, .banner_image div div, .image-container-ksiazka-ig-sm div div, .image-container-sergio-5s div div {
+  all: unset !important;
+}
+
+.client-info-image {
+  position: absolute;
+  left: -30px;
+  width: 60px !important;
+  height: 60px;
+  top: 30px;
+  border-radius: 50%;
+  border: 3px solid var(--whiteColor);
+}
+
+.banner_image {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 76%;
+  max-width: 100%;
+  position: absolute;
+  bottom: -215px;
+  right: 45px;
+}
+
+.creative-shape-bg {
+  width: 100%;
+  height: 150px;
+}
+
+.image-container-ksiazka-ig-sm {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 95%;
+  max-width: 100%;
+}
+
+.image-container-sergio-5s {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 76%;
+  max-width: 100%;
+}
+
+.discover-img-ksiazka-2 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 95%;
+  max-width: 100%;
+}
+
+.features-image-sergio-4-sm {
+  height: auto;
+  min-width: 50%;
+  max-width: 100%;
+  position: relative;
+}
+
+.discover-img-sergiosdorje {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 92%;
+  max-width: 100%;
+}
+
+.single-team-member-box-team-image {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 92%;
+  max-width: 100%;
+}
+
+.feedback-0-image-page1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 75%;
+  max-width: 100%;
+}
+
+.feedback-1-image-page1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 40%;
+  max-width: 100%;
+}
+
+.feedback-2-image-page1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 35%;
+  max-width: 100%;
+}
+
+.feedback-3-image-page1 {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 35%;
+  max-width: 100%;
+}
+
+.ksiazka-image {
+  display: inline-block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 50%;
+  max-width: 100%;
+}
+
+.sekrety-rozwoju-osobistego-image {
+  display: inline-block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 60%;
+  max-width: 100%;
+}
+
+.bundle-h-image {
+  display: inline-block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 70%;
+  max-width: 100%;
+}
+
+.ksiazka-bundle-image {
+  display: inline-block;
+  width: 33.78rem;
+  height: 21.8rem;
+}
+
+.radykalna-prawda-w-zwiazku-image {
+  display: inline-block;
+  width: 33.78rem;
+  height: 21.8rem;
+}
+
+.sekrety-rozwoju-osobistego-papier-gr-image {
+  display: inline-block;
+  width: 33.78rem;
+  height: 21.8rem;
+}
+
+.pricing-custom-image {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.radykalna-s-image {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.couple-s-image {
+  display: inline-block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.radykalna-brochure-image {
+  display: inline-block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 85%;
+  max-width: 100%;
+}
+
+.custom-divi-image {
+  display: inline-block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.radykalna-s-image-custom {
+  display: inline-block;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: auto;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.flex-features-image {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 /*# sourceMappingURL=style.css.map */

@@ -26,6 +26,7 @@ import VirtualReality from "../components/BookLanding/VirtualReality";
 import CtaCard from "../components/BookLanding/CtaCard";
 import Pricing2 from "../components/BookLanding/Pricing2";
 import VideoComp from '../components/BookLanding/VideoComp';
+import FirstTime from "../components/BookLanding/FirstTime";
 
 
 import Head from "next/head";
@@ -286,6 +287,7 @@ class BookLanding extends React.Component {
           </Head>
           <Navbar />
           <Banner />
+          <FirstTime />
           <AboutContent />
           <VideoComp />
           <Discover2 />

@@ -6951,7 +6951,7 @@ Back To Top CSS
 }
 
 @import './mycustom/mycustom';
-.sekrety-rozwoju-osobistego-image,.radykalna-s-image-custom,.custom-divi-image,.radykalna-brochure-image,.couple-s-image,.radykalna-prawda-w-zwiazku-image,.bundle-h-image,.ksiazka-image,.sekrety-rozwoju-osobistego-papier-gr-image,.ksiazka-bundle-image,.radykalna-s-image,.pricing-custom-image,.client-info-image,.feedback-0-image-page1 , .feedback-1-image-page1 ,  .feedback-2-image-page1, .feedback-3-image-page1,.banner_image ,.single-team-member-box-team-image,.image-container-ksiazka-ig-sm , .discover-img-ksiazka-2,.features-image-sergio-4-sm,.discover-img-sergiosdorje {
+.sekrety-rozwoju-osobistego-image,.radykalna-s-image-custom,.custom-divi-image,.radykalna-brochure-image,.couple-s-image,.radykalna-prawda-w-zwiazku-image,.bundle-h-image,.ksiazka-image,.sekrety-rozwoju-osobistego-papier-gr-image,.ksiazka-bundle-image,.radykalna-s-image,.pricing-custom-image,.client-info-image,.feedback-0-image-page1 , .feedback-1-image-page1 ,  .feedback-2-image-page1, .feedback-3-image-page1,.banner_image ,.single-team-member-box-team-image,.image-container-ksiazka-ig-sm, .image-container-sergio-5s, .discover-img-ksiazka-2,.features-image-sergio-4-sm,.discover-img-sergiosdorje {
     img{
         position: inherit !important;
         width:auto !important;
@@ -6959,7 +6959,7 @@ Back To Top CSS
         object-fit: contain !important;
     }
 }
-.sekrety-rozwoju-osobistego-image,.radykalna-s-image-custom,.custom-divi-image,.couple-s-image,.radykalna-brochure-image,.radykalna-prawda-w-zwiazku-image,.bundle-h-image,.ksiazka-image,.sekrety-rozwoju-osobistego-papier-gr-image,.ksiazka-bundle-image,.radykalna-s-image,.pricing-custom-image,.client-info-image,.features-image-sergio-4-sm,.discover-img-sergiosdorje,.single-team-member-box-team-image,.feedback-0-image-page1,.discover-img-ksiazka-2,.feedback-1-image-page1,.feedback-2-image-page1 ,.creative-shape-bg,.feedback-3-image-page1,.banner_image,.image-container-ksiazka-ig-sm{
+.sekrety-rozwoju-osobistego-image,.radykalna-s-image-custom,.custom-divi-image,.couple-s-image,.radykalna-brochure-image,.radykalna-prawda-w-zwiazku-image,.bundle-h-image,.ksiazka-image,.sekrety-rozwoju-osobistego-papier-gr-image,.ksiazka-bundle-image,.radykalna-s-image,.pricing-custom-image,.client-info-image,.features-image-sergio-4-sm,.discover-img-sergiosdorje,.single-team-member-box-team-image,.feedback-0-image-page1,.discover-img-ksiazka-2,.feedback-1-image-page1,.feedback-2-image-page1 ,.creative-shape-bg,.feedback-3-image-page1,.banner_image,.image-container-ksiazka-ig-sm, .image-container-sergio-5s{
     div{
         all: unset !important;
         div{
@@ -6993,6 +6993,12 @@ Back To Top CSS
     width: min-content;
     height: auto;
     min-width: 95%;
+    max-width: 100%;
+  }
+  .image-container-sergio-5s {
+    width: min-content;
+    height: auto;
+    min-width: 76%;
     max-width: 100%;
   }
   
