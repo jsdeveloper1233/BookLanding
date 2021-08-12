@@ -12,6 +12,46 @@ $value_eight: 1910px;
 
 /* Max width (767px) */
 @media only #{$media} and ($feature_max : $value_one) {
+    .radykalna-s-image-custom {
+        min-width: 100%;
+      }
+    .custom-divi-image {
+        min-width: 100%;
+      }
+    .radykalna-brochure-image {
+        min-width: 100%;
+      }
+    .couple-s-image {
+        min-width: 100%;
+      }
+    .radykalna-s-image {
+        min-width: 100%;
+      }
+    .pricing-custom-image {
+        min-width: 100%;
+      }
+    .single-team-member-box-team-image {
+        display: inline-block;
+        min-width: 100%;
+      }
+      .feedback-0-image-page1 {
+        /* width: 100%;
+        height: 25vh; */
+        min-width: 100%;
+      }
+      .feedback-1-image-page1 {
+        /* width: 100%;
+        height: 35vh; */
+        min-width: 100%;
+      }
+      .feedback-2-image-page1 {
+        /* width: 100%;
+        height: 15vh; */
+        min-width:100%;
+      }
+      .feedback-3-image-page1 {
+        min-width: 100%;
+      }
     .btn {
         font-size: 14px;
         padding: 14px 27px;
@@ -226,7 +266,12 @@ $value_eight: 1910px;
         &.book-home {
             .book-image {
                 margin-top: 40px;
-
+                .banner_image{
+                    position: relative;
+                    bottom: 0;
+                    right: 0;
+                    min-width: 100%;
+                }
                 img {
                     position: relative;
                     bottom: 0;
@@ -291,6 +336,9 @@ $value_eight: 1910px;
     .creative-shape {
         bottom: -5px;
     }
+    .creative-shape-bg {
+        height: 37.5px;
+      }
 
     .features-area {
         .shape10, .shape11, .shape6, .shape3 {
@@ -1625,10 +1673,37 @@ $value_eight: 1910px;
     .modal-video-close-btn {
         right: 0;
     }
+    .discover-img-ksiazka-2 {
+        min-width: 100%;
+      }
+    .image-container-ksiazka-ig-sm {
+        min-width: 100%;
+       }
+       .discover-img-sergiosdorje {
+        min-width: 100%;
+      }
 }
 
 /* Min width (768px) to Max width (991px) */
 @media only #{$media} and ($feature_min : $value_two) and ($feature_max : $value_three) {
+    .radykalna-s-image-custom {
+        min-width: 100%;
+      }
+    .custom-divi-image {
+        min-width: 100%;
+      }
+    .radykalna-brochure-image {
+        min-width: 100%;
+      }
+    .couple-s-image{
+        min-width: 100%;
+      }
+    .radykalna-s-image {
+        min-width: 100%;
+      }
+    .pricing-custom-image {
+        min-width: 100%;
+      }
     .ptb-100 {
         padding: {
             top: 80px;
@@ -1722,7 +1797,13 @@ $value_eight: 1910px;
         &.book-home {
             .book-image {
                 text-align: center;
-
+                .banner_image{
+                    position: relative;
+                    bottom: 0;
+                    right: 0;
+                    min-width: 70%;
+                    display: inline-block;
+                }
                 img {
                     position: relative;
                     bottom: 0;
@@ -2495,13 +2576,45 @@ $value_eight: 1910px;
     .modal-video-body {
         padding: 0 40px;
     }
+    .discover-img-ksiazka-2{
+        display:inline-block;
+        min-width: 57%;
+      }
     .modal-video-close-btn {
         right: 0;
     }
+    .features-image-sergio-4-sm{
+        bottom:0;
+      }
+      .discover-img-sergiosdorje {
+        min-width: 100%;
+      }
 }
 
 /* Min width (992px) to Max width (1199px) */
 @media only #{$media} and ($feature_min : $value_four) and ($feature_max : $value_five) {
+    .radykalna-s-image-custom {
+        min-width: 100%;
+      }
+    .custom-divi-image {
+        min-width: 100%;
+      }
+    .radykalna-brochure-image{
+        min-width: 100%;
+      }
+    .couple-s-image{
+        min-width: 100%;
+      }
+    .radykalna-s-image {
+        min-width: 100%;
+      }
+    .pricing-custom-image {
+        min-width: 100%;
+      }
+    .single-team-member-box-team-image{
+        min-width: 100%;
+        display: inline-block;
+      }
     .main-banner {
         height: 100%;
         padding: {
@@ -2553,6 +2666,10 @@ $value_eight: 1910px;
         }
         &.book-home {
             .book-image {
+                .banner_image{
+                    bottom: -134px;
+                    right: 45px;
+                }
                 img {
                     bottom: -134px;
                     right: 45px;
@@ -2764,10 +2881,36 @@ $value_eight: 1910px;
             }
         }
     }
+    .image-container-ksiazka-ig-sm{
+        min-width: 100%;
+      }
+      .features-image-sergio-4-sm {
+        min-width: 100%;
+      }
+      .discover-img-sergiosdorje{
+        /* width:28rem;
+        height: 44rem; */
+        min-width: 100%;
+      }
 }
 
 /* Min width (1200px) to Max width (1350px) */
 @media only #{$media} and ($feature_min : $value_six) and ($feature_max : $value_seven) {
+    .radykalna-s-image-custom {
+        min-width: 100%;
+      }
+    .custom-divi-image {
+        min-width: 100%;
+      }
+    .radykalna-brochure-image{
+        min-width: 95%;
+      }
+    .radykalna-s-image{
+        min-width: 95%;
+      }
+    .pricing-custom-image {
+        min-width: 100%;
+      }
     .main-banner {
         .app-image {
             img {
@@ -2803,10 +2946,30 @@ $value_eight: 1910px;
             }
         }
     }
+    .image-container-ksiazka-ig-sm{
+        min-width: 100%;
+      }
+      .features-image-sergio-4-sm {
+        min-width: 100%;
+      }
+      .discover-img-sergiosdorje{
+        /* width:34rem;
+        height:53rem; */
+        min-width: 100%;
+      }
 }
 
 /* Min width (1910px) */
 @media only #{$media} and ($feature_min : $value_eight) {
+    .radykalna-s-image-custom {
+        min-width: 100%;
+      }
+    .radykalna-brochure-image{
+        min-width: 65%;
+      }
+    .radykalna-s-image{
+        min-width: 100%;
+      } 
     .main-banner {
         height: 100vh;
 
@@ -2833,6 +2996,11 @@ $value_eight: 1910px;
             }
         }
         .book-image {
+            .banner_image{
+                bottom: -20vh !important;
+                right: 0 !important;
+                min-width: 100%;
+            }
             img {
                 bottom: -136px !important;
                 right: 0 !important;
