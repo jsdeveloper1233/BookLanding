@@ -9,7 +9,6 @@ const axios = require('axios')
 const Przelewy24 = require('./prz24lib.js')
 const moment = require('moment');
 // const {Przelewy24} = require('node-przelewy24')
-// const P24 = new Przelewy24('133651', '133651', '8a57fa651d374455', false)
 const MailerLite = require("mailerlite-api-v2-node").default;
 require('dotenv').config()
 const mailerLite = MailerLite(process.env.MAILERLITE_API_KEY || 'test');
